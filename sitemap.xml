@@ -40,6 +40,12 @@
   </url>
   
   <url>
+    <loc>https://bxcodec.io/</loc>
+    <lastmod>2018-05-01T11:18:11+07:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://bxcodec.io/tags/library/</loc>
     <lastmod>2018-05-01T11:18:11+07:00</lastmod>
     <priority>0</priority>
@@ -95,12 +101,6 @@
   
   <url>
     <loc>https://bxcodec.io/tags/</loc>
-    <lastmod>2018-05-01T11:18:11+07:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://bxcodec.io/</loc>
     <lastmod>2018-05-01T11:18:11+07:00</lastmod>
     <priority>0</priority>
   </url>

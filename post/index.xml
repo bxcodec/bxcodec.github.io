@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Posts on bxcodec</title>
+    <title>Posts on Iman Tumorang</title>
     <link>https://bxcodec.io/post/</link>
-    <description>Recent content in Posts on bxcodec</description>
+    <description>Recent content in Posts on Iman Tumorang</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Tue, 01 May 2018 11:18:11 +0700</lastBuildDate>
@@ -19,7 +19,8 @@
       <guid>https://bxcodec.io/posts/faker/</guid>
       <description>Struct Data Fake Generator
 Faker will generate you a fake data based on your Struct.
-Index  Support Getting Started Example Contribution  Support You can file an Issue. See documentation in Godoc
+Source code: github
+ Support Getting Started Example Contribution  Support You can file an Issue. See documentation in Godoc
 Getting Started Download go get -u github.com/bxcodec/faker  Example With Tag Supported tag:
 Internet :
  Email Mac address Domain name Url UserName IP Address (IPV4 IPV6 ) Password  Payment :
@@ -33,6 +34,7 @@ Internet :
       
       <guid>https://bxcodec.io/posts/saint/</guid>
       <description> Saint : Just a Simple Math Library with Integer Operations
+Source code: github
 Download go get -u github.com/bxcodec/saint  Example package main import ( &amp;quot;fmt&amp;quot; &amp;quot;github.com/bxcodec/saint&amp;quot; ) func main() { arr:=[] int {2,1,3,5,6} var x int x= saint.Max(arr...) fmt.Println(x) // 6 x= saint.Max(4,3,1,5,7) fmt.Println(x) // 7 x= saint.Min(arr...) fmt.Println(x) // 1 x= saint.Min(4,3,5,5,7) fmt.Println(x) // 3 x= saint.Sum(arr...) fmt.Println(x) // 17 x = saint.Sum(4,5) fmt.Println(x) // 9 }  </description>
     </item>
     
