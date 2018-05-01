@@ -13,10 +13,10 @@
     
     <item>
       <title>Faker</title>
-      <link>https://bxcodec.github.io/posts/faker/</link>
+      <link>https://bxcodec.github.io/2018/05/01/faker/</link>
       <pubDate>Tue, 01 May 2018 11:18:11 +0700</pubDate>
       
-      <guid>https://bxcodec.github.io/posts/faker/</guid>
+      <guid>https://bxcodec.github.io/2018/05/01/faker/</guid>
       <description>Struct Data Fake Generator
 Faker will generate you a fake data based on your Struct.
 Index  Support Getting Started Example Contribution  Support You can file an Issue. See documentation in Godoc
