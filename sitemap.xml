@@ -57,14 +57,14 @@
   </url>
   
   <url>
-    <loc>https://bxcodec.io/categories/life/</loc>
-    <lastmod>2018-05-01T17:59:14+07:00</lastmod>
+    <loc>https://bxcodec.io/tags/life/</loc>
+    <lastmod>2018-05-01T11:09:30+07:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://bxcodec.io/tags/life/</loc>
-    <lastmod>2018-05-01T11:09:30+07:00</lastmod>
+    <loc>https://bxcodec.io/categories/life/</loc>
+    <lastmod>2018-05-01T17:59:14+07:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -81,13 +81,13 @@
   </url>
   
   <url>
-    <loc>https://bxcodec.io/categories/programming/</loc>
+    <loc>https://bxcodec.io/tags/programming/</loc>
     <lastmod>2018-05-01T11:18:11+07:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://bxcodec.io/tags/programming/</loc>
+    <loc>https://bxcodec.io/categories/programming/</loc>
     <lastmod>2018-05-01T11:18:11+07:00</lastmod>
     <priority>0</priority>
   </url>
