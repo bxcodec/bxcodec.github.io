@@ -10,5 +10,23 @@
 	<atom:link href="https://bxcodec.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
     
     
+    <item>
+      <title>Life</title>
+      <link>https://bxcodec.github.io/categories/life/</link>
+      <pubDate>Tue, 01 May 2018 11:09:30 +0700</pubDate>
+      
+      <guid>https://bxcodec.github.io/categories/life/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Programming</title>
+      <link>https://bxcodec.github.io/categories/programming/</link>
+      <pubDate>Tue, 01 May 2018 11:18:11 +0700</pubDate>
+      
+      <guid>https://bxcodec.github.io/categories/programming/</guid>
+      <description></description>
+    </item>
+    
   </channel>
 </rss>

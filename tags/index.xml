@@ -6,9 +6,82 @@
     <description>Recent content in Tags on bxcodec</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
+    <lastBuildDate>Tue, 01 May 2018 11:18:11 +0700</lastBuildDate>
     
 	<atom:link href="https://bxcodec.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Faker</title>
+      <link>https://bxcodec.github.io/tags/faker/</link>
+      <pubDate>Tue, 01 May 2018 11:18:11 +0700</pubDate>
+      
+      <guid>https://bxcodec.github.io/tags/faker/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Golang</title>
+      <link>https://bxcodec.github.io/tags/golang/</link>
+      <pubDate>Tue, 01 May 2018 11:18:11 +0700</pubDate>
+      
+      <guid>https://bxcodec.github.io/tags/golang/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Library</title>
+      <link>https://bxcodec.github.io/tags/library/</link>
+      <pubDate>Tue, 01 May 2018 11:18:11 +0700</pubDate>
+      
+      <guid>https://bxcodec.github.io/tags/library/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Life</title>
+      <link>https://bxcodec.github.io/tags/life/</link>
+      <pubDate>Tue, 01 May 2018 11:09:30 +0700</pubDate>
+      
+      <guid>https://bxcodec.github.io/tags/life/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Programmer</title>
+      <link>https://bxcodec.github.io/tags/programmer/</link>
+      <pubDate>Tue, 01 May 2018 11:09:30 +0700</pubDate>
+      
+      <guid>https://bxcodec.github.io/tags/programmer/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Programming</title>
+      <link>https://bxcodec.github.io/tags/programming/</link>
+      <pubDate>Tue, 01 May 2018 11:18:11 +0700</pubDate>
+      
+      <guid>https://bxcodec.github.io/tags/programming/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Saint</title>
+      <link>https://bxcodec.github.io/tags/saint/</link>
+      <pubDate>Tue, 01 May 2018 11:15:02 +0700</pubDate>
+      
+      <guid>https://bxcodec.github.io/tags/saint/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Startup</title>
+      <link>https://bxcodec.github.io/tags/startup/</link>
+      <pubDate>Tue, 01 May 2018 11:09:30 +0700</pubDate>
+      
+      <guid>https://bxcodec.github.io/tags/startup/</guid>
+      <description></description>
+    </item>
     
   </channel>
 </rss>
