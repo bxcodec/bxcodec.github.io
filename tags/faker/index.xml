@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Faker on bxcodec</title>
-    <link>https://bxcodec.github.io/tags/faker/</link>
+    <link>https://bxcodec.io/tags/faker/</link>
     <description>Recent content in Faker on bxcodec</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Tue, 01 May 2018 11:18:11 +0700</lastBuildDate>
     
-	<atom:link href="https://bxcodec.github.io/tags/faker/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://bxcodec.io/tags/faker/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Faker</title>
-      <link>https://bxcodec.github.io/2018/05/01/faker/</link>
+      <link>https://bxcodec.io/2018/05/01/faker/</link>
       <pubDate>Tue, 01 May 2018 11:18:11 +0700</pubDate>
       
-      <guid>https://bxcodec.github.io/2018/05/01/faker/</guid>
+      <guid>https://bxcodec.io/2018/05/01/faker/</guid>
       <description>Struct Data Fake Generator
 Faker will generate you a fake data based on your Struct.
 Index  Support Getting Started Example Contribution  Support You can file an Issue. See documentation in Godoc

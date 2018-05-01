@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Startup on bxcodec</title>
-    <link>https://bxcodec.github.io/tags/startup/</link>
+    <link>https://bxcodec.io/tags/startup/</link>
     <description>Recent content in Startup on bxcodec</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Tue, 01 May 2018 11:09:30 +0700</lastBuildDate>
     
-	<atom:link href="https://bxcodec.github.io/tags/startup/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://bxcodec.io/tags/startup/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>What I Learn from Working in Small Startup as A Fresh Graduate</title>
-      <link>https://bxcodec.github.io/2018/05/01/what-i-learn-from-working-in-small-startup-as-a-fresh-graduate/</link>
+      <link>https://bxcodec.io/2018/05/01/what-i-learn-from-working-in-small-startup-as-a-fresh-graduate/</link>
       <pubDate>Tue, 01 May 2018 11:09:30 +0700</pubDate>
       
-      <guid>https://bxcodec.github.io/2018/05/01/what-i-learn-from-working-in-small-startup-as-a-fresh-graduate/</guid>
+      <guid>https://bxcodec.io/2018/05/01/what-i-learn-from-working-in-small-startup-as-a-fresh-graduate/</guid>
       <description>Hey , my name is Iman Syahputra Situmorang, a Fullstack Software Engineer in Bornevia.
 I just start working for 6 months. A valuable 6 months to learn what is the feel when working in a small Start Up . Well it will be a shocking news, about the closing of bornevia.com.
 But I will not telling anything about the reason of bornevia’s closing, I’m just telling what I learn from Bornevia when I work over there.</description>
