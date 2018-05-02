@@ -3,6 +3,16 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://bxcodec.io/posts/programming-as-a-passion-vs-programming-as-a-job/</loc>
+    <lastmod>2018-05-02T08:48:07+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://bxcodec.io/posts/an-opinion-based--advices-to-junior-programmer/</loc>
+    <lastmod>2018-05-02T08:39:08+07:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://bxcodec.io/posts/how-can-i-ever-be-a-shit-as-a-software-developer/</loc>
     <lastmod>2018-05-01T18:14:17+07:00</lastmod>
   </url>
@@ -33,6 +43,12 @@
   </url>
   
   <url>
+    <loc>https://bxcodec.io/tags/careers/</loc>
+    <lastmod>2018-05-02T08:48:07+07:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://bxcodec.io/categories/</loc>
     <priority>0</priority>
   </url>
@@ -51,7 +67,7 @@
   
   <url>
     <loc>https://bxcodec.io/</loc>
-    <lastmod>2018-05-01T18:14:17+07:00</lastmod>
+    <lastmod>2018-05-02T08:48:07+07:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -63,19 +79,19 @@
   
   <url>
     <loc>https://bxcodec.io/tags/life/</loc>
-    <lastmod>2018-05-01T18:14:17+07:00</lastmod>
+    <lastmod>2018-05-02T08:48:07+07:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://bxcodec.io/categories/life/</loc>
-    <lastmod>2018-05-01T18:14:17+07:00</lastmod>
+    <lastmod>2018-05-02T08:48:07+07:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://bxcodec.io/post/</loc>
-    <lastmod>2018-05-01T18:14:17+07:00</lastmod>
+    <lastmod>2018-05-02T08:48:07+07:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -87,13 +103,13 @@
   
   <url>
     <loc>https://bxcodec.io/tags/programming/</loc>
-    <lastmod>2018-05-01T11:18:11+07:00</lastmod>
+    <lastmod>2018-05-02T08:48:07+07:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://bxcodec.io/categories/programming/</loc>
-    <lastmod>2018-05-01T11:18:11+07:00</lastmod>
+    <lastmod>2018-05-02T08:48:07+07:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -111,7 +127,7 @@
   
   <url>
     <loc>https://bxcodec.io/tags/</loc>
-    <lastmod>2018-05-01T11:18:11+07:00</lastmod>
+    <lastmod>2018-05-02T08:48:07+07:00</lastmod>
     <priority>0</priority>
   </url>
   

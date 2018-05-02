@@ -30,7 +30,7 @@
 
 
 
-<meta property="og:updated_time" content="2018-05-01T18:14:17&#43;07:00"/>
+<meta property="og:updated_time" content="2018-05-02T08:48:07&#43;07:00"/>
 
 
 
@@ -176,12 +176,12 @@
     </div>
     <div class="article-info profile-block">
       <div class="article-info-block">
-        5
+        7
         <span>Posts</span>
       </div>
       <div class="article-info-block">
         
-          9
+          10
         
         <span>
             Tags
@@ -267,15 +267,15 @@
 <article class="article article-type-post" itemscope="" itemprop="blogPost">
     <div class="article-inner">
         
-        <a href="https://bxcodec.io/posts/how-can-i-ever-be-a-shit-as-a-software-developer/" itemprop="url">
-            <img src="https://cdn-images-1.medium.com/max/2000/1*lLD6w6_jjDQwnznRw_ysxg.jpeg" class="article-banner">
+        <a href="https://bxcodec.io/posts/programming-as-a-passion-vs-programming-as-a-job/" itemprop="url">
+            <img src="https://cdn-images-1.medium.com/max/2000/1*hEbJvltnslRrdEzjWQ7Img.jpeg" class="article-banner">
         
         </a>
 
         <header class="article-header">
-    <a href="https://bxcodec.io/posts/how-can-i-ever-be-a-shit-as-a-software-developer/">
+    <a href="https://bxcodec.io/posts/programming-as-a-passion-vs-programming-as-a-job/">
     <h1 class="article-title" itemprop="name">
-        How can I ever be a shit as a software developer
+        Programming as a Passion vs Programming as a Job
     </h1>
     </a>
     <div class="article-meta">
@@ -283,9 +283,166 @@
         
         <div class="article-date">
             <i class="fa fa-calendar"></i>
-            <time datetime="2018-05-01 18:14:17 &#43;0700 WIB" itemprop="datePublished">2018-05-01</time>
+            <time datetime="2018-05-02 08:48:07 &#43;0700 WIB" itemprop="datePublished">2018-05-02</time>
             &middot;
-            1331
+            1010
+            words
+            &middot;
+            5
+            minute read
+        </div>
+        
+        
+            
+            
+            <div class="article-category">
+                <i class="fa fa-folder"></i>
+                
+                
+                <a class="article-category-link" href="https://bxcodec.io/categories/life">life</a>
+                &middot;
+                
+                
+                <a class="article-category-link" href="https://bxcodec.io/categories/programming">programming</a>
+                
+                
+            </div>
+            
+        
+
+        
+            
+            
+            <div class="article-category">
+                <i class="fa fa-tags"></i>
+                
+                
+                <a class="article-category-link" href="https://bxcodec.io/tags/careers">careers</a>
+                &middot;
+                
+                
+                <a class="article-category-link" href="https://bxcodec.io/tags/life">life</a>
+                &middot;
+                
+                
+                <a class="article-category-link" href="https://bxcodec.io/tags/programming">programming</a>
+                
+                
+            </div>
+            
+        
+    </div>
+</header>
+
+        <div class="article-entry" itemprop="articleBody">
+            <p class="article-more-link">
+                <a href="https://bxcodec.io/posts/programming-as-a-passion-vs-programming-as-a-job/">
+                    Read more
+                </a>
+            </p>
+        </div>
+        <footer class="article-footer">
+    <a data-url="https://bxcodec.io/posts/programming-as-a-passion-vs-programming-as-a-job/" data-id="0aab69948ccda9999ef891f88ff8bceb" class="article-share-link">
+        <i class="fa fa-share"></i>
+        Share
+    </a>
+    
+    <a href="https://bxcodec.io/posts/programming-as-a-passion-vs-programming-as-a-job/#disqus_thread" class="article-comment-link">
+        Comments
+    </a>
+    
+
+    <script>
+    (function ($) {
+        
+        if (typeof(__SHARE_BUTTON_BINDED__) === 'undefined' || !__SHARE_BUTTON_BINDED__) {
+            __SHARE_BUTTON_BINDED__ = true;
+        } else {
+            return;
+        }
+        $('body').on('click', function() {
+            $('.article-share-box.on').removeClass('on');
+        }).on('click', '.article-share-link', function(e) {
+            e.stopPropagation();
+
+            var $this = $(this),
+                url = $this.attr('data-url'),
+                encodedUrl = encodeURIComponent(url),
+                id = 'article-share-box-' + $this.attr('data-id'),
+                offset = $this.offset(),
+                box;
+
+            if ($('#' + id).length) {
+                box = $('#' + id);
+
+                if (box.hasClass('on')){
+                    box.removeClass('on');
+                    return;
+                }
+            } else {
+                var html = [
+                    '<div id="' + id + '" class="article-share-box">',
+                        '<input class="article-share-input" value="' + url + '">',
+                        '<div class="article-share-links">',
+                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="fa fa-twitter article-share-twitter" target="_blank" title="Twitter"></a>',
+                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="fa fa-facebook article-share-facebook" target="_blank" title="Facebook"></a>',
+                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="fa fa-pinterest article-share-pinterest" target="_blank" title="Pinterest"></a>',
+                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="fa fa-google article-share-google" target="_blank" title="Google+"></a>',
+                        '</div>',
+                    '</div>'
+                ].join('');
+
+              box = $(html);
+
+              $('body').append(box);
+            }
+
+            $('.article-share-box.on').hide();
+
+            box.css({
+                top: offset.top + 25,
+                left: offset.left
+            }).addClass('on');
+
+        }).on('click', '.article-share-box', function (e) {
+            e.stopPropagation();
+        }).on('click', '.article-share-box-input', function () {
+            $(this).select();
+        }).on('click', '.article-share-box-link', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+
+            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
+        });
+    })(jQuery);
+    </script>
+</footer>
+
+    </div>
+</article>
+
+<article class="article article-type-post" itemscope="" itemprop="blogPost">
+    <div class="article-inner">
+        
+        <a href="https://bxcodec.io/posts/an-opinion-based--advices-to-junior-programmer/" itemprop="url">
+            <img src="https://cdn-images-1.medium.com/max/1600/1*pftyu1Ij9RpvF7luoE1jJw.jpeg" class="article-banner">
+        
+        </a>
+
+        <header class="article-header">
+    <a href="https://bxcodec.io/posts/an-opinion-based--advices-to-junior-programmer/">
+    <h1 class="article-title" itemprop="name">
+        An Opinion-based : Advices to Junior Programmer
+    </h1>
+    </a>
+    <div class="article-meta">
+
+        
+        <div class="article-date">
+            <i class="fa fa-calendar"></i>
+            <time datetime="2018-05-02 08:39:08 &#43;0700 WIB" itemprop="datePublished">2018-05-02</time>
+            &middot;
+            1286
             words
             &middot;
             7
@@ -313,7 +470,7 @@
                 <i class="fa fa-tags"></i>
                 
                 
-                <a class="article-category-link" href="https://bxcodec.io/tags/programmer">programmer</a>
+                <a class="article-category-link" href="https://bxcodec.io/tags/careers">careers</a>
                 &middot;
                 
                 
@@ -328,628 +485,18 @@
 
         <div class="article-entry" itemprop="articleBody">
             <p class="article-more-link">
-                <a href="https://bxcodec.io/posts/how-can-i-ever-be-a-shit-as-a-software-developer/">
+                <a href="https://bxcodec.io/posts/an-opinion-based--advices-to-junior-programmer/">
                     Read more
                 </a>
             </p>
         </div>
         <footer class="article-footer">
-    <a data-url="https://bxcodec.io/posts/how-can-i-ever-be-a-shit-as-a-software-developer/" data-id="4643ad58475ef4d1ea58301f934c6937" class="article-share-link">
+    <a data-url="https://bxcodec.io/posts/an-opinion-based--advices-to-junior-programmer/" data-id="dd8a2d2cf6d2e373f582d551b3c6c71c" class="article-share-link">
         <i class="fa fa-share"></i>
         Share
     </a>
     
-    <a href="https://bxcodec.io/posts/how-can-i-ever-be-a-shit-as-a-software-developer/#disqus_thread" class="article-comment-link">
-        Comments
-    </a>
-    
-
-    <script>
-    (function ($) {
-        
-        if (typeof(__SHARE_BUTTON_BINDED__) === 'undefined' || !__SHARE_BUTTON_BINDED__) {
-            __SHARE_BUTTON_BINDED__ = true;
-        } else {
-            return;
-        }
-        $('body').on('click', function() {
-            $('.article-share-box.on').removeClass('on');
-        }).on('click', '.article-share-link', function(e) {
-            e.stopPropagation();
-
-            var $this = $(this),
-                url = $this.attr('data-url'),
-                encodedUrl = encodeURIComponent(url),
-                id = 'article-share-box-' + $this.attr('data-id'),
-                offset = $this.offset(),
-                box;
-
-            if ($('#' + id).length) {
-                box = $('#' + id);
-
-                if (box.hasClass('on')){
-                    box.removeClass('on');
-                    return;
-                }
-            } else {
-                var html = [
-                    '<div id="' + id + '" class="article-share-box">',
-                        '<input class="article-share-input" value="' + url + '">',
-                        '<div class="article-share-links">',
-                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="fa fa-twitter article-share-twitter" target="_blank" title="Twitter"></a>',
-                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="fa fa-facebook article-share-facebook" target="_blank" title="Facebook"></a>',
-                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="fa fa-pinterest article-share-pinterest" target="_blank" title="Pinterest"></a>',
-                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="fa fa-google article-share-google" target="_blank" title="Google+"></a>',
-                        '</div>',
-                    '</div>'
-                ].join('');
-
-              box = $(html);
-
-              $('body').append(box);
-            }
-
-            $('.article-share-box.on').hide();
-
-            box.css({
-                top: offset.top + 25,
-                left: offset.left
-            }).addClass('on');
-
-        }).on('click', '.article-share-box', function (e) {
-            e.stopPropagation();
-        }).on('click', '.article-share-box-input', function () {
-            $(this).select();
-        }).on('click', '.article-share-box-link', function (e) {
-            e.preventDefault();
-            e.stopPropagation();
-
-            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
-        });
-    })(jQuery);
-    </script>
-</footer>
-
-    </div>
-</article>
-
-<article class="article article-type-post" itemscope="" itemprop="blogPost">
-    <div class="article-inner">
-        
-        <a href="https://bxcodec.io/posts/the-hardest-part-of-being-a-non-native-speaker-of-english/" itemprop="url">
-            <img src="https://cdn-images-1.medium.com/max/1800/1*P0fX9WV1kOLBXzb5p6SFcg.jpeg" class="article-banner">
-        
-        </a>
-
-        <header class="article-header">
-    <a href="https://bxcodec.io/posts/the-hardest-part-of-being-a-non-native-speaker-of-english/">
-    <h1 class="article-title" itemprop="name">
-        The Hardest Part of Being a Non-Native Speaker of English
-    </h1>
-    </a>
-    <div class="article-meta">
-
-        
-        <div class="article-date">
-            <i class="fa fa-calendar"></i>
-            <time datetime="2018-05-01 17:59:14 &#43;0700 WIB" itemprop="datePublished">2018-05-01</time>
-            &middot;
-            1358
-            words
-            &middot;
-            7
-            minute read
-        </div>
-        
-        
-            
-            
-            <div class="article-category">
-                <i class="fa fa-folder"></i>
-                
-                
-                <a class="article-category-link" href="https://bxcodec.io/categories/life">life</a>
-                
-                
-            </div>
-            
-        
-
-        
-            
-            
-            <div class="article-category">
-                <i class="fa fa-tags"></i>
-                
-                
-                <a class="article-category-link" href="https://bxcodec.io/tags/programmer">programmer</a>
-                &middot;
-                
-                
-                <a class="article-category-link" href="https://bxcodec.io/tags/writer">writer</a>
-                
-                
-            </div>
-            
-        
-    </div>
-</header>
-
-        <div class="article-entry" itemprop="articleBody">
-            <p class="article-more-link">
-                <a href="https://bxcodec.io/posts/the-hardest-part-of-being-a-non-native-speaker-of-english/">
-                    Read more
-                </a>
-            </p>
-        </div>
-        <footer class="article-footer">
-    <a data-url="https://bxcodec.io/posts/the-hardest-part-of-being-a-non-native-speaker-of-english/" data-id="d082a49a9473ec0e54c99700e875f73b" class="article-share-link">
-        <i class="fa fa-share"></i>
-        Share
-    </a>
-    
-    <a href="https://bxcodec.io/posts/the-hardest-part-of-being-a-non-native-speaker-of-english/#disqus_thread" class="article-comment-link">
-        Comments
-    </a>
-    
-
-    <script>
-    (function ($) {
-        
-        if (typeof(__SHARE_BUTTON_BINDED__) === 'undefined' || !__SHARE_BUTTON_BINDED__) {
-            __SHARE_BUTTON_BINDED__ = true;
-        } else {
-            return;
-        }
-        $('body').on('click', function() {
-            $('.article-share-box.on').removeClass('on');
-        }).on('click', '.article-share-link', function(e) {
-            e.stopPropagation();
-
-            var $this = $(this),
-                url = $this.attr('data-url'),
-                encodedUrl = encodeURIComponent(url),
-                id = 'article-share-box-' + $this.attr('data-id'),
-                offset = $this.offset(),
-                box;
-
-            if ($('#' + id).length) {
-                box = $('#' + id);
-
-                if (box.hasClass('on')){
-                    box.removeClass('on');
-                    return;
-                }
-            } else {
-                var html = [
-                    '<div id="' + id + '" class="article-share-box">',
-                        '<input class="article-share-input" value="' + url + '">',
-                        '<div class="article-share-links">',
-                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="fa fa-twitter article-share-twitter" target="_blank" title="Twitter"></a>',
-                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="fa fa-facebook article-share-facebook" target="_blank" title="Facebook"></a>',
-                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="fa fa-pinterest article-share-pinterest" target="_blank" title="Pinterest"></a>',
-                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="fa fa-google article-share-google" target="_blank" title="Google+"></a>',
-                        '</div>',
-                    '</div>'
-                ].join('');
-
-              box = $(html);
-
-              $('body').append(box);
-            }
-
-            $('.article-share-box.on').hide();
-
-            box.css({
-                top: offset.top + 25,
-                left: offset.left
-            }).addClass('on');
-
-        }).on('click', '.article-share-box', function (e) {
-            e.stopPropagation();
-        }).on('click', '.article-share-box-input', function () {
-            $(this).select();
-        }).on('click', '.article-share-box-link', function (e) {
-            e.preventDefault();
-            e.stopPropagation();
-
-            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
-        });
-    })(jQuery);
-    </script>
-</footer>
-
-    </div>
-</article>
-
-<article class="article article-type-post" itemscope="" itemprop="blogPost">
-    <div class="article-inner">
-        
-        </a>
-
-        <header class="article-header">
-    <a href="https://bxcodec.io/posts/faker/">
-    <h1 class="article-title" itemprop="name">
-        Faker
-    </h1>
-    </a>
-    <div class="article-meta">
-
-        
-        <div class="article-date">
-            <i class="fa fa-calendar"></i>
-            <time datetime="2018-05-01 11:18:11 &#43;0700 WIB" itemprop="datePublished">2018-05-01</time>
-            &middot;
-            543
-            words
-            &middot;
-            3
-            minute read
-        </div>
-        
-        
-            
-            
-            <div class="article-category">
-                <i class="fa fa-folder"></i>
-                
-                
-                <a class="article-category-link" href="https://bxcodec.io/categories/programming">programming</a>
-                
-                
-            </div>
-            
-        
-
-        
-            
-            
-            <div class="article-category">
-                <i class="fa fa-tags"></i>
-                
-                
-                <a class="article-category-link" href="https://bxcodec.io/tags/golang">golang</a>
-                &middot;
-                
-                
-                <a class="article-category-link" href="https://bxcodec.io/tags/programming">programming</a>
-                &middot;
-                
-                
-                <a class="article-category-link" href="https://bxcodec.io/tags/library">library</a>
-                &middot;
-                
-                
-                <a class="article-category-link" href="https://bxcodec.io/tags/faker">faker</a>
-                
-                
-            </div>
-            
-        
-    </div>
-</header>
-
-        <div class="article-entry" itemprop="articleBody">
-            <p class="article-more-link">
-                <a href="https://bxcodec.io/posts/faker/">
-                    Read more
-                </a>
-            </p>
-        </div>
-        <footer class="article-footer">
-    <a data-url="https://bxcodec.io/posts/faker/" data-id="11daa549acfe38263a263f3913a24f9e" class="article-share-link">
-        <i class="fa fa-share"></i>
-        Share
-    </a>
-    
-    <a href="https://bxcodec.io/posts/faker/#disqus_thread" class="article-comment-link">
-        Comments
-    </a>
-    
-
-    <script>
-    (function ($) {
-        
-        if (typeof(__SHARE_BUTTON_BINDED__) === 'undefined' || !__SHARE_BUTTON_BINDED__) {
-            __SHARE_BUTTON_BINDED__ = true;
-        } else {
-            return;
-        }
-        $('body').on('click', function() {
-            $('.article-share-box.on').removeClass('on');
-        }).on('click', '.article-share-link', function(e) {
-            e.stopPropagation();
-
-            var $this = $(this),
-                url = $this.attr('data-url'),
-                encodedUrl = encodeURIComponent(url),
-                id = 'article-share-box-' + $this.attr('data-id'),
-                offset = $this.offset(),
-                box;
-
-            if ($('#' + id).length) {
-                box = $('#' + id);
-
-                if (box.hasClass('on')){
-                    box.removeClass('on');
-                    return;
-                }
-            } else {
-                var html = [
-                    '<div id="' + id + '" class="article-share-box">',
-                        '<input class="article-share-input" value="' + url + '">',
-                        '<div class="article-share-links">',
-                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="fa fa-twitter article-share-twitter" target="_blank" title="Twitter"></a>',
-                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="fa fa-facebook article-share-facebook" target="_blank" title="Facebook"></a>',
-                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="fa fa-pinterest article-share-pinterest" target="_blank" title="Pinterest"></a>',
-                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="fa fa-google article-share-google" target="_blank" title="Google+"></a>',
-                        '</div>',
-                    '</div>'
-                ].join('');
-
-              box = $(html);
-
-              $('body').append(box);
-            }
-
-            $('.article-share-box.on').hide();
-
-            box.css({
-                top: offset.top + 25,
-                left: offset.left
-            }).addClass('on');
-
-        }).on('click', '.article-share-box', function (e) {
-            e.stopPropagation();
-        }).on('click', '.article-share-box-input', function () {
-            $(this).select();
-        }).on('click', '.article-share-box-link', function (e) {
-            e.preventDefault();
-            e.stopPropagation();
-
-            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
-        });
-    })(jQuery);
-    </script>
-</footer>
-
-    </div>
-</article>
-
-<article class="article article-type-post" itemscope="" itemprop="blogPost">
-    <div class="article-inner">
-        
-        </a>
-
-        <header class="article-header">
-    <a href="https://bxcodec.io/posts/saint/">
-    <h1 class="article-title" itemprop="name">
-        Saint
-    </h1>
-    </a>
-    <div class="article-meta">
-
-        
-        <div class="article-date">
-            <i class="fa fa-calendar"></i>
-            <time datetime="2018-05-01 11:15:02 &#43;0700 WIB" itemprop="datePublished">2018-05-01</time>
-            &middot;
-            67
-            words
-            &middot;
-            1
-            minute read
-        </div>
-        
-        
-            
-            
-            <div class="article-category">
-                <i class="fa fa-folder"></i>
-                
-                
-                <a class="article-category-link" href="https://bxcodec.io/categories/programming">programming</a>
-                
-                
-            </div>
-            
-        
-
-        
-            
-            
-            <div class="article-category">
-                <i class="fa fa-tags"></i>
-                
-                
-                <a class="article-category-link" href="https://bxcodec.io/tags/golang">golang</a>
-                &middot;
-                
-                
-                <a class="article-category-link" href="https://bxcodec.io/tags/programming">programming</a>
-                &middot;
-                
-                
-                <a class="article-category-link" href="https://bxcodec.io/tags/library">library</a>
-                &middot;
-                
-                
-                <a class="article-category-link" href="https://bxcodec.io/tags/saint">saint</a>
-                
-                
-            </div>
-            
-        
-    </div>
-</header>
-
-        <div class="article-entry" itemprop="articleBody">
-            <p class="article-more-link">
-                <a href="https://bxcodec.io/posts/saint/">
-                    Read more
-                </a>
-            </p>
-        </div>
-        <footer class="article-footer">
-    <a data-url="https://bxcodec.io/posts/saint/" data-id="700c241eb84ade8e1cbb8f47f9e6ac48" class="article-share-link">
-        <i class="fa fa-share"></i>
-        Share
-    </a>
-    
-    <a href="https://bxcodec.io/posts/saint/#disqus_thread" class="article-comment-link">
-        Comments
-    </a>
-    
-
-    <script>
-    (function ($) {
-        
-        if (typeof(__SHARE_BUTTON_BINDED__) === 'undefined' || !__SHARE_BUTTON_BINDED__) {
-            __SHARE_BUTTON_BINDED__ = true;
-        } else {
-            return;
-        }
-        $('body').on('click', function() {
-            $('.article-share-box.on').removeClass('on');
-        }).on('click', '.article-share-link', function(e) {
-            e.stopPropagation();
-
-            var $this = $(this),
-                url = $this.attr('data-url'),
-                encodedUrl = encodeURIComponent(url),
-                id = 'article-share-box-' + $this.attr('data-id'),
-                offset = $this.offset(),
-                box;
-
-            if ($('#' + id).length) {
-                box = $('#' + id);
-
-                if (box.hasClass('on')){
-                    box.removeClass('on');
-                    return;
-                }
-            } else {
-                var html = [
-                    '<div id="' + id + '" class="article-share-box">',
-                        '<input class="article-share-input" value="' + url + '">',
-                        '<div class="article-share-links">',
-                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="fa fa-twitter article-share-twitter" target="_blank" title="Twitter"></a>',
-                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="fa fa-facebook article-share-facebook" target="_blank" title="Facebook"></a>',
-                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="fa fa-pinterest article-share-pinterest" target="_blank" title="Pinterest"></a>',
-                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="fa fa-google article-share-google" target="_blank" title="Google+"></a>',
-                        '</div>',
-                    '</div>'
-                ].join('');
-
-              box = $(html);
-
-              $('body').append(box);
-            }
-
-            $('.article-share-box.on').hide();
-
-            box.css({
-                top: offset.top + 25,
-                left: offset.left
-            }).addClass('on');
-
-        }).on('click', '.article-share-box', function (e) {
-            e.stopPropagation();
-        }).on('click', '.article-share-box-input', function () {
-            $(this).select();
-        }).on('click', '.article-share-box-link', function (e) {
-            e.preventDefault();
-            e.stopPropagation();
-
-            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
-        });
-    })(jQuery);
-    </script>
-</footer>
-
-    </div>
-</article>
-
-<article class="article article-type-post" itemscope="" itemprop="blogPost">
-    <div class="article-inner">
-        
-        <a href="https://bxcodec.io/posts/what-i-learn-from-working-in-small-startup-as-a-fresh-graduate/" itemprop="url">
-            <img src="https://cdn-images-1.medium.com/max/800/1*leFEncGF70sZTmknjTklUw.jpeg" class="article-banner">
-        
-        </a>
-
-        <header class="article-header">
-    <a href="https://bxcodec.io/posts/what-i-learn-from-working-in-small-startup-as-a-fresh-graduate/">
-    <h1 class="article-title" itemprop="name">
-        What I Learn from Working in Small Startup as A Fresh Graduate
-    </h1>
-    </a>
-    <div class="article-meta">
-
-        
-        <div class="article-date">
-            <i class="fa fa-calendar"></i>
-            <time datetime="2018-05-01 11:09:30 &#43;0700 WIB" itemprop="datePublished">2018-05-01</time>
-            &middot;
-            1257
-            words
-            &middot;
-            6
-            minute read
-        </div>
-        
-        
-            
-            
-            <div class="article-category">
-                <i class="fa fa-folder"></i>
-                
-                
-                <a class="article-category-link" href="https://bxcodec.io/categories/life">life</a>
-                
-                
-            </div>
-            
-        
-
-        
-            
-            
-            <div class="article-category">
-                <i class="fa fa-tags"></i>
-                
-                
-                <a class="article-category-link" href="https://bxcodec.io/tags/programmer">programmer</a>
-                &middot;
-                
-                
-                <a class="article-category-link" href="https://bxcodec.io/tags/startup">startup</a>
-                &middot;
-                
-                
-                <a class="article-category-link" href="https://bxcodec.io/tags/life">life</a>
-                
-                
-            </div>
-            
-        
-    </div>
-</header>
-
-        <div class="article-entry" itemprop="articleBody">
-            <p class="article-more-link">
-                <a href="https://bxcodec.io/posts/what-i-learn-from-working-in-small-startup-as-a-fresh-graduate/">
-                    Read more
-                </a>
-            </p>
-        </div>
-        <footer class="article-footer">
-    <a data-url="https://bxcodec.io/posts/what-i-learn-from-working-in-small-startup-as-a-fresh-graduate/" data-id="6af3d55df3904339a41235a9830caa1d" class="article-share-link">
-        <i class="fa fa-share"></i>
-        Share
-    </a>
-    
-    <a href="https://bxcodec.io/posts/what-i-learn-from-working-in-small-startup-as-a-fresh-graduate/#disqus_thread" class="article-comment-link">
+    <a href="https://bxcodec.io/posts/an-opinion-based--advices-to-junior-programmer/#disqus_thread" class="article-comment-link">
         Comments
     </a>
     
@@ -1026,6 +573,13 @@
 
 <nav id="page-nav">
 
+    
+    
+        <a class="extend next" rel="next" href="https://bxcodec.io/page/2/">
+            Next »
+        </a>
+    
+
 </nav>
 
 
@@ -1040,6 +594,40 @@
     </h3>
     <div class="widget">
         <ul id="recent-post">
+            
+            <li>
+                <div class="item-thumbnail">
+                    <a href="https://bxcodec.io/posts/programming-as-a-passion-vs-programming-as-a-job/" class="thumbnail">
+                    
+                        <span style="background-image:url(https://cdn-images-1.medium.com/max/2000/1*hEbJvltnslRrdEzjWQ7Img.jpeg)" alt="Iman Tumorang" class="thumbnail-image"></span>
+                    
+                    </a>
+                </div>
+                <div class="item-inner">
+                    
+                    <p class="item-title"><a href="https://bxcodec.io/posts/programming-as-a-passion-vs-programming-as-a-job/" class="title">Programming as a Passion vs Programming as a Job</a></p>
+                    <p class="item-date">
+                        <time datetime="2018-05-02 08:48:07 &#43;0700 WIB" itemprop="datePublished">2018-05-02</time>
+                    </p>
+                </div>
+            </li>
+            
+            <li>
+                <div class="item-thumbnail">
+                    <a href="https://bxcodec.io/posts/an-opinion-based--advices-to-junior-programmer/" class="thumbnail">
+                    
+                        <span style="background-image:url(https://cdn-images-1.medium.com/max/1600/1*pftyu1Ij9RpvF7luoE1jJw.jpeg)" alt="Iman Tumorang" class="thumbnail-image"></span>
+                    
+                    </a>
+                </div>
+                <div class="item-inner">
+                    
+                    <p class="item-title"><a href="https://bxcodec.io/posts/an-opinion-based--advices-to-junior-programmer/" class="title">An Opinion-based : Advices to Junior Programmer</a></p>
+                    <p class="item-date">
+                        <time datetime="2018-05-02 08:39:08 &#43;0700 WIB" itemprop="datePublished">2018-05-02</time>
+                    </p>
+                </div>
+            </li>
             
             <li>
                 <div class="item-thumbnail">
@@ -1092,40 +680,6 @@
                 </div>
             </li>
             
-            <li>
-                <div class="item-thumbnail">
-                    <a href="https://bxcodec.io/posts/saint/" class="thumbnail">
-                    
-                        <span class="thumbnail-image thumbnail-none"></span>
-                    
-                    </a>
-                </div>
-                <div class="item-inner">
-                    
-                    <p class="item-title"><a href="https://bxcodec.io/posts/saint/" class="title">Saint</a></p>
-                    <p class="item-date">
-                        <time datetime="2018-05-01 11:15:02 &#43;0700 WIB" itemprop="datePublished">2018-05-01</time>
-                    </p>
-                </div>
-            </li>
-            
-            <li>
-                <div class="item-thumbnail">
-                    <a href="https://bxcodec.io/posts/what-i-learn-from-working-in-small-startup-as-a-fresh-graduate/" class="thumbnail">
-                    
-                        <span style="background-image:url(https://cdn-images-1.medium.com/max/800/1*leFEncGF70sZTmknjTklUw.jpeg)" alt="Iman Tumorang" class="thumbnail-image"></span>
-                    
-                    </a>
-                </div>
-                <div class="item-inner">
-                    
-                    <p class="item-title"><a href="https://bxcodec.io/posts/what-i-learn-from-working-in-small-startup-as-a-fresh-graduate/" class="title">What I Learn from Working in Small Startup as A Fresh Graduate</a></p>
-                    <p class="item-date">
-                        <time datetime="2018-05-01 11:09:30 &#43;0700 WIB" itemprop="datePublished">2018-05-01</time>
-                    </p>
-                </div>
-            </li>
-            
         </ul>
     </div>
 </div>
@@ -1144,7 +698,7 @@
                 <a class="category-list-link" href="https://bxcodec.io/categories/life">
                     life
                 </a>
-                <span class="category-list-count">3</span>
+                <span class="category-list-count">5</span>
             </li>
             
             <li class="category-list-item">
@@ -1152,7 +706,7 @@
                 <a class="category-list-link" href="https://bxcodec.io/categories/programming">
                     programming
                 </a>
-                <span class="category-list-count">2</span>
+                <span class="category-list-count">3</span>
             </li>
             
         </ul>
@@ -1171,6 +725,14 @@
     </h3>
     <div class="widget">
         <ul class="category-list">
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://bxcodec.io/tags/careers">
+                    careers
+                </a>
+                <span class="category-list-count">2</span>
+            </li>
             
             <li class="category-list-item">
                 
@@ -1201,7 +763,7 @@
                 <a class="category-list-link" href="https://bxcodec.io/tags/life">
                     life
                 </a>
-                <span class="category-list-count">2</span>
+                <span class="category-list-count">4</span>
             </li>
             
             <li class="category-list-item">
@@ -1217,7 +779,7 @@
                 <a class="category-list-link" href="https://bxcodec.io/tags/programming">
                     programming
                 </a>
-                <span class="category-list-count">2</span>
+                <span class="category-list-count">3</span>
             </li>
             
             <li class="category-list-item">
@@ -1259,6 +821,9 @@
         Tag cloud
     </h3>
     <div class="widget tagcloud">
+        
+        
+        <a href="https://bxcodec.io/tags/careers" style="font-size: 12px;">careers</a>
         
         
         <a href="https://bxcodec.io/tags/faker" style="font-size: 12px;">faker</a>
