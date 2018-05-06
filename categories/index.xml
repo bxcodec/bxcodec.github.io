@@ -11,6 +11,15 @@
     
     
     <item>
+      <title>Golang</title>
+      <link>https://bxcodec.io/categories/golang/</link>
+      <pubDate>Tue, 01 May 2018 11:18:11 +0700</pubDate>
+      
+      <guid>https://bxcodec.io/categories/golang/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>Life</title>
       <link>https://bxcodec.io/categories/life/</link>
       <pubDate>Sun, 06 May 2018 22:38:28 +0700</pubDate>
@@ -22,9 +31,18 @@
     <item>
       <title>Programming</title>
       <link>https://bxcodec.io/categories/programming/</link>
-      <pubDate>Sun, 06 May 2018 22:46:43 +0700</pubDate>
+      <pubDate>Sun, 06 May 2018 23:11:29 +0700</pubDate>
       
       <guid>https://bxcodec.io/categories/programming/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Testing</title>
+      <link>https://bxcodec.io/categories/testing/</link>
+      <pubDate>Sun, 06 May 2018 23:11:29 +0700</pubDate>
+      
+      <guid>https://bxcodec.io/categories/testing/</guid>
       <description></description>
     </item>
     

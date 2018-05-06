@@ -6,10 +6,32 @@
     <description>Recent content in Programming on Iman Tumorang</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 06 May 2018 22:46:43 +0700</lastBuildDate>
+    <lastBuildDate>Sun, 06 May 2018 23:11:29 +0700</lastBuildDate>
     
 	<atom:link href="https://bxcodec.io/categories/programming/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>My honest opinion about Unit Testing</title>
+      <link>https://bxcodec.io/posts/my-honest-opinion-about-unit-testing/</link>
+      <pubDate>Sun, 06 May 2018 23:11:29 +0700</pubDate>
+      
+      <guid>https://bxcodec.io/posts/my-honest-opinion-about-unit-testing/</guid>
+      <description>This is my honest opinion about Unit Testing in Software Engineering
+Imagine now you are in the kitchen. You are going to make an omelet. Then, you must prepare the tools first, a stove, a pan, fried spoon, a knife etc. Then, you also must have the needs, such as eggs, pepper, salt etc.
+Then, let’s make a new one. When making this new one, you must follow these steps without missing for a single thing.</description>
+    </item>
+    
+    <item>
+      <title>My First Impression about Code Review</title>
+      <link>https://bxcodec.io/posts/my-first-impression-about-code-review/</link>
+      <pubDate>Sun, 06 May 2018 23:03:29 +0700</pubDate>
+      
+      <guid>https://bxcodec.io/posts/my-first-impression-about-code-review/</guid>
+      <description>How does it feel when your code being reviewed and rejected
+My first time to know about Code Review is when entering my current company at Kurio. In my past company before here, we never doing any code review. So everything is just passed to staging-branch and if tested well merge directly to master.
+Here in my current company, we trained to do code reviewing for every team member. So everyone can review when there is an open pull request (PR) .</description>
+    </item>
     
     <item>
       <title>Why You Should Care About Squash and Merge in Git</title>
