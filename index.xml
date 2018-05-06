@@ -6,10 +6,21 @@
     <description>Recent content on Iman Tumorang</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 06 May 2018 22:38:28 +0700</lastBuildDate>
+    <lastBuildDate>Sun, 06 May 2018 22:46:43 +0700</lastBuildDate>
     
 	<atom:link href="https://bxcodec.io/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Why You Should Care About Squash and Merge in Git</title>
+      <link>https://bxcodec.io/posts/why-you-should-care-about-squash-and-merge-in-git/</link>
+      <pubDate>Sun, 06 May 2018 22:46:43 +0700</pubDate>
+      
+      <guid>https://bxcodec.io/posts/why-you-should-care-about-squash-and-merge-in-git/</guid>
+      <description>Make your history more clean and readable
+We just develop our new feature in Kurio. It is a targeted push notification. More about this you could read it here
+We have a “good” enough development life here. When it was decided to create a new feature, a mini team will be assigned to their role. The team can consist of a few people from the different division, 2 from backend division, 1 from machine-learning division and so on based on the project needs.</description>
+    </item>
     
     <item>
       <title>How Bad is My First Code in Backend Production when Working as a Software Engineer</title>
