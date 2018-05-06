@@ -6,10 +6,22 @@
     <description>Recent content in Posts on Iman Tumorang</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 02 May 2018 08:48:07 +0700</lastBuildDate>
+    <lastBuildDate>Sun, 06 May 2018 22:38:28 +0700</lastBuildDate>
     
 	<atom:link href="https://bxcodec.io/post/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>How Bad is My First Code in Backend Production when Working as a Software Engineer</title>
+      <link>https://bxcodec.io/posts/how-bad-is-my-first-code-in-backend-production-when-working-as-a-software-engineer/</link>
+      <pubDate>Sun, 06 May 2018 22:38:28 +0700</pubDate>
+      
+      <guid>https://bxcodec.io/posts/how-bad-is-my-first-code-in-backend-production-when-working-as-a-software-engineer/</guid>
+      <description>The story of mine, that taught me the important of code review.
+It happen when my first year in my first company as an Software Engineer. That was my first time to write a big task for the backend side. That was creating a cron-job that will work to migrate data based on our customer data.
+The original task is easy. If drawn in a picture
+The task is, we provide some of safe option to our customer.</description>
+    </item>
     
     <item>
       <title>Programming as a Passion vs Programming as a Job</title>
