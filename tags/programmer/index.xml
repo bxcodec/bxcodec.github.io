@@ -6,10 +6,19 @@
     <description>Recent content in Programmer on Iman Tumorang</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 06 May 2018 22:38:28 +0700</lastBuildDate>
+    <lastBuildDate>Thu, 17 May 2018 22:20:50 +0700</lastBuildDate>
     
 	<atom:link href="https://bxcodec.io/tags/programmer/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>What Are Some Things I Wish I Knew When I Started Programming</title>
+      <link>https://bxcodec.io/posts/what-are-some-things-i-wish-i-knew-when-i-started-programming/</link>
+      <pubDate>Thu, 17 May 2018 22:20:50 +0700</pubDate>
+      
+      <guid>https://bxcodec.io/posts/what-are-some-things-i-wish-i-knew-when-i-started-programming/</guid>
+      <description>Majority and Stereotype Kills Dream I started programming 5 years ago. So practically I’ve been coding for 5 years. Back to my first time in programming, it’s when I choose the Informatics Engineering Major in University, many people look down on it. It’s like, my major is unused and my future is already determined and will became Internet cafe guard. This happen because many of people in my place, that who going to university with Informatics Engineering Major, later became an Internet cafe owner/clerk/operator.</description>
+    </item>
     
     <item>
       <title>How Bad is My First Code in Backend Production when Working as a Software Engineer</title>

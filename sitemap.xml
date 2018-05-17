@@ -3,6 +3,11 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://bxcodec.io/posts/what-are-some-things-i-wish-i-knew-when-i-started-programming/</loc>
+    <lastmod>2018-05-17T22:20:50+07:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://bxcodec.io/posts/my-honest-opinion-about-unit-testing/</loc>
     <lastmod>2018-05-06T23:11:29+07:00</lastmod>
   </url>
@@ -98,20 +103,20 @@
   </url>
   
   <url>
-    <loc>https://bxcodec.io/categories/golang/</loc>
-    <lastmod>2018-05-01T11:18:11+07:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
     <loc>https://bxcodec.io/tags/golang/</loc>
     <lastmod>2018-05-01T11:18:11+07:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
+    <loc>https://bxcodec.io/categories/golang/</loc>
+    <lastmod>2018-05-01T11:18:11+07:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://bxcodec.io/</loc>
-    <lastmod>2018-05-06T23:11:29+07:00</lastmod>
+    <lastmod>2018-05-17T22:20:50+07:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -122,37 +127,37 @@
   </url>
   
   <url>
-    <loc>https://bxcodec.io/categories/life/</loc>
-    <lastmod>2018-05-06T22:38:28+07:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
     <loc>https://bxcodec.io/tags/life/</loc>
     <lastmod>2018-05-06T22:38:28+07:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
+    <loc>https://bxcodec.io/categories/life/</loc>
+    <lastmod>2018-05-17T22:20:50+07:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://bxcodec.io/post/</loc>
-    <lastmod>2018-05-06T23:11:29+07:00</lastmod>
+    <lastmod>2018-05-17T22:20:50+07:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://bxcodec.io/tags/programmer/</loc>
-    <lastmod>2018-05-06T22:38:28+07:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://bxcodec.io/categories/programming/</loc>
-    <lastmod>2018-05-06T23:11:29+07:00</lastmod>
+    <lastmod>2018-05-17T22:20:50+07:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://bxcodec.io/tags/programming/</loc>
+    <lastmod>2018-05-06T23:11:29+07:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://bxcodec.io/categories/programming/</loc>
     <lastmod>2018-05-06T23:11:29+07:00</lastmod>
     <priority>0</priority>
   </url>
@@ -176,13 +181,13 @@
   </url>
   
   <url>
-    <loc>https://bxcodec.io/categories/testing/</loc>
+    <loc>https://bxcodec.io/tags/testing/</loc>
     <lastmod>2018-05-06T23:11:29+07:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://bxcodec.io/tags/testing/</loc>
+    <loc>https://bxcodec.io/categories/testing/</loc>
     <lastmod>2018-05-06T23:11:29+07:00</lastmod>
     <priority>0</priority>
   </url>
