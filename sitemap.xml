@@ -3,6 +3,11 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://bxcodec.io/posts/about-theme/</loc>
+    <lastmod>2018-12-02T08:48:07+07:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://bxcodec.io/posts/the-daily-life-of-a-software-engineer-in-jakarta/</loc>
     <lastmod>2018-12-02T08:48:07+07:00</lastmod>
   </url>
@@ -73,6 +78,12 @@
   </url>
   
   <url>
+    <loc>https://bxcodec.io/tags/bxcodec/</loc>
+    <lastmod>2018-12-02T08:48:07+07:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://bxcodec.io/tags/careers/</loc>
     <lastmod>2018-12-02T08:48:07+07:00</lastmod>
     <priority>0</priority>
@@ -116,6 +127,12 @@
   <url>
     <loc>https://bxcodec.io/categories/golang/</loc>
     <lastmod>2018-05-01T11:18:11+07:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://bxcodec.io/tags/layout/</loc>
+    <lastmod>2018-12-02T08:48:07+07:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -206,6 +223,12 @@
   <url>
     <loc>https://bxcodec.io/tags/unit-testing/</loc>
     <lastmod>2018-05-06T23:11:29+07:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://bxcodec.io/tags/web/</loc>
+    <lastmod>2018-12-02T08:48:07+07:00</lastmod>
     <priority>0</priority>
   </url>
   
