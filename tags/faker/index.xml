@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Faker on Iman Tumorang</title>
+    <title>Faker on Letters From Iman</title>
     <link>https://bxcodec.io/tags/faker/</link>
-    <description>Recent content in Faker on Iman Tumorang</description>
+    <description>Recent content in Faker on Letters From Iman</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
+    <copyright>Iman Tumorang @bxcodec.io - All rights reserved</copyright>
     <lastBuildDate>Tue, 01 May 2018 11:18:11 +0700</lastBuildDate>
     
 	<atom:link href="https://bxcodec.io/tags/faker/index.xml" rel="self" type="application/rss+xml" />
@@ -18,13 +19,7 @@
       
       <guid>https://bxcodec.io/posts/faker/</guid>
       <description>Struct Data Fake Generator
-Faker will generate you a fake data based on your Struct.
-Source code: github
- Support Getting Started Example Contribution  Support You can file an Issue. See documentation in Godoc
-Getting Started Download go get -u github.com/bxcodec/faker  Example With Tag Supported tag:
-Internet :
- Email Mac address Domain name Url UserName IP Address (IPV4 IPV6 ) Password  Payment :
- Credit Card Type (VISA, MASTERCARD , AMERICAN EXPRESS ,DISCOVER) Credit Card Number  Address :</description>
+Faker will generate you a fake data based on your Struct.</description>
     </item>
     
   </channel>

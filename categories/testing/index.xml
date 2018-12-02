@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Testing on Iman Tumorang</title>
+    <title>Testing on Letters From Iman</title>
     <link>https://bxcodec.io/categories/testing/</link>
-    <description>Recent content in Testing on Iman Tumorang</description>
+    <description>Recent content in Testing on Letters From Iman</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
+    <copyright>Iman Tumorang @bxcodec.io - All rights reserved</copyright>
     <lastBuildDate>Sun, 06 May 2018 23:11:29 +0700</lastBuildDate>
     
 	<atom:link href="https://bxcodec.io/categories/testing/index.xml" rel="self" type="application/rss+xml" />
@@ -17,9 +18,7 @@
       <pubDate>Sun, 06 May 2018 23:11:29 +0700</pubDate>
       
       <guid>https://bxcodec.io/posts/my-honest-opinion-about-unit-testing/</guid>
-      <description>This is my honest opinion about Unit Testing in Software Engineering
-Imagine now you are in the kitchen. You are going to make an omelet. Then, you must prepare the tools first, a stove, a pan, fried spoon, a knife etc. Then, you also must have the needs, such as eggs, pepper, salt etc.
-Then, let’s make a new one. When making this new one, you must follow these steps without missing for a single thing.</description>
+      <description>This is my honest opinion about Unit Testing in Software Engineering</description>
     </item>
     
   </channel>

@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Life on Iman Tumorang</title>
+    <title>Life on Letters From Iman</title>
     <link>https://bxcodec.io/categories/life/</link>
-    <description>Recent content in Life on Iman Tumorang</description>
+    <description>Recent content in Life on Letters From Iman</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
+    <copyright>Iman Tumorang @bxcodec.io - All rights reserved</copyright>
     <lastBuildDate>Thu, 17 May 2018 22:20:50 +0700</lastBuildDate>
     
 	<atom:link href="https://bxcodec.io/categories/life/index.xml" rel="self" type="application/rss+xml" />
@@ -17,7 +18,7 @@
       <pubDate>Thu, 17 May 2018 22:20:50 +0700</pubDate>
       
       <guid>https://bxcodec.io/posts/what-are-some-things-i-wish-i-knew-when-i-started-programming/</guid>
-      <description>Majority and Stereotype Kills Dream I started programming 5 years ago. So practically I’ve been coding for 5 years. Back to my first time in programming, it’s when I choose the Informatics Engineering Major in University, many people look down on it. It’s like, my major is unused and my future is already determined and will became Internet cafe guard. This happen because many of people in my place, that who going to university with Informatics Engineering Major, later became an Internet cafe owner/clerk/operator.</description>
+      <description>Majority and Stereotype Kills Dream I started programming 5 years ago.</description>
     </item>
     
     <item>
@@ -26,10 +27,7 @@
       <pubDate>Sun, 06 May 2018 22:38:28 +0700</pubDate>
       
       <guid>https://bxcodec.io/posts/how-bad-is-my-first-code-in-backend-production-when-working-as-a-software-engineer/</guid>
-      <description>The story of mine, that taught me the important of code review.
-It happen when my first year in my first company as an Software Engineer. That was my first time to write a big task for the backend side. That was creating a cron-job that will work to migrate data based on our customer data.
-The original task is easy. If drawn in a picture
-The task is, we provide some of safe option to our customer.</description>
+      <description>The story of mine, that taught me the important of code review.</description>
     </item>
     
     <item>
@@ -38,19 +36,16 @@ The task is, we provide some of safe option to our customer.</description>
       <pubDate>Wed, 02 May 2018 08:48:07 +0700</pubDate>
       
       <guid>https://bxcodec.io/posts/programming-as-a-passion-vs-programming-as-a-job/</guid>
-      <description>Based on my experiences with my personal opinion and thought
-When we were still in college, we always demanded for studying hard. Having a good score in every class and also active in social community, club or something.
-I remember when I was still in college, I always trying not to fail in my class. Also, I’m joining a club, a community by students. A geek one, it’s called “Programming Club”.</description>
+      <description>Based on my experiences with my personal opinion and thought</description>
     </item>
     
     <item>
       <title>An Opinion-based : Advices to Junior Programmer</title>
-      <link>https://bxcodec.io/posts/an-opinion-based--advices-to-junior-programmer/</link>
+      <link>https://bxcodec.io/posts/an-opinion-based-advices-to-junior-programmer/</link>
       <pubDate>Wed, 02 May 2018 08:39:08 +0700</pubDate>
       
-      <guid>https://bxcodec.io/posts/an-opinion-based--advices-to-junior-programmer/</guid>
-      <description>My honest opinion how to survive being a Junior Programmer
-Being junior is a bit scary. It’s like too many things that we must know and learn. The system, the teams, the new technology, and everything. Currently, I can said, I’m a junior in my office. But time by the time, my task increased and more deep. At the beginning I just instructed to code something, then report to my team lead.</description>
+      <guid>https://bxcodec.io/posts/an-opinion-based-advices-to-junior-programmer/</guid>
+      <description>My honest opinion how to survive being a Junior Programmer</description>
     </item>
     
     <item>
@@ -59,9 +54,7 @@ Being junior is a bit scary. It’s like too many things that we must know and l
       <pubDate>Tue, 01 May 2018 18:14:17 +0700</pubDate>
       
       <guid>https://bxcodec.io/posts/how-can-i-ever-be-a-shit-as-a-software-developer/</guid>
-      <description>And what I can learned and improve by being a shit.
-Become software developer is not a title, but it’s a responsibilities we must faced. When it’s not good, then say no, otherwise say yes. Don’t be the sh*t programmer.
-Surprised by the Unexpected Things On my second grade when still in college, a few years ago. I got a chance to work as intern in One of government office as an software developer interns.</description>
+      <description>And what I can learned and improve by being a shit.</description>
     </item>
     
     <item>
@@ -70,10 +63,7 @@ Surprised by the Unexpected Things On my second grade when still in college, a f
       <pubDate>Tue, 01 May 2018 17:59:14 +0700</pubDate>
       
       <guid>https://bxcodec.io/posts/the-hardest-part-of-being-a-non-native-speaker-of-english/</guid>
-      <description>This path is too risky, but there are no other shortcut.
-Writing is one of my hobby since I was still in high school. But write an English story is merely new for me. I started writing an English article/story since a year ago.
-TLDR:
- This is my personal story Don’t expect a great story, because I’m on my way to improve myself.  My Way in Writing I still remember, a few years ago.</description>
+      <description>This path is too risky, but there are no other shortcut.</description>
     </item>
     
     <item>
@@ -82,9 +72,7 @@ TLDR:
       <pubDate>Tue, 01 May 2018 11:09:30 +0700</pubDate>
       
       <guid>https://bxcodec.io/posts/what-i-learn-from-working-in-small-startup-as-a-fresh-graduate/</guid>
-      <description>Hey , my name is Iman Syahputra Situmorang, a Fullstack Software Engineer in Bornevia.
-I just start working for 6 months. A valuable 6 months to learn what is the feel when working in a small Start Up . Well it will be a shocking news, about the closing of bornevia.com.
-But I will not telling anything about the reason of bornevia’s closing, I’m just telling what I learn from Bornevia when I work over there.</description>
+      <description>Hey , my name is Iman Syahputra Situmorang, a Fullstack Software Engineer in Bornevia.</description>
     </item>
     
   </channel>

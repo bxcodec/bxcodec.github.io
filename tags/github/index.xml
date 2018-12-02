@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Github on Iman Tumorang</title>
+    <title>Github on Letters From Iman</title>
     <link>https://bxcodec.io/tags/github/</link>
-    <description>Recent content in Github on Iman Tumorang</description>
+    <description>Recent content in Github on Letters From Iman</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
+    <copyright>Iman Tumorang @bxcodec.io - All rights reserved</copyright>
     <lastBuildDate>Sun, 06 May 2018 23:03:29 +0700</lastBuildDate>
     
 	<atom:link href="https://bxcodec.io/tags/github/index.xml" rel="self" type="application/rss+xml" />
@@ -17,9 +18,7 @@
       <pubDate>Sun, 06 May 2018 23:03:29 +0700</pubDate>
       
       <guid>https://bxcodec.io/posts/my-first-impression-about-code-review/</guid>
-      <description>How does it feel when your code being reviewed and rejected
-My first time to know about Code Review is when entering my current company at Kurio. In my past company before here, we never doing any code review. So everything is just passed to staging-branch and if tested well merge directly to master.
-Here in my current company, we trained to do code reviewing for every team member. So everyone can review when there is an open pull request (PR) .</description>
+      <description>How does it feel when your code being reviewed and rejected</description>
     </item>
     
     <item>
@@ -29,8 +28,7 @@ Here in my current company, we trained to do code reviewing for every team membe
       
       <guid>https://bxcodec.io/posts/why-you-should-care-about-squash-and-merge-in-git/</guid>
       <description>Make your history more clean and readable
-We just develop our new feature in Kurio. It is a targeted push notification. More about this you could read it here
-We have a “good” enough development life here. When it was decided to create a new feature, a mini team will be assigned to their role. The team can consist of a few people from the different division, 2 from backend division, 1 from machine-learning division and so on based on the project needs.</description>
+We just develop our new feature in Kurio.</description>
     </item>
     
   </channel>

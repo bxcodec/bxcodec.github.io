@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Programming on Iman Tumorang</title>
+    <title>Programming on Letters From Iman</title>
     <link>https://bxcodec.io/categories/programming/</link>
-    <description>Recent content in Programming on Iman Tumorang</description>
+    <description>Recent content in Programming on Letters From Iman</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
+    <copyright>Iman Tumorang @bxcodec.io - All rights reserved</copyright>
     <lastBuildDate>Sun, 06 May 2018 23:11:29 +0700</lastBuildDate>
     
 	<atom:link href="https://bxcodec.io/categories/programming/index.xml" rel="self" type="application/rss+xml" />
@@ -17,9 +18,7 @@
       <pubDate>Sun, 06 May 2018 23:11:29 +0700</pubDate>
       
       <guid>https://bxcodec.io/posts/my-honest-opinion-about-unit-testing/</guid>
-      <description>This is my honest opinion about Unit Testing in Software Engineering
-Imagine now you are in the kitchen. You are going to make an omelet. Then, you must prepare the tools first, a stove, a pan, fried spoon, a knife etc. Then, you also must have the needs, such as eggs, pepper, salt etc.
-Then, let’s make a new one. When making this new one, you must follow these steps without missing for a single thing.</description>
+      <description>This is my honest opinion about Unit Testing in Software Engineering</description>
     </item>
     
     <item>
@@ -28,9 +27,7 @@ Then, let’s make a new one. When making this new one, you must follow these st
       <pubDate>Sun, 06 May 2018 23:03:29 +0700</pubDate>
       
       <guid>https://bxcodec.io/posts/my-first-impression-about-code-review/</guid>
-      <description>How does it feel when your code being reviewed and rejected
-My first time to know about Code Review is when entering my current company at Kurio. In my past company before here, we never doing any code review. So everything is just passed to staging-branch and if tested well merge directly to master.
-Here in my current company, we trained to do code reviewing for every team member. So everyone can review when there is an open pull request (PR) .</description>
+      <description>How does it feel when your code being reviewed and rejected</description>
     </item>
     
     <item>
@@ -40,8 +37,7 @@ Here in my current company, we trained to do code reviewing for every team membe
       
       <guid>https://bxcodec.io/posts/why-you-should-care-about-squash-and-merge-in-git/</guid>
       <description>Make your history more clean and readable
-We just develop our new feature in Kurio. It is a targeted push notification. More about this you could read it here
-We have a “good” enough development life here. When it was decided to create a new feature, a mini team will be assigned to their role. The team can consist of a few people from the different division, 2 from backend division, 1 from machine-learning division and so on based on the project needs.</description>
+We just develop our new feature in Kurio.</description>
     </item>
     
     <item>
@@ -50,9 +46,7 @@ We have a “good” enough development life here. When it was decided to create
       <pubDate>Wed, 02 May 2018 08:48:07 +0700</pubDate>
       
       <guid>https://bxcodec.io/posts/programming-as-a-passion-vs-programming-as-a-job/</guid>
-      <description>Based on my experiences with my personal opinion and thought
-When we were still in college, we always demanded for studying hard. Having a good score in every class and also active in social community, club or something.
-I remember when I was still in college, I always trying not to fail in my class. Also, I’m joining a club, a community by students. A geek one, it’s called “Programming Club”.</description>
+      <description>Based on my experiences with my personal opinion and thought</description>
     </item>
     
     <item>
@@ -62,13 +56,7 @@ I remember when I was still in college, I always trying not to fail in my class.
       
       <guid>https://bxcodec.io/posts/faker/</guid>
       <description>Struct Data Fake Generator
-Faker will generate you a fake data based on your Struct.
-Source code: github
- Support Getting Started Example Contribution  Support You can file an Issue. See documentation in Godoc
-Getting Started Download go get -u github.com/bxcodec/faker  Example With Tag Supported tag:
-Internet :
- Email Mac address Domain name Url UserName IP Address (IPV4 IPV6 ) Password  Payment :
- Credit Card Type (VISA, MASTERCARD , AMERICAN EXPRESS ,DISCOVER) Credit Card Number  Address :</description>
+Faker will generate you a fake data based on your Struct.</description>
     </item>
     
     <item>
@@ -77,9 +65,7 @@ Internet :
       <pubDate>Tue, 01 May 2018 11:15:02 +0700</pubDate>
       
       <guid>https://bxcodec.io/posts/saint/</guid>
-      <description> Saint : Just a Simple Math Library with Integer Operations
-Source code: github
-Download go get -u github.com/bxcodec/saint  Example package main import ( &amp;quot;fmt&amp;quot; &amp;quot;github.com/bxcodec/saint&amp;quot; ) func main() { arr:=[] int {2,1,3,5,6} var x int x= saint.Max(arr...) fmt.Println(x) // 6 x= saint.Max(4,3,1,5,7) fmt.Println(x) // 7 x= saint.Min(arr...) fmt.Println(x) // 1 x= saint.Min(4,3,5,5,7) fmt.Println(x) // 3 x= saint.Sum(arr...) fmt.Println(x) // 17 x = saint.Sum(4,5) fmt.Println(x) // 9 }  </description>
+      <description>Saint : Just a Simple Math Library with Integer Operations</description>
     </item>
     
   </channel>
