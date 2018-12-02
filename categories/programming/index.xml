@@ -7,10 +7,19 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>Iman Tumorang @bxcodec.io - All rights reserved</copyright>
-    <lastBuildDate>Sun, 06 May 2018 23:11:29 +0700</lastBuildDate>
+    <lastBuildDate>Sun, 02 Dec 2018 08:48:07 +0700</lastBuildDate>
     
 	<atom:link href="https://bxcodec.io/categories/programming/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>The Daily Life of a Software Engineer in Jakarta</title>
+      <link>https://bxcodec.io/posts/the-daily-life-of-a-software-engineer-in-jakarta/</link>
+      <pubDate>Sun, 02 Dec 2018 08:48:07 +0700</pubDate>
+      
+      <guid>https://bxcodec.io/posts/the-daily-life-of-a-software-engineer-in-jakarta/</guid>
+      <description>Just my personal daily life as a Software Engineer in Jakarta</description>
+    </item>
     
     <item>
       <title>My honest opinion about Unit Testing</title>
