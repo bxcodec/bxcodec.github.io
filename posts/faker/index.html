@@ -2,7 +2,7 @@
 <html lang="en-us"><head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-        <meta name="generator" content="Hugo 0.52" />
+        <meta name="generator" content="Hugo 0.53-DEV" />
 	
 
 	<title>Faker - Letters From Iman </title>
@@ -246,8 +246,8 @@ See documentation in <a href="https://godoc.org/github.com/bxcodec/faker">Godoc<
 <ul>
 <li>Word</li>
 <li>Sentence</li>
-<li>Sentences</li>
-</ul>
+
+<li><p>Sentences</p>
 
 <pre><code>package main
 
@@ -257,89 +257,90 @@ import (
 )
 
 type SomeStruct struct {
- Latitude         float32 `faker:&quot;lat&quot;`
- Long             float32 `faker:&quot;long&quot;`
- CreditCardType   string  `faker:&quot;cc_type&quot;`
- CreditCardNumber string  `faker:&quot;cc_number&quot;`
- Email            string  `faker:&quot;email&quot;`
- IPV4             string  `faker:&quot;ipv4&quot;`
- IPV6             string  `faker:&quot;ipv6&quot;`
- Password         string  `faker:&quot;password&quot;`
- PhoneNumber      string  `faker:&quot;phone_number&quot;`
- MacAddress       string  `faker:&quot;mac_address&quot;`
- Url              string  `faker:&quot;url&quot;`
- UserName         string  `faker:&quot;username&quot;`
- ToolFreeNumber   string  `faker:&quot;tool_free_number&quot;`
- E164PhoneNumber  string  `faker:&quot;e_164_phone_number&quot;`
- TitleMale        string  `faker:&quot;title_male&quot;`
- TitleFemale      string  `faker:&quot;title_female&quot;`
- FirstNameMale    string  `faker:&quot;first_name_male&quot;`
- FirstNameFemale  string  `faker:&quot;first_name_female&quot;`
- LastName         string  `faker:&quot;last_name&quot;`
- Name             string  `faker:&quot;name&quot;`
- UnixTime         int64   `faker:&quot;unix_time&quot;`
- Date             string  `faker:&quot;date&quot;`
- Time             string  `faker:&quot;time&quot;`
- MonthName        string  `faker:&quot;month_name&quot;`
- Year             string  `faker:&quot;year&quot;`
- DayOfWeek        string  `faker:&quot;day_of_week&quot;`
- DayOfMonth       string  `faker:&quot;day_of_month&quot;`
- Timestamp        string  `faker:&quot;timestamp&quot;`
- Century          string  `faker:&quot;century&quot;`
- TimeZone         string  `faker:&quot;timezone&quot;`
- TimePeriod       string  `faker:&quot;time_period&quot;`
- Word             string  `faker:&quot;word&quot;`
- Sentence         string  `faker:&quot;sentence&quot;`
- Sentences        string  `faker:&quot;sentences&quot;`
+Latitude         float32 `faker:&quot;lat&quot;`
+Long             float32 `faker:&quot;long&quot;`
+CreditCardType   string  `faker:&quot;cc_type&quot;`
+CreditCardNumber string  `faker:&quot;cc_number&quot;`
+Email            string  `faker:&quot;email&quot;`
+IPV4             string  `faker:&quot;ipv4&quot;`
+IPV6             string  `faker:&quot;ipv6&quot;`
+Password         string  `faker:&quot;password&quot;`
+PhoneNumber      string  `faker:&quot;phone_number&quot;`
+MacAddress       string  `faker:&quot;mac_address&quot;`
+Url              string  `faker:&quot;url&quot;`
+UserName         string  `faker:&quot;username&quot;`
+ToolFreeNumber   string  `faker:&quot;tool_free_number&quot;`
+E164PhoneNumber  string  `faker:&quot;e_164_phone_number&quot;`
+TitleMale        string  `faker:&quot;title_male&quot;`
+TitleFemale      string  `faker:&quot;title_female&quot;`
+FirstNameMale    string  `faker:&quot;first_name_male&quot;`
+FirstNameFemale  string  `faker:&quot;first_name_female&quot;`
+LastName         string  `faker:&quot;last_name&quot;`
+Name             string  `faker:&quot;name&quot;`
+UnixTime         int64   `faker:&quot;unix_time&quot;`
+Date             string  `faker:&quot;date&quot;`
+Time             string  `faker:&quot;time&quot;`
+MonthName        string  `faker:&quot;month_name&quot;`
+Year             string  `faker:&quot;year&quot;`
+DayOfWeek        string  `faker:&quot;day_of_week&quot;`
+DayOfMonth       string  `faker:&quot;day_of_month&quot;`
+Timestamp        string  `faker:&quot;timestamp&quot;`
+Century          string  `faker:&quot;century&quot;`
+TimeZone         string  `faker:&quot;timezone&quot;`
+TimePeriod       string  `faker:&quot;time_period&quot;`
+Word             string  `faker:&quot;word&quot;`
+Sentence         string  `faker:&quot;sentence&quot;`
+Sentences        string  `faker:&quot;sentences&quot;`
 }
 
 func main() {
 
-  a= SomeStruct{}
-  err:= faker.FakeData(&amp;a)
-  if err!= nil {
-    fmt.Println(err)
-  }
-  fmt.Printf(&quot;%+v&quot;, a)
+a= SomeStruct{}
+err:= faker.FakeData(&amp;a)
+if err!= nil {
+fmt.Println(err)
+}
+fmt.Printf(&quot;%+v&quot;, a)
 	//Will Print  :
 	 /* Latitude: -74.209991,
-        Long: -4.394531,
-        CreditCardNumber: 376243757700558,
-        CreditCardType: american express,
-        Email: QjTIcmn@lmErh.info,
-        IPV4: 80.206.109.93,
-        IPV6: 448f:a391:90c6:d165:1d1f:b536:45f7:f084,
+    Long: -4.394531,
+    CreditCardNumber: 376243757700558,
+    CreditCardType: american express,
+    Email: QjTIcmn@lmErh.info,
+    IPV4: 80.206.109.93,
+    IPV6: 448f:a391:90c6:d165:1d1f:b536:45f7:f084,
 	    Password: FhOSWpnzXwxxnCTlZJcZeBTUeRaVidThUdntQryyjNiAFwbyCe,
-        PhoneNumber: 865-321-1047,
-        MacAddress: 46:77:6f:bb:d0:fc,
-        Url: https://sFUBEIj.info/kYvcpYL.html,
-        UserName: VwrVhzZ,
-        ToolFreeNumber: (777) 372-148965,
-        E164PhoneNumber: +765101283947,
-        TitleMale: Prof.,
-        TitleFemale: Dr.,
-        FirstNameMale: Charley,
-        FirstNameFemale: Freeda,
-        LastName: Runte,
-        Name: Dr. Freeda Runte,
-        UnixTime: 679631083,
-        Date: 2010-06-12,
-        Time: 11:33:24,
-        MonthName: January,
-        Year: 1982,
-        DayOfWeek: Sunday,
-        DayOfMonth: 26,
-        Timestamp: 1972-06-24 14:03:32,
-        Century: XV,
-        TimeZone: Navajo,
-        TimePeriod: AM,
+    PhoneNumber: 865-321-1047,
+    MacAddress: 46:77:6f:bb:d0:fc,
+    Url: https://sFUBEIj.info/kYvcpYL.html,
+    UserName: VwrVhzZ,
+    ToolFreeNumber: (777) 372-148965,
+    E164PhoneNumber: +765101283947,
+    TitleMale: Prof.,
+    TitleFemale: Dr.,
+    FirstNameMale: Charley,
+    FirstNameFemale: Freeda,
+    LastName: Runte,
+    Name: Dr. Freeda Runte,
+    UnixTime: 679631083,
+    Date: 2010-06-12,
+    Time: 11:33:24,
+    MonthName: January,
+    Year: 1982,
+    DayOfWeek: Sunday,
+    DayOfMonth: 26,
+    Timestamp: 1972-06-24 14:03:32,
+    Century: XV,
+    TimeZone: Navajo,
+    TimePeriod: AM,
 	    Word: consectetur,
-        Sentence: Perferendis aut sit accusantium consequatur voluptatem .,
-        Sentences: Perferendis sit consequatur accusantium aut voluptatem .Aut voluptatem consequatur sit perferendis accusantium .Aut consequatur sit accusantium perferendis voluptatem .,
+    Sentence: Perferendis aut sit accusantium consequatur voluptatem .,
+    Sentences: Perferendis sit consequatur accusantium aut voluptatem .Aut voluptatem consequatur sit perferendis accusantium .Aut consequatur sit accusantium perferendis voluptatem .,
 	 */
 }
 
-</code></pre>
+</code></pre></li>
+</ul>
 
 <h4 id="without-tag">Without Tag</h4>
 
