@@ -7,10 +7,19 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>Iman Tumorang @bxcodec.io - All rights reserved</copyright>
-    <lastBuildDate>Sun, 02 Dec 2018 08:48:07 +0700</lastBuildDate>
+    <lastBuildDate>Thu, 06 Dec 2018 05:14:07 +0700</lastBuildDate>
     
 	<atom:link href="https://bxcodec.io/categories/life/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>CI/CD at Kurio Backend with Buddy.Works</title>
+      <link>https://bxcodec.io/posts/ci-cd-at-kurio-backend-with-buddy.works/</link>
+      <pubDate>Thu, 06 Dec 2018 05:14:07 +0700</pubDate>
+      
+      <guid>https://bxcodec.io/posts/ci-cd-at-kurio-backend-with-buddy.works/</guid>
+      <description>On my first time joining Kurio Engineering team, a year ago before I wrote this story, we already used CI/CD flow in every teams (mobile team, backend team, and data science team).</description>
+    </item>
     
     <item>
       <title>About Theme</title>
@@ -27,7 +36,7 @@
       <pubDate>Sun, 02 Dec 2018 08:48:07 +0700</pubDate>
       
       <guid>https://bxcodec.io/posts/the-daily-life-of-a-software-engineer-in-jakarta/</guid>
-      <description>Just my personal daily life as a Software Engineer in Jakarta</description>
+      <description>In this article, I will share what my typical daily looks like as Software Engineer in Jakarta.</description>
     </item>
     
     <item>
@@ -45,7 +54,7 @@
       <pubDate>Sun, 06 May 2018 22:38:28 +0700</pubDate>
       
       <guid>https://bxcodec.io/posts/how-bad-is-my-first-code-in-backend-production-when-working-as-a-software-engineer/</guid>
-      <description>The story of mine, that taught me the important of code review.</description>
+      <description>It happen when my first year in my first company as an Software Engineer.</description>
     </item>
     
     <item>
@@ -54,7 +63,7 @@
       <pubDate>Wed, 02 May 2018 08:48:07 +0700</pubDate>
       
       <guid>https://bxcodec.io/posts/programming-as-a-passion-vs-programming-as-a-job/</guid>
-      <description>Based on my experiences with my personal opinion and thought</description>
+      <description>When we were still in college, we always demanded for studying hard.</description>
     </item>
     
     <item>
@@ -63,7 +72,7 @@
       <pubDate>Wed, 02 May 2018 08:39:08 +0700</pubDate>
       
       <guid>https://bxcodec.io/posts/an-opinion-based-advices-to-junior-programmer/</guid>
-      <description>My honest opinion how to survive being a Junior Programmer</description>
+      <description>Being junior is a bit scary. It’s like too many things that we must know and learn.</description>
     </item>
     
     <item>
@@ -72,7 +81,7 @@
       <pubDate>Tue, 01 May 2018 18:14:17 +0700</pubDate>
       
       <guid>https://bxcodec.io/posts/how-can-i-ever-be-a-shit-as-a-software-developer/</guid>
-      <description>And what I can learned and improve by being a shit.</description>
+      <description>Become software developer is not a title, but it’s a responsibilities we must faced.</description>
     </item>
     
     <item>
@@ -81,7 +90,7 @@
       <pubDate>Tue, 01 May 2018 17:59:14 +0700</pubDate>
       
       <guid>https://bxcodec.io/posts/the-hardest-part-of-being-a-non-native-speaker-of-english/</guid>
-      <description>This path is too risky, but there are no other shortcut.</description>
+      <description>Writing is one of my hobby since I was still in high school.</description>
     </item>
     
     <item>

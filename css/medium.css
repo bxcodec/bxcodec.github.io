@@ -255,6 +255,12 @@ span.post-name a,span.post-read-more a:hover {
     font-weight:700;
     margin-bottom:1rem;
 }
+.mainheading h2.subtitle {
+    color: gray;
+    font-weight: 450;
+    font-size: 27px;
+    margin-bottom:1rem;
+}
 .footer {
     border-top:1px solid rgba(0,0,0,.05)!important;
     padding-top:15px;

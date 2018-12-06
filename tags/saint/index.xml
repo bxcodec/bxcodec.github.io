@@ -18,7 +18,8 @@
       <pubDate>Tue, 01 May 2018 11:15:02 +0700</pubDate>
       
       <guid>https://bxcodec.io/posts/saint/</guid>
-      <description>Saint : Just a Simple Math Library with Integer Operations</description>
+      <description>Source code: github
+Download go get -u github.com/bxcodec/saint  Example package main import ( &amp;quot;fmt&amp;quot; &amp;quot;github.</description>
     </item>
     
   </channel>
