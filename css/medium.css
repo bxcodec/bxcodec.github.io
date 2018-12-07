@@ -114,7 +114,8 @@ section.recent-posts {
     height: 100%;
 }
 .maxthumb {
-    max-height:300px;
+    max-height:180px;
+    min-height:180px;
     overflow:hidden;
 }
 .listfeaturedtag .card, .card-footer {
