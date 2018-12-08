@@ -26,3 +26,11 @@
 .error{
     text-align: center !important;
 }
+
+.home-tags > ul.tags { 
+    padding-left: 1.25rem;
+    margin:0 !important;
+}
+.home-tags > ul.tags li {
+     margin-top: 0.60rem
+} 
