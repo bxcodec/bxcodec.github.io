@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Posts on Letters From Iman</title>
+    <link>https://bxcodec.io/post/</link>
+    <description>Recent content in Posts on Letters From Iman</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>Iman Tumorang @bxcodec.io - All rights reserved</copyright>
+    <lastBuildDate>Thu, 06 Dec 2018 05:14:07 +0700</lastBuildDate>
+    
+	<atom:link href="https://bxcodec.io/post/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>CI/CD at Kurio Backend with Buddy.Works</title>
+      <link>https://bxcodec.io/posts/ci-cd-at-kurio-backend-with-buddy.works/</link>
+      <pubDate>Thu, 06 Dec 2018 05:14:07 +0700</pubDate>
+      
+      <guid>https://bxcodec.io/posts/ci-cd-at-kurio-backend-with-buddy.works/</guid>
+      <description>On my first time joining Kurio Engineering team, a year ago before I wrote this story, we already used CI/CD flow in every teams (mobile team, backend team, and data science team).</description>
+    </item>
+    
+    <item>
+      <title>About Theme</title>
+      <link>https://bxcodec.io/posts/about-theme/</link>
+      <pubDate>Sun, 02 Dec 2018 08:48:07 +0700</pubDate>
+      
+      <guid>https://bxcodec.io/posts/about-theme/</guid>
+      <description>After a long time not maintaining this blog, now I think it&amp;rsquo;s time to re-maintain this.</description>
+    </item>
+    
+    <item>
+      <title>The Daily Life of a Software Engineer in Jakarta</title>
+      <link>https://bxcodec.io/posts/the-daily-life-of-a-software-engineer-in-jakarta/</link>
+      <pubDate>Sun, 02 Dec 2018 08:48:07 +0700</pubDate>
+      
+      <guid>https://bxcodec.io/posts/the-daily-life-of-a-software-engineer-in-jakarta/</guid>
+      <description>In this article, I will share what my typical daily looks like as Software Engineer in Jakarta.</description>
+    </item>
+    
+    <item>
+      <title>What Are Some Things I Wish I Knew When I Started Programming</title>
+      <link>https://bxcodec.io/posts/what-are-some-things-i-wish-i-knew-when-i-started-programming/</link>
+      <pubDate>Thu, 17 May 2018 22:20:50 +0700</pubDate>
+      
+      <guid>https://bxcodec.io/posts/what-are-some-things-i-wish-i-knew-when-i-started-programming/</guid>
+      <description>Majority and Stereotype Kills Dream I started programming 5 years ago.</description>
+    </item>
+    
+    <item>
+      <title>My honest opinion about Unit Testing</title>
+      <link>https://bxcodec.io/posts/my-honest-opinion-about-unit-testing/</link>
+      <pubDate>Sun, 06 May 2018 23:11:29 +0700</pubDate>
+      
+      <guid>https://bxcodec.io/posts/my-honest-opinion-about-unit-testing/</guid>
+      <description>Imagine now you are in the kitchen. You are going to make an omelet.</description>
+    </item>
+    
+    <item>
+      <title>My First Impression about Code Review</title>
+      <link>https://bxcodec.io/posts/my-first-impression-about-code-review/</link>
+      <pubDate>Sun, 06 May 2018 23:03:29 +0700</pubDate>
+      
+      <guid>https://bxcodec.io/posts/my-first-impression-about-code-review/</guid>
+      <description>My first time to know about Code Review is when entering my current company at Kurio.</description>
+    </item>
+    
+    <item>
+      <title>Why You Should Care About Squash and Merge in Git</title>
+      <link>https://bxcodec.io/posts/why-you-should-care-about-squash-and-merge-in-git/</link>
+      <pubDate>Sun, 06 May 2018 22:46:43 +0700</pubDate>
+      
+      <guid>https://bxcodec.io/posts/why-you-should-care-about-squash-and-merge-in-git/</guid>
+      <description>We just develop our new feature in Kurio. It is a targeted push notification.</description>
+    </item>
+    
+    <item>
+      <title>How Bad is My First Code in Backend Production when Working as a Software Engineer</title>
+      <link>https://bxcodec.io/posts/how-bad-is-my-first-code-in-backend-production-when-working-as-a-software-engineer/</link>
+      <pubDate>Sun, 06 May 2018 22:38:28 +0700</pubDate>
+      
+      <guid>https://bxcodec.io/posts/how-bad-is-my-first-code-in-backend-production-when-working-as-a-software-engineer/</guid>
+      <description>It happen when my first year in my first company as an Software Engineer.</description>
+    </item>
+    
+    <item>
+      <title>Programming as a Passion vs Programming as a Job</title>
+      <link>https://bxcodec.io/posts/programming-as-a-passion-vs-programming-as-a-job/</link>
+      <pubDate>Wed, 02 May 2018 08:48:07 +0700</pubDate>
+      
+      <guid>https://bxcodec.io/posts/programming-as-a-passion-vs-programming-as-a-job/</guid>
+      <description>When we were still in college, we always demanded for studying hard.</description>
+    </item>
+    
+    <item>
+      <title>An Opinion-based : Advices to Junior Programmer</title>
+      <link>https://bxcodec.io/posts/an-opinion-based-advices-to-junior-programmer/</link>
+      <pubDate>Wed, 02 May 2018 08:39:08 +0700</pubDate>
+      
+      <guid>https://bxcodec.io/posts/an-opinion-based-advices-to-junior-programmer/</guid>
+      <description>Being junior is a bit scary. It’s like too many things that we must know and learn.</description>
+    </item>
+    
+    <item>
+      <title>How can I ever be a shit as a software developer</title>
+      <link>https://bxcodec.io/posts/how-can-i-ever-be-a-shit-as-a-software-developer/</link>
+      <pubDate>Tue, 01 May 2018 18:14:17 +0700</pubDate>
+      
+      <guid>https://bxcodec.io/posts/how-can-i-ever-be-a-shit-as-a-software-developer/</guid>
+      <description>Become software developer is not a title, but it’s a responsibilities we must faced.</description>
+    </item>
+    
+    <item>
+      <title>The Hardest Part of Being a Non-Native Speaker of English</title>
+      <link>https://bxcodec.io/posts/the-hardest-part-of-being-a-non-native-speaker-of-english/</link>
+      <pubDate>Tue, 01 May 2018 17:59:14 +0700</pubDate>
+      
+      <guid>https://bxcodec.io/posts/the-hardest-part-of-being-a-non-native-speaker-of-english/</guid>
+      <description>Writing is one of my hobby since I was still in high school.</description>
+    </item>
+    
+    <item>
+      <title>Faker</title>
+      <link>https://bxcodec.io/posts/faker/</link>
+      <pubDate>Tue, 01 May 2018 11:18:11 +0700</pubDate>
+      
+      <guid>https://bxcodec.io/posts/faker/</guid>
+      <description>Faker will generate you a fake data based on your Struct.</description>
+    </item>
+    
+    <item>
+      <title>Saint</title>
+      <link>https://bxcodec.io/posts/saint/</link>
+      <pubDate>Tue, 01 May 2018 11:15:02 +0700</pubDate>
+      
+      <guid>https://bxcodec.io/posts/saint/</guid>
+      <description>Source code: github
+Download go get -u github.com/bxcodec/saint  Example package main import ( &amp;quot;fmt&amp;quot; &amp;quot;github.</description>
+    </item>
+    
+    <item>
+      <title>What I Learn from Working in Small Startup as A Fresh Graduate</title>
+      <link>https://bxcodec.io/posts/what-i-learn-from-working-in-small-startup-as-a-fresh-graduate/</link>
+      <pubDate>Tue, 01 May 2018 11:09:30 +0700</pubDate>
+      
+      <guid>https://bxcodec.io/posts/what-i-learn-from-working-in-small-startup-as-a-fresh-graduate/</guid>
+      <description>Hey , my name is Iman Syahputra Situmorang, a Fullstack Software Engineer in Bornevia.</description>
+    </item>
+    
+  </channel>
+</rss>
