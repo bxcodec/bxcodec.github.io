@@ -253,12 +253,12 @@ span.post-name a,span.post-read-more a:hover {
       /* } */
 }
 .mainheading h1.posttitle {
-    font-weight:700;
+    font-weight:600;
     margin-bottom:1rem;
 }
 .mainheading h2.subtitle {
     color: gray;
-    font-weight: 450;
+    font-weight: 400;
     font-size: 27px;
     margin-bottom:1rem;
 }
@@ -278,7 +278,7 @@ span.post-name a,span.post-read-more a:hover {
 }
 .article-post {
     font-family:Merriweather;
-    font-size:1.2rem;
+    font-size:1rem;
     line-height:1.8;
     color:rgba(0,0,0,.8);
 }
@@ -575,7 +575,7 @@ ul.tags li a:hover {
     font-family: -apple-system,system-ui,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
 }
 .article-post .h1, .article-post .h2, .article-post .h3, .article-post .h4, .article-post .h5, .article-post .h6, .article-post h1, .article-post h2, .article-post h3, .article-post h4, .article-post h5, .article-post h6 {
-    font-weight: 700;
+    font-weight: 600;
     margin-bottom: 1.5rem;
 }
 .article-post img.shadow {
