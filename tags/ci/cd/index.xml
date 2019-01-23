@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Deployment on Letters From Iman</title>
-    <link>https://bxcodec.io/tags/deployment/</link>
-    <description>Recent content in Deployment on Letters From Iman</description>
+    <title>Ci/Cd on Letters From Iman</title>
+    <link>https://bxcodec.io/tags/ci/cd/</link>
+    <description>Recent content in Ci/Cd on Letters From Iman</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>Iman Tumorang @bxcodec.io - All rights reserved</copyright>
     <lastBuildDate>Thu, 06 Dec 2018 05:14:07 +0700</lastBuildDate>
     
-	<atom:link href="https://bxcodec.io/tags/deployment/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://bxcodec.io/tags/ci/cd/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>

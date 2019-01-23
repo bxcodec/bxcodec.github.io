@@ -14,10 +14,10 @@
     
     <item>
       <title>CI/CD at Kurio Backend with Buddy.Works</title>
-      <link>https://bxcodec.io/posts/ci-cd-at-kurio-backend-with-buddy.works/</link>
+      <link>https://bxcodec.io/posts/ci/cd-at-kurio-backend-with-buddy.works/</link>
       <pubDate>Thu, 06 Dec 2018 05:14:07 +0700</pubDate>
       
-      <guid>https://bxcodec.io/posts/ci-cd-at-kurio-backend-with-buddy.works/</guid>
+      <guid>https://bxcodec.io/posts/ci/cd-at-kurio-backend-with-buddy.works/</guid>
       <description>On my first time joining Kurio Engineering team, a year ago before I wrote this story, we already used CI/CD flow in every teams (mobile team, backend team, and data science team).</description>
     </item>
     
