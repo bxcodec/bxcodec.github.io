@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html lang="en-us"><head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <meta name="generator" content="Hugo 0.54-DEV" />
+	
+
+	<title>
+		 
+		Today I Learned: Making a Simple Interactive Shell Application in Golang-Letters From Iman
+		
+
+	</title>
+
+	<meta property="og:title" content="Today I Learned: Making a Simple Interactive Shell Application in Golang - Letters From Iman" /> 
+	<meta property="og:description" content="So today, I learn something new and a bit of basic thing in Golang." />
+	<meta property="og:type" content="article" />
+	<meta property="og:url" content="https://bxcodec.io/posts/today-i-learned-making-a-simple-interactive-shell-application-in-golang/" />
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp"
+	 crossorigin="anonymous">
+	<link href="https://fonts.googleapis.com/css?family=Righteous%7CMerriweather:300,300i,400,400i,700,700i" rel="stylesheet">
+	<link href="/css/medium.css" rel="stylesheet">
+	<link href="/css/additional.css" rel="stylesheet">
+	<link rel="icon" href="https://bxcodec.io/favicon.ico">
+	<link rel="apple-touch-icon" href="https://bxcodec.io/apple-touch-icon.png"/>
+	
+	<meta property="og:image" content="https://cdn-images-1.medium.com/max/800/0*TEeZWyrO8mI2hXwE"/>
+	<meta property="og:image:secure_url" content="https://cdn-images-1.medium.com/max/800/0*TEeZWyrO8mI2hXwE"/>
+	<meta name="twitter:card" content="summary_large_image" />
+		
+	<meta name="twitter:site" content="@bxcodec.io" />
+	
+	<meta name="twitter:creator" content="@bxcodec" />
+	
+	
+</head>
+<body>
+<nav class="navbar navbar-expand-lg navbar-light bg-white fixed-top mediumnavigation nav-down">
+    <div class="container pr-0">
+        
+        <a class="navbar-brand" href="https://bxcodec.io">
+
+            
+            <span style="font-family:Righteous;">Letters From Iman</span>
+            
+        </a>
+        
+
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarMediumish" aria-controls="navbarSupportedContent"
+            aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        
+        <div class="collapse navbar-collapse" id="navbarMediumish">
+            
+            <ul class="navbar-nav ml-auto">
+                 
+                <li class="nav-item ">
+                    <a class="nav-link" href="/posts">Blog</a>
+                </li>
+                 
+                <li class="nav-item ">
+                    <a class="nav-link" href="/">About Me</a>
+                </li>
+                
+            </ul>
+        </div>
+        
+    </div>
+</nav>
+
+
+        <div class="site-content">   
+            <div class="container">
+<div class="mainheading">
+    
+</div><div class="main-content">
+        
+        <div class="container">
+            <div class="row">
+                
+                <div class="col-md-2 pl-0"><div class="share">
+    <p>Share</p>
+    <ul>
+        <li class="ml-1 mr-1">
+        <a target="_blank" href="https://twitter.com/intent/tweet?text=Today%20I%20Learned%3a%20Making%20a%20Simple%20Interactive%20Shell%20Application%20in%c2%a0Golang&url=https%3a%2f%2fbxcodec.io%2fposts%2ftoday-i-learned-making-a-simple-interactive-shell-application-in-golang%2f" onclick="window.open(this.href, 'twitter-share', 'width=550,height=435');return false;">
+        <i class="fab fa-twitter"></i>
+        </a>
+        </li>
+        
+        <li class="ml-1 mr-1">
+        <a target="_blank" href="https://facebook.com/sharer.php?u=https%3a%2f%2fbxcodec.io%2fposts%2ftoday-i-learned-making-a-simple-interactive-shell-application-in-golang%2f" onclick="window.open(this.href, 'facebook-share', 'width=550,height=435');return false;">
+        <i class="fab fa-facebook-f"></i>
+        </a>
+        </li>
+        
+        <li class="ml-1 mr-1">
+        <a target="_blank" href="https://plus.google.com/share?url=https%3a%2f%2fbxcodec.io%2fposts%2ftoday-i-learned-making-a-simple-interactive-shell-application-in-golang%2f" onclick="window.open(this.href, 'google-share', 'width=550,height=435');return false;">
+        <i class="fab fa-google"></i>
+        </a>
+        </li>
+
+        <li class="ml-1 mr-1">
+        <a target="_blank" href="https://www.xing.com/spi/shares/new?url=https%3a%2f%2fbxcodec.io%2fposts%2ftoday-i-learned-making-a-simple-interactive-shell-application-in-golang%2f" onclick="window.open(this.href, 'xing-share', 'width=550,height=435');return false;">
+        <i class="fab fa-xing"></i>
+        </a>
+        </li>        
+    </ul>
+
+    
+        <div class="sep">
+        </div>				
+        <ul>
+            <li> 
+            <a  class="small smoothscroll" href="#disqus_thread"></a>
+            </li>
+        </ul>
+    
+</div></div>
+                                
+                <div class="col-md-9 flex-first flex-md-unordered">
+                    <div class="mainheading">
+                                                                	
+                        
+                        
+                        
+                        <div class="post-top-meta">
+                            <div>
+                                <img class="author-thumb" src="http://gravatar.com/avatar/01e3584fe39eb72335f13243c3a814a2?s=200" alt="Iman Tumorang">
+                            </div>
+                            <div >
+                                <a  href="https://bxcodec.io" class="link-dark">Iman Tumorang</a><br>
+                                <span class="author-description">
+                                    Software Engineer - Writer - Open Source Enthusiast - Startup Enthusiast<br>
+                                    <i class="far fa-star"></i>
+                                    Jan 25, 2019
+                                    <i class="far fa-clock clock"></i>
+                                    5 min read
+                                </span>					
+                            </div>
+                        </div>			
+                        	
+                        
+                                                     
+                        
+                        <h1 class="posttitle">Today I Learned: Making a Simple Interactive Shell Application in Golang</h1> 
+                        
+                            <h2 class="subtitle">How I make a simple interactive shell in Golang</h2> 
+                        
+                        
+                    </div>
+
+                    
+                    
+                        <img class="featured-image img-fluid" src="https://cdn-images-1.medium.com/max/800/0*TEeZWyrO8mI2hXwE" alt="thumbnail for this post">
+                    
+                    
+                    
+                    
+                    <div class="article-post">
+                        
+
+<p>So today, I learn something new and a bit of basic thing in Golang. It was making a simple interactive shell. It was just a very simple application, but it kinda looks cool to make it.</p>
+
+<p>I&rsquo;ve been working over 1 year in Golang. So many tools already created by people out there, for example: cobra by spf13, or many more that help us to make command line application. But, somehow I&rsquo;m curious how to make a simple one without having dependencies with other external libraries.</p>
+
+<p>So just out of curiosity, I start to search how to make it in Google. But what I found is only tutorial using other external dependencies. Everyone is only promoting their own library to ease making an interactive shell 😌. Guys? I just need to make a simple one with the pure Golang package (No external dependencies)😌</p>
+
+<p>But, I found an article about making an interactive shell, like this article: <a href="http://technosophos.com/2014/07/11/start-an-interactive-shell-from-within-go.html">http://technosophos.com/2014/07/11/start-an-interactive-shell-from-within-go.html</a>, but, what he does is not like I want. So later with only many examples that I found from websites like Gobyexample.com, etc.</p>
+
+<p>I made a simple Shell application by myself. Here I will explain how I made it below.</p>
+
+<h2 id="shell">Shell</h2>
+
+<p>So before making a simple Shell application, I want to make sure that what I mean shell is the same as what you mean.</p>
+
+<p>For me, Shell is an application that will act as the very basic user interface (text-based interface). Some people might say it Command Line Interface (CLI).</p>
+
+<h2 id="making-the-application">Making The Application</h2>
+
+<p>To make the application, for the simplest prototype I will make it like this.</p>
+
+<pre><code class="language-shell">$ ls
+go.mod  main.go
+</code></pre>
+
+<h2 id="read-the-command-from-terminal">Read the Command from Terminal</h2>
+
+<p>To make this, the first thing to do is reading the input. I need to read the input from the terminal. To that, I make it like this.</p>
+
+<pre><code class="language-go">reader := bufio.NewReader(os.Stdin)
+cmdString, err := reader.ReadString('\n')
+if err != nil {
+ fmt.Fprintln(os.Stderr, err)
+}
+</code></pre>
+
+<h2 id="execute-the-command">Execute the Command</h2>
+
+<p>Then execute the command. After reading the command string from the terminal, now execute the command.</p>
+
+<pre><code class="language-go">cmdString = strings.TrimSuffix(cmdString, &quot;\n&quot;)
+cmd := exec.Command(commandString)
+cmd.Stderr = os.Stderr
+cmd.Stdout = os.Stdout
+cmd.Run()
+</code></pre>
+
+<p>Until here, now I can run my simple shell application, but it will only run for one command. After running a command, it will stop.</p>
+
+<h2 id="adding-the-infinite-loop">Adding the Infinite Loop</h2>
+
+<p>To make it receive every command after executed once. We need to add it to an infinite loop.</p>
+
+<pre><code class="language-go">for {
+ fmt.Print(&quot;$ &quot;)
+ cmdString, err := reader.ReadString('\n')
+ if err != nil {
+  fmt.Fprintln(os.Stderr, err)
+ }
+cmdString = strings.TrimSuffix(cmdString, &quot;\n&quot;)
+cmd := exec.Command(cmdString)
+ cmd.Stderr = os.Stderr
+ cmd.Stdout = os.Stdout
+ err = cmd.Run()
+ if err != nil {
+  fmt.Fprintln(os.Stderr, err)
+ }
+}
+</code></pre>
+
+<p>If we run the application it will look like this below
+<img src="https://cdn-images-1.medium.com/max/800/1*LRYpG0IQy9EmvqkxuJOapw.gif" alt="simple shell application" /></p>
+
+<blockquote>
+<p>simple shell application</p>
+</blockquote>
+
+<h2 id="dealing-with-the-arguments">Dealing with the Arguments</h2>
+
+<p>Until this line, I&rsquo;ve finished my first CLI application. But it still doesn&rsquo;t accept arguments. If I pass an argument, then it will throw an error.</p>
+
+<pre><code>$ ls -lah // this command wil throw error
+</code></pre>
+
+<p>To read the arguments, I make it like this below. First I split the command into an array of string.</p>
+
+<pre><code class="language-go">// ...
+cmdString = strings.TrimSuffix(cmdString, &quot;\n&quot;)
+arrCommandStr := strings.Fields(cmdString)
+cmd := exec.Command(arrCommandStr[0], arrCommandStr[1:]...)
+// ...
+</code></pre>
+
+<p>For splitting the text, I use the <code>Fields</code> function from package <code>string</code>. This function is similar to the split string function. If <code>string.Split</code> will split the string by given specific separator. But <code>strings.Fields</code> will separate the words by whitespace.</p>
+
+<p>Example:</p>
+
+<pre><code class="language-go">str := &quot;Hello World    Beautiful World&quot;
+arrString := strings.Fields(str)
+fmt.Println(arrString)
+// [Hello World Beautiful World]
+</code></pre>
+
+<p>Now, my simple shell is already accepting and process the given params. Now, this command should be worked.</p>
+
+<pre><code>$ ls -lah
+total 4280
+drwxr-xr-x  5 iman  staff   160B Nov  6 19:48 .
+drwxr-xr-x  6 iman  staff   192B Nov  6 11:41 ..
+-rw-r--r--  1 iman  staff    38B Nov  6 11:43 go.mod
+-rw-r--r--  1 iman  staff   606B Nov  6 20:11 main.go
+-rwxr-xr-x  1 iman  staff   2.1M Nov  6 19:49 simshel
+</code></pre>
+
+<h2 id="adding-the-exit-command">Adding the Exit Command</h2>
+
+<p>But, this application is only worked for any built-in application that registered in the environment. Command like exit is not exist, because it is programmed in every CLI application.
+Then, I make a switch-case handler for each command that doesn&rsquo;t have a built-in application in the system like the exit command.</p>
+
+<script src="https://gist.github.com/bxcodec/da11f6e398981cbf49ceb265859f7997.js"></script>
+
+<h2 id="adding-the-custom-command">Adding the Custom Command</h2>
+
+<p>To add custom commands, I could simply add it to the switch-case handler. For example, I want to add a command like plus. This command does not exist in any CLI application out there. I want to make it like this:</p>
+
+<pre><code>$ plus 2 4 5 6
+17
+</code></pre>
+
+<p>To make this, I just need to add a sum function and add the command case handler in the switch-case</p>
+
+<script src="https://gist.github.com/bxcodec/19c22a4e33ac4c9cb116e204e2a94f99.js"></script>
+
+<h2 id="conclusion">Conclusion</h2>
+
+<p>In the end, it&rsquo;s only a very simple application. But for sure, I learn a few things when making this. And also, when writing this, I found a similar article with this article (here: <a href="https://sj14.gitlab.io/post/2018-07-01-go-unix-shell/">https://sj14.gitlab.io/post/2018-07-01-go-unix-shell/</a>). <br>
+After reading that article, I&rsquo;m thinking of discarding my draft. But, I&rsquo;ve written a lot of explanation and example here, so then I decided to post it anyway XD.</p>
+
+<p>Anyway, I&rsquo;ve put the source code in my Github too here: <a href="https://github.com/bxcodec/simpleshell">https://github.com/bxcodec/simpleshell</a>, if just some chance happens, I will try to add some feature into it later.</p>
+
+<p>*Indonesian version: <a href="https://medium.com/easyread/today-i-learned-belajar-membuat-aplikasi-interactive-shell-sederhana-di-golang-2ef013003393">https://medium.com/easyread/today-i-learned-belajar-membuat-aplikasi-interactive-shell-sederhana-di-golang-2ef013003393</a></p>
+
+<hr />
+
+<p><em>Originally posted at: <a href="https://hackernoon.com/today-i-learned-making-a-simple-interactive-shell-application-in-golang-aa83adcb266a">https://hackernoon.com/today-i-learned-making-a-simple-interactive-shell-application-in-golang-aa83adcb266a</a></em></p>
+
+                    </div>
+                    
+                    
+                    <div class="after-post-tags">
+                        <ul class="tags">
+                        
+                        <li>
+                        <a href="/tags/shell">shell</a>
+                        </li>
+                        
+                        <li>
+                        <a href="/tags/golang">golang</a>
+                        </li>
+                        
+                        <li>
+                        <a href="/tags/programming">programming</a>
+                        </li>
+                        
+                        <li>
+                        <a href="/tags/open-source">open-source</a>
+                        </li>
+                        
+                        </ul>
+                    </div>
+                    
+                    
+                    
+                    <div class="row PageNavigation d-flex justify-content-between font-weight-bold">
+                    
+                        <a class="prev d-block col-md-6" href="/posts/integration-test-with-database-in-golang/"> &laquo; Integration Test With Database in Golang</a>
+                    
+                    
+                        <a class="next d-block col-md-6 text-lg-right" href="/posts/today-i-learned-checkout-to-pull-request-in-github-public-repository/">Today I Learned - Checkout to Pull Request in GitHub Public Repository &raquo;</a>
+                    
+                    <div class="clearfix"></div>
+                    </div>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+         
+        
+<div class="container">
+    <div id="comments" class="row justify-content-center mb-5">
+        <div class="col-md-8">           
+            <div id="disqus_thread"></div>
+<script type="application/javascript">
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "iman-tumorang" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>               
+        </div>
+    </div>
+</div>
+
+
+ 
+    </div>
+<div class="alertbar">
+	<div class="container text-center">
+        <span>
+            
+                <span style="font-family:Righteous;">Letters From Iman</span>
+            
+            &nbsp; Never miss a <b>story</b>, subscribe to my newsletter
+        </span>
+
+        <form action="#ZgotmplZ" method="post" name="mc-embedded-subscribe-form" target="_blank" novalidate>
+		<input type="email" placeholder="Email" name="EMAIL" autocomplete="on" required>
+	    	
+	    	<div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="b_4711b43114f183e963e2f7193_0d2c555b4a" tabindex="-1" value=""></div>
+		<input type="submit" value="Subscribe" name="subscribe" >
+        </form>
+
+	</div>
+</div> 
+
+            </div>
+    
+<footer class="footer">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 col-sm-6 text-center text-lg-left">
+                &copy; Copyright Iman Tumorang @bxcodec.io - All rights reserved
+            </div>
+            <div class="col-md-6 col-sm-6 text-center text-lg-right">    
+                
+            </div>
+        </div>
+    </div>
+</footer>
+
+        </div>
+
+    
+<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>    
+    
+<script src="/js/mediumish.js"></script>
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+	ga('create', 'UA-106812096-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+
+    </body>
+</html>

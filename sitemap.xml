@@ -8,6 +8,11 @@
   </url>
   
   <url>
+    <loc>https://bxcodec.io/posts/today-i-learned-making-a-simple-interactive-shell-application-in-golang/</loc>
+    <lastmod>2019-01-25T04:14:07+07:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://bxcodec.io/posts/today-i-learned-checkout-to-pull-request-in-github-public-repository/</loc>
     <lastmod>2019-01-25T04:14:07+07:00</lastmod>
   </url>
@@ -249,6 +254,12 @@
   <url>
     <loc>https://bxcodec.io/tags/saint/</loc>
     <lastmod>2018-05-01T11:15:02+07:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://bxcodec.io/tags/shell/</loc>
+    <lastmod>2019-01-25T04:14:07+07:00</lastmod>
     <priority>0</priority>
   </url>
   

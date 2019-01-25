@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Open Source on Letters From Iman</title>
-    <link>https://bxcodec.io/tags/open-source/</link>
-    <description>Recent content in Open Source on Letters From Iman</description>
+    <title>Shell on Letters From Iman</title>
+    <link>https://bxcodec.io/tags/shell/</link>
+    <description>Recent content in Shell on Letters From Iman</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>Iman Tumorang @bxcodec.io - All rights reserved</copyright>
     <lastBuildDate>Fri, 25 Jan 2019 04:14:07 +0700</lastBuildDate>
     
-	<atom:link href="https://bxcodec.io/tags/open-source/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://bxcodec.io/tags/shell/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
@@ -19,15 +19,6 @@
       
       <guid>https://bxcodec.io/posts/today-i-learned-making-a-simple-interactive-shell-application-in-golang/</guid>
       <description>So today, I learn something new and a bit of basic thing in Golang.</description>
-    </item>
-    
-    <item>
-      <title>Today I Learned - Checkout to Pull Request in GitHub Public Repository</title>
-      <link>https://bxcodec.io/posts/today-i-learned-checkout-to-pull-request-in-github-public-repository/</link>
-      <pubDate>Fri, 25 Jan 2019 04:14:07 +0700</pubDate>
-      
-      <guid>https://bxcodec.io/posts/today-i-learned-checkout-to-pull-request-in-github-public-repository/</guid>
-      <description>So today I learned a really important thing in Github and open-source world :D.</description>
     </item>
     
   </channel>
