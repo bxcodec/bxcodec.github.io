@@ -8,6 +8,11 @@
   </url>
   
   <url>
+    <loc>https://bxcodec.io/posts/today-i-learned-checkout-to-pull-request-in-github-public-repository/</loc>
+    <lastmod>2019-01-25T04:14:07+07:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://bxcodec.io/posts/today-i-learned-fix-go-get-private-repository-return-error-terminal-prompts-disabled/</loc>
     <lastmod>2019-01-25T04:14:07+07:00</lastmod>
   </url>
@@ -147,7 +152,7 @@
   
   <url>
     <loc>https://bxcodec.io/tags/github/</loc>
-    <lastmod>2018-05-06T23:03:29+07:00</lastmod>
+    <lastmod>2019-01-25T04:14:07+07:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -206,6 +211,12 @@
   </url>
   
   <url>
+    <loc>https://bxcodec.io/tags/open-source/</loc>
+    <lastmod>2019-01-25T04:14:07+07:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://bxcodec.io/posts/</loc>
     <lastmod>2019-01-25T05:14:07+07:00</lastmod>
     <priority>0</priority>
@@ -226,6 +237,12 @@
   <url>
     <loc>https://bxcodec.io/categories/programming/</loc>
     <lastmod>2019-01-25T05:14:07+07:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://bxcodec.io/tags/pull-request/</loc>
+    <lastmod>2019-01-25T04:14:07+07:00</lastmod>
     <priority>0</priority>
   </url>
   
