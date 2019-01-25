@@ -8,6 +8,11 @@
   </url>
   
   <url>
+    <loc>https://bxcodec.io/posts/today-i-learned-fix-go-get-private-repository-return-error-terminal-prompts-disabled/</loc>
+    <lastmod>2019-01-25T04:14:07+07:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://bxcodec.io/posts/ci/cd-at-kurio-backend-with-buddy.works/</loc>
     <lastmod>2018-12-06T05:14:07+07:00</lastmod>
   </url>
@@ -117,6 +122,12 @@
   </url>
   
   <url>
+    <loc>https://bxcodec.io/tags/error/</loc>
+    <lastmod>2019-01-25T04:14:07+07:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://bxcodec.io/tags/faker/</loc>
     <lastmod>2018-05-01T11:18:11+07:00</lastmod>
     <priority>0</priority>
@@ -124,7 +135,7 @@
   
   <url>
     <loc>https://bxcodec.io/tags/git/</loc>
-    <lastmod>2018-05-06T23:03:29+07:00</lastmod>
+    <lastmod>2019-01-25T04:14:07+07:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -137,6 +148,12 @@
   <url>
     <loc>https://bxcodec.io/tags/github/</loc>
     <lastmod>2018-05-06T23:03:29+07:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://bxcodec.io/tags/go/</loc>
+    <lastmod>2019-01-25T04:14:07+07:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -245,6 +262,12 @@
   <url>
     <loc>https://bxcodec.io/categories/testing/</loc>
     <lastmod>2018-05-06T23:11:29+07:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://bxcodec.io/tags/til/</loc>
+    <lastmod>2019-01-25T04:14:07+07:00</lastmod>
     <priority>0</priority>
   </url>
   

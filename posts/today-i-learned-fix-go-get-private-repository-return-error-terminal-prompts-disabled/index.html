@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="en-us"><head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <meta name="generator" content="Hugo 0.54-DEV" />
+	
+
+	<title>
+		 
+		Today I Learned - Fix: go get private repository return error terminal prompts disabled-Letters From Iman
+		
+
+	</title>
+
+	<meta property="og:title" content="Today I Learned - Fix: go get private repository return error terminal prompts disabled - Letters From Iman" /> 
+	<meta property="og:description" content="I&rsquo;ve some project stored separated in 3 git-host providers: Github, Gitlab, and Bitbucket." />
+	<meta property="og:type" content="article" />
+	<meta property="og:url" content="https://bxcodec.io/posts/today-i-learned-fix-go-get-private-repository-return-error-terminal-prompts-disabled/" />
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp"
+	 crossorigin="anonymous">
+	<link href="https://fonts.googleapis.com/css?family=Righteous%7CMerriweather:300,300i,400,400i,700,700i" rel="stylesheet">
+	<link href="/css/medium.css" rel="stylesheet">
+	<link href="/css/additional.css" rel="stylesheet">
+	<link rel="icon" href="https://bxcodec.io/favicon.ico">
+	<link rel="apple-touch-icon" href="https://bxcodec.io/apple-touch-icon.png"/>
+	
+	<meta property="og:image" content="https://cdn-images-1.medium.com/max/800/1*9kMWGfv5aU9l3dbVLkbhfg.jpeg"/>
+	<meta property="og:image:secure_url" content="https://cdn-images-1.medium.com/max/800/1*9kMWGfv5aU9l3dbVLkbhfg.jpeg"/>
+	<meta name="twitter:card" content="summary_large_image" />
+		
+	<meta name="twitter:site" content="@bxcodec.io" />
+	
+	<meta name="twitter:creator" content="@bxcodec" />
+	
+	
+</head>
+<body>
+<nav class="navbar navbar-expand-lg navbar-light bg-white fixed-top mediumnavigation nav-down">
+    <div class="container pr-0">
+        
+        <a class="navbar-brand" href="https://bxcodec.io">
+
+            
+            <span style="font-family:Righteous;">Letters From Iman</span>
+            
+        </a>
+        
+
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarMediumish" aria-controls="navbarSupportedContent"
+            aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        
+        <div class="collapse navbar-collapse" id="navbarMediumish">
+            
+            <ul class="navbar-nav ml-auto">
+                 
+                <li class="nav-item ">
+                    <a class="nav-link" href="/posts">Blog</a>
+                </li>
+                 
+                <li class="nav-item ">
+                    <a class="nav-link" href="/">About Me</a>
+                </li>
+                
+            </ul>
+        </div>
+        
+    </div>
+</nav>
+
+
+        <div class="site-content">   
+            <div class="container">
+<div class="mainheading">
+    
+</div><div class="main-content">
+        
+        <div class="container">
+            <div class="row">
+                
+                <div class="col-md-2 pl-0"><div class="share">
+    <p>Share</p>
+    <ul>
+        <li class="ml-1 mr-1">
+        <a target="_blank" href="https://twitter.com/intent/tweet?text=Today%20I%20Learned%e2%80%8a-%e2%80%8aFix%3a%20go%20get%20private%20repository%20return%20error%20terminal%20prompts%c2%a0disabled&url=https%3a%2f%2fbxcodec.io%2fposts%2ftoday-i-learned-fix-go-get-private-repository-return-error-terminal-prompts-disabled%2f" onclick="window.open(this.href, 'twitter-share', 'width=550,height=435');return false;">
+        <i class="fab fa-twitter"></i>
+        </a>
+        </li>
+        
+        <li class="ml-1 mr-1">
+        <a target="_blank" href="https://facebook.com/sharer.php?u=https%3a%2f%2fbxcodec.io%2fposts%2ftoday-i-learned-fix-go-get-private-repository-return-error-terminal-prompts-disabled%2f" onclick="window.open(this.href, 'facebook-share', 'width=550,height=435');return false;">
+        <i class="fab fa-facebook-f"></i>
+        </a>
+        </li>
+        
+        <li class="ml-1 mr-1">
+        <a target="_blank" href="https://plus.google.com/share?url=https%3a%2f%2fbxcodec.io%2fposts%2ftoday-i-learned-fix-go-get-private-repository-return-error-terminal-prompts-disabled%2f" onclick="window.open(this.href, 'google-share', 'width=550,height=435');return false;">
+        <i class="fab fa-google"></i>
+        </a>
+        </li>
+
+        <li class="ml-1 mr-1">
+        <a target="_blank" href="https://www.xing.com/spi/shares/new?url=https%3a%2f%2fbxcodec.io%2fposts%2ftoday-i-learned-fix-go-get-private-repository-return-error-terminal-prompts-disabled%2f" onclick="window.open(this.href, 'xing-share', 'width=550,height=435');return false;">
+        <i class="fab fa-xing"></i>
+        </a>
+        </li>        
+    </ul>
+
+    
+        <div class="sep">
+        </div>				
+        <ul>
+            <li> 
+            <a  class="small smoothscroll" href="#disqus_thread"></a>
+            </li>
+        </ul>
+    
+</div></div>
+                                
+                <div class="col-md-9 flex-first flex-md-unordered">
+                    <div class="mainheading">
+                                                                	
+                        
+                        
+                        
+                        <div class="post-top-meta">
+                            <div>
+                                <img class="author-thumb" src="http://gravatar.com/avatar/01e3584fe39eb72335f13243c3a814a2?s=200" alt="Iman Tumorang">
+                            </div>
+                            <div >
+                                <a  href="https://bxcodec.io" class="link-dark">Iman Tumorang</a><br>
+                                <span class="author-description">
+                                    Software Engineer - Writer - Open Source Enthusiast - Startup Enthusiast<br>
+                                    <i class="far fa-star"></i>
+                                    Jan 25, 2019
+                                    <i class="far fa-clock clock"></i>
+                                    3 min read
+                                </span>					
+                            </div>
+                        </div>			
+                        	
+                        
+                                                     
+                        
+                        <h1 class="posttitle">Today I Learned - Fix: go get private repository return error terminal prompts disabled</h1> 
+                        
+                            <h2 class="subtitle">Fixing fatal: could not read Username for &#39;https://githost[.]something&#39;: terminal prompts disabled</h2> 
+                        
+                        
+                    </div>
+
+                    
+                    
+                        <img class="featured-image img-fluid" src="https://cdn-images-1.medium.com/max/800/1*9kMWGfv5aU9l3dbVLkbhfg.jpeg" alt="thumbnail for this post">
+                    
+                    
+                    
+                    
+                    <div class="article-post">
+                        
+
+<p>I&rsquo;ve some project stored separated in 3 git-host providers: Github, Gitlab, and Bitbucket. Because I was a low-profile software engineer, I use both in Gitlab and Bitbucket for the private repository and Github for public repository XD.</p>
+
+<p>I like Github very much, but my current financial status forced me to reduce any not so important cost just for my personal hobby and private projects XD.</p>
+
+<p>So, a few days ago, I&rsquo;m trying to create a project of Golang and stored it in Gitlab. And this project has 2 dependencies to my other library. One of them stored in Bitbucket, and another one in Gitlab.</p>
+
+<p>To simplify, I will tell it in an example. Let&rsquo;s say I have 3 projects.</p>
+
+<ul>
+<li><code>math</code> library project in bitbucket (private repository)</li>
+<li><code>multiply</code> library project in Gitlab (private repository)</li>
+<li><code>samplecool</code> project in Gitlab(private repository)</li>
+</ul>
+
+<p>So, the <code>samplecool</code> project use the <code>math</code> and the <code>multiply</code> as its dependencies, means, the <code>math</code> and <code>multiply</code> is imported in <code>samplecool</code> project.</p>
+
+<pre><code class="language-go">package samplecool
+import(
+  &quot;bitbucket.org/bxcodec/math&quot;
+  &quot;gitlab.com/bxcodec/multiply&quot;
+)
+</code></pre>
+
+<p>And when I trying to go get the samplecool&rsquo;s dependencies, this error happens:</p>
+
+<pre><code class="language-shell">$ go get -v
+# cd .; git ls-remote https://bitbucket.org/bxcodec/math
+fatal: could not read Username for 'https://bitbucket.org': terminal prompts disabled
+go: missing Mercurial command. See https://golang.org/s/gogetcmd
+package bitbucket.org/bxcodec/math: https://api.bitbucket.org/2.0/repositories/bxcodec/math?fields=scm: 403 Forbidden
+Fetching https://gitlab.com/bxcodec/multiply?go-get=1
+Parsing meta tags from https://gitlab.com/bxcodec/multiply?go-get=1 (status code 200)
+get &quot;gitlab.com/bxcodec/multiply&quot;: found meta tag get.metaImport{Prefix:&quot;gitlab.com/bxcodec/multiply&quot;, VCS:&quot;git&quot;, RepoRoot:&quot;https://gitlab.com/bxcodec/multiply.git&quot;} at https://gitlab.com/bxcodec/multiply?go-get=1
+gitlab.com/bxcodec/multiply (download)
+# cd .; git clone https://gitlab.com/bxcodec/multiply.git /Users/imantumorang/go/src/gitlab.com/bxcodec/multiply
+Cloning into '/Users/imantumorang/go/src/gitlab.com/bxcodec/multiply'...
+fatal: could not read Username for 'https://gitlab.com': terminal prompts disabled
+package gitlab.com/bxcodec/multiply: exit status 128
+</code></pre>
+
+<p>If we look for more detail, the errors I found is:</p>
+
+<pre><code class="language-shell">fatal: could not read Username for 'githost.something': terminal prompts disabled
+</code></pre>
+
+<p>I see the similar error happened here. After finding the solution on the internet, I found a few commands that help me to solve this.</p>
+
+<h2 id="fixing-fatal-could-not-read-username-for-gitlab-terminal-prompts-disabled">Fixing fatal: could not read Username for Gitlab: terminal prompts disabled</h2>
+
+<p>For Gitlab case, This command should fix this error:</p>
+
+<pre><code class="language-shell">git config --global url.&quot;git@gitlab.com:&quot;.insteadOf &quot;https://gitlab.com/&quot;
+</code></pre>
+
+<p>This will use our <code>/.ssh</code>, so make sure our ssh key exists and registered in our Gitlab.</p>
+
+<p>To ensure this command works, when we see in <code>.gitconfig</code> there will be an addition to the <code>.gitconfig</code> something like this:</p>
+
+<pre><code class="language-shell">$ cat ~/.gitconfig
+[url &quot;git@gitlab.com:&quot;]
+ insteadOf = https://gitlab.com/
+</code></pre>
+
+<h2 id="fixing-fatal-could-not-read-username-for-bitbucket-terminal-prompts-disabled">Fixing fatal: could not read Username for Bitbucket: terminal prompts disabled</h2>
+
+<p>The same goes for bitbucket.</p>
+
+<pre><code class="language-shell">git config --global url.&quot;git@bitbucket.org:&quot;.insteadOf &quot;https://bitbucket.org/&quot;
+</code></pre>
+
+<p>And my <code>.gitconfig</code> will changed into like this below:</p>
+
+<pre><code class="language-shell">$ cat ~/.gitconfig
+[url &quot;git@gitlab.com:&quot;]
+ insteadOf = https://gitlab.com/
+[url &quot;git@bitbucket.org:&quot;]
+ insteadOf = https://bitbucket.org/
+</code></pre>
+
+<p>After doing this in both Gitlab and Bitbucket, now I can <code>go get</code> all the dependencies.
+And this also works for Github too. If you try to GitHub, just change the URL target and URL origin.</p>
+
+<pre><code class="language-shell">git config --global url.&quot;git@github.com:&quot;.insteadOf &quot;https://github.com/&quot;
+</code></pre>
+
+<hr />
+
+<p>References:</p>
+
+<ul>
+<li><a href="https://bykov.tech/2016/05/31/using-standard-command-go-get-for-private-golang-packages-on-gitlab-com/">https://bykov.tech/2016/05/31/using-standard-command-go-get-for-private-golang-packages-on-gitlab-com/</a></li>
+</ul>
+
+<hr />
+
+<p><em>Originally posted at: <a href="https://medium.com/easyread/today-i-learned-fix-go-get-private-repository-return-error-terminal-prompts-disabled-8c5549d89045">https://medium.com/easyread/today-i-learned-fix-go-get-private-repository-return-error-terminal-prompts-disabled-8c5549d89045</a></em></p>
+
+                    </div>
+                    
+                    
+                    <div class="after-post-tags">
+                        <ul class="tags">
+                        
+                        <li>
+                        <a href="/tags/golang">golang</a>
+                        </li>
+                        
+                        <li>
+                        <a href="/tags/til">til</a>
+                        </li>
+                        
+                        <li>
+                        <a href="/tags/programming">programming</a>
+                        </li>
+                        
+                        <li>
+                        <a href="/tags/git">git</a>
+                        </li>
+                        
+                        <li>
+                        <a href="/tags/go">go</a>
+                        </li>
+                        
+                        <li>
+                        <a href="/tags/error">error</a>
+                        </li>
+                        
+                        </ul>
+                    </div>
+                    
+                    
+                    
+                    <div class="row PageNavigation d-flex justify-content-between font-weight-bold">
+                    
+                        <a class="prev d-block col-md-6" href="/posts/integration-test-with-database-in-golang/"> &laquo; Integration Test With Database in Golang</a>
+                    
+                    
+                        <a class="next d-block col-md-6 text-lg-right" href="/posts/ci/cd-at-kurio-backend-with-buddy.works/">CI/CD at Kurio Backend with Buddy.Works &raquo;</a>
+                    
+                    <div class="clearfix"></div>
+                    </div>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+         
+        
+<div class="container">
+    <div id="comments" class="row justify-content-center mb-5">
+        <div class="col-md-8">           
+            <div id="disqus_thread"></div>
+<script type="application/javascript">
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "iman-tumorang" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>               
+        </div>
+    </div>
+</div>
+
+
+ 
+    </div>
+<div class="alertbar">
+	<div class="container text-center">
+        <span>
+            
+                <span style="font-family:Righteous;">Letters From Iman</span>
+            
+            &nbsp; Never miss a <b>story</b>, subscribe to my newsletter
+        </span>
+
+        <form action="#ZgotmplZ" method="post" name="mc-embedded-subscribe-form" target="_blank" novalidate>
+		<input type="email" placeholder="Email" name="EMAIL" autocomplete="on" required>
+	    	
+	    	<div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="b_4711b43114f183e963e2f7193_0d2c555b4a" tabindex="-1" value=""></div>
+		<input type="submit" value="Subscribe" name="subscribe" >
+        </form>
+
+	</div>
+</div> 
+
+            </div>
+    
+<footer class="footer">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 col-sm-6 text-center text-lg-left">
+                &copy; Copyright Iman Tumorang @bxcodec.io - All rights reserved
+            </div>
+            <div class="col-md-6 col-sm-6 text-center text-lg-right">    
+                
+            </div>
+        </div>
+    </div>
+</footer>
+
+        </div>
+
+    
+<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>    
+    
+<script src="/js/mediumish.js"></script>
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+	ga('create', 'UA-106812096-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+
+    </body>
+</html>
