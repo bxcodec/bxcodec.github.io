@@ -40,11 +40,29 @@
     </item>
     
     <item>
+      <title>Container</title>
+      <link>https://bxcodec.io/tags/container/</link>
+      <pubDate>Tue, 29 Jan 2019 08:13:07 +0700</pubDate>
+      
+      <guid>https://bxcodec.io/tags/container/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>Deployment</title>
       <link>https://bxcodec.io/tags/deployment/</link>
-      <pubDate>Fri, 25 Jan 2019 09:14:07 +0700</pubDate>
+      <pubDate>Tue, 29 Jan 2019 08:13:07 +0700</pubDate>
       
       <guid>https://bxcodec.io/tags/deployment/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Docker</title>
+      <link>https://bxcodec.io/tags/docker/</link>
+      <pubDate>Tue, 29 Jan 2019 08:13:07 +0700</pubDate>
+      
+      <guid>https://bxcodec.io/tags/docker/</guid>
       <description></description>
     </item>
     
@@ -112,11 +130,29 @@
     </item>
     
     <item>
+      <title>Google Cloud Platform</title>
+      <link>https://bxcodec.io/tags/google-cloud-platform/</link>
+      <pubDate>Tue, 29 Jan 2019 08:13:07 +0700</pubDate>
+      
+      <guid>https://bxcodec.io/tags/google-cloud-platform/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>Integration Testing</title>
       <link>https://bxcodec.io/tags/integration-testing/</link>
       <pubDate>Fri, 25 Jan 2019 09:14:07 +0700</pubDate>
       
       <guid>https://bxcodec.io/tags/integration-testing/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Kubernetes</title>
+      <link>https://bxcodec.io/tags/kubernetes/</link>
+      <pubDate>Tue, 29 Jan 2019 08:13:07 +0700</pubDate>
+      
+      <guid>https://bxcodec.io/tags/kubernetes/</guid>
       <description></description>
     </item>
     

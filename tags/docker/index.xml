@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Docker on Letters From Iman</title>
+    <link>https://bxcodec.io/tags/docker/</link>
+    <description>Recent content in Docker on Letters From Iman</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>Iman Tumorang @bxcodec.io - All rights reserved</copyright>
+    <lastBuildDate>Tue, 29 Jan 2019 08:13:07 +0700</lastBuildDate>
+    
+	<atom:link href="https://bxcodec.io/tags/docker/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Mount file to Kubernetes Pod, without Deleting the Existing File — in the Docker-Container in the Same Directory</title>
+      <link>https://bxcodec.io/posts/mount-file-to-kubernetes-pod-without-deleting-the-existing-file-in-the-docker-container-in-the-same-directory/</link>
+      <pubDate>Tue, 29 Jan 2019 08:13:07 +0700</pubDate>
+      
+      <guid>https://bxcodec.io/posts/mount-file-to-kubernetes-pod-without-deleting-the-existing-file-in-the-docker-container-in-the-same-directory/</guid>
+      <description>A few weeks ago, I made a simple application named tweetor that was about a simple tutorial to create Kubenernetes Clusters in Google Cloud Platform (GCP).</description>
+    </item>
+    
+  </channel>
+</rss>
