@@ -7,10 +7,19 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>Iman Tumorang @bxcodec.io - All rights reserved</copyright>
-    <lastBuildDate>Tue, 29 Jan 2019 08:13:07 +0700</lastBuildDate>
+    <lastBuildDate>Thu, 07 Feb 2019 04:14:07 +0700</lastBuildDate>
     
 	<atom:link href="https://bxcodec.io/posts/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>The Evolutions of Git Commit Message Conventions in Kurio</title>
+      <link>https://bxcodec.io/posts/the-evolutions-of-git-commit-message-conventions-in-kurio/</link>
+      <pubDate>Thu, 07 Feb 2019 04:14:07 +0700</pubDate>
+      
+      <guid>https://bxcodec.io/posts/the-evolutions-of-git-commit-message-conventions-in-kurio/</guid>
+      <description>We in Kurio use Github as our version control system.</description>
+    </item>
     
     <item>
       <title>Mount file to Kubernetes Pod, without Deleting the Existing File — in the Docker-Container in the Same Directory</title>

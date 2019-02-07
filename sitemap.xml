@@ -3,6 +3,11 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://bxcodec.io/posts/the-evolutions-of-git-commit-message-conventions-in-kurio/</loc>
+    <lastmod>2019-02-07T04:14:07+07:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://bxcodec.io/posts/mount-file-to-kubernetes-pod-without-deleting-the-existing-file-in-the-docker-container-in-the-same-directory/</loc>
     <lastmod>2019-01-29T08:13:07+07:00</lastmod>
   </url>
@@ -162,7 +167,19 @@
   
   <url>
     <loc>https://bxcodec.io/tags/git/</loc>
-    <lastmod>2019-01-24T04:14:07+07:00</lastmod>
+    <lastmod>2019-02-07T04:14:07+07:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://bxcodec.io/categories/git/</loc>
+    <lastmod>2019-02-07T04:14:07+07:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://bxcodec.io/tags/git-commit/</loc>
+    <lastmod>2019-02-07T04:14:07+07:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -174,7 +191,7 @@
   
   <url>
     <loc>https://bxcodec.io/tags/github/</loc>
-    <lastmod>2019-01-23T04:14:07+07:00</lastmod>
+    <lastmod>2019-02-07T04:14:07+07:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -185,13 +202,13 @@
   </url>
   
   <url>
-    <loc>https://bxcodec.io/categories/golang/</loc>
+    <loc>https://bxcodec.io/tags/golang/</loc>
     <lastmod>2019-01-25T09:14:07+07:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://bxcodec.io/tags/golang/</loc>
+    <loc>https://bxcodec.io/categories/golang/</loc>
     <lastmod>2019-01-25T09:14:07+07:00</lastmod>
     <priority>0</priority>
   </url>
@@ -209,14 +226,20 @@
   </url>
   
   <url>
+    <loc>https://bxcodec.io/tags/kubernetes/</loc>
+    <lastmod>2019-01-29T08:13:07+07:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://bxcodec.io/categories/kubernetes/</loc>
     <lastmod>2019-01-29T08:13:07+07:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://bxcodec.io/tags/kubernetes/</loc>
-    <lastmod>2019-01-29T08:13:07+07:00</lastmod>
+    <loc>https://bxcodec.io/tags/kurio/</loc>
+    <lastmod>2019-02-07T04:14:07+07:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -228,7 +251,7 @@
   
   <url>
     <loc>https://bxcodec.io/</loc>
-    <lastmod>2019-01-29T08:13:07+07:00</lastmod>
+    <lastmod>2019-02-07T04:14:07+07:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -239,26 +262,26 @@
   </url>
   
   <url>
-    <loc>https://bxcodec.io/categories/life/</loc>
-    <lastmod>2018-12-06T05:14:07+07:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
     <loc>https://bxcodec.io/tags/life/</loc>
     <lastmod>2018-12-06T05:14:07+07:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
+    <loc>https://bxcodec.io/categories/life/</loc>
+    <lastmod>2018-12-06T05:14:07+07:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://bxcodec.io/tags/open-source/</loc>
-    <lastmod>2019-01-23T04:14:07+07:00</lastmod>
+    <lastmod>2019-02-07T04:14:07+07:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://bxcodec.io/posts/</loc>
-    <lastmod>2019-01-29T08:13:07+07:00</lastmod>
+    <lastmod>2019-02-07T04:14:07+07:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -269,14 +292,14 @@
   </url>
   
   <url>
-    <loc>https://bxcodec.io/categories/programming/</loc>
-    <lastmod>2019-01-29T08:13:07+07:00</lastmod>
+    <loc>https://bxcodec.io/tags/programming/</loc>
+    <lastmod>2019-01-25T09:14:07+07:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://bxcodec.io/tags/programming/</loc>
-    <lastmod>2019-01-25T09:14:07+07:00</lastmod>
+    <loc>https://bxcodec.io/categories/programming/</loc>
+    <lastmod>2019-02-07T04:14:07+07:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -317,13 +340,13 @@
   </url>
   
   <url>
-    <loc>https://bxcodec.io/categories/testing/</loc>
+    <loc>https://bxcodec.io/tags/testing/</loc>
     <lastmod>2018-05-06T23:11:29+07:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://bxcodec.io/tags/testing/</loc>
+    <loc>https://bxcodec.io/categories/testing/</loc>
     <lastmod>2018-05-06T23:11:29+07:00</lastmod>
     <priority>0</priority>
   </url>
