@@ -34,3 +34,9 @@
 .home-tags > ul.tags li {
      margin-top: 0.60rem
 } 
+
+#subscribe iframe {
+    height: 260px !important;
+    border: none;
+    width: 100%;
+}
