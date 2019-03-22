@@ -7,10 +7,19 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>Iman Tumorang @bxcodec.io - All rights reserved</copyright>
-    <lastBuildDate>Fri, 25 Jan 2019 09:14:07 +0700</lastBuildDate>
+    <lastBuildDate>Fri, 22 Mar 2019 14:14:07 +0700</lastBuildDate>
     
 	<atom:link href="https://bxcodec.io/tags/golang/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Today I Learned: Pass By Reference on Interface Parameter in Golang</title>
+      <link>https://bxcodec.io/posts/today-i-learned-pass-by-reference-on-interface-parameter-in-golang/</link>
+      <pubDate>Fri, 22 Mar 2019 14:14:07 +0700</pubDate>
+      
+      <guid>https://bxcodec.io/posts/today-i-learned-pass-by-reference-on-interface-parameter-in-golang/</guid>
+      <description>Back to the college days, I remember there are 2 ways to pass a parameter to a function.</description>
+    </item>
     
     <item>
       <title>Integration Test With Database in Golang</title>
