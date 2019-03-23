@@ -171,13 +171,13 @@
   </url>
   
   <url>
-    <loc>https://bxcodec.io/categories/git/</loc>
+    <loc>https://bxcodec.io/tags/git/</loc>
     <lastmod>2019-02-07T04:14:07+07:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://bxcodec.io/tags/git/</loc>
+    <loc>https://bxcodec.io/categories/git/</loc>
     <lastmod>2019-02-07T04:14:07+07:00</lastmod>
     <priority>0</priority>
   </url>
@@ -207,14 +207,14 @@
   </url>
   
   <url>
-    <loc>https://bxcodec.io/categories/golang/</loc>
-    <lastmod>2019-01-25T09:14:07+07:00</lastmod>
+    <loc>https://bxcodec.io/tags/golang/</loc>
+    <lastmod>2019-03-22T14:14:07+07:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://bxcodec.io/tags/golang/</loc>
-    <lastmod>2019-03-22T14:14:07+07:00</lastmod>
+    <loc>https://bxcodec.io/categories/golang/</loc>
+    <lastmod>2019-01-25T09:14:07+07:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -231,13 +231,13 @@
   </url>
   
   <url>
-    <loc>https://bxcodec.io/categories/kubernetes/</loc>
+    <loc>https://bxcodec.io/tags/kubernetes/</loc>
     <lastmod>2019-01-29T08:13:07+07:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://bxcodec.io/tags/kubernetes/</loc>
+    <loc>https://bxcodec.io/categories/kubernetes/</loc>
     <lastmod>2019-01-29T08:13:07+07:00</lastmod>
     <priority>0</priority>
   </url>
@@ -267,13 +267,13 @@
   </url>
   
   <url>
-    <loc>https://bxcodec.io/categories/life/</loc>
+    <loc>https://bxcodec.io/tags/life/</loc>
     <lastmod>2018-12-06T05:14:07+07:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://bxcodec.io/tags/life/</loc>
+    <loc>https://bxcodec.io/categories/life/</loc>
     <lastmod>2018-12-06T05:14:07+07:00</lastmod>
     <priority>0</priority>
   </url>
@@ -297,14 +297,14 @@
   </url>
   
   <url>
-    <loc>https://bxcodec.io/categories/programming/</loc>
-    <lastmod>2019-03-22T14:14:07+07:00</lastmod>
+    <loc>https://bxcodec.io/tags/programming/</loc>
+    <lastmod>2019-01-25T09:14:07+07:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://bxcodec.io/tags/programming/</loc>
-    <lastmod>2019-01-25T09:14:07+07:00</lastmod>
+    <loc>https://bxcodec.io/categories/programming/</loc>
+    <lastmod>2019-03-22T14:14:07+07:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -351,25 +351,25 @@
   </url>
   
   <url>
-    <loc>https://bxcodec.io/categories/testing/</loc>
-    <lastmod>2018-05-06T23:11:29+07:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
     <loc>https://bxcodec.io/tags/testing/</loc>
     <lastmod>2018-05-06T23:11:29+07:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://bxcodec.io/categories/til/</loc>
-    <lastmod>2019-03-22T14:14:07+07:00</lastmod>
+    <loc>https://bxcodec.io/categories/testing/</loc>
+    <lastmod>2018-05-06T23:11:29+07:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://bxcodec.io/tags/til/</loc>
+    <lastmod>2019-03-22T14:14:07+07:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://bxcodec.io/categories/til/</loc>
     <lastmod>2019-03-22T14:14:07+07:00</lastmod>
     <priority>0</priority>
   </url>

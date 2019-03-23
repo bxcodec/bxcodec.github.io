@@ -137,7 +137,7 @@
                                     <i class="far fa-star"></i>
                                     Mar 22, 2019
                                     <i class="far fa-clock clock"></i>
-                                    4 min read
+                                    5 min read
                                 </span>					
                             </div>
                         </div>			
@@ -260,9 +260,9 @@ func doSomethinWithThisParam(item *interface{}) {
 
 <h3 id="third-attempt-casting-to-original-type-and-assign-the-value-worked-but">Third Attempt: Casting to Original Type and Assign the Value <em>[Worked but…]</em></h3>
 
-<p>Later, after trying many things, I found a worked one. The parameter is still an interface{}, but instead of directly assign the value, at first I had to cast it back to the original&rsquo;s type. At this time, it&rsquo;s a bit tricky. And we must carefull how to use it. See the difference here below.</p>
+<p>Later, after trying many things, I found a worked one. The parameter is still an interface{}, but instead of directly assign the value, at first I had to cast it back to the original&rsquo;s type. At this time, it&rsquo;s a bit tricky. And we must careful how to use it. See the difference here below.</p>
 
-<p><strong>Not worked one</strong><br/>
+<p><strong>Not worked one</strong> <br/>
 This one example below is not worked.</p>
 
 <pre><code class="language-go">func doSomethinWithThisParam(item interface{}) {
@@ -287,9 +287,25 @@ But this one is worked. </p>
 // Print: {ID:124 Name:Iman Tumorang}
 </code></pre>
 
-<p>Seriously????? 😱</p>
+<p>Seriously????? 😱 <br/>
+At first, I&rsquo;m a bit confused. What is really happening here? How could be when I made like this one it doesn&rsquo;t work.</p>
 
-<p><strong>Another worked one</strong><br/>
+<pre><code class="language-go">origin := item.(*Student)
+ origin = &amp;Student{
+  ID:   &quot;124&quot;,
+  Name: &quot;Iman Tumorang&quot;,
+ }
+</code></pre>
+
+<p>But with this one, it worked.</p>
+
+<pre><code class="language-go">origin := item.(*Student)
+origin.Name = &quot;Iman Tumorang&quot;
+</code></pre>
+
+<p>Need a few minutes to figure this out. But later I understand why this happens.</p>
+
+<p><strong>Another worked one</strong> <br/>
 After figuring the problem, I realized something. The first one is failed since it replaces the address. So instead to replace the address, I try a new approachment that only change the value.</p>
 
 <pre><code class="language-go">func doSomethinWithThisParam(item interface{}) {
@@ -302,6 +318,16 @@ After figuring the problem, I realized something. The first one is failed since 
 }
 // Print: {ID:124 Name:Iman Tumorang}
 </code></pre>
+
+<p>This one is worked well. That made me realized that when we want to change the value in the pointer variable, we need to set directly to the value, not to change address it self.</p>
+
+<p><strong>Final Resolver</strong> <br/>
+So after experimenting with many trials, finally I choose the last one. And because this function that I&rsquo;m working on will a bit generic based on my current task, I transform it and add switch case condition so it will be more generic based on the switch case I made.</p>
+
+<p>In simple, All my works on my current task can be described in this example below. There is a generic function that will accept interface{} and do something inside it. And it supports many structs. </p>
+
+<p>The snippet code would be like this:
+<script src="https://gist.github.com/bxcodec/ae04792eb710eea3a359dcea018bf1c2.js"></script></p>
 
 <h3 id="conclusions">Conclusions</h3>
 
