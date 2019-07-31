@@ -40,3 +40,14 @@
     border: none;
     width: 100%;
 }
+
+figure { 
+    text-align: center !important;
+    font-style: italic !important;
+    font-size: smaller !important;
+    text-indent: 0 !important;
+}
+
+img.scaled {
+    width: 100%;
+}

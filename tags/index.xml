@@ -7,85 +7,85 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>Iman Tumorang @bxcodec.io - All rights reserved</copyright>
-    <lastBuildDate>Sun, 02 Dec 2018 08:48:07 +0700</lastBuildDate>
+    <lastBuildDate>Wed, 31 Jul 2019 23:00:07 +0700</lastBuildDate>
     
 	<atom:link href="https://bxcodec.io/tags/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
-      <title>Bxcodec</title>
-      <link>https://bxcodec.io/tags/bxcodec/</link>
-      <pubDate>Sun, 02 Dec 2018 08:48:07 +0700</pubDate>
-      
-      <guid>https://bxcodec.io/tags/bxcodec/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Careers</title>
-      <link>https://bxcodec.io/tags/careers/</link>
-      <pubDate>Sun, 02 Dec 2018 08:48:07 +0700</pubDate>
-      
-      <guid>https://bxcodec.io/tags/careers/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Ci/Cd</title>
-      <link>https://bxcodec.io/tags/ci/cd/</link>
-      <pubDate>Fri, 25 Jan 2019 09:14:07 +0700</pubDate>
-      
-      <guid>https://bxcodec.io/tags/ci/cd/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Container</title>
-      <link>https://bxcodec.io/tags/container/</link>
-      <pubDate>Tue, 29 Jan 2019 08:13:07 +0700</pubDate>
-      
-      <guid>https://bxcodec.io/tags/container/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Deployment</title>
-      <link>https://bxcodec.io/tags/deployment/</link>
-      <pubDate>Tue, 29 Jan 2019 08:13:07 +0700</pubDate>
-      
-      <guid>https://bxcodec.io/tags/deployment/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Docker</title>
+      <title>docker</title>
       <link>https://bxcodec.io/tags/docker/</link>
-      <pubDate>Tue, 29 Jan 2019 08:13:07 +0700</pubDate>
+      <pubDate>Wed, 31 Jul 2019 23:00:07 +0700</pubDate>
       
       <guid>https://bxcodec.io/tags/docker/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>Error</title>
-      <link>https://bxcodec.io/tags/error/</link>
-      <pubDate>Thu, 24 Jan 2019 04:14:07 +0700</pubDate>
+      <title>golang</title>
+      <link>https://bxcodec.io/tags/golang/</link>
+      <pubDate>Wed, 31 Jul 2019 23:00:07 +0700</pubDate>
       
-      <guid>https://bxcodec.io/tags/error/</guid>
+      <guid>https://bxcodec.io/tags/golang/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>Faker</title>
-      <link>https://bxcodec.io/tags/faker/</link>
-      <pubDate>Tue, 01 May 2018 11:18:11 +0700</pubDate>
+      <title>kubernetes</title>
+      <link>https://bxcodec.io/tags/kubernetes/</link>
+      <pubDate>Wed, 31 Jul 2019 23:00:07 +0700</pubDate>
       
-      <guid>https://bxcodec.io/tags/faker/</guid>
+      <guid>https://bxcodec.io/tags/kubernetes/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>Git</title>
+      <title>openapi</title>
+      <link>https://bxcodec.io/tags/openapi/</link>
+      <pubDate>Wed, 31 Jul 2019 23:00:07 +0700</pubDate>
+      
+      <guid>https://bxcodec.io/tags/openapi/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>rest</title>
+      <link>https://bxcodec.io/tags/rest/</link>
+      <pubDate>Wed, 31 Jul 2019 23:00:07 +0700</pubDate>
+      
+      <guid>https://bxcodec.io/tags/rest/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>sliceofcode</title>
+      <link>https://bxcodec.io/tags/sliceofcode/</link>
+      <pubDate>Fri, 22 Mar 2019 14:14:07 +0700</pubDate>
+      
+      <guid>https://bxcodec.io/tags/sliceofcode/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>til</title>
+      <link>https://bxcodec.io/tags/til/</link>
+      <pubDate>Fri, 22 Mar 2019 14:14:07 +0700</pubDate>
+      
+      <guid>https://bxcodec.io/tags/til/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>todayilearned</title>
+      <link>https://bxcodec.io/tags/todayilearned/</link>
+      <pubDate>Fri, 22 Mar 2019 14:14:07 +0700</pubDate>
+      
+      <guid>https://bxcodec.io/tags/todayilearned/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>git</title>
       <link>https://bxcodec.io/tags/git/</link>
       <pubDate>Thu, 07 Feb 2019 04:14:07 +0700</pubDate>
       
@@ -94,7 +94,7 @@
     </item>
     
     <item>
-      <title>Git Commit</title>
+      <title>git-commit</title>
       <link>https://bxcodec.io/tags/git-commit/</link>
       <pubDate>Thu, 07 Feb 2019 04:14:07 +0700</pubDate>
       
@@ -103,16 +103,7 @@
     </item>
     
     <item>
-      <title>Git Flow</title>
-      <link>https://bxcodec.io/tags/git-flow/</link>
-      <pubDate>Sun, 06 May 2018 23:03:29 +0700</pubDate>
-      
-      <guid>https://bxcodec.io/tags/git-flow/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Github</title>
+      <title>github</title>
       <link>https://bxcodec.io/tags/github/</link>
       <pubDate>Thu, 07 Feb 2019 04:14:07 +0700</pubDate>
       
@@ -121,20 +112,20 @@
     </item>
     
     <item>
-      <title>Go</title>
-      <link>https://bxcodec.io/tags/go/</link>
-      <pubDate>Thu, 24 Jan 2019 04:14:07 +0700</pubDate>
+      <title>kurio</title>
+      <link>https://bxcodec.io/tags/kurio/</link>
+      <pubDate>Thu, 07 Feb 2019 04:14:07 +0700</pubDate>
       
-      <guid>https://bxcodec.io/tags/go/</guid>
+      <guid>https://bxcodec.io/tags/kurio/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>Golang</title>
-      <link>https://bxcodec.io/tags/golang/</link>
-      <pubDate>Fri, 22 Mar 2019 14:14:07 +0700</pubDate>
+      <title>open-source</title>
+      <link>https://bxcodec.io/tags/open-source/</link>
+      <pubDate>Thu, 07 Feb 2019 04:14:07 +0700</pubDate>
       
-      <guid>https://bxcodec.io/tags/golang/</guid>
+      <guid>https://bxcodec.io/tags/open-source/</guid>
       <description></description>
     </item>
     
@@ -148,7 +139,34 @@
     </item>
     
     <item>
-      <title>Integration Testing</title>
+      <title>container</title>
+      <link>https://bxcodec.io/tags/container/</link>
+      <pubDate>Tue, 29 Jan 2019 08:13:07 +0700</pubDate>
+      
+      <guid>https://bxcodec.io/tags/container/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>deployment</title>
+      <link>https://bxcodec.io/tags/deployment/</link>
+      <pubDate>Tue, 29 Jan 2019 08:13:07 +0700</pubDate>
+      
+      <guid>https://bxcodec.io/tags/deployment/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>ci/cd</title>
+      <link>https://bxcodec.io/tags/ci/cd/</link>
+      <pubDate>Fri, 25 Jan 2019 09:14:07 +0700</pubDate>
+      
+      <guid>https://bxcodec.io/tags/ci/cd/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>integration-testing</title>
       <link>https://bxcodec.io/tags/integration-testing/</link>
       <pubDate>Fri, 25 Jan 2019 09:14:07 +0700</pubDate>
       
@@ -157,70 +175,7 @@
     </item>
     
     <item>
-      <title>Kubernetes</title>
-      <link>https://bxcodec.io/tags/kubernetes/</link>
-      <pubDate>Tue, 29 Jan 2019 08:13:07 +0700</pubDate>
-      
-      <guid>https://bxcodec.io/tags/kubernetes/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Kurio</title>
-      <link>https://bxcodec.io/tags/kurio/</link>
-      <pubDate>Thu, 07 Feb 2019 04:14:07 +0700</pubDate>
-      
-      <guid>https://bxcodec.io/tags/kurio/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Layout</title>
-      <link>https://bxcodec.io/tags/layout/</link>
-      <pubDate>Sun, 02 Dec 2018 08:48:07 +0700</pubDate>
-      
-      <guid>https://bxcodec.io/tags/layout/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Library</title>
-      <link>https://bxcodec.io/tags/library/</link>
-      <pubDate>Tue, 01 May 2018 11:18:11 +0700</pubDate>
-      
-      <guid>https://bxcodec.io/tags/library/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Life</title>
-      <link>https://bxcodec.io/tags/life/</link>
-      <pubDate>Thu, 06 Dec 2018 05:14:07 +0700</pubDate>
-      
-      <guid>https://bxcodec.io/tags/life/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Open Source</title>
-      <link>https://bxcodec.io/tags/open-source/</link>
-      <pubDate>Thu, 07 Feb 2019 04:14:07 +0700</pubDate>
-      
-      <guid>https://bxcodec.io/tags/open-source/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Programmer</title>
-      <link>https://bxcodec.io/tags/programmer/</link>
-      <pubDate>Thu, 17 May 2018 22:20:50 +0700</pubDate>
-      
-      <guid>https://bxcodec.io/tags/programmer/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Programming</title>
+      <title>programming</title>
       <link>https://bxcodec.io/tags/programming/</link>
       <pubDate>Fri, 25 Jan 2019 09:14:07 +0700</pubDate>
       
@@ -229,88 +184,7 @@
     </item>
     
     <item>
-      <title>Pull Request</title>
-      <link>https://bxcodec.io/tags/pull-request/</link>
-      <pubDate>Wed, 23 Jan 2019 04:14:07 +0700</pubDate>
-      
-      <guid>https://bxcodec.io/tags/pull-request/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Saint</title>
-      <link>https://bxcodec.io/tags/saint/</link>
-      <pubDate>Tue, 01 May 2018 11:15:02 +0700</pubDate>
-      
-      <guid>https://bxcodec.io/tags/saint/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Shell</title>
-      <link>https://bxcodec.io/tags/shell/</link>
-      <pubDate>Tue, 22 Jan 2019 04:14:07 +0700</pubDate>
-      
-      <guid>https://bxcodec.io/tags/shell/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Sliceofcode</title>
-      <link>https://bxcodec.io/tags/sliceofcode/</link>
-      <pubDate>Fri, 22 Mar 2019 14:14:07 +0700</pubDate>
-      
-      <guid>https://bxcodec.io/tags/sliceofcode/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Software Engineer</title>
-      <link>https://bxcodec.io/tags/software-engineer/</link>
-      <pubDate>Sun, 02 Dec 2018 08:48:07 +0700</pubDate>
-      
-      <guid>https://bxcodec.io/tags/software-engineer/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Startup</title>
-      <link>https://bxcodec.io/tags/startup/</link>
-      <pubDate>Tue, 01 May 2018 11:09:30 +0700</pubDate>
-      
-      <guid>https://bxcodec.io/tags/startup/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Testing</title>
-      <link>https://bxcodec.io/tags/testing/</link>
-      <pubDate>Sun, 06 May 2018 23:11:29 +0700</pubDate>
-      
-      <guid>https://bxcodec.io/tags/testing/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Til</title>
-      <link>https://bxcodec.io/tags/til/</link>
-      <pubDate>Fri, 22 Mar 2019 14:14:07 +0700</pubDate>
-      
-      <guid>https://bxcodec.io/tags/til/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Todayilearned</title>
-      <link>https://bxcodec.io/tags/todayilearned/</link>
-      <pubDate>Fri, 22 Mar 2019 14:14:07 +0700</pubDate>
-      
-      <guid>https://bxcodec.io/tags/todayilearned/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Travis</title>
+      <title>travis</title>
       <link>https://bxcodec.io/tags/travis/</link>
       <pubDate>Fri, 25 Jan 2019 09:14:07 +0700</pubDate>
       
@@ -319,16 +193,88 @@
     </item>
     
     <item>
-      <title>Unit Testing</title>
-      <link>https://bxcodec.io/tags/unit-testing/</link>
-      <pubDate>Sun, 06 May 2018 23:11:29 +0700</pubDate>
+      <title>error</title>
+      <link>https://bxcodec.io/tags/error/</link>
+      <pubDate>Thu, 24 Jan 2019 04:14:07 +0700</pubDate>
       
-      <guid>https://bxcodec.io/tags/unit-testing/</guid>
+      <guid>https://bxcodec.io/tags/error/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>Web</title>
+      <title>go</title>
+      <link>https://bxcodec.io/tags/go/</link>
+      <pubDate>Thu, 24 Jan 2019 04:14:07 +0700</pubDate>
+      
+      <guid>https://bxcodec.io/tags/go/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>pull-request</title>
+      <link>https://bxcodec.io/tags/pull-request/</link>
+      <pubDate>Wed, 23 Jan 2019 04:14:07 +0700</pubDate>
+      
+      <guid>https://bxcodec.io/tags/pull-request/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>shell</title>
+      <link>https://bxcodec.io/tags/shell/</link>
+      <pubDate>Tue, 22 Jan 2019 04:14:07 +0700</pubDate>
+      
+      <guid>https://bxcodec.io/tags/shell/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>life</title>
+      <link>https://bxcodec.io/tags/life/</link>
+      <pubDate>Thu, 06 Dec 2018 05:14:07 +0700</pubDate>
+      
+      <guid>https://bxcodec.io/tags/life/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>bxcodec</title>
+      <link>https://bxcodec.io/tags/bxcodec/</link>
+      <pubDate>Sun, 02 Dec 2018 08:48:07 +0700</pubDate>
+      
+      <guid>https://bxcodec.io/tags/bxcodec/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>careers</title>
+      <link>https://bxcodec.io/tags/careers/</link>
+      <pubDate>Sun, 02 Dec 2018 08:48:07 +0700</pubDate>
+      
+      <guid>https://bxcodec.io/tags/careers/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>layout</title>
+      <link>https://bxcodec.io/tags/layout/</link>
+      <pubDate>Sun, 02 Dec 2018 08:48:07 +0700</pubDate>
+      
+      <guid>https://bxcodec.io/tags/layout/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>software-engineer</title>
+      <link>https://bxcodec.io/tags/software-engineer/</link>
+      <pubDate>Sun, 02 Dec 2018 08:48:07 +0700</pubDate>
+      
+      <guid>https://bxcodec.io/tags/software-engineer/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>web</title>
       <link>https://bxcodec.io/tags/web/</link>
       <pubDate>Sun, 02 Dec 2018 08:48:07 +0700</pubDate>
       
@@ -337,11 +283,83 @@
     </item>
     
     <item>
-      <title>Writer</title>
+      <title>programmer</title>
+      <link>https://bxcodec.io/tags/programmer/</link>
+      <pubDate>Thu, 17 May 2018 22:20:50 +0700</pubDate>
+      
+      <guid>https://bxcodec.io/tags/programmer/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>testing</title>
+      <link>https://bxcodec.io/tags/testing/</link>
+      <pubDate>Sun, 06 May 2018 23:11:29 +0700</pubDate>
+      
+      <guid>https://bxcodec.io/tags/testing/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>unit-testing</title>
+      <link>https://bxcodec.io/tags/unit-testing/</link>
+      <pubDate>Sun, 06 May 2018 23:11:29 +0700</pubDate>
+      
+      <guid>https://bxcodec.io/tags/unit-testing/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>git-flow</title>
+      <link>https://bxcodec.io/tags/git-flow/</link>
+      <pubDate>Sun, 06 May 2018 23:03:29 +0700</pubDate>
+      
+      <guid>https://bxcodec.io/tags/git-flow/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>writer</title>
       <link>https://bxcodec.io/tags/writer/</link>
       <pubDate>Tue, 01 May 2018 17:59:14 +0700</pubDate>
       
       <guid>https://bxcodec.io/tags/writer/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>faker</title>
+      <link>https://bxcodec.io/tags/faker/</link>
+      <pubDate>Tue, 01 May 2018 11:18:11 +0700</pubDate>
+      
+      <guid>https://bxcodec.io/tags/faker/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>library</title>
+      <link>https://bxcodec.io/tags/library/</link>
+      <pubDate>Tue, 01 May 2018 11:18:11 +0700</pubDate>
+      
+      <guid>https://bxcodec.io/tags/library/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>saint</title>
+      <link>https://bxcodec.io/tags/saint/</link>
+      <pubDate>Tue, 01 May 2018 11:15:02 +0700</pubDate>
+      
+      <guid>https://bxcodec.io/tags/saint/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>startup</title>
+      <link>https://bxcodec.io/tags/startup/</link>
+      <pubDate>Tue, 01 May 2018 11:09:30 +0700</pubDate>
+      
+      <guid>https://bxcodec.io/tags/startup/</guid>
       <description></description>
     </item>
     
