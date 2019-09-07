@@ -1,0 +1,512 @@
+<!DOCTYPE html>
+<html lang="en-us"><head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <meta name="generator" content="Hugo 0.57.0-DEV" />
+	
+
+	<title>
+		 
+		Today I Learned: Enabling Horizontal Pod Autoscaler(HPA) in Kubernetes-Letters From Iman
+		
+
+	</title>
+
+	<meta property="og:title" content="Today I Learned: Enabling Horizontal Pod Autoscaler(HPA) in Kubernetes - Letters From Iman" /> 
+	<meta property="og:description" content="It&rsquo;s been a while I didn&rsquo;t post any updates. It&rsquo;s so busy lately, and it&rsquo;s hard to find free time to write an article in this past few weeks." />
+	<meta property="og:type" content="article" />
+	<meta property="og:url" content="https://bxcodec.io/posts/today-i-learned-enabling-horizontal-pod-autoscalerhpa-in-kubernetes/" />
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp"
+	 crossorigin="anonymous">
+	<link href="https://fonts.googleapis.com/css?family=Righteous%7CMerriweather:300,300i,400,400i,700,700i" rel="stylesheet">
+	<link href="/css/medium.css" rel="stylesheet">
+	<link href="/css/additional.css" rel="stylesheet">
+	<link rel="icon" href="https://bxcodec.io/favicon.ico">
+	<link rel="apple-touch-icon" href="https://bxcodec.io/apple-touch-icon.png"/>
+	
+	<meta property="og:image" content="https://cdn-images-1.medium.com/max/1440/0*KmYKiSJlee713jGB"/>
+	<meta property="og:image:secure_url" content="https://cdn-images-1.medium.com/max/1440/0*KmYKiSJlee713jGB"/>
+	<meta name="twitter:card" content="summary_large_image" />
+		
+	<meta name="twitter:site" content="@bxcodec.io" />
+	
+	<meta name="twitter:creator" content="@bxcodec" />
+	
+	
+</head>
+<body>
+<nav class="navbar navbar-expand-lg navbar-light bg-white fixed-top mediumnavigation nav-down">
+    <div class="container pr-0">
+        
+        <a class="navbar-brand" href="https://bxcodec.io">
+
+            
+            <span style="font-family:Righteous;">Letters From Iman</span>
+            
+        </a>
+        
+
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarMediumish" aria-controls="navbarSupportedContent"
+            aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        
+        <div class="collapse navbar-collapse" id="navbarMediumish">
+            
+            <ul class="navbar-nav ml-auto">
+                 
+                <li class="nav-item ">
+                    <a class="nav-link" href="/posts">Blog</a>
+                </li>
+                 
+                <li class="nav-item ">
+                    <a class="nav-link" href="/">About Me</a>
+                </li>
+                
+            </ul>
+        </div>
+        
+    </div>
+</nav>
+
+
+        <div class="site-content">   
+            <div class="container">
+<div class="mainheading">
+    
+</div><div class="main-content">
+        
+        <div class="container">
+            <div class="row">
+                
+                <div class="col-md-2 pl-0"><div class="share">
+    <p>Share</p>
+    <ul>
+        <li class="ml-1 mr-1">
+        <a target="_blank" href="https://twitter.com/intent/tweet?text=Today%20I%20Learned%3a%20Enabling%20Horizontal%20Pod%20Autoscaler%28HPA%29%20in%20Kubernetes&url=https%3a%2f%2fbxcodec.io%2fposts%2ftoday-i-learned-enabling-horizontal-pod-autoscalerhpa-in-kubernetes%2f" onclick="window.open(this.href, 'twitter-share', 'width=550,height=435');return false;">
+        <i class="fab fa-twitter"></i>
+        </a>
+        </li>
+        
+        <li class="ml-1 mr-1">
+        <a target="_blank" href="https://facebook.com/sharer.php?u=https%3a%2f%2fbxcodec.io%2fposts%2ftoday-i-learned-enabling-horizontal-pod-autoscalerhpa-in-kubernetes%2f" onclick="window.open(this.href, 'facebook-share', 'width=550,height=435');return false;">
+        <i class="fab fa-facebook-f"></i>
+        </a>
+        </li>
+
+        <li class="ml-1 mr-1">
+        <a target="_blank" href="https://www.xing.com/spi/shares/new?url=https%3a%2f%2fbxcodec.io%2fposts%2ftoday-i-learned-enabling-horizontal-pod-autoscalerhpa-in-kubernetes%2f" onclick="window.open(this.href, 'xing-share', 'width=550,height=435');return false;">
+        <i class="fab fa-xing"></i>
+        </a>
+        </li>        
+    </ul>
+
+    
+        <div class="sep">
+        </div>				
+        <ul>
+            <li> 
+            <a  class="small smoothscroll" href="#disqus_thread"></a>
+            </li>
+        </ul>
+    
+</div></div>
+                                
+                <div class="col-md-9 flex-first flex-md-unordered">
+                    <div class="mainheading">
+                                                                	
+                        
+                        
+                        
+                        <div class="post-top-meta">
+                            <div>
+                                <img class="author-thumb" src="http://gravatar.com/avatar/01e3584fe39eb72335f13243c3a814a2?s=200" alt="Iman Tumorang">
+                            </div>
+                            <div >
+                                <a  href="https://bxcodec.io" class="link-dark">Iman Tumorang</a><br>
+                                <span class="author-description">
+                                    Software Engineer - Writer - Open Source Enthusiast - Startup Enthusiast<br>
+                                    <i class="far fa-star"></i>
+                                    Sep 7, 2019
+                                    <i class="far fa-clock clock"></i>
+                                    5 min read
+                                </span>					
+                            </div>
+                        </div>			
+                        	
+                        
+                                                     
+                        
+                        <h1 class="posttitle">Today I Learned: Enabling Horizontal Pod Autoscaler(HPA) in Kubernetes</h1> 
+                        
+                            <h2 class="subtitle">Solving &#39;Unknown&#39; Current Resource Value in HPA Target to allow horizontal autoscaling in Kubernetes.</h2> 
+                        
+                        
+                    </div>
+
+                    
+                    
+                    
+                    <style>
+                        figure {
+                            width: 95%;
+                            text-align: center !important;
+                            font-style: italic !important;
+                            font-size: smaller !important;
+                            text-indent: 0 !important;
+                            margin: auto;
+                            padding: 0.5em;
+                            color: #aaaaaa;
+                        }
+                        figure a{
+                            color: #aaaaaa;
+                            text-decoration: #aaaaaa;
+                        }
+                        figure  .featured-image{
+                            margin-bottom: 0.5rem;
+                        }
+                        figure img{
+                            margin: auto;
+                        }
+                        img.scaled {
+                            width: 70%;
+                        }
+                    </style>
+
+                    <figure>
+                        <img class="featured-image img-fluid" src="https://cdn-images-1.medium.com/max/1440/0*KmYKiSJlee713jGB" alt="Photo by Paweł Czerwiński on Unsplash.com">
+                        <figcaption>Photo by <a href='https://unsplash.com/@pawel_czerwinski'>Paweł Czerwiński</a> on Unsplash.com</figcaption>
+                    </figure>
+                    <br>
+                    
+                    
+                    
+                    
+                    <div class="article-post">
+                        
+
+<p>It&rsquo;s been a while I didn&rsquo;t post any updates. It&rsquo;s so busy lately, and it&rsquo;s hard to find free time to write an article in this past few weeks. So, in this rare chances, I want to write something that I learn today. </p>
+
+<p>For an introduction, so, currently, I&rsquo;m trying Kubernetes for my side project. It&rsquo;s a side project of a mobile application. The landing page can be seen in <a href="https://mabar.id">https://mabar.id</a> and currently it&rsquo;s only support for android application, can be downloaded from play store <a href="https://play.google.com/store/apps/details?id=id.mabar">here</a>.</p>
+
+<p>I&rsquo;ve been working on this project for a few months, and I do this with my friend. I&rsquo;m working on the backend side, the API, and the Infra side, I use Kubernetes in this project.</p>
+
+<p>So today, I learn something new when trying to implement horizontal scaling with Kubernetes. 
+Previously, Kubernetes actually has an object called HPA (Horizontal Pod Autoscaller). The details about this HPA can be seen in the official <a href="https://kubernetes.io/docs/tasks/run-application/horizontal-pod-autoscale/">documentation</a>. </p>
+
+<p>At first, I think it should be easy to implement this. Just to add the object in the deployment script, and it should be handled by the Kubernetes clusters.</p>
+
+<h2 id="problems">Problems</h2>
+
+<p>But, it&rsquo;s not as easy as that. So, to simulate the real case, I will write how is the actual problem before it solved and how I solve it. </p>
+
+<p>So let&rsquo;s say, I want to deploy the landing page of <a href="https://mabar.id">https://mabar.id</a> in Kubernetes. And I want to add the HPA as well. The reasons to do this:</p>
+
+<ul>
+<li>Want to know how to implement HPA</li>
+<li>Even the landing page is still so new, I believe no one will visit it, but just in case it&rsquo;s has a huge request, just to prepare it anyway :D</li>
+</ul>
+
+<p>At first, after seeing many blog-post and official documentation of Kubernetes, I found how to create HPA for the pod in Kubernetes. </p>
+
+<pre><code class="language-yaml">apiVersion: autoscaling/v2beta1
+kind: HorizontalPodAutoscaler
+metadata:
+  name: landing
+  namespace: landing-page
+spec:
+  scaleTargetRef:
+    apiVersion: apps/v1beta1
+    kind: Deployment
+    name: landing
+  minReplicas: 1
+  maxReplicas: 10
+  metrics:
+  - type: Resource
+    resource:
+      name: cpu
+      targetAverageUtilization: 70
+</code></pre>
+
+<p>Just with this simple script, it should be run automatically. That was my first thought. </p>
+
+<p>So, then, I&rsquo;m trying to test it. I do a load testing to the server.</p>
+
+<pre><code class="language-bash">$ hey -c 50 -z 5m https://mabar.id
+</code></pre>
+
+<p>I&rsquo;m using <a href="https://github.com/rakyll/hey">hey</a> as my load testing tools. I create a 50 concurrent call for 5 minutes to the landing page. </p>
+
+<p>Normally, it should be deployed a new pod replica as the request come become huge and huge. 
+But what I see instead that, my pod is just crashing and restarting. I&rsquo;m curious why this happened.
+And later, after looking for the HPA details, I see a weird thing.</p>
+
+<pre><code class="language-bash">$ kubectl get hpa
+NAME      REFERENCE            TARGETS         MINPODS   MAXPODS   REPLICAS   AGE
+landing   Deployment/landing   &lt;unknown&gt;/70%   1         10        1          74d
+</code></pre>
+
+<p><img src="https://cdn-images-1.medium.com/max/1440/1*uFniFBiVUyKjDmNHGNSuMA.png" alt="Target is unknown in HPA" /></p>
+
+<blockquote>
+<p>Target is unknown in HPA</p>
+</blockquote>
+
+<p>Or in the detail version, with <code>describe</code> command.</p>
+
+<pre><code class="language-bash">$ kubectl describe hpa landing
+</code></pre>
+
+<script src="https://gist.github.com/bxcodec/e5e712d3046f45e0d7995c35082f4c9e.js"></script>
+
+<blockquote>
+<p>hpa describe with unknown current resources</p>
+</blockquote>
+
+<p>In the metrics section, it shows <code>&lt;unknown&gt;/70%</code>. Why does this happen? </p>
+
+<h2 id="solution">Solution</h2>
+
+<p>So after searching for many solutions and StackOverflow question, luckily there&rsquo;s an SO answer that really help me, why my HPA is not working.</p>
+
+<p>So, after I learned from the SO answer, I think my Kubernetes cluster is still doesn&rsquo;t have the metrics server to retrieve the current used resource on the pods. </p>
+
+<p>So the solution is I must install the metric server in my Kubernetes cluster. The metric-server that I need to install can be found in this repository: <a href="https://github.com/kubernetes-incubator/metrics-server">https://github.com/kubernetes-incubator/metrics-server</a></p>
+
+<p>Actually, if we go to the repository, it already shows how to implement the metric-server to Kubernetes cluster. But, I&rsquo;ll copy the steps from the Github repository here.</p>
+
+<p><strong>Steps</strong></p>
+
+<ul>
+<li><p>Clone that repository</p>
+
+<pre><code class="language-bash">$ git clone https://github.com/kubernetes-incubator/metrics-server.git
+.....
+$ cd metrics-server
+</code></pre></li>
+
+<li><p>Deploy the configurations with <code>kubectl</code> command.</p>
+
+<pre><code class="language-bash">$ kubectl apply -f deploy/1.8+/
+</code></pre></li>
+</ul>
+
+<p><img src="https://cdn-images-1.medium.com/max/1440/1*fOdMdoCBwXGx8BmvlvtAGQ.png" alt="apply the metric-server deployment" /></p>
+
+<blockquote>
+<p>apply the metric-server deployment</p>
+</blockquote>
+
+<ul>
+<li><p>And the next step is, to edit the metric-server deployment flag</p>
+
+<pre><code class="language-bash">$ kubectl edit deploy -n kube-system metrics-server
+</code></pre></li>
+
+<li><p>And add the flags arguments as needed. All the available flags can be seen in the Github repository. But I just used the default one that displayed in the github repository</p>
+
+<pre><code class="language-bash">args:
+- --kubelet-insecure-tls
+- --kubelet-preferred-address-types=InternalIP,ExternalIP,Hostname
+</code></pre></li>
+
+<li><p>Add it and save it.</p>
+
+<pre><code class="language-bash">$ kubectl edit deployment metrics-server
+</code></pre></li>
+</ul>
+
+<p><img src="https://cdn-images-1.medium.com/max/1440/1*P59kFoxviTwNB7OAigL7eg.png" alt="Edit the deployment for metrics-server" /></p>
+
+<blockquote>
+<p>Edit the deployment for metrics-server</p>
+</blockquote>
+
+<p><img src="https://cdn-images-1.medium.com/max/1440/1*_R9jbi4o-eHZx2BqP6Z9mA.png" alt="Edit and add the arguments for the containers of metrics-server" /></p>
+
+<blockquote>
+<p>Edit and add the arguments for the containers of metrics-server</p>
+</blockquote>
+
+<p><em>*Oh yeah, the metrics-server will be deployed in kube-system namespace, so if you can&rsquo;t look the deployment name, maybe you can switch the namespace.</em></p>
+
+<ul>
+<li>And after editing the deployment config, the HPA should be working now</li>
+</ul>
+
+<p><img src="https://cdn-images-1.medium.com/max/1440/1*T8u1nRshHk4tXYcDWmfp6g.png" alt="The HPA Status" /></p>
+
+<blockquote>
+<p>The HPA Status</p>
+</blockquote>
+
+<h2 id="testing-the-hpa">Testing the HPA</h2>
+
+<p>And after editing the deployment configurations with the required arguments. The HPA should be working right now. To prove it worked or not, I try to create a load test again with the high concurrent request. And also looking for the HPA details and pods status in Kubernetes. </p>
+
+<p>The HPA already works perfectly now. If the request consumes exceed the target resources, the HPA will deploy a new replica of our pods automatically. And if the request usage goes down again to normal, the HPA will delete our pod&rsquo;s replicas automatically.</p>
+
+<p>This is the screenshot to the HPA status if I watch the HPA in the details.</p>
+
+<p><img src="https://cdn-images-1.medium.com/max/1440/1*p60fLnB724jUcaKYjcGKgQ.png" alt="The HPA detected the current request and add replicas if needed" /></p>
+
+<blockquote>
+<p>The HPA detected the current request and add replicas if needed</p>
+</blockquote>
+
+<p>And this is the screenshot that happening if we watch the pods status. It will deploy a new pod according the HPA status.
+<img src="https://cdn-images-1.medium.com/max/1440/1*xqEoy2nIdhKvIKFrPTSfOA.png" alt="A new pod will deployed automatically" /></p>
+
+<blockquote>
+<p>A new pod will deployed automatically</p>
+</blockquote>
+
+<h2 id="takeaways">Takeaways</h2>
+
+<p>So to enable the HPA, we also need to install the metrics-server in our Kubernetes clusters. It&rsquo;s not enough just have the HPA scripts. Because the HPA will need the metrics-data to do its job.</p>
+
+<p>And well, what I write here is just the default steps, actually, you can customize the deployment config for the metric-server like what Prafull do in his answer in Stackoverflow. </p>
+
+<p>But today, I learned something new to me. It needs 2 hours for me to understand and fix this by myself. Maybe the practice that I made is still not the best one. But for now, it solved my issue. I&rsquo;ll learn the best solution later. </p>
+
+<p>And I look forward to learning something new again in the future related to Kubernetes and Software Engineering.</p>
+
+<hr />
+
+<p>References:</p>
+
+<ul>
+<li><a href="https://stackoverflow.com/a/53727101/4075313">https://stackoverflow.com/a/53727101/4075313</a></li>
+<li><a href="https://github.com/kubernetes-incubator/metrics-server">https://github.com/kubernetes-incubator/metrics-server</a></li>
+</ul>
+
+                    </div>
+
+                    
+<div class="container">
+    <div id="subscribe" class="row justify-content-center mb-5">
+        <div class="col-md-8">           
+           <iframe style="width:100%; height:260px !important; border:none !important;" src="https://upscri.be/eec395-2"></iframe>
+        </div>
+    </div>
+</div>
+
+
+ 
+                    <div class="after-post-tags">
+                        <ul class="tags">
+                        
+                        <li>
+                        <a href="/tags/hpa">hpa</a>
+                        </li>
+                        
+                        <li>
+                        <a href="/tags/horizontal-pod-autoscaler">horizontal-pod-autoscaler</a>
+                        </li>
+                        
+                        <li>
+                        <a href="/tags/deployment">deployment</a>
+                        </li>
+                        
+                        <li>
+                        <a href="/tags/kubernetes">kubernetes</a>
+                        </li>
+                        
+                        <li>
+                        <a href="/tags/autoscaling">autoscaling</a>
+                        </li>
+                        
+                        </ul>
+                    </div>
+                    
+                    
+                    
+                    <div class="row PageNavigation d-flex justify-content-between font-weight-bold">
+                    
+                    
+                        <a class="next d-block col-md-6 text-lg-right" href="/posts/utilize-open-api-3-for-the-faster-software-development-process/">Utilize Open API 3 for the Faster Software Development Process &raquo;</a>
+                    
+                    <div class="clearfix"></div>
+                    </div>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        <br/> 
+        
+<div class="container">
+    <div id="comments" class="row justify-content-center mb-5">
+        <div class="col-md-8">           
+            <div id="disqus_thread"></div>
+<script type="application/javascript">
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "iman-tumorang" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>               
+        </div>
+    </div>
+</div>
+
+
+ 
+    </div>
+
+            </div>
+    
+<footer class="footer">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 col-sm-6 text-center text-lg-left">
+                &copy; Copyright Iman Tumorang @bxcodec.io - All rights reserved
+            </div>
+            <div class="col-md-6 col-sm-6 text-center text-lg-right">    
+                <a target="_blank" href="https://www.wowthemes.net">Mediumish Theme</a> by WowThemes.net
+            </div>
+        </div>
+    </div>
+</footer>
+
+        </div>
+
+    
+<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>    
+    
+<script src="/js/mediumish.js"></script>
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+	ga('create', 'UA-106812096-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+
+    </body>
+</html>

@@ -7,10 +7,55 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>Iman Tumorang @bxcodec.io - All rights reserved</copyright>
-    <lastBuildDate>Wed, 31 Jul 2019 23:00:07 +0700</lastBuildDate>
+    <lastBuildDate>Sat, 07 Sep 2019 15:00:07 +0700</lastBuildDate>
     
 	<atom:link href="https://bxcodec.io/tags/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>autoscaling</title>
+      <link>https://bxcodec.io/tags/autoscaling/</link>
+      <pubDate>Sat, 07 Sep 2019 15:00:07 +0700</pubDate>
+      
+      <guid>https://bxcodec.io/tags/autoscaling/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>deployment</title>
+      <link>https://bxcodec.io/tags/deployment/</link>
+      <pubDate>Sat, 07 Sep 2019 15:00:07 +0700</pubDate>
+      
+      <guid>https://bxcodec.io/tags/deployment/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>horizontal-pod-autoscaler</title>
+      <link>https://bxcodec.io/tags/horizontal-pod-autoscaler/</link>
+      <pubDate>Sat, 07 Sep 2019 15:00:07 +0700</pubDate>
+      
+      <guid>https://bxcodec.io/tags/horizontal-pod-autoscaler/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>hpa</title>
+      <link>https://bxcodec.io/tags/hpa/</link>
+      <pubDate>Sat, 07 Sep 2019 15:00:07 +0700</pubDate>
+      
+      <guid>https://bxcodec.io/tags/hpa/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>kubernetes</title>
+      <link>https://bxcodec.io/tags/kubernetes/</link>
+      <pubDate>Sat, 07 Sep 2019 15:00:07 +0700</pubDate>
+      
+      <guid>https://bxcodec.io/tags/kubernetes/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>docker</title>
@@ -27,15 +72,6 @@
       <pubDate>Wed, 31 Jul 2019 23:00:07 +0700</pubDate>
       
       <guid>https://bxcodec.io/tags/golang/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>kubernetes</title>
-      <link>https://bxcodec.io/tags/kubernetes/</link>
-      <pubDate>Wed, 31 Jul 2019 23:00:07 +0700</pubDate>
-      
-      <guid>https://bxcodec.io/tags/kubernetes/</guid>
       <description></description>
     </item>
     
@@ -144,15 +180,6 @@
       <pubDate>Tue, 29 Jan 2019 08:13:07 +0700</pubDate>
       
       <guid>https://bxcodec.io/tags/container/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>deployment</title>
-      <link>https://bxcodec.io/tags/deployment/</link>
-      <pubDate>Tue, 29 Jan 2019 08:13:07 +0700</pubDate>
-      
-      <guid>https://bxcodec.io/tags/deployment/</guid>
       <description></description>
     </item>
     
