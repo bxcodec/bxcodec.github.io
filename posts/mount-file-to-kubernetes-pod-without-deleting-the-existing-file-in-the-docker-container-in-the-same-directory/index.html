@@ -2,7 +2,7 @@
 <html lang="en-us"><head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-        <meta name="generator" content="Hugo 0.57.0-DEV" />
+        <meta name="generator" content="Hugo 0.63.0-DEV" />
 	
 
 	<title>
@@ -185,109 +185,65 @@
                     
                     
                     <div class="article-post">
-                        
-
-<p>A few weeks ago, I made a simple application named tweetor that was about a simple tutorial to create Kubenernetes Clusters in Google Cloud Platform (GCP). It was the part of a project I made called “Kube X-mas”. This project is a series of article written in Bahasa Indonesia to create a live application in Kubernetes at GCP, you could see the series here: <a href="https://medium.com/easyread/christmas-tale-of-sofware-engineer-project-kube-xmas-9167ebca70d2">https://medium.com/easyread/christmas-tale-of-sofware-engineer-project-kube-xmas-9167ebca70d2</a></p>
-
+                        <p>A few weeks ago, I made a simple application named tweetor that was about a simple tutorial to create Kubenernetes Clusters in Google Cloud Platform (GCP). It was the part of a project I made called “Kube X-mas”. This project is a series of article written in Bahasa Indonesia to create a live application in Kubernetes at GCP, you could see the series here: <a href="https://medium.com/easyread/christmas-tale-of-sofware-engineer-project-kube-xmas-9167ebca70d2">https://medium.com/easyread/christmas-tale-of-sofware-engineer-project-kube-xmas-9167ebca70d2</a></p>
 <p>In that project, I will deploy a Golang application into a Kubernetes cluster in GCP. As we know, when developing an application, it must separate its config file, whether it’s in Environment variable, or just in a config file ( .json, .yaml, .toml, etc). So it can be more flexible, we can change the environment staging, production or testing.</p>
-
 <p>In my case, I will dockerize my application in a Docker image, then when deploying it to Kubernetes, I will use Kubernetes controller to inject the configuration file, so it can run with the injected configuration file.</p>
-
 <p>So, basically, in Kubernetes, we can inject (mount) file into a container. In my case, I will mount a config file of my application into my docker containers. To do this, I can use the Kubernetes ConfigMap and Volumes, it allows us to inject configuration files into our docker application containers.</p>
-
 <h2 id="the-issue">The Issue</h2>
-
 <p>To be clear, I have a Go (Golang) application that builds and containerized in a docker image. This application already compiled and build and saved in a docker image.</p>
-
 <p>This is my <code>Dockerfile</code>.</p>
-
-<script src="https://gist.github.com/bxcodec/232b1c47ca3cd0a15fd0cf770ba7bad5.js"></script>
-
+<!-- raw HTML omitted -->
 <p>So it will create a Docker image that will contain the compiled go application in <code>/app/engine</code>. But this application will need a config file, so it can run and live. I need to inject the config file so it can run.</p>
-
-<p><img src="https://cdn-images-1.medium.com/max/1600/1*a_TDZoHdPpdNWwKuw42Wdg.png" alt="inject the config to docker container" /></p>
-
+<p><img src="https://cdn-images-1.medium.com/max/1600/1*a_TDZoHdPpdNWwKuw42Wdg.png" alt="inject the config to docker container"></p>
 <blockquote>
 <p>inject the config to docker container</p>
 </blockquote>
-
 <p>And then, I use the Kubernetes config maps to inject my application config file.</p>
-
-<script src="https://gist.github.com/bxcodec/e9d4b2794fc1fd1fb23e06020a4c210c.js"></script>
-
+<!-- raw HTML omitted -->
 <p>But, the issue then happen. What I expect is, when injecting this config file on the same path. Let’s say my working directory in the container is <code>/app</code></p>
-
 <p>Previous:</p>
-
 <pre><code>app
 └── engine
-</code></pre>
-
-<p>What I expect after injected the config maps with mount volume:</p>
-
+</code></pre><p>What I expect after injected the config maps with mount volume:</p>
 <pre><code>app
 ├── config.toml
 └── engine
-</code></pre>
-
-<p>What it really happens:</p>
-
+</code></pre><p>What it really happens:</p>
 <pre><code>app
 └── config.toml
-</code></pre>
-
-<p>Instead of adding a new file, the Kubernetes mount volume will replace all the file, and it removes the existing file.</p>
-
+</code></pre><p>Instead of adding a new file, the Kubernetes mount volume will replace all the file, and it removes the existing file.</p>
 <p>I’m stuck in this issue for 4 hours because I don’t realize it first. My pods keep crashing and restarted. Until then, I try to debug it slowly and realized that if I mount a file that will also delete the existing file if it has the same directory.</p>
-
 <h2 id="solutions">Solutions</h2>
-
 <p>After realizing the issue, there are two options I can choose.</p>
-
 <ul>
-<li><p>Separate my working directory in Docker container with the directory of my application in the container. So, instead use the <code>/app</code> as my working directory in the container, I will create a new directory that will my <code>WORKDIR</code>. And I will put my config file in that folder.</p></li>
-
-<li><p>Trying to figure out it until it solved.</p></li>
+<li>
+<p>Separate my working directory in Docker container with the directory of my application in the container. So, instead use the <code>/app</code> as my working directory in the container, I will create a new directory that will my <code>WORKDIR</code>. And I will put my config file in that folder.</p>
+</li>
+<li>
+<p>Trying to figure out it until it solved.</p>
+</li>
 </ul>
-
 <p>Option 1 is really obvious, and it solves the problems. At the time, when facing this issue, I use option 1. But a few days later, just out of curiosity, I try to solve option 2. I try to read again many resources (official documentation) and blog post if any kind of this issue ever happens to anyone and how to fix it.</p>
-
 <p>But, I found nothing, except this <a href="https://blog.sebastian-daschner.com/entries/multiple-kubernetes-volumes-directory">https://blog.sebastian-daschner.com/entries/multiple-kubernetes-volumes-directory</a>. In this article, he explains about multiple Kubernetes volumes directory. So I’m curious if this will also can solve my problem.</p>
-
 <p>In that article, he said to use <code>subPath</code>, and so be it, then I try to use the <code>subPath</code> too in my applications deployment for Kubernetes.</p>
-
 <p>Previously:</p>
-
 <pre><code>- name: configs          
   mountPath: /app
-</code></pre>
-
-<p>And changed into:</p>
-
+</code></pre><p>And changed into:</p>
 <pre><code>- name: configs
   mountPath: /app/config.toml
   subPath: config.toml
-</code></pre>
-
-<p>And voila, it works. It does not replace and delete my existing file in the container anymore. And it can run smoothly.</p>
-
+</code></pre><p>And voila, it works. It does not replace and delete my existing file in the container anymore. And it can run smoothly.</p>
 <p>My full Kubernetes deployment.yaml file:</p>
-
-<script src="https://gist.github.com/bxcodec/df348766eeb730afe00ba278c81e3249.js"></script>
-
+<!-- raw HTML omitted -->
 <p>Well, when solving this, I learn something important. Even I stuck for 4–6 hours when solving this “alone”, but I learned a valuable lesson here. And can’t look forward to the next adventure.</p>
-
 <p><em>Anyway, if you find this useful would you mind to share this story, so everyone will not fall to the same hole. And follow me to keep updates to my learning journey in Software Engineering :)</em></p>
-
 <h5 id="references">References:</h5>
-
 <ul>
 <li><a href="https://blog.sebastian-daschner.com/entries/multiple-kubernetes-volumes-directory">https://blog.sebastian-daschner.com/entries/multiple-kubernetes-volumes-directory</a></li>
 </ul>
-
-<hr />
-
-<p><em>Originally posted at: <a href="https://hackernoon.com/mount-file-to-kubernetes-pod-without-deleting-the-existing-file-in-the-docker-container-in-the-88b5d11661a6">https://hackernoon.com/mount-file-to-kubernetes-pod-without-deleting-the-existing-file-in-the-docker-container-in-the-88b5d11661a6</a></em></p>
+<hr>
+<p>_Originally posted at: <a href="https://hackernoon.com/mount-file-to-kubernetes-pod-without-deleting-the-existing-file-in-the-docker-container-in-the-88b5d11661a6_">https://hackernoon.com/mount-file-to-kubernetes-pod-without-deleting-the-existing-file-in-the-docker-container-in-the-88b5d11661a6_</a></p>
 
                     </div>
 

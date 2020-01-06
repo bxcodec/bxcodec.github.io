@@ -2,7 +2,7 @@
 <html lang="en-us"><head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-        <meta name="generator" content="Hugo 0.57.0-DEV" />
+        <meta name="generator" content="Hugo 0.63.0-DEV" />
 	
 
 	<title>
@@ -185,12 +185,8 @@
                     
                     
                     <div class="article-post">
-                        
-
-<p>Imagine now you are in the kitchen. You are going to make an omelet. Then, you must prepare the tools first, a stove, a pan, fried spoon, a knife etc. Then, you also must have the needs, such as eggs, pepper, salt etc.</p>
-
+                        <p>Imagine now you are in the kitchen. You are going to make an omelet. Then, you must prepare the tools first, a stove, a pan, fried spoon, a knife etc. Then, you also must have the needs, such as eggs, pepper, salt etc.</p>
 <p>Then, let’s make a new one. When making this new one, you must follow these steps without missing for a single thing.</p>
-
 <ul>
 <li>Crack 2 eggs into a mixing bowl. Make sure the eggs are in good condition</li>
 <li>Whisk the egg for 10 minutes.</li>
@@ -200,24 +196,17 @@
 <li>Make sure whisked eggs heat up. And no liquid anymore.</li>
 <li>Serve the omelet.</li>
 </ul>
-
 <p>Then, when you start to make it, you will do this</p>
-
 <ul>
 <li>Before pouring the eggs into the mixing bowl, you will crack the eggs, if you find a putrid egg, then you will choose another egg. This is an expected behavior</li>
 <li>When you whisk the eggs less than 1 minute, the whisked egg will be unevenly stirred.If so, you will whisk again. This is an expected behavior</li>
 <li>When you pour 2 teaspoon of salt into the whisked egg, then the eggs will be salty. If it’s too salty, then you will add another egg to reduce the saltiness. This is an expected behavior</li>
 <li>When you cook the whisked egg over a 100°C- temperature pan, it will get scorched. You have to reduce the heat.</li>
 </ul>
-
 <p>All the expected behaviors, already covered. When you do all the steps above, you have done a test for each function/steps/method/unit. So, when a simple error occurred like too many salts, we already know how to deal and handle it in our steps/function/method/unit. That’s the use of unit testing.</p>
-
 <h2 id="covered-the-standard-expected-behaviour">Covered the standard (expected) behaviour</h2>
-
 <p>Unit testing will guide you to the expected (standard) behavior of a function. The omelete for example, we have standard (expected) behavior to cook the eggs, you need a 60°C heat of your pan.</p>
-
 <p>Okay, forget the omelet. Let say we have a simple function in Go</p>
-
 <pre><code>func Login(username, password string) error{
  if len(password) &lt; 6 {
    return NewErrNotValidPassword
@@ -236,10 +225,7 @@
   // Login Successs
   return nil
 }
-</code></pre>
-
-<p>Then we have the unit tests here for this function *(just a sample)</p>
-
+</code></pre><p>Then we have the unit tests here for this function *(just a sample)</p>
 <pre><code>func TestLoginSuccess(){
  username:=&quot;lolcats&quot;
  password:= &quot;youknowhoiam&quot;
@@ -274,44 +260,25 @@ func TestWrongPassword(){
  assert.NoError(err)
  assert.Equal(err,NewErrWrongPassword)
 }
-</code></pre>
-
-<p>If you look for the unit test, we must know for the expected behavior of every single branch. If the password is less than 6 characters, then it should be error. If your test said no error found, then there must be something wrong with your period</p>
-
+</code></pre><p>If you look for the unit test, we must know for the expected behavior of every single branch. If the password is less than 6 characters, then it should be error. If your test said no error found, then there must be something wrong with your period</p>
 <h2 id="add-extra-time-to-develop">Add extra time to develop</h2>
-
-<p><img src="https://cdn-images-1.medium.com/max/1600/1*-Ap-M0CPDmt544ptMayCCw.png" alt="extra time to develop" /></p>
-
+<p><img src="https://cdn-images-1.medium.com/max/1600/1*-Ap-M0CPDmt544ptMayCCw.png" alt="extra time to develop"></p>
 <p>In creating unit testing to our function, we need more extra time. Because we must create all the test for every unit function. Because instead we just creating and thinking about the logic, we also add an extra job to create the coverage of the test. It will take even longer if using TDD approachment.</p>
-
 <p>But the point is, your product has less bugs when it already released into production.</p>
-
-<h2 id="reduce-the-error-bug-in-production">Reduce The Error/Bug in production</h2>
-
+<h2 id="reduce-the-errorbug-in-production">Reduce The Error/Bug in production</h2>
 <p>When you write your system without creating a unit testing, of course you can release it faster. But, later your user may find too many bugs right after using it.</p>
-
-<p><img src="https://cdn-images-1.medium.com/max/1600/1*GicowE2JpiMGl3DTaq47Qg.png" alt="Without Unit Testing" /></p>
-
+<p><img src="https://cdn-images-1.medium.com/max/1600/1*GicowE2JpiMGl3DTaq47Qg.png" alt="Without Unit Testing"></p>
 <p>Compare it if you create the unit test</p>
-
-<p><img src="https://cdn-images-1.medium.com/max/1600/1*C-JTO3W1WkiKH4Lx7oBGIA.png" alt="Using Unit test" /></p>
-
+<p><img src="https://cdn-images-1.medium.com/max/1600/1*C-JTO3W1WkiKH4Lx7oBGIA.png" alt="Using Unit test"></p>
 <p>When your write code without a test, then your user will find 50 bugs. It will make your users get mad, uncomfortable to your application. Compare to using test, your user will only find 10 bugs.</p>
-
 <p>In the term of making the omelet. Imagine you will cook for 50 omelets with a 100-egg-budget. And from the 100 eggs, there are 1 putrid eggs. Then, you cook it without checking the quality of the eggs, you don’t do the unit test for every step. You just pour them, without covering the error/putrid eggs. And when you finish it, you delivered it to production, to your client. Got the idea how your client will be, right?</p>
-
 <h2 id="conclusions">Conclusions</h2>
-
 <p>Unit testing is a good thing, it will increase your product quality. In my current company, when coding some of the new features, it’s required to add unit tests for each function.
 But sometimes, it’s too boring to do that. It’s like creating the test was a new big task to do.</p>
-
 <p>One day, I’m so glad because my function is done. Well, my assumption this function will work well at that time. But even it’ll work, I still need add more test, to cover every branch in there. Then, I feel like…. “WTF. What a climax killer”. I must add the test again. Damn. So, boring.</p>
-
 <p>But it’s increased my confidence to my work. I will more focus on another testing like integration testing, with the real DB, the real services.</p>
-
-<hr>
-
-<p><em>Previously posted: <a href="https://hackernoon.com/my-honest-opinion-about-unit-testing-84eee5e893ad">https://hackernoon.com/my-honest-opinion-about-unit-testing-84eee5e893ad</a></em></p>
+<!-- raw HTML omitted -->
+<p>_Previously posted: <a href="https://hackernoon.com/my-honest-opinion-about-unit-testing-84eee5e893ad_">https://hackernoon.com/my-honest-opinion-about-unit-testing-84eee5e893ad_</a></p>
 
                     </div>
 

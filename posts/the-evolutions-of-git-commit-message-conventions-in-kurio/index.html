@@ -2,7 +2,7 @@
 <html lang="en-us"><head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-        <meta name="generator" content="Hugo 0.57.0-DEV" />
+        <meta name="generator" content="Hugo 0.63.0-DEV" />
 	
 
 	<title>
@@ -13,7 +13,7 @@
 	</title>
 
 	<meta property="og:title" content="The Evolutions of Git Commit Message Conventions in Kurio - Letters From Iman" /> 
-	<meta property="og:description" content="We in Kurio use Github as our version control system." />
+	<meta property="og:description" content="We in Kurio use Github as our version control system. And because of that, we also have a flow like open source project does." />
 	<meta property="og:type" content="article" />
 	<meta property="og:url" content="https://bxcodec.io/posts/the-evolutions-of-git-commit-message-conventions-in-kurio/" />
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
@@ -185,136 +185,84 @@
                     
                     
                     <div class="article-post">
-                        
-
-<p>We in Kurio use Github as our version control system. And because of that, we also have a flow like open source project does.</p>
-
+                        <p>We in Kurio use Github as our version control system. And because of that, we also have a flow like open source project does.</p>
 <p>For example, when someone developing a new feature, or just fixing some bugs they must create a pull request to main branch. Then everyone that is responsible (their team’s member) review the submitted PR.</p>
-
 <p>If it passes, then they will merge it to main branch and will be responsible to deploy it into staging and release it to production.</p>
-
-<p><img src="https://cdn-images-1.medium.com/max/800/1*j44LdQTcnolYfKKZlXnGeQ.png" alt="Code Review" /></p>
-
+<p><img src="https://cdn-images-1.medium.com/max/800/1*j44LdQTcnolYfKKZlXnGeQ.png" alt="Code Review"></p>
 <blockquote>
 <p>Code Review</p>
 </blockquote>
-
 <p>And then, one thing we must really concern is about the git commit message. We have the <strong>unwritten</strong> rules here about git commit messages, it must be clear and understandable.</p>
-
 <p>Well, we have a long journey to come to this day until our git commit messages look clear and clean.</p>
-
 <h3 id="1-start-from-just-a-simple-explanation">1. Start From Just a Simple Explanation</h3>
-
 <p>Well, everyone starts from here. When doing commit we just put as is, what we’re doing or fixing.</p>
-
 <p>For example, if someone fixing a bug, they should explain in their commit message. Like example below.</p>
-
 <pre><code>$ git commit -m &quot;Fixing logic of something&quot;
 $ git commit -m &quot;Add new features of something&quot;
-</code></pre>
-
-<p>Well, we stick with this kind of conventions for a long time. If we look at the git commit history it will more look like this.</p>
-
-<p><img src="https://cdn-images-1.medium.com/max/800/1*bnK4zO3kdhlxkAd6bn5c6w.png" alt="Kurio git commit history" /></p>
-
+</code></pre><p>Well, we stick with this kind of conventions for a long time. If we look at the git commit history it will more look like this.</p>
+<p><img src="https://cdn-images-1.medium.com/max/800/1*bnK4zO3kdhlxkAd6bn5c6w.png" alt="Kurio git commit history"></p>
 <blockquote>
 <p>Kurio git commit history</p>
 </blockquote>
-
 <p>It’s not well structured. Also, it’s a boring thing when reading this kind of git commit history.</p>
-
 <h3 id="2-introducing-emoji">2. Introducing Emoji</h3>
-
 <p>And then a few months later, around December 2017 (I read from our git commit history). I remember I proposed a new unique git commit message conventions to our team in Backend at Kurio :D.</p>
-
-<p>I proposed this after I found this repository in GitHub: <a href="https://github.com/dannyfritz/commit-message-emoji">https://github.com/dannyfritz/commit-message-emoji</a>, instead of a normal commit message, he introduced a commit message with emoji.</p>
-
-<p><img src="https://cdn-images-1.medium.com/max/800/1*Bf78vcvuwftkMPj1qJnr1w.png" alt="Commit emoji from https://github.com/dannyfritz/commit-message-emoji" /></p>
-
+<p>I proposed this after I found this repository in GitHub: <a href="https://github.com/dannyfritz/commit-message-emoji,">https://github.com/dannyfritz/commit-message-emoji,</a> instead of a normal commit message, he introduced a commit message with emoji.</p>
+<p><img src="https://cdn-images-1.medium.com/max/800/1*Bf78vcvuwftkMPj1qJnr1w.png" alt="Commit emoji from https://github.com/dannyfritz/commit-message-emoji"></p>
 <blockquote>
 <p>Commit emoji from <a href="https://github.com/dannyfritz/commit-message-emoji">https://github.com/dannyfritz/commit-message-emoji</a></p>
 </blockquote>
-
 <p>Well, when doing this, it’s a fun thing. I like how the conventions work. Our commit message looks colorful, and fun :D.</p>
-
 <p>A few of us also agreed with this kind of git commit conventions :D. So a few of us at the backend team use emoji when committing changes to our projects.</p>
-
-<p><img src="https://cdn-images-1.medium.com/max/600/1*amyWW5rXjxQkpWoIZKZIsw.png" alt="Commit with emoji at Kurio" /></p>
-
+<p><img src="https://cdn-images-1.medium.com/max/600/1*amyWW5rXjxQkpWoIZKZIsw.png" alt="Commit with emoji at Kurio"></p>
 <blockquote>
 <p>Commit with emoji at Kurio</p>
 </blockquote>
-
 <p>And that happens just for a few months. Well, it’s fun, but something is missing with this kind of commit message. It can lead to confusion when anything happens in deployment and we want to revert to a specific commit. Too many distractions in commit message when we want to read the commit history.</p>
-
 <p>So later, a few months later, we starting to leave this kind of git commit conventions. And back to the previous one, with just a simple explanation of our git commit message.</p>
-
 <h3 id="3-angularjs-styles">3. AngularJS Styles</h3>
-
 <p>But, later, we found a new good thing. These conventions used by many open-source contributors in Github. This git commit message convention is introduced by the AngularJS team.</p>
-
 <p>They even put it into a Google doc about their git commit conventions here:
 <a href="http://bit.ly/2Rxuxnv">AngularJS Git Commit Msg Convention</a></p>
-
-<p><img src="https://cdn-images-1.medium.com/max/800/1*geawy4w_T9yfaBI23YiyTQ.png" alt="AngularJS git commits message conventions" /></p>
-
+<p><img src="https://cdn-images-1.medium.com/max/800/1*geawy4w_T9yfaBI23YiyTQ.png" alt="AngularJS git commits message conventions"></p>
 <blockquote>
 <p>AngularJS git commits message conventions.</p>
 </blockquote>
-
 <p>These conventions are looked more clear and clean. And after a few months, we try to implement this. Even it still not look perfect like the AngularJS team do, at least we use the term at our commit messages.</p>
-
 <p>To do this is not happen in a night, we move to these conventions slowly. It’s not easy to convince everyone and change the habits of the engineers. Forcing will bring chaos :D.</p>
-
 <p>So, our team making this kind of commit message slowly and spreading to all of our repositories. (Anyway, I’m one of the engineers that a bit hard to move to this kind of conventions :D). But later, after I look at the result, now I agree that this convention is better.</p>
-
 <p>The commit message looks structured and clean. This how our commit messages looks now.</p>
-
-<p><img src="https://cdn-images-1.medium.com/max/800/1*7AbXu8ByMaha2lkyMZ4_9A.png" alt="Kurio git commit message" /></p>
-
+<p><img src="https://cdn-images-1.medium.com/max/800/1*7AbXu8ByMaha2lkyMZ4_9A.png" alt="Kurio git commit message"></p>
 <blockquote>
 <p>Kurio git commit message</p>
 </blockquote>
-
 <p>It took a few years until we agreed on this git commit conventions. Some people may not take this seriously, but this is very important things.</p>
-
 <p>I have an experience that must force me to look to our git commit messages that not structured well. I don’t remember when it happens, but it happens when we have a bug in production, that already running for a month, since it’s released. And this happened when we just put a simple explanation on our git commit messages (the evolution version 1 above)</p>
-
 <p>To debug this, we look to our git commit histories, which commit caused this bug. Since it happens a month ago, there are already many commit messages merged to production branch. And the history is not structured as we used now.</p>
-
 <p>So to tracing the changes, we look for each commit messages. Even we know it happens in a feature(feed-feature) but we don’t know which PR/commit that caused this bug. It really messy, and confusing.</p>
-
 <p>But, it’s different now. Now our commit message already structured and clean (not 100%) but we still trying to make this better and better.</p>
-
-<h3 id="4-what-s-next">4. What’s Next?</h3>
-
+<h3 id="4-whats-next">4. What’s Next?</h3>
 <p>For now, we just follow how the commit message conventions that introduced by AngularJS. There is a reason why we choose this convention.</p>
-
 <p>This convention will really help to do the <strong>semantic-release</strong>, as we know, some people can really hard to do the <a href="https://semver.org/">semantic-versioning</a>. And sometimes, some people too lazy to make a clear release notes.</p>
-
 <p>With the commit message like this, we can easily to decide what will our next version number of our application, there will be no more <a href="http://sentimentalversioning.org/">sentimental-versioning</a>, it will force us to be strict and follow how the semantic-versioning works.</p>
-
 <blockquote>
 <p>For example, let’s say we have an application that already versioned v1.0.0, let’s called it TODO application. Then, for example, we add a few changes, that’s to add a print log to each error condition, so we can see the logs when errors happen in production.</p>
-
+</blockquote>
+<blockquote>
 <p>This changes, need a lot of energy because there is so many error condition in our application. It may take a week to add the logger. There will be countless commit message if it was very complex system.</p>
-
+</blockquote>
+<blockquote>
 <p>And then, imagine that when doing that, every engineer that contribute to adding the error don’t have any commit message conventions, they use their own styles.</p>
-
+</blockquote>
+<blockquote>
 <p>And when it finished, someone that in charge to release a new version of the application will be really confused. Should he release a major, minor or just a patch?</p>
 </blockquote>
-
 <p>A clear and structured commit message will really helpful to decide what will our next version number. If we found like <code>feat</code> that means a minor, or when we found a <code>chore</code> that will be just a patch versions that really don’t affect any production or when found something <code>breaking</code> then it means it was a new major version that may have totally different changes compared to previous versions.</p>
-
 <p>And also with this commit conventions, we can clearly write our release notes based on our commit history, it’s clean and structured anyway, so we can easily to write what would be our release notes checklist.</p>
-
 <p>This is also the reasons, why AngularJS use this convention, so they can automate their release flow with ease.</p>
-
 <p>*ps: Luckily, there is a tool that already used by many companies here: <a href="https://github.com/semantic-release/semantic-release">github.com/semantic-release/semantic-release</a>, this tool will help us to decide the next version number, generate the release-notes, as long as we follow how the git commit conventions that they agreed</p>
-
-<hr />
-
-<p><em>Originally posted at Kurio Engineering Blog: <a href="https://toolbox.kurio.co.id/the-evolutions-of-git-commit-message-conventions-in-kurio-4a03b441d06a">https://toolbox.kurio.co.id/the-evolutions-of-git-commit-message-conventions-in-kurio-4a03b441d06a</a></em></p>
+<hr>
+<p>_Originally posted at Kurio Engineering Blog: <a href="https://toolbox.kurio.co.id/the-evolutions-of-git-commit-message-conventions-in-kurio-4a03b441d06a_">https://toolbox.kurio.co.id/the-evolutions-of-git-commit-message-conventions-in-kurio-4a03b441d06a_</a></p>
 
                     </div>
 

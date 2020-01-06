@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>github on Letters From Iman</title>
@@ -18,7 +18,7 @@
       <pubDate>Thu, 07 Feb 2019 04:14:07 +0700</pubDate>
       
       <guid>https://bxcodec.io/posts/the-evolutions-of-git-commit-message-conventions-in-kurio/</guid>
-      <description>We in Kurio use Github as our version control system.</description>
+      <description>We in Kurio use Github as our version control system. And because of that, we also have a flow like open source project does.</description>
     </item>
     
     <item>

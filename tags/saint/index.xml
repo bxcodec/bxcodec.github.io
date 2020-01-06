@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>saint on Letters From Iman</title>
@@ -19,7 +19,7 @@
       
       <guid>https://bxcodec.io/posts/saint/</guid>
       <description>Source code: github
-Download go get -u github.com/bxcodec/saint  Example package main import ( &amp;quot;fmt&amp;quot; &amp;quot;github.</description>
+Download go get -u github.com/bxcodec/saint Example package main import ( &amp;quot;fmt&amp;quot; &amp;quot;github.</description>
     </item>
     
   </channel>

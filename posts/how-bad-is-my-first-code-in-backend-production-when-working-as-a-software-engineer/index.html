@@ -2,7 +2,7 @@
 <html lang="en-us"><head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-        <meta name="generator" content="Hugo 0.57.0-DEV" />
+        <meta name="generator" content="Hugo 0.63.0-DEV" />
 	
 
 	<title>
@@ -185,76 +185,45 @@
                     
                     
                     <div class="article-post">
-                        
-
-<p>It happen when my first year in my first company as an Software Engineer. That was my first time to write a big task for the backend side. That was creating a cron-job that will work to migrate data based on our customer data.</p>
-
+                        <p>It happen when my first year in my first company as an Software Engineer. That was my first time to write a big task for the backend side. That was creating a cron-job that will work to migrate data based on our customer data.</p>
 <p>The original task is easy. If drawn in a picture</p>
-
-<p><img src="https://cdn-images-1.medium.com/max/1600/1*9cLBp3Qe3YLDNsHJvOyZTQ.png" alt="How it works" /></p>
-
+<p><img src="https://cdn-images-1.medium.com/max/1600/1*9cLBp3Qe3YLDNsHJvOyZTQ.png" alt="How it works"></p>
 <p>The task is, we provide some of safe option to our customer. Since in that day, our company, Bornevia, not doing well (a.k.a Shutting Down) more: <a href="https://www.techinasia.com/bornevia-shutdown">https://www.techinasia.com/bornevia-shutdown</a></p>
-
 <p>So basically, we provide some of option to migrate our customer data and tickets. We are running as CRM SaaS. So we have a lot user and its ticket and offer them to be migrated to Zendesk (the most stable at that year) or migrate into CSV file. We only have 3 Engineers included me.</p>
-
 <p>Each member already have a big task, such as closing the services, closing the payment, handling the refund and everything. Then our CTO ask me to do the job. I’m working alone and I am a “Fresh Graduate” yet. It’s a bit frustrating.</p>
-
 <p>I’ve never code directly into backend code, after my graduation and joining Bornevia, I just work as a Front-End. So that’s my first time code in backend.</p>
-
 <p>Our CTO gave me 2 weeks to finish the migration function, so we can test in the rest 2 weeks. With estimated done was a month.</p>
-
 <h2 id="callback-is-a-hell-for-beginner">Callback is a Hell for Beginner</h2>
-
 <p>So then within a whole weeks, I was only reading the code, learning the flow and also researching how to migrate to 3rd party. They give me a chance to choose the 3rd party will migrated to. After researching the easiest one, I found Zendesk, because it provide a batch Post (ticket), due to for a single customer (which is represent a company) can have up to 100.000 tickets (live chat, email, facebook, twitter etc) and up to 2000 customer will migrated. So the most best option is looking for a same service that has a batch post ticket for migrating.</p>
-
 <p>Our system written in JavaScript, we use Node JS as the backend, and Rails+ Angular as the Front-End</p>
-
-<p><img src="https://cdn-images-1.medium.com/max/1600/1*FNC-OdS35tU_u9zA0ImcBQ.png" alt="The System" /></p>
-
+<p><img src="https://cdn-images-1.medium.com/max/1600/1*FNC-OdS35tU_u9zA0ImcBQ.png" alt="The System"></p>
 <p>*disclaimer: I’m not knowing exactly all the whole system, because that’s my first time dive to the backend code. I’m just learn a few system, then we closed. So I just know a few of it.</p>
-
 <p>Since I joined the company, I always working in Front-End (Angular Js), so when assigned to this new task, I’m totally confused, and know nothing about the backend side.</p>
-
 <p>I know a little about Node Js, but still doesn’t know and learn enough what monster can born from there.</p>
-
 <p>Then I code the migrator system, and after fighting with the confused flow , I finished it at 3 weeks. Then we test at staging, with staging account, everything is clear. Then we release it to production</p>
-
 <p>But….</p>
-
 <p>The few next day, our system overloaded, every services returning Internal server error.</p>
-
 <p>Our customer start to mad and called for help. It happen since the midnight, so in the morning, It’s totally chaos at the time. Everyone start to blaming.
 Some of us already on holidays, so it hard to help.</p>
-
 <p>“Who was the last man in charge for deploying?” some of engineers said from slack chat.</p>
-
 <p>“But all the functions already passed in test” others said again.</p>
-
 <p>And also, Zendesk block our IP because we make too many request. And in other side, some of our client creating a new cron job. So there are so many pending request.</p>
-
 <p>Then our CTO reviewing the latest commit, and figured the problem. It because I forgot to close the callback, or at least sent a null to the callback. WTF!!!</p>
-
 <pre><code>callback (null)
-</code></pre>
-
-<h2 id="lesson-learned">Lesson Learned</h2>
-
+</code></pre><h2 id="lesson-learned">Lesson Learned</h2>
 <p>Well, many lesson I can learn from that day</p>
-
 <ul>
-<li><strong>Code review is a must</strong> <br>
+<li><strong>Code review is a must</strong> <!-- raw HTML omitted -->
 When developing this, we did not doing code review, so only when the function work on my local, I will push to staging, then test by our QA. If work, then passed to production. So everyone never know what is my code like until the disaster happen</li>
-<li><strong>I need to learn and improve my skill even it’s not my role.</strong> <br>
+<li><strong>I need to learn and improve my skill even it’s not my role.</strong> <!-- raw HTML omitted -->
 We never know the chance come, like this. I never thought I will assigned to this project, because since I joined the company, I always work in front-end, some also work in backend, but just adding a few line code.
 After that day, our CTO gave me a lot of book about Node Js, Cron Job etc.</li>
-<li><strong>Frontend is cool, Backend is another thing.</strong><br>
+<li>**Frontend is cool, Backend is another thing.**<!-- raw HTML omitted -->
 From that day, I was more excited to backend. Writing efficient code, handling concurrency it’s more challenging.
 I’m not saying Frontend is not challenging, frontend is cool, you got the hype, everyone will notice the frontend first then the backend. Because frontend have a UI or something that can seen by people. Not API, or Cron Job, or Dealing with Rate limiting.</li>
 </ul>
-
 <p>Today Bornevia is already closed. I write this, to remind me, that today last year ago, was my first day in Bornevia. There a lot experience I can learn from there.</p>
-
-<p><em>Previously Posted in: <a href="https://blog.pairworking.com/how-bad-is-my-first-piece-of-code-in-backend-production-when-working-as-a-software-engineer-b5e0264795ed">https://blog.pairworking.com/how-bad-is-my-first-piece-of-code-in-backend-production-when-working-as-a-software-engineer-b5e0264795ed</a></em></p>
+<p>_Previously Posted in: <a href="https://blog.pairworking.com/how-bad-is-my-first-piece-of-code-in-backend-production-when-working-as-a-software-engineer-b5e0264795ed_">https://blog.pairworking.com/how-bad-is-my-first-piece-of-code-in-backend-production-when-working-as-a-software-engineer-b5e0264795ed_</a></p>
 
                     </div>
 

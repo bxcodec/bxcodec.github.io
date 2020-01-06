@@ -2,7 +2,7 @@
 <html lang="en-us"><head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-        <meta name="generator" content="Hugo 0.57.0-DEV" />
+        <meta name="generator" content="Hugo 0.63.0-DEV" />
 	
 
 	<title>
@@ -13,7 +13,7 @@
 	</title>
 
 	<meta property="og:title" content="Today I Learned - Fix: go get private repository return error terminal prompts disabled - Letters From Iman" /> 
-	<meta property="og:description" content="I&rsquo;ve some project stored separated in 3 git-host providers: Github, Gitlab, and Bitbucket." />
+	<meta property="og:description" content="I&#39;ve some project stored separated in 3 git-host providers: Github, Gitlab, and Bitbucket." />
 	<meta property="og:type" content="article" />
 	<meta property="og:url" content="https://bxcodec.io/posts/today-i-learned-fix-go-get-private-repository-return-error-terminal-prompts-disabled/" />
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
@@ -185,104 +185,65 @@
                     
                     
                     <div class="article-post">
-                        
-
-<p>I&rsquo;ve some project stored separated in 3 git-host providers: Github, Gitlab, and Bitbucket. Because I was a low-profile software engineer, I use both in Gitlab and Bitbucket for the private repository and Github for public repository XD.</p>
-
+                        <p>I've some project stored separated in 3 git-host providers: Github, Gitlab, and Bitbucket. Because I was a low-profile software engineer, I use both in Gitlab and Bitbucket for the private repository and Github for public repository XD.</p>
 <p>I like Github very much, but my current financial status forced me to reduce any not so important cost just for my personal hobby and private projects XD.</p>
-
-<p>So, a few days ago, I&rsquo;m trying to create a project of Golang and stored it in Gitlab. And this project has 2 dependencies to my other library. One of them stored in Bitbucket, and another one in Gitlab.</p>
-
-<p>To simplify, I will tell it in an example. Let&rsquo;s say I have 3 projects.</p>
-
+<p>So, a few days ago, I'm trying to create a project of Golang and stored it in Gitlab. And this project has 2 dependencies to my other library. One of them stored in Bitbucket, and another one in Gitlab.</p>
+<p>To simplify, I will tell it in an example. Let's say I have 3 projects.</p>
 <ul>
 <li><code>math</code> library project in bitbucket (private repository)</li>
 <li><code>multiply</code> library project in Gitlab (private repository)</li>
 <li><code>samplecool</code> project in Gitlab(private repository)</li>
 </ul>
-
 <p>So, the <code>samplecool</code> project use the <code>math</code> and the <code>multiply</code> as its dependencies, means, the <code>math</code> and <code>multiply</code> is imported in <code>samplecool</code> project.</p>
-
-<pre><code class="language-go">package samplecool
-import(
-  &quot;bitbucket.org/bxcodec/math&quot;
-  &quot;gitlab.com/bxcodec/multiply&quot;
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#f92672">package</span> <span style="color:#a6e22e">samplecool</span>
+<span style="color:#f92672">import</span>(
+  <span style="color:#e6db74">&#34;bitbucket.org/bxcodec/math&#34;</span>
+  <span style="color:#e6db74">&#34;gitlab.com/bxcodec/multiply&#34;</span>
 )
-</code></pre>
-
-<p>And when I trying to go get the samplecool&rsquo;s dependencies, this error happens:</p>
-
-<pre><code class="language-shell">$ go get -v
-# cd .; git ls-remote https://bitbucket.org/bxcodec/math
-fatal: could not read Username for 'https://bitbucket.org': terminal prompts disabled
+</code></pre></div><p>And when I trying to go get the samplecool's dependencies, this error happens:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">$ go get -v
+<span style="color:#75715e"># cd .; git ls-remote https://bitbucket.org/bxcodec/math</span>
+fatal: could not read Username <span style="color:#66d9ef">for</span> <span style="color:#e6db74">&#39;https://bitbucket.org&#39;</span>: terminal prompts disabled
 go: missing Mercurial command. See https://golang.org/s/gogetcmd
-package bitbucket.org/bxcodec/math: https://api.bitbucket.org/2.0/repositories/bxcodec/math?fields=scm: 403 Forbidden
-Fetching https://gitlab.com/bxcodec/multiply?go-get=1
-Parsing meta tags from https://gitlab.com/bxcodec/multiply?go-get=1 (status code 200)
-get &quot;gitlab.com/bxcodec/multiply&quot;: found meta tag get.metaImport{Prefix:&quot;gitlab.com/bxcodec/multiply&quot;, VCS:&quot;git&quot;, RepoRoot:&quot;https://gitlab.com/bxcodec/multiply.git&quot;} at https://gitlab.com/bxcodec/multiply?go-get=1
-gitlab.com/bxcodec/multiply (download)
-# cd .; git clone https://gitlab.com/bxcodec/multiply.git /Users/imantumorang/go/src/gitlab.com/bxcodec/multiply
-Cloning into '/Users/imantumorang/go/src/gitlab.com/bxcodec/multiply'...
-fatal: could not read Username for 'https://gitlab.com': terminal prompts disabled
-package gitlab.com/bxcodec/multiply: exit status 128
-</code></pre>
-
-<p>If we look for more detail, the errors I found is:</p>
-
-<pre><code class="language-shell">fatal: could not read Username for 'githost.something': terminal prompts disabled
-</code></pre>
-
-<p>I see the similar error happened here. After finding the solution on the internet, I found a few commands that help me to solve this.</p>
-
-<h2 id="fixing-fatal-could-not-read-username-for-gitlab-terminal-prompts-disabled">Fixing fatal: could not read Username for Gitlab: terminal prompts disabled</h2>
-
+package bitbucket.org/bxcodec/math: https://api.bitbucket.org/2.0/repositories/bxcodec/math?fields<span style="color:#f92672">=</span>scm: <span style="color:#ae81ff">403</span> Forbidden
+Fetching https://gitlab.com/bxcodec/multiply?go-get<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span>
+Parsing meta tags from https://gitlab.com/bxcodec/multiply?go-get<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span> <span style="color:#f92672">(</span>status code 200<span style="color:#f92672">)</span>
+get <span style="color:#e6db74">&#34;gitlab.com/bxcodec/multiply&#34;</span>: found meta tag get.metaImport<span style="color:#f92672">{</span>Prefix:<span style="color:#e6db74">&#34;gitlab.com/bxcodec/multiply&#34;</span>, VCS:<span style="color:#e6db74">&#34;git&#34;</span>, RepoRoot:<span style="color:#e6db74">&#34;https://gitlab.com/bxcodec/multiply.git&#34;</span><span style="color:#f92672">}</span> at https://gitlab.com/bxcodec/multiply?go-get<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span>
+gitlab.com/bxcodec/multiply <span style="color:#f92672">(</span>download<span style="color:#f92672">)</span>
+<span style="color:#75715e"># cd .; git clone https://gitlab.com/bxcodec/multiply.git /Users/imantumorang/go/src/gitlab.com/bxcodec/multiply</span>
+Cloning into <span style="color:#e6db74">&#39;/Users/imantumorang/go/src/gitlab.com/bxcodec/multiply&#39;</span>...
+fatal: could not read Username <span style="color:#66d9ef">for</span> <span style="color:#e6db74">&#39;https://gitlab.com&#39;</span>: terminal prompts disabled
+package gitlab.com/bxcodec/multiply: exit status <span style="color:#ae81ff">128</span>
+</code></pre></div><p>If we look for more detail, the errors I found is:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">fatal: could not read Username <span style="color:#66d9ef">for</span> <span style="color:#e6db74">&#39;githost.something&#39;</span>: terminal prompts disabled
+</code></pre></div><p>I see the similar error happened here. After finding the solution on the internet, I found a few commands that help me to solve this.</p>
+<h2 id="fixing-fatal-could-not-read-username-for-gitlab-terminal-promptsdisabled">Fixing fatal: could not read Username for Gitlab: terminal prompts disabled</h2>
 <p>For Gitlab case, This command should fix this error:</p>
-
-<pre><code class="language-shell">git config --global url.&quot;git@gitlab.com:&quot;.insteadOf &quot;https://gitlab.com/&quot;
-</code></pre>
-
-<p>This will use our <code>/.ssh</code>, so make sure our ssh key exists and registered in our Gitlab.</p>
-
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">git config --global url.<span style="color:#e6db74">&#34;git@gitlab.com:&#34;</span>.insteadOf <span style="color:#e6db74">&#34;https://gitlab.com/&#34;</span>
+</code></pre></div><p>This will use our <code>/.ssh</code>, so make sure our ssh key exists and registered in our Gitlab.</p>
 <p>To ensure this command works, when we see in <code>.gitconfig</code> there will be an addition to the <code>.gitconfig</code> something like this:</p>
-
-<pre><code class="language-shell">$ cat ~/.gitconfig
-[url &quot;git@gitlab.com:&quot;]
- insteadOf = https://gitlab.com/
-</code></pre>
-
-<h2 id="fixing-fatal-could-not-read-username-for-bitbucket-terminal-prompts-disabled">Fixing fatal: could not read Username for Bitbucket: terminal prompts disabled</h2>
-
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">$ cat ~/.gitconfig
+<span style="color:#f92672">[</span>url <span style="color:#e6db74">&#34;git@gitlab.com:&#34;</span><span style="color:#f92672">]</span>
+ insteadOf <span style="color:#f92672">=</span> https://gitlab.com/
+</code></pre></div><h2 id="fixing-fatal-could-not-read-username-for-bitbucket-terminal-promptsdisabled">Fixing fatal: could not read Username for Bitbucket: terminal prompts disabled</h2>
 <p>The same goes for bitbucket.</p>
-
-<pre><code class="language-shell">git config --global url.&quot;git@bitbucket.org:&quot;.insteadOf &quot;https://bitbucket.org/&quot;
-</code></pre>
-
-<p>And my <code>.gitconfig</code> will changed into like this below:</p>
-
-<pre><code class="language-shell">$ cat ~/.gitconfig
-[url &quot;git@gitlab.com:&quot;]
- insteadOf = https://gitlab.com/
-[url &quot;git@bitbucket.org:&quot;]
- insteadOf = https://bitbucket.org/
-</code></pre>
-
-<p>After doing this in both Gitlab and Bitbucket, now I can <code>go get</code> all the dependencies.
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">git config --global url.<span style="color:#e6db74">&#34;git@bitbucket.org:&#34;</span>.insteadOf <span style="color:#e6db74">&#34;https://bitbucket.org/&#34;</span>
+</code></pre></div><p>And my <code>.gitconfig</code> will changed into like this below:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">$ cat ~/.gitconfig
+<span style="color:#f92672">[</span>url <span style="color:#e6db74">&#34;git@gitlab.com:&#34;</span><span style="color:#f92672">]</span>
+ insteadOf <span style="color:#f92672">=</span> https://gitlab.com/
+<span style="color:#f92672">[</span>url <span style="color:#e6db74">&#34;git@bitbucket.org:&#34;</span><span style="color:#f92672">]</span>
+ insteadOf <span style="color:#f92672">=</span> https://bitbucket.org/
+</code></pre></div><p>After doing this in both Gitlab and Bitbucket, now I can <code>go get</code> all the dependencies.
 And this also works for Github too. If you try to GitHub, just change the URL target and URL origin.</p>
-
-<pre><code class="language-shell">git config --global url.&quot;git@github.com:&quot;.insteadOf &quot;https://github.com/&quot;
-</code></pre>
-
-<hr />
-
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">git config --global url.<span style="color:#e6db74">&#34;git@github.com:&#34;</span>.insteadOf <span style="color:#e6db74">&#34;https://github.com/&#34;</span>
+</code></pre></div><hr>
 <p>References:</p>
-
 <ul>
 <li><a href="https://bykov.tech/2016/05/31/using-standard-command-go-get-for-private-golang-packages-on-gitlab-com/">https://bykov.tech/2016/05/31/using-standard-command-go-get-for-private-golang-packages-on-gitlab-com/</a></li>
 </ul>
-
-<hr />
-
-<p><em>Originally posted at: <a href="https://medium.com/easyread/today-i-learned-fix-go-get-private-repository-return-error-terminal-prompts-disabled-8c5549d89045">https://medium.com/easyread/today-i-learned-fix-go-get-private-repository-return-error-terminal-prompts-disabled-8c5549d89045</a></em></p>
+<hr>
+<p>_Originally posted at: <a href="https://medium.com/easyread/today-i-learned-fix-go-get-private-repository-return-error-terminal-prompts-disabled-8c5549d89045_">https://medium.com/easyread/today-i-learned-fix-go-get-private-repository-return-error-terminal-prompts-disabled-8c5549d89045_</a></p>
 
                     </div>
 
