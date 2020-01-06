@@ -186,7 +186,7 @@
                     
                     <div class="article-post">
                         <p>Today's problem is a hard problem but has a silly solution. So, right now, I'm working on some stuff in Xendit, my current employer. I'm working on the refactoring of our core-payment system that will handle the payment transaction from/to each bank that we supported. </p>
-<p>And, when I'm developing this new core service, one of the services is related to hashing and generating a payment code, let's call it Payment Code Generator service. The payment_code needs to be random but also unique, but we won't go into there for the details. But in short, it will require a counter to generate and that is why we need to store the counter.</p>
+<p>And, when I'm developing this new core service, one of the services is related to hashing and generating a payment code, let's call it Payment Code Generator service. The <code>payment_code</code> needs to be random but also unique, but we won't go into there for the details. But in short, it will require a counter to generate and that is why we need to store the counter.</p>
 <p>So, I would tell the scenario in a simple one.  Let's say I'm building a service that will generate payment code. </p>
 <p>In this service, I have 2 tables. Let's say <code>master_counter</code> and <code>payment_code</code>.</p>
 <p>The <code>master_counter</code> table schema.</p>
@@ -258,7 +258,7 @@
   <span style="color:#a6e22e">tx</span>.<span style="color:#a6e22e">Commit</span>() <span style="color:#75715e">// commit the transaction
 </span></code></pre></div><p>All this function is working perfectly when I try with a single request. There's no error or bug happening. But, when I try to do load testing. Just with only 2 concurrent users. I got these errors a lot.</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">pq: duplicate key value violates unique constraint <span style="color:#ae81ff">\&#34;</span>my_unique_payment_code_index<span style="color:#ae81ff">\&#34;</span>
-</code></pre></div><p>It says, duplication error on <code>payment_code</code>. This is happening because the generated payment_code has to be unique. </p>
+</code></pre></div><p>It says, duplication error on <code>payment_code</code>. This is happening because the generated <code>payment_code</code> has to be unique. </p>
 <p>Well, as an application it's not wrong anyway. Because we return an error. But, from the business point of view, how could it return the duplication error, when the user is requesting a &ldquo;<strong>new</strong>&rdquo; <code>payment_code</code> that never used yet?</p>
 <p>My first assumption is, if there's a duplication, it means, that there's a race condition here. The race condition happened when I'm doing an update and read on the <code>counter</code> value. And because the <code>counter</code> will be hashed for the payment code, and the payment code must be unique, but because of the race condition, there's a condition that the application reading the same value of the <code>counter</code> and that's causing duplicate key violations.</p>
 <p>In simple, the error occurs because we have met with a race condition where the counters are not updated when concurrent requests come in, causing duplication to occur when we attempt to create new payment codes in parallel requests.</p>
