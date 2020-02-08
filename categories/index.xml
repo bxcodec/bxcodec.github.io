@@ -7,10 +7,28 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>Iman Tumorang @bxcodec.io - All rights reserved</copyright>
-    <lastBuildDate>Mon, 06 Jan 2020 12:08:07 +0700</lastBuildDate>
+    <lastBuildDate>Sat, 08 Feb 2020 12:08:07 +0700</lastBuildDate>
     
 	<atom:link href="https://bxcodec.io/categories/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>rfcs</title>
+      <link>https://bxcodec.io/categories/rfcs/</link>
+      <pubDate>Sat, 08 Feb 2020 12:08:07 +0700</pubDate>
+      
+      <guid>https://bxcodec.io/categories/rfcs/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>softwaredevelopment</title>
+      <link>https://bxcodec.io/categories/softwaredevelopment/</link>
+      <pubDate>Sat, 08 Feb 2020 12:08:07 +0700</pubDate>
+      
+      <guid>https://bxcodec.io/categories/softwaredevelopment/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>database</title>
@@ -18,15 +36,6 @@
       <pubDate>Mon, 06 Jan 2020 12:08:07 +0700</pubDate>
       
       <guid>https://bxcodec.io/categories/database/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>softwaredevelopment</title>
-      <link>https://bxcodec.io/categories/softwaredevelopment/</link>
-      <pubDate>Mon, 06 Jan 2020 12:08:07 +0700</pubDate>
-      
-      <guid>https://bxcodec.io/categories/softwaredevelopment/</guid>
       <description></description>
     </item>
     

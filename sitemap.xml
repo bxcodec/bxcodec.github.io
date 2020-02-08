@@ -4,6 +4,66 @@
   
   <url>
     <loc>https://bxcodec.io/categories/</loc>
+    <lastmod>2020-02-08T12:08:07+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://bxcodec.io/tags/http/</loc>
+    <lastmod>2020-02-08T12:08:07+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://bxcodec.io/tags/http-patch/</loc>
+    <lastmod>2020-02-08T12:08:07+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://bxcodec.io/posts/http-patch-method-ive-thought-the-wrong-way/</loc>
+    <lastmod>2020-02-08T12:08:07+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://bxcodec.io/tags/json-patch/</loc>
+    <lastmod>2020-02-08T12:08:07+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://bxcodec.io/</loc>
+    <lastmod>2020-02-08T12:08:07+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://bxcodec.io/posts/</loc>
+    <lastmod>2020-02-08T12:08:07+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://bxcodec.io/categories/rfcs/</loc>
+    <lastmod>2020-02-08T12:08:07+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://bxcodec.io/tags/rfcs/</loc>
+    <lastmod>2020-02-08T12:08:07+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://bxcodec.io/tags/softwaredevelopment/</loc>
+    <lastmod>2020-02-08T12:08:07+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://bxcodec.io/categories/softwaredevelopment/</loc>
+    <lastmod>2020-02-08T12:08:07+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://bxcodec.io/tags/</loc>
+    <lastmod>2020-02-08T12:08:07+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://bxcodec.io/tags/database/</loc>
     <lastmod>2020-01-06T12:08:07+07:00</lastmod>
   </url>
   
@@ -13,22 +73,7 @@
   </url>
   
   <url>
-    <loc>https://bxcodec.io/tags/database/</loc>
-    <lastmod>2020-01-06T12:08:07+07:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://bxcodec.io/</loc>
-    <lastmod>2020-01-06T12:08:07+07:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://bxcodec.io/tags/postgresql/</loc>
-    <lastmod>2020-01-06T12:08:07+07:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://bxcodec.io/posts/</loc>
     <lastmod>2020-01-06T12:08:07+07:00</lastmod>
   </url>
   
@@ -38,17 +83,7 @@
   </url>
   
   <url>
-    <loc>https://bxcodec.io/categories/softwaredevelopment/</loc>
-    <lastmod>2020-01-06T12:08:07+07:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://bxcodec.io/tags/sql/</loc>
-    <lastmod>2020-01-06T12:08:07+07:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://bxcodec.io/tags/</loc>
     <lastmod>2020-01-06T12:08:07+07:00</lastmod>
   </url>
   
@@ -68,12 +103,12 @@
   </url>
   
   <url>
-    <loc>https://bxcodec.io/categories/deployment/</loc>
+    <loc>https://bxcodec.io/tags/deployment/</loc>
     <lastmod>2019-09-07T15:00:07+07:00</lastmod>
   </url>
   
   <url>
-    <loc>https://bxcodec.io/tags/deployment/</loc>
+    <loc>https://bxcodec.io/categories/deployment/</loc>
     <lastmod>2019-09-07T15:00:07+07:00</lastmod>
   </url>
   
@@ -278,12 +313,12 @@
   </url>
   
   <url>
-    <loc>https://bxcodec.io/categories/life/</loc>
+    <loc>https://bxcodec.io/tags/life/</loc>
     <lastmod>2018-12-06T05:14:07+07:00</lastmod>
   </url>
   
   <url>
-    <loc>https://bxcodec.io/tags/life/</loc>
+    <loc>https://bxcodec.io/categories/life/</loc>
     <lastmod>2018-12-06T05:14:07+07:00</lastmod>
   </url>
   
