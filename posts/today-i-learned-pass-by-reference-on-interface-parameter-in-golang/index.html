@@ -302,8 +302,9 @@ After figuring the problem, I realized something. The first one is failed since 
 <p><strong>Final Resolver</strong> <!-- raw HTML omitted -->
 So after experimenting with many trials, finally I choose the last one. And because this function that I'm working on will a bit generic based on my current task, I transform it and add switch case condition so it will be more generic based on the switch case I made.</p>
 <p>In simple, All my works on my current task can be described in this example below. There is a generic function that will accept interface{} and do something inside it. And it supports many structs. </p>
-<p>The snippet code would be like this:</p>
-<!-- raw HTML omitted -->
+<p>The snippet code would be like this:
+<script type="application/javascript" src="https://gist.github.com/bxcodec/ae04792eb710eea3a359dcea018bf1c2.js"></script>
+</p>
 <h3 id="conclusions">Conclusions</h3>
 <p>This one is really-really a serious thing in Golang. We must very careful when working with pass-by-reference and interface{}. To avoid any unnecessary bugs, I recommend adding a unit test to each function that uses the pass-by-reference method.</p>
 <p>To be honest, I'm stuck for an hour on this issue. So if you think this is a good thing to knows, kindly share this article so anyone won't fall to the same problems.</p>

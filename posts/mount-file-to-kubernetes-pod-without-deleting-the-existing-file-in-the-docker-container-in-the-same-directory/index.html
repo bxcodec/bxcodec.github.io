@@ -196,14 +196,16 @@
 <h2 id="the-issue">The Issue</h2>
 <p>To be clear, I have a Go (Golang) application that builds and containerized in a docker image. This application already compiled and build and saved in a docker image.</p>
 <p>This is my <code>Dockerfile</code>.</p>
-<!-- raw HTML omitted -->
+<script type="application/javascript" src="https://gist.github.com/bxcodec/232b1c47ca3cd0a15fd0cf770ba7bad5.js"></script>
+
 <p>So it will create a Docker image that will contain the compiled go application in <code>/app/engine</code>. But this application will need a config file, so it can run and live. I need to inject the config file so it can run.</p>
 <p><img src="https://cdn-images-1.medium.com/max/1600/1*a_TDZoHdPpdNWwKuw42Wdg.png" alt="inject the config to docker container"></p>
 <blockquote>
 <p>inject the config to docker container</p>
 </blockquote>
 <p>And then, I use the Kubernetes config maps to inject my application config file.</p>
-<!-- raw HTML omitted -->
+<script type="application/javascript" src="https://gist.github.com/bxcodec/e9d4b2794fc1fd1fb23e06020a4c210c.js"></script>
+
 <p>But, the issue then happen. What I expect is, when injecting this config file on the same path. Let’s say my working directory in the container is <code>/app</code></p>
 <p>Previous:</p>
 <pre><code>app
@@ -239,7 +241,8 @@
   subPath: config.toml
 </code></pre><p>And voila, it works. It does not replace and delete my existing file in the container anymore. And it can run smoothly.</p>
 <p>My full Kubernetes deployment.yaml file:</p>
-<!-- raw HTML omitted -->
+<script type="application/javascript" src="https://gist.github.com/bxcodec/df348766eeb730afe00ba278c81e3249.js"></script>
+
 <p>Well, when solving this, I learn something important. Even I stuck for 4–6 hours when solving this “alone”, but I learned a valuable lesson here. And can’t look forward to the next adventure.</p>
 <p><em>Anyway, if you find this useful would you mind to share this story, so everyone will not fall to the same hole. And follow me to keep updates to my learning journey in Software Engineering :)</em></p>
 <h5 id="references">References:</h5>
@@ -247,7 +250,7 @@
 <li><a href="https://blog.sebastian-daschner.com/entries/multiple-kubernetes-volumes-directory">https://blog.sebastian-daschner.com/entries/multiple-kubernetes-volumes-directory</a></li>
 </ul>
 <hr>
-<p>_Originally posted at: <a href="https://hackernoon.com/mount-file-to-kubernetes-pod-without-deleting-the-existing-file-in-the-docker-container-in-the-88b5d11661a6_">https://hackernoon.com/mount-file-to-kubernetes-pod-without-deleting-the-existing-file-in-the-docker-container-in-the-88b5d11661a6_</a></p>
+<p><em>Originally posted at: <a href="https://hackernoon.com/mount-file-to-kubernetes-pod-without-deleting-the-existing-file-in-the-docker-container-in-the-88b5d11661a6">https://hackernoon.com/mount-file-to-kubernetes-pod-without-deleting-the-existing-file-in-the-docker-container-in-the-88b5d11661a6</a></em></p>
 
                     </div>
 

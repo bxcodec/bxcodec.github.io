@@ -233,14 +233,16 @@ $ docker push asia.gcr.io/kube-xmas/tweetor-docs:latest
 //docker push process will happen here...
 </code></pre></div><h5 id="step-2-create-a-kubernetes-deployment-configuration-for-swagger-ui">Step-2: Create a Kubernetes Deployment Configuration for Swagger UI</h5>
 <p>The next step is, create the K8s Deployment component. I made my version here. If you want to copy this, just copy it and change anything that required to change.</p>
-<!-- raw HTML omitted -->
+<script type="application/javascript" src="https://gist.github.com/bxcodec/7a1246df6c411fbceb30122e80a77615.js"></script>
+
 <p>Execute and run the deployment on Kubernetes.</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ kubectl apply -f swagger_ui_deployment.yaml
 $ kubectl get pods --namespace<span style="color:#f92672">=</span>tweetor-docs
 NAME                             READY   STATUS    RESTARTS   AGE
 tweetor-docs-786d889d67-65h45   1/1     Running   <span style="color:#ae81ff">0</span>          14m
 </code></pre></div><p>So, from the deployment above, I only use 3 component of K8s, <code>Namespace</code>, <code>Deployment</code> and <code>Service</code> (Node Port). And the last step is, to add the <code>Ingress</code> component to the service, so every engineer will able to see the documentation.</p>
-<!-- raw HTML omitted -->
+<script type="application/javascript" src="https://gist.github.com/bxcodec/2d33e6b2e61b0c1a969fc56ef52eac21.js"></script>
+
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ kubectl apply -f ingress_swagger_docs.yaml
 </code></pre></div><p><img src="https://cdn-images-1.medium.com/max/1600/1*C5ScoD2IvK3m1a_qEk_xdw.png" alt="Live Swagger UI Documentations"></p>
 <p>And now the docs will available and accessible by any engineer. And everyone can see the docs.</p>
@@ -273,7 +275,8 @@ $ docker push asia.gcr.io/kube-xmas/tweetor-mock:latest
 </code></pre></div><p>Just it, the rest is to add a deployment file to Kubernetes.</p>
 <h4 id="steps-2-creating-the-kubernetes-deployment-for-mock-server">Steps-2: Creating the Kubernetes Deployment for Mock Server</h4>
 <p>And the next is adding the K8s deployment. Here is my deployment configuration.</p>
-<!-- raw HTML omitted -->
+<script type="application/javascript" src="https://gist.github.com/bxcodec/66c2abacdb7af98285df0b877db3b2ea.js"></script>
+
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ kubectl apply -f mock_tweetor_deployment.yaml
 </code></pre></div><p>And add the ingress to DNS management and after that, I can now access the mock-server.</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ curl mock.tweetor.xyz/tweets
@@ -320,7 +323,8 @@ $ docker push asia.gcr.io/kube-xmas/tweetor-mock:latest
 <p>Well, luckily, there is a great tool has been built by the communities here: <a href="https://github.com/OpenAPITools/openapi-generator">https://github.com/OpenAPITools/openapi-generator</a>. So I just want to use it, and again, it's open-source, and it's free. And it's very easy to use. Especially, they already support for CLI, and Docker Image.</p>
 <h4 id="generate-sdk-with-docker-i-just-copy-it-from-the-github-repository-and-it-works-">Generate SDK With Docker (I just copy it from the Github repository, and it works) 😋</h4>
 <p>I prefer to use with docker because it can be used in CI/CD, especially if the CI/CD support containerization like Buddy.Works. And also with using Docker, I don't need to install Java SDK, because if we want to install using CLI, we need to install Java SDK. Since I don't want to add any extras job, I just use the method using docker. </p>
-<!-- raw HTML omitted -->
+<script type="application/javascript" src="https://gist.github.com/bxcodec/16a9ba520943c6db10ce50c60e08480b.js"></script>
+
 <ul>
 <li>Change the <code>./tweetor.yaml</code> with your Open API Specification. </li>
 <li><code>-g</code>: specify the programming language of the generated SDK. The supported programming-language can be seen here. In the example above, I want to generate an HTTP Client SDK for Golang.</li>

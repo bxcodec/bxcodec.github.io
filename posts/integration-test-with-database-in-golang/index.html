@@ -233,7 +233,8 @@
  <span style="color:#a6e22e">r</span>.<span style="color:#a6e22e">Client</span>.<span style="color:#a6e22e">Close</span>()
 }
 </code></pre></div><p>Thanks to testify package, it really helpful to create a suite test. Later with this struct, I just can easily embed it to my test-file. You can see at  <code>mycache_test.go</code></p>
-<!-- raw HTML omitted -->
+<script type="application/javascript" src="https://gist.github.com/bxcodec/efed138319e0e61824f6ebedd6b3ff05.js"></script>
+
 <p>If you look, the cache_test.go file, it's a bit different with the normal file-test. If in normal test-file we ussually have this pattern:</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">TestXXXX</span> (<span style="color:#a6e22e">t</span> <span style="color:#f92672">*</span><span style="color:#a6e22e">testing</span>.<span style="color:#a6e22e">T</span>){} <span style="color:#75715e">// with testing param
 </span></code></pre></div><p>It always has the testing param in each test. And it's required. But in this case, because I use the testify package, there a bit different how to do the test. And it really matters. To add a test case, we must follow the pattern:</p>
@@ -244,10 +245,12 @@
 <p>If we run the testing in our local, then make sure that our required Databases alive and can access from our local pc. If we run the testing in CI/CD server, then we must provide a live database to fulfill the test.</p>
 <p>Luckily, in this modern software engineering era, there was a tool like Docker exists. We can run our database in docker container, so we don't have to have a real database leave just for testing needs.</p>
 <p>To make it easy, I will use the <code>docker-compose</code> feature, look my <code>docker-compose.yaml</code>.</p>
-<!-- raw HTML omitted -->
+<script type="application/javascript" src="https://gist.github.com/bxcodec/8457ed9d7ea50ca87e8fca8139b629c9.js"></script>
+
 <p>With just command <code>docker-compose up -d</code>, then I will have a 2 database live in a docker-container so that I can test it directly with it.</p>
 <p>To ease me, I just make it into a <code>Makefile</code>. So before running my integration-test, I need my database already live in container.</p>
-<!-- raw HTML omitted -->
+<script type="application/javascript" src="https://gist.github.com/bxcodec/85803f96a20fc086da8904920298eb58.js"></script>
+
 <p>So now, to do my testing I just do it with one command:</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">$ make integration-test <span style="color:#75715e">#for integration test</span>
 $ make unittest <span style="color:#75715e">#just for unit-testing</span>
@@ -262,7 +265,8 @@ $ make unittest <span style="color:#75715e">#just for unit-testing</span>
 <h2 id="setup-the-travisyml-script">Setup the travis.yml script</h2>
 <p>Before move forward, first, we need to add our project to travis-ci.com and enable the CI/CD pipeline there.
 Later, we just need to add our <code>.travis.yml</code> in our project. For my project, you can look all the entire script of <code>.travis.yml</code> in my repository.</p>
-<!-- raw HTML omitted -->
+<script type="application/javascript" src="https://gist.github.com/bxcodec/50a2e52419d3a08af13322591d35d02e.js"></script>
+
 <p>Then later, enable it in Travis,
 <img src="https://cdn-images-1.medium.com/max/800/1*kwfpsiR2NXvbfSBMw538Nw.png" alt="find and enable our repo in Travis"><!-- raw HTML omitted --></p>
 <blockquote>

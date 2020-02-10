@@ -264,13 +264,15 @@ drwxr-xr-x  6 iman  staff   192B Nov  6 11:41 ..
 </code></pre><h2 id="adding-the-exitcommand">Adding the Exit Command</h2>
 <p>But, this application is only worked for any built-in application that registered in the environment. Command like exit is not exist, because it is programmed in every CLI application.
 Then, I make a switch-case handler for each command that doesn't have a built-in application in the system like the exit command.</p>
-<!-- raw HTML omitted -->
+<script type="application/javascript" src="https://gist.github.com/bxcodec/da11f6e398981cbf49ceb265859f7997.js"></script>
+
 <h2 id="adding-the-customcommand">Adding the Custom Command</h2>
 <p>To add custom commands, I could simply add it to the switch-case handler. For example, I want to add a command like plus. This command does not exist in any CLI application out there. I want to make it like this:</p>
 <pre><code>$ plus 2 4 5 6
 17
 </code></pre><p>To make this, I just need to add a sum function and add the command case handler in the switch-case</p>
-<!-- raw HTML omitted -->
+<script type="application/javascript" src="https://gist.github.com/bxcodec/19c22a4e33ac4c9cb116e204e2a94f99.js"></script>
+
 <h2 id="conclusion">Conclusion</h2>
 <p>In the end, it's only a very simple application. But for sure, I learn a few things when making this. And also, when writing this, I found a similar article with this article (here: <a href="https://sj14.gitlab.io/post/2018-07-01-go-unix-shell/)">https://sj14.gitlab.io/post/2018-07-01-go-unix-shell/)</a>. <!-- raw HTML omitted -->
 After reading that article, I'm thinking of discarding my draft. But, I've written a lot of explanation and example here, so then I decided to post it anyway XD.</p>
