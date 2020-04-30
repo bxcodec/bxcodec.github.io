@@ -2,7 +2,7 @@
 <html lang="en-us"><head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-        <meta name="generator" content="Hugo 0.63.0-DEV" />
+        <meta name="generator" content="Hugo 0.70.0-DEV" />
 	
 
 	<title>
@@ -189,10 +189,10 @@
                     
                     
                     <div class="article-post">
-                        <p>I've some project stored separated in 3 git-host providers: Github, Gitlab, and Bitbucket. Because I was a low-profile software engineer, I use both in Gitlab and Bitbucket for the private repository and Github for public repository XD.</p>
+                        <p>I&rsquo;ve some project stored separated in 3 git-host providers: Github, Gitlab, and Bitbucket. Because I was a low-profile software engineer, I use both in Gitlab and Bitbucket for the private repository and Github for public repository XD.</p>
 <p>I like Github very much, but my current financial status forced me to reduce any not so important cost just for my personal hobby and private projects XD.</p>
-<p>So, a few days ago, I'm trying to create a project of Golang and stored it in Gitlab. And this project has 2 dependencies to my other library. One of them stored in Bitbucket, and another one in Gitlab.</p>
-<p>To simplify, I will tell it in an example. Let's say I have 3 projects.</p>
+<p>So, a few days ago, I&rsquo;m trying to create a project of Golang and stored it in Gitlab. And this project has 2 dependencies to my other library. One of them stored in Bitbucket, and another one in Gitlab.</p>
+<p>To simplify, I will tell it in an example. Let&rsquo;s say I have 3 projects.</p>
 <ul>
 <li><code>math</code> library project in bitbucket (private repository)</li>
 <li><code>multiply</code> library project in Gitlab (private repository)</li>
@@ -204,7 +204,7 @@
   <span style="color:#e6db74">&#34;bitbucket.org/bxcodec/math&#34;</span>
   <span style="color:#e6db74">&#34;gitlab.com/bxcodec/multiply&#34;</span>
 )
-</code></pre></div><p>And when I trying to go get the samplecool's dependencies, this error happens:</p>
+</code></pre></div><p>And when I trying to go get the samplecool&rsquo;s dependencies, this error happens:</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">$ go get -v
 <span style="color:#75715e"># cd .; git ls-remote https://bitbucket.org/bxcodec/math</span>
 fatal: could not read Username <span style="color:#66d9ef">for</span> <span style="color:#e6db74">&#39;https://bitbucket.org&#39;</span>: terminal prompts disabled

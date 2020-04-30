@@ -2,7 +2,7 @@
 <html lang="en-us"><head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-        <meta name="generator" content="Hugo 0.63.0-DEV" />
+        <meta name="generator" content="Hugo 0.70.0-DEV" />
 	
 
 	<title>
@@ -214,15 +214,15 @@
 <span style="color:#66d9ef">func</span> <span style="color:#a6e22e">passByReference</span>(<span style="color:#a6e22e">item</span> <span style="color:#f92672">*</span><span style="color:#66d9ef">string</span>) {
  <span style="color:#f92672">*</span><span style="color:#a6e22e">item</span> = <span style="color:#e6db74">&#34;world&#34;</span>
 }
-</code></pre></div><p>As you see, in the example above. That's how I usually passing the parameters based on their types (by references or by value).</p>
+</code></pre></div><p>As you see, in the example above. That&rsquo;s how I usually passing the parameters based on their types (by references or by value).</p>
 <h3 id="pass-by-reference-on-interface-param-ingolang">Pass By Reference on Interface Param in Golang</h3>
-<p>But, one day. I face a problem that I need to solve about pass a parameter by reference. Not like any ordinary one that I've ever made, this one using an interface at the parameter. So basically, this function accepts anything in <code>interface{}</code>, and fill the value based on the logic that happens inside that function. </p>
+<p>But, one day. I face a problem that I need to solve about pass a parameter by reference. Not like any ordinary one that I&rsquo;ve ever made, this one using an interface at the parameter. So basically, this function accepts anything in <code>interface{}</code>, and fill the value based on the logic that happens inside that function. </p>
 <p>The function looks like this below.</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">doSomethinWithThisParam</span>(<span style="color:#a6e22e">item</span> <span style="color:#66d9ef">interface</span>{}){}
-</code></pre></div><p>This function is simple, it only accepts an interface, and do something inside it. It won't return any error, so it just to hydrate the item with a value in it.</p>
+</code></pre></div><p>This function is simple, it only accepts an interface, and do something inside it. It won&rsquo;t return any error, so it just to hydrate the item with a value in it.</p>
 <p>So to solve this weird behavior, I tried to solve with trying it on my owns. Here below I will explain the steps how I solve it.</p>
 <h3 id="first-attempt-pointer-to-interface-_notworked_">First Attempt: Pointer to Interface <em>[Not Worked]</em></h3>
-<p>At first, I tried to like the non-interface{} does. I put a pointer in the interface. But it doesn't work. </p>
+<p>At first, I tried to like the non-interface{} does. I put a pointer in the interface. But it doesn&rsquo;t work. </p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#f92672">package</span> <span style="color:#a6e22e">main</span>
 <span style="color:#f92672">import</span> (
  <span style="color:#e6db74">&#34;fmt&#34;</span>
@@ -242,9 +242,9 @@
   <span style="color:#a6e22e">Name</span>: <span style="color:#e6db74">&#34;Iman Tumorang&#34;</span>,
  }
 }
-</code></pre></div><p>This one can't be compiled, it throws the error.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">cannot use &amp;item <span style="color:#f92672">(</span>type *Student<span style="color:#f92672">)</span> as type *interface <span style="color:#f92672">{</span><span style="color:#f92672">}</span> in argument to doSomethinWithThisParam:
-	*interface <span style="color:#f92672">{</span><span style="color:#f92672">}</span> is pointer to interface, not interface
+</code></pre></div><p>This one can&rsquo;t be compiled, it throws the error.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">cannot use &amp;item <span style="color:#f92672">(</span>type *Student<span style="color:#f92672">)</span> as type *interface <span style="color:#f92672">{}</span> in argument to doSomethinWithThisParam:
+	*interface <span style="color:#f92672">{}</span> is pointer to interface, not interface
 </code></pre></div><h3 id="second-attempt-directly-assign-value-to-interface-_notworked_">Second Attempt: Directly Assign Value to Interface <em>[Not Worked]</em></h3>
 <p>The second one, I try without a pointer to the interface, but instead, I assign the value directly to the given param.</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">doSomethinWithThisParam</span>(<span style="color:#a6e22e">item</span> <span style="color:#66d9ef">interface</span>{}) {
@@ -256,7 +256,7 @@
 <span style="color:#75715e">// Print: {ID: Name:}
 </span></code></pre></div><p>And after print the data, it still not worked. It prints the empty value. </p>
 <h3 id="third-attempt-casting-to-original-type-and-assign-the-value-_workedbut_">Third Attempt: Casting to Original Type and Assign the Value <em>[Worked but…]</em></h3>
-<p>Later, after trying many things, I found a worked one. The parameter is still an interface{}, but instead of directly assign the value, at first I had to cast it back to the original's type. At this time, it's a bit tricky. And we must careful how to use it. See the difference here below.</p>
+<p>Later, after trying many things, I found a worked one. The parameter is still an interface{}, but instead of directly assign the value, at first I had to cast it back to the original&rsquo;s type. At this time, it&rsquo;s a bit tricky. And we must careful how to use it. See the difference here below.</p>
 <p><strong>Not worked one</strong> <!-- raw HTML omitted -->
 This one example below is not worked.</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">doSomethinWithThisParam</span>(<span style="color:#a6e22e">item</span> <span style="color:#66d9ef">interface</span>{}) {
@@ -277,7 +277,7 @@ But this one is worked. </p>
 }
 <span style="color:#75715e">// Print: {ID:124 Name:Iman Tumorang}
 </span></code></pre></div><p>Seriously????? 😱 <!-- raw HTML omitted -->
-At first, I'm a bit confused. What is really happening here? How could be when I made like this one it doesn't work.</p>
+At first, I&rsquo;m a bit confused. What is really happening here? How could be when I made like this one it doesn&rsquo;t work.</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#a6e22e">origin</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">item</span>.(<span style="color:#f92672">*</span><span style="color:#a6e22e">Student</span>)
  <span style="color:#a6e22e">origin</span> = <span style="color:#f92672">&amp;</span><span style="color:#a6e22e">Student</span>{
   <span style="color:#a6e22e">ID</span>:   <span style="color:#e6db74">&#34;124&#34;</span>,
@@ -300,14 +300,14 @@ After figuring the problem, I realized something. The first one is failed since 
 <span style="color:#75715e">// Print: {ID:124 Name:Iman Tumorang}
 </span></code></pre></div><p>This one is worked well. That made me realized that when we want to change the value in the pointer variable, we need to set directly to the value, not to change address it self.</p>
 <p><strong>Final Resolver</strong> <!-- raw HTML omitted -->
-So after experimenting with many trials, finally I choose the last one. And because this function that I'm working on will a bit generic based on my current task, I transform it and add switch case condition so it will be more generic based on the switch case I made.</p>
+So after experimenting with many trials, finally I choose the last one. And because this function that I&rsquo;m working on will a bit generic based on my current task, I transform it and add switch case condition so it will be more generic based on the switch case I made.</p>
 <p>In simple, All my works on my current task can be described in this example below. There is a generic function that will accept interface{} and do something inside it. And it supports many structs. </p>
 <p>The snippet code would be like this:
 <script type="application/javascript" src="https://gist.github.com/bxcodec/ae04792eb710eea3a359dcea018bf1c2.js"></script>
 </p>
 <h3 id="conclusions">Conclusions</h3>
 <p>This one is really-really a serious thing in Golang. We must very careful when working with pass-by-reference and interface{}. To avoid any unnecessary bugs, I recommend adding a unit test to each function that uses the pass-by-reference method.</p>
-<p>To be honest, I'm stuck for an hour on this issue. So if you think this is a good thing to knows, kindly share this article so anyone won't fall to the same problems.</p>
+<p>To be honest, I&rsquo;m stuck for an hour on this issue. So if you think this is a good thing to knows, kindly share this article so anyone won&rsquo;t fall to the same problems.</p>
 
                     </div>
 

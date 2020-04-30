@@ -2,7 +2,7 @@
 <html lang="en-us"><head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-        <meta name="generator" content="Hugo 0.63.0-DEV" />
+        <meta name="generator" content="Hugo 0.70.0-DEV" />
 	
 
 	<title>
@@ -190,8 +190,8 @@
                     
                     <div class="article-post">
                         <p>On my first time joining <a href="https://kurio.co.id">Kurio Engineering team</a>, a year ago before I wrote this story, we already used CI/CD flow in every teams (mobile team, backend team, and data science team).</p>
-<p>Back then, I still don't understand yet what's the meaning CI/CD. All I learned about that topic, I got that here from Kurio. CI/CD stands for Continuous Integration and Continuous Delivery. It is a tool to ease and make our development process faster.</p>
-<p>For example, imagine we're developing an application, let's say a simple Todo Application, written in Golang. To deploy this to the server, we will make a few steps like below:</p>
+<p>Back then, I still don&rsquo;t understand yet what&rsquo;s the meaning CI/CD. All I learned about that topic, I got that here from Kurio. CI/CD stands for Continuous Integration and Continuous Delivery. It is a tool to ease and make our development process faster.</p>
+<p>For example, imagine we&rsquo;re developing an application, let&rsquo;s say a simple Todo Application, written in Golang. To deploy this to the server, we will make a few steps like below:</p>
 <ul>
 <li>Finish all the feature and function</li>
 <li>Test all the function using unit test manually in local</li>
@@ -200,20 +200,20 @@
 <li>SSH and Configure the environment in the server</li>
 <li>Run the application in the server</li>
 </ul>
-<p>Doing this, over and over again, every time we're developing a feature is really painful. To do all of this, could take so many times until it lives in the server.</p>
+<p>Doing this, over and over again, every time we&rsquo;re developing a feature is really painful. To do all of this, could take so many times until it lives in the server.</p>
 <blockquote>
 <p>&ldquo;Anything that you do more than twice has to be automated&rdquo; ~ Adam Stone, CEO, D-Tools</p>
 </blockquote>
-<p>So that's how CI/CD solves this problem, we can automate it, so we don't need to do all the dirty things like SSH to the server to start the application, uploading the file to the server.</p>
+<p>So that&rsquo;s how CI/CD solves this problem, we can automate it, so we don&rsquo;t need to do all the dirty things like SSH to the server to start the application, uploading the file to the server.</p>
 <p>Nowadays, there are so many CI/CD tools that we can use according to our needs. Jenkins, CircleCI, Travis-CI, BuddyWorks, etc. Everything has advantages and disadvantages. If you need a free cost, Jenkins may be suite for you, but you need an extra effort to set up the server. And another thing is only about pricing and feature, just look for them and use wisely to your needs.</p>
 <h2 id="kurio-backend-cicdflow">Kurio Backend CI/CD Flow</h2>
-<p>In Kurio, we have 3 CI/CD tools to help us, they are Travis-CI, BuddyWorks, and Jenkins. Travis-CI and BuddyWorks is a SaaS system, so we must spend a bunch of money to use it, but it offers simplicity, so I think it's a win-win solution. Recently most of our projects here use BuddyWorks as our CI/CD system.</p>
-<p>Our first CI/CD tool is Travis-CI and it was good. It really helpful for us. It's easy to integrate with our projects, the documentation is very clear. Besides, Travis is really a famous CI/CD tools on open source world, so it's easy to find the community to ask about the setup. But for some cases, it's not suited to our problem that I will explain later.</p>
+<p>In Kurio, we have 3 CI/CD tools to help us, they are Travis-CI, BuddyWorks, and Jenkins. Travis-CI and BuddyWorks is a SaaS system, so we must spend a bunch of money to use it, but it offers simplicity, so I think it&rsquo;s a win-win solution. Recently most of our projects here use BuddyWorks as our CI/CD system.</p>
+<p>Our first CI/CD tool is Travis-CI and it was good. It really helpful for us. It&rsquo;s easy to integrate with our projects, the documentation is very clear. Besides, Travis is really a famous CI/CD tools on open source world, so it&rsquo;s easy to find the community to ask about the setup. But for some cases, it&rsquo;s not suited to our problem that I will explain later.</p>
 <p>Anyway, I would tell our CI/CD flow from writing the code until deployment and live into production, the flow can be seen in this picture below.</p>
 <p><img src="https://cdn-images-1.medium.com/max/1600/1*SSVEjzazsfemcTD7POHibg.png" alt="Kurio Backend CI/CD Flow">
 <em>Kurio Backend CI/CD Flow</em></p>
-<p>Start from writing the code, every engineer who works on some tasks, will push and make a Pull Request (PR) in Github. Thanks to the Github's webhook, we can listen to every event that happens in the Github server. So with this events, we can use it as the CI/CD trigger.</p>
-<p>After the PR approved and merged to master, our CI/CD system will automatically deploy it to staging. When it's deployed in staging server, now it will be tested manually. Some tests like load-testing or just black box-testing will be done here.</p>
+<p>Start from writing the code, every engineer who works on some tasks, will push and make a Pull Request (PR) in Github. Thanks to the Github&rsquo;s webhook, we can listen to every event that happens in the Github server. So with this events, we can use it as the CI/CD trigger.</p>
+<p>After the PR approved and merged to master, our CI/CD system will automatically deploy it to staging. When it&rsquo;s deployed in staging server, now it will be tested manually. Some tests like load-testing or just black box-testing will be done here.</p>
 <p>When it already passes the requirements then we release it to production. Again with just using the release tag in Github, it will automatically be deployed to production.</p>
 <h2 id="cicd-with-buddyworks">CI/CD With BuddyWorks.</h2>
 <p>Our testing flow is really simple. We use the CI/CD tools only for testing and building, and also deployment purposes. And for some testing that needs to interact with a real application, usually, we will spawn a live docker container directly in the CI/CD systems, then runs our testing scenario. Or I might say, an integration testing with a real service. For example, if a project depends on MySQL service, we will spawn a docker container of MySQL, then run it with the test directly against it. So in our CI/CD system, there will be a live MySQL service running from a docker container.</p>

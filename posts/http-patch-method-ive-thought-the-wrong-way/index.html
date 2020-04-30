@@ -2,7 +2,7 @@
 <html lang="en-us"><head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-        <meta name="generator" content="Hugo 0.63.0-DEV" />
+        <meta name="generator" content="Hugo 0.70.0-DEV" />
 	
 
 	<title>
@@ -189,12 +189,12 @@
                     
                     
                     <div class="article-post">
-                        <p>I've been working on Software Engineering for more than 3 years now. And I'm surprised, in these 3 years, I never face any PATCH endpoint yet, until now. </p>
+                        <p>I&rsquo;ve been working on Software Engineering for more than 3 years now. And I&rsquo;m surprised, in these 3 years, I never face any PATCH endpoint yet, until now. </p>
 <p>And because of that, I never really use the PATCH Method before, and never develop it either. I remember 3 years ago when the first time I asked my senior about the difference between PUT and PATCH was only the changed value. PUT will replace the entire item, and PATCH changing the specified field.</p>
-<p>That's it! But in reality, in my careers, we never used the PATCH method. The reason is that we still didn't need it at that time. So I now live with this belief, and whenever I talk to others, they usually understand what I mean.</p>
+<p>That&rsquo;s it! But in reality, in my careers, we never used the PATCH method. The reason is that we still didn&rsquo;t need it at that time. So I now live with this belief, and whenever I talk to others, they usually understand what I mean.</p>
 <h3 id="my-original-thought-aboutpatch">My Original Thought about PATCH</h3>
 <p>So, since I know about HTTP Method and REST. I only use these methods, GET, DELETE, POST, and PUT. I never have a chance (yet) to use PATCH.</p>
-<p>We know clearly, how the PUT work. And I've been using PUT for a long time now. For example, I have this JSON. And I'm doing PUT operation.</p>
+<p>We know clearly, how the PUT work. And I&rsquo;ve been using PUT for a long time now. For example, I have this JSON. And I&rsquo;m doing PUT operation.</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">GET /user/bxcodec
 <span style="color:#f92672">{</span>
   <span style="color:#e6db74">&#34;name&#34;</span>: <span style="color:#e6db74">&#34;Iman&#34;</span>,
@@ -242,7 +242,7 @@
 </blockquote>
 <p>So, from the RFC docs, it says, in the request body, I have to specify a set of actions or instructions to modify the current resource in request URI. As we can see in the example above. But how I do set the actions in the request body? How should I format it?</p>
 <h3 id="introducing-jsonpatch">Introducing JSON PATCH</h3>
-<p>To answer the previous question, how should I format the action list in my request body? I found an interesting thing, it's another RFC called JSON-Patch (RFC 6902). This is an RFC to explain how to use JSON-Patch for JSON operations. </p>
+<p>To answer the previous question, how should I format the action list in my request body? I found an interesting thing, it&rsquo;s another RFC called JSON-Patch (RFC 6902). This is an RFC to explain how to use JSON-Patch for JSON operations. </p>
 <p>A short example of how JSON-PATCH worked is more like this. For example, we have a JSON here.</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json">{
   <span style="color:#f92672">&#34;name&#34;</span>: <span style="color:#e6db74">&#34;Iman&#34;</span>,
@@ -289,7 +289,7 @@
 <span style="color:#f92672">}</span>
 </code></pre></div><h3 id="conclusions">Conclusions</h3>
 <p>Today, after living with a wrong belief, I learned new things. HTTP-PATCH has a different way to implement it. We can use JSON-PATCH as the request-body on the HTTP-PATCH request method. </p>
-<p>But, I don't know, to be honest, I still feel this way is not really convenient. And it makes an extra layer of our implementations, compares to like what I used to be used. Luckily, there's already a lot of JSON-PATCH library out there, like <a href="https://github.com/evanphx/json-patch">https://github.com/evanphx/json-patch</a> for Golang, <a href="https://www.npmjs.com/package/fast-json-patch">https://www.npmjs.com/package/fast-json-patch</a> in Typescript, and many more. So I don't think it will be hard to implement it in my next projects. But yeah, let's see haha. </p>
+<p>But, I don&rsquo;t know, to be honest, I still feel this way is not really convenient. And it makes an extra layer of our implementations, compares to like what I used to be used. Luckily, there&rsquo;s already a lot of JSON-PATCH library out there, like <a href="https://github.com/evanphx/json-patch">https://github.com/evanphx/json-patch</a> for Golang, <a href="https://www.npmjs.com/package/fast-json-patch">https://www.npmjs.com/package/fast-json-patch</a> in Typescript, and many more. So I don&rsquo;t think it will be hard to implement it in my next projects. But yeah, let&rsquo;s see haha. </p>
 <p>But yeah, even it more convenient to change directly the value for patching (without using JSON-PATCH, and not following the RFC 5789) LOL, I will try to follow this in my next projects.</p>
 
                     </div>

@@ -2,7 +2,7 @@
 <html lang="en-us"><head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-        <meta name="generator" content="Hugo 0.63.0-DEV" />
+        <meta name="generator" content="Hugo 0.70.0-DEV" />
 	
 
 	<title>
@@ -191,19 +191,19 @@
                     <div class="article-post">
                         <p>So today I learned a really important thing in Github and open-source world :D. Started from a few months ago, I make a simple library here: <a href="https://github.com/bxcodec/faker">https://github.com/bxcodec/faker</a>. This library is helping the Go engineer to create a dummy data based on their structs.</p>
 <p>So for example:</p>
-<p>In Go, let's say I have the struct like this below:</p>
+<p>In Go, let&rsquo;s say I have the struct like this below:</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#66d9ef">type</span> <span style="color:#a6e22e">Sample</span> <span style="color:#66d9ef">struct</span> {
  <span style="color:#a6e22e">Name</span> <span style="color:#66d9ef">string</span> 
  <span style="color:#a6e22e">Age</span> <span style="color:#66d9ef">int</span>
 }
-</code></pre></div><p>With my <code>faker</code> library, I can generate a dummy data based on that's struct.</p>
+</code></pre></div><p>With my <code>faker</code> library, I can generate a dummy data based on that&rsquo;s struct.</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#a6e22e">sample</span><span style="color:#f92672">:=</span> <span style="color:#a6e22e">Sample</span>{}
 <span style="color:#a6e22e">faker</span>.<span style="color:#a6e22e">FakeData</span>(<span style="color:#f92672">&amp;</span><span style="color:#a6e22e">sample</span>)
 <span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Printf</span>(<span style="color:#e6db74">&#34;%+v&#34;</span>, <span style="color:#a6e22e">sample</span>)
 <span style="color:#75715e">//will print: {Name: &#34;Some-random-string&#34;, Age: 17 /*random num*/}
 </span></code></pre></div><p>This library will very useful for doing testing (unit testing or anything that need a dummy data).</p>
 <p>So, a few days ago, someone creates a Pull Request to my library. Usually, if the PR looks good to me, I always try to pull it into my local, and test it directly. To do this, usually, I just clone his forked repository then test it in my local.</p>
-<p>But for this time, it's a bit different. He creates a branch in his forked repo, then creates a direct PR to my repository. So, if I clone his forked repo, this branch does not exist. The same as for my repository, if I fetch all the branch, his PR's branch does not exist.</p>
+<p>But for this time, it&rsquo;s a bit different. He creates a branch in his forked repo, then creates a direct PR to my repository. So, if I clone his forked repo, this branch does not exist. The same as for my repository, if I fetch all the branch, his PR&rsquo;s branch does not exist.</p>
 <p>So how to checkout to a PR branch?</p>
 <hr>
 <h2 id="checkout-to-pull-request-ingithub">Checkout to Pull Request in Github</h2>
@@ -249,7 +249,7 @@ From github.com:bxcodec/faker
  * <span style="color:#f92672">[</span>new ref<span style="color:#f92672">]</span>         refs/pull/12/head -&gt; origin/pr/12
  * <span style="color:#f92672">[</span>new ref<span style="color:#f92672">]</span>         refs/pull/13/head -&gt; origin/pr/13
  ...
-</code></pre></div><p>Later, let's just checkout to the PR branch</p>
+</code></pre></div><p>Later, let&rsquo;s just checkout to the PR branch</p>
 <pre><code>$ git checkout pr/10 
 </code></pre><hr>
 <p>Anyway, this is also worked in Gitlab and maybe for another Git host out there.</p>

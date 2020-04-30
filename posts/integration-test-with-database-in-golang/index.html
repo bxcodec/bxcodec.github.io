@@ -2,7 +2,7 @@
 <html lang="en-us"><head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-        <meta name="generator" content="Hugo 0.63.0-DEV" />
+        <meta name="generator" content="Hugo 0.70.0-DEV" />
 	
 
 	<title>
@@ -192,11 +192,11 @@
                         <p>Software testing is a process used to identify the correctness, completeness, and quality of developed computer software. There are so many kinds of software testing. Start from unit-testing, load-testing, stress-testing, integration-testing, UI-testing, e2e-testing, and many more.</p>
 <p>Every kind of testing have a different purpose, unit-testing aims to test a single unit of function. Load testing aims to measure how reliable our system against a huge request. And Integration testing aims to ensure our system can integrate with the external services without any issues.</p>
 <h2 id="integration-testing-ingo">Integration Testing In Go</h2>
-<p>In this article, I won't tell any other test except integration testing. This kind test as I said earlier is to ensure that our systems can integrate to external services without any issues.</p>
+<p>In this article, I won&rsquo;t tell any other test except integration testing. This kind test as I said earlier is to ensure that our systems can integrate to external services without any issues.</p>
 <p>So with this test, we hope we can avoid any unnecessary error or bug when deploying our applications to the server whatever its environment (staging, production)</p>
-<p>So, before moving how to do it in Golang, let me clarify a few things before I explain many things below. Actually, I don't know that this kind of testing is looking good for many people, but this is how we made an integration testing in our company Kurio (my current company when writing this). If you have an any better idea, it really pleasures if you tell us it in the comment below.</p>
+<p>So, before moving how to do it in Golang, let me clarify a few things before I explain many things below. Actually, I don&rsquo;t know that this kind of testing is looking good for many people, but this is how we made an integration testing in our company Kurio (my current company when writing this). If you have an any better idea, it really pleasures if you tell us it in the comment below.</p>
 <h2 id="preparation-andtools">Preparation and Tools</h2>
-<p>In this article, to make it clear, I've listed and prepared a few things as my tools and helper here.</p>
+<p>In this article, to make it clear, I&rsquo;ve listed and prepared a few things as my tools and helper here.</p>
 <ul>
 <li>Docker installed (specifically, docker-compose)</li>
 <li>github.com/stretchr/testify for testing package tools</li>
@@ -205,10 +205,10 @@
 <li>etc listed in go.mod</li>
 </ul>
 <p>So I will use 2 kinds of database, and my simple application will connect to this database. What I will explain is, how to make an integration testing against to my both database here.</p>
-<p>So I will use MySQL and also Redis well, technically we also can say Redis as a database but NoSQL, if it's not, well just assume it was a database :D.</p>
+<p>So I will use MySQL and also Redis well, technically we also can say Redis as a database but NoSQL, if it&rsquo;s not, well just assume it was a database :D.</p>
 <h2 id="test-suite">Test Suite</h2>
-<p>So let's say I have a project that depends on both of this database, you can look my entire simple projects here: <a href="https://github.com/bxcodec/integration-testing">https://github.com/bxcodec/integration-testing</a></p>
-<p>If you look to packages mysql and redis you will find my function handler to connect to each DB itself and also its file test. Each test was a Suite test. A bundle test that will test my handler. To make a suite test it's easy, thanks to <code>github.com/stretchr/testify</code> I can do it with ease.</p>
+<p>So let&rsquo;s say I have a project that depends on both of this database, you can look my entire simple projects here: <a href="https://github.com/bxcodec/integration-testing">https://github.com/bxcodec/integration-testing</a></p>
+<p>If you look to packages mysql and redis you will find my function handler to connect to each DB itself and also its file test. Each test was a Suite test. A bundle test that will test my handler. To make a suite test it&rsquo;s easy, thanks to <code>github.com/stretchr/testify</code> I can do it with ease.</p>
 <p>For example, you can look at my redis package. At suite_test.go I define a RedisSuite struct that will be reusable by any test-file.</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#f92672">package</span> <span style="color:#a6e22e">redis_test</span>
 <span style="color:#f92672">import</span> (
@@ -235,15 +235,15 @@
 </code></pre></div><p>Thanks to testify package, it really helpful to create a suite test. Later with this struct, I just can easily embed it to my test-file. You can see at  <code>mycache_test.go</code></p>
 <script type="application/javascript" src="https://gist.github.com/bxcodec/efed138319e0e61824f6ebedd6b3ff05.js"></script>
 
-<p>If you look, the cache_test.go file, it's a bit different with the normal file-test. If in normal test-file we ussually have this pattern:</p>
+<p>If you look, the cache_test.go file, it&rsquo;s a bit different with the normal file-test. If in normal test-file we ussually have this pattern:</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">TestXXXX</span> (<span style="color:#a6e22e">t</span> <span style="color:#f92672">*</span><span style="color:#a6e22e">testing</span>.<span style="color:#a6e22e">T</span>){} <span style="color:#75715e">// with testing param
-</span></code></pre></div><p>It always has the testing param in each test. And it's required. But in this case, because I use the testify package, there a bit different how to do the test. And it really matters. To add a test case, we must follow the pattern:</p>
+</span></code></pre></div><p>It always has the testing param in each test. And it&rsquo;s required. But in this case, because I use the testify package, there a bit different how to do the test. And it really matters. To add a test case, we must follow the pattern:</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#66d9ef">func</span> (<span style="color:#a6e22e">s</span> <span style="color:#a6e22e">TestSuite</span>) <span style="color:#a6e22e">TestXXXX</span>(){} <span style="color:#75715e">//without testing param
 </span></code></pre></div><p>For example, in my redis test-file (cache_test.go), you could see that I have 2 test they are: <code>TestSet</code> and <code>TestGet</code>.</p>
 <h2 id="running-thetest">Running The Test</h2>
 <p>To run the test, it still the same as usual. Run it with: <code>go test</code>. But, because this test requires live Databases(MySQL and Redis), at first, we need to run a live database in our testing environment.</p>
 <p>If we run the testing in our local, then make sure that our required Databases alive and can access from our local pc. If we run the testing in CI/CD server, then we must provide a live database to fulfill the test.</p>
-<p>Luckily, in this modern software engineering era, there was a tool like Docker exists. We can run our database in docker container, so we don't have to have a real database leave just for testing needs.</p>
+<p>Luckily, in this modern software engineering era, there was a tool like Docker exists. We can run our database in docker container, so we don&rsquo;t have to have a real database leave just for testing needs.</p>
 <p>To make it easy, I will use the <code>docker-compose</code> feature, look my <code>docker-compose.yaml</code>.</p>
 <script type="application/javascript" src="https://gist.github.com/bxcodec/8457ed9d7ea50ca87e8fca8139b629c9.js"></script>
 
@@ -298,7 +298,7 @@ Later, we just need to add our <code>.travis.yml</code> in our project. For my 
 <span style="color:#a6e22e">suite</span>.<span style="color:#a6e22e">Run</span>(<span style="color:#a6e22e">t</span>, <span style="color:#a6e22e">yourItemSuite</span>)
 }
 </code></pre></div><p>At least, this package already makes the boilerplate like setting the migration (if using migrations) or handle the test-suite setup that will help you work faster. :D</p>
-<p>Also, it's required to understand how testify/suite works, before implementing your own integration test like ours.</p>
+<p>Also, it&rsquo;s required to understand how testify/suite works, before implementing your own integration test like ours.</p>
 <hr>
 <p>Once again, as I tell at the beginning of this article, this is how we made an integration testing in our company Kurio (my current company when writing this.
 If you have an any better idea, it really pleasures if you tell me it in the comment below. But if you found this very useful, please share this with anyone who might need this. ^_^</p>

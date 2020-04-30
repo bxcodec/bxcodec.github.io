@@ -157,6 +157,15 @@
     </item>
     
     <item>
+      <title>go</title>
+      <link>https://bxcodec.io/tags/go/</link>
+      <pubDate>Wed, 31 Jul 2019 23:00:07 +0700</pubDate>
+      
+      <guid>https://bxcodec.io/tags/go/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>golang</title>
       <link>https://bxcodec.io/tags/golang/</link>
       <pubDate>Wed, 31 Jul 2019 23:00:07 +0700</pubDate>
@@ -274,15 +283,6 @@
     </item>
     
     <item>
-      <title>ci/cd</title>
-      <link>https://bxcodec.io/tags/ci/cd/</link>
-      <pubDate>Fri, 25 Jan 2019 09:14:07 +0700</pubDate>
-      
-      <guid>https://bxcodec.io/tags/ci/cd/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>integration-testing</title>
       <link>https://bxcodec.io/tags/integration-testing/</link>
       <pubDate>Fri, 25 Jan 2019 09:14:07 +0700</pubDate>
@@ -315,15 +315,6 @@
       <pubDate>Thu, 24 Jan 2019 04:14:07 +0700</pubDate>
       
       <guid>https://bxcodec.io/tags/error/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>go</title>
-      <link>https://bxcodec.io/tags/go/</link>
-      <pubDate>Thu, 24 Jan 2019 04:14:07 +0700</pubDate>
-      
-      <guid>https://bxcodec.io/tags/go/</guid>
       <description></description>
     </item>
     
@@ -477,6 +468,15 @@
       <pubDate>Tue, 01 May 2018 11:09:30 +0700</pubDate>
       
       <guid>https://bxcodec.io/tags/startup/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>ci/cd</title>
+      <link>https://bxcodec.io/tags/ci/cd/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://bxcodec.io/tags/ci/cd/</guid>
       <description></description>
     </item>
     
