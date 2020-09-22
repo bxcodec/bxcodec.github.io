@@ -7,7 +7,16 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>Iman Tumorang @bxcodec.io - All rights reserved</copyright>
-    <lastBuildDate>Mon, 06 Jan 2020 12:08:07 +0700</lastBuildDate><atom:link href="https://bxcodec.io/tags/rdbms/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 22 Sep 2020 09:08:07 +0700</lastBuildDate><atom:link href="https://bxcodec.io/tags/rdbms/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>How To Do Pagination in Postgres with Golang in 4 Common Ways</title>
+      <link>https://bxcodec.io/posts/how-to-do-pagination-in-postgres-with-golang-in-4-common-ways/</link>
+      <pubDate>Tue, 22 Sep 2020 09:08:07 +0700</pubDate>
+      
+      <guid>https://bxcodec.io/posts/how-to-do-pagination-in-postgres-with-golang-in-4-common-ways/</guid>
+      <description>Hi again everyone, it&amp;rsquo;s been a long time I haven&amp;rsquo;t published any article.</description>
+    </item>
+    
     <item>
       <title>Today I Learned: Row Locking Transaction in PostgreSQL</title>
       <link>https://bxcodec.io/posts/today-i-learned-row-locking-transaction-in-postgresql/</link>

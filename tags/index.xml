@@ -7,7 +7,70 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>Iman Tumorang @bxcodec.io - All rights reserved</copyright>
-    <lastBuildDate>Sat, 08 Feb 2020 12:08:07 +0700</lastBuildDate><atom:link href="https://bxcodec.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 22 Sep 2020 09:08:07 +0700</lastBuildDate><atom:link href="https://bxcodec.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>benchmark</title>
+      <link>https://bxcodec.io/tags/benchmark/</link>
+      <pubDate>Tue, 22 Sep 2020 09:08:07 +0700</pubDate>
+      
+      <guid>https://bxcodec.io/tags/benchmark/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>database</title>
+      <link>https://bxcodec.io/tags/database/</link>
+      <pubDate>Tue, 22 Sep 2020 09:08:07 +0700</pubDate>
+      
+      <guid>https://bxcodec.io/tags/database/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>golang</title>
+      <link>https://bxcodec.io/tags/golang/</link>
+      <pubDate>Tue, 22 Sep 2020 09:08:07 +0700</pubDate>
+      
+      <guid>https://bxcodec.io/tags/golang/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>pagination</title>
+      <link>https://bxcodec.io/tags/pagination/</link>
+      <pubDate>Tue, 22 Sep 2020 09:08:07 +0700</pubDate>
+      
+      <guid>https://bxcodec.io/tags/pagination/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>postgresql</title>
+      <link>https://bxcodec.io/tags/postgresql/</link>
+      <pubDate>Tue, 22 Sep 2020 09:08:07 +0700</pubDate>
+      
+      <guid>https://bxcodec.io/tags/postgresql/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>rdbms</title>
+      <link>https://bxcodec.io/tags/rdbms/</link>
+      <pubDate>Tue, 22 Sep 2020 09:08:07 +0700</pubDate>
+      
+      <guid>https://bxcodec.io/tags/rdbms/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>sql</title>
+      <link>https://bxcodec.io/tags/sql/</link>
+      <pubDate>Tue, 22 Sep 2020 09:08:07 +0700</pubDate>
+      
+      <guid>https://bxcodec.io/tags/sql/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>http</title>
       <link>https://bxcodec.io/tags/http/</link>
@@ -50,42 +113,6 @@
       <pubDate>Sat, 08 Feb 2020 12:08:07 +0700</pubDate>
       
       <guid>https://bxcodec.io/tags/softwaredevelopment/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>database</title>
-      <link>https://bxcodec.io/tags/database/</link>
-      <pubDate>Mon, 06 Jan 2020 12:08:07 +0700</pubDate>
-      
-      <guid>https://bxcodec.io/tags/database/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>postgresql</title>
-      <link>https://bxcodec.io/tags/postgresql/</link>
-      <pubDate>Mon, 06 Jan 2020 12:08:07 +0700</pubDate>
-      
-      <guid>https://bxcodec.io/tags/postgresql/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>rdbms</title>
-      <link>https://bxcodec.io/tags/rdbms/</link>
-      <pubDate>Mon, 06 Jan 2020 12:08:07 +0700</pubDate>
-      
-      <guid>https://bxcodec.io/tags/rdbms/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>sql</title>
-      <link>https://bxcodec.io/tags/sql/</link>
-      <pubDate>Mon, 06 Jan 2020 12:08:07 +0700</pubDate>
-      
-      <guid>https://bxcodec.io/tags/sql/</guid>
       <description></description>
     </item>
     
@@ -149,15 +176,6 @@
       <pubDate>Wed, 31 Jul 2019 23:00:07 +0700</pubDate>
       
       <guid>https://bxcodec.io/tags/docker/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>golang</title>
-      <link>https://bxcodec.io/tags/golang/</link>
-      <pubDate>Wed, 31 Jul 2019 23:00:07 +0700</pubDate>
-      
-      <guid>https://bxcodec.io/tags/golang/</guid>
       <description></description>
     </item>
     

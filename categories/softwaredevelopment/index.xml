@@ -7,7 +7,16 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>Iman Tumorang @bxcodec.io - All rights reserved</copyright>
-    <lastBuildDate>Sat, 08 Feb 2020 12:08:07 +0700</lastBuildDate><atom:link href="https://bxcodec.io/categories/softwaredevelopment/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 22 Sep 2020 09:08:07 +0700</lastBuildDate><atom:link href="https://bxcodec.io/categories/softwaredevelopment/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>How To Do Pagination in Postgres with Golang in 4 Common Ways</title>
+      <link>https://bxcodec.io/posts/how-to-do-pagination-in-postgres-with-golang-in-4-common-ways/</link>
+      <pubDate>Tue, 22 Sep 2020 09:08:07 +0700</pubDate>
+      
+      <guid>https://bxcodec.io/posts/how-to-do-pagination-in-postgres-with-golang-in-4-common-ways/</guid>
+      <description>Hi again everyone, it&amp;rsquo;s been a long time I haven&amp;rsquo;t published any article.</description>
+    </item>
+    
     <item>
       <title>HTTP - PATCH Method! I&#39;ve Thought the Wrong Way!!!</title>
       <link>https://bxcodec.io/posts/http-patch-method-ive-thought-the-wrong-way/</link>

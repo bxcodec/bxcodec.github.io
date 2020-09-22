@@ -3,8 +3,78 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://bxcodec.io/tags/benchmark/</loc>
+    <lastmod>2020-09-22T09:08:07+07:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://bxcodec.io/categories/</loc>
-    <lastmod>2020-02-08T12:08:07+07:00</lastmod>
+    <lastmod>2020-09-22T09:08:07+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://bxcodec.io/tags/database/</loc>
+    <lastmod>2020-09-22T09:08:07+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://bxcodec.io/categories/database/</loc>
+    <lastmod>2020-09-22T09:08:07+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://bxcodec.io/tags/golang/</loc>
+    <lastmod>2020-09-22T09:08:07+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://bxcodec.io/categories/golang/</loc>
+    <lastmod>2020-09-22T09:08:07+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://bxcodec.io/posts/how-to-do-pagination-in-postgres-with-golang-in-4-common-ways/</loc>
+    <lastmod>2020-09-22T09:08:07+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://bxcodec.io/</loc>
+    <lastmod>2020-09-22T09:08:07+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://bxcodec.io/tags/pagination/</loc>
+    <lastmod>2020-09-22T09:08:07+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://bxcodec.io/tags/postgresql/</loc>
+    <lastmod>2020-09-22T09:08:07+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://bxcodec.io/posts/</loc>
+    <lastmod>2020-09-22T09:08:07+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://bxcodec.io/tags/rdbms/</loc>
+    <lastmod>2020-09-22T09:08:07+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://bxcodec.io/categories/softwaredevelopment/</loc>
+    <lastmod>2020-09-22T09:08:07+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://bxcodec.io/tags/sql/</loc>
+    <lastmod>2020-09-22T09:08:07+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://bxcodec.io/tags/</loc>
+    <lastmod>2020-09-22T09:08:07+07:00</lastmod>
   </url>
   
   <url>
@@ -28,16 +98,6 @@
   </url>
   
   <url>
-    <loc>https://bxcodec.io/</loc>
-    <lastmod>2020-02-08T12:08:07+07:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://bxcodec.io/posts/</loc>
-    <lastmod>2020-02-08T12:08:07+07:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://bxcodec.io/tags/rfcs/</loc>
     <lastmod>2020-02-08T12:08:07+07:00</lastmod>
   </url>
@@ -50,41 +110,6 @@
   <url>
     <loc>https://bxcodec.io/tags/softwaredevelopment/</loc>
     <lastmod>2020-02-08T12:08:07+07:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://bxcodec.io/categories/softwaredevelopment/</loc>
-    <lastmod>2020-02-08T12:08:07+07:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://bxcodec.io/tags/</loc>
-    <lastmod>2020-02-08T12:08:07+07:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://bxcodec.io/tags/database/</loc>
-    <lastmod>2020-01-06T12:08:07+07:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://bxcodec.io/categories/database/</loc>
-    <lastmod>2020-01-06T12:08:07+07:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://bxcodec.io/tags/postgresql/</loc>
-    <lastmod>2020-01-06T12:08:07+07:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://bxcodec.io/tags/rdbms/</loc>
-    <lastmod>2020-01-06T12:08:07+07:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://bxcodec.io/tags/sql/</loc>
-    <lastmod>2020-01-06T12:08:07+07:00</lastmod>
   </url>
   
   <url>
@@ -134,11 +159,6 @@
   
   <url>
     <loc>https://bxcodec.io/tags/docker/</loc>
-    <lastmod>2019-07-31T23:00:07+07:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://bxcodec.io/tags/golang/</loc>
     <lastmod>2019-07-31T23:00:07+07:00</lastmod>
   </url>
   
@@ -240,11 +260,6 @@
   <url>
     <loc>https://bxcodec.io/posts/mount-file-to-kubernetes-pod-without-deleting-the-existing-file-in-the-docker-container-in-the-same-directory/</loc>
     <lastmod>2019-01-29T08:13:07+07:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://bxcodec.io/categories/golang/</loc>
-    <lastmod>2019-01-25T09:14:07+07:00</lastmod>
   </url>
   
   <url>
