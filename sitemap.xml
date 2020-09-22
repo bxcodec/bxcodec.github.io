@@ -138,11 +138,6 @@
   </url>
   
   <url>
-    <loc>https://bxcodec.io/tags/go/</loc>
-    <lastmod>2019-07-31T23:00:07+07:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://bxcodec.io/tags/golang/</loc>
     <lastmod>2019-07-31T23:00:07+07:00</lastmod>
   </url>
@@ -274,6 +269,11 @@
   
   <url>
     <loc>https://bxcodec.io/tags/error/</loc>
+    <lastmod>2019-01-24T04:14:07+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://bxcodec.io/tags/go/</loc>
     <lastmod>2019-01-24T04:14:07+07:00</lastmod>
   </url>
   

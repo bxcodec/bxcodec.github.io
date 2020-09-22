@@ -7,11 +7,7 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>Iman Tumorang @bxcodec.io - All rights reserved</copyright>
-    <lastBuildDate>Tue, 01 May 2018 11:18:11 +0700</lastBuildDate>
-    
-	<atom:link href="https://bxcodec.io/tags/library/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Tue, 01 May 2018 11:18:11 +0700</lastBuildDate><atom:link href="https://bxcodec.io/tags/library/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Faker</title>
       <link>https://bxcodec.io/posts/faker/</link>

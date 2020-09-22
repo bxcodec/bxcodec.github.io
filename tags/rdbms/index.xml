@@ -7,11 +7,7 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>Iman Tumorang @bxcodec.io - All rights reserved</copyright>
-    <lastBuildDate>Mon, 06 Jan 2020 12:08:07 +0700</lastBuildDate>
-    
-	<atom:link href="https://bxcodec.io/tags/rdbms/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Mon, 06 Jan 2020 12:08:07 +0700</lastBuildDate><atom:link href="https://bxcodec.io/tags/rdbms/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Today I Learned: Row Locking Transaction in PostgreSQL</title>
       <link>https://bxcodec.io/posts/today-i-learned-row-locking-transaction-in-postgresql/</link>

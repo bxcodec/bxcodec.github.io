@@ -7,11 +7,7 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>Iman Tumorang @bxcodec.io - All rights reserved</copyright>
-    <lastBuildDate>Fri, 25 Jan 2019 09:14:07 +0700</lastBuildDate>
-    
-	<atom:link href="https://bxcodec.io/tags/integration-testing/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Fri, 25 Jan 2019 09:14:07 +0700</lastBuildDate><atom:link href="https://bxcodec.io/tags/integration-testing/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Integration Test With Database in Golang</title>
       <link>https://bxcodec.io/posts/integration-test-with-database-in-golang/</link>

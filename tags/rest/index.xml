@@ -7,11 +7,7 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>Iman Tumorang @bxcodec.io - All rights reserved</copyright>
-    <lastBuildDate>Wed, 31 Jul 2019 23:00:07 +0700</lastBuildDate>
-    
-	<atom:link href="https://bxcodec.io/tags/rest/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Wed, 31 Jul 2019 23:00:07 +0700</lastBuildDate><atom:link href="https://bxcodec.io/tags/rest/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Utilize Open API 3 for the Faster Software Development Process</title>
       <link>https://bxcodec.io/posts/utilize-open-api-3-for-the-faster-software-development-process/</link>

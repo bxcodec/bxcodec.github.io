@@ -7,11 +7,7 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>Iman Tumorang @bxcodec.io - All rights reserved</copyright>
-    <lastBuildDate>Thu, 07 Feb 2019 04:14:07 +0700</lastBuildDate>
-    
-	<atom:link href="https://bxcodec.io/tags/github/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Thu, 07 Feb 2019 04:14:07 +0700</lastBuildDate><atom:link href="https://bxcodec.io/tags/github/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>The Evolutions of Git Commit Message Conventions in Kurio</title>
       <link>https://bxcodec.io/posts/the-evolutions-of-git-commit-message-conventions-in-kurio/</link>
