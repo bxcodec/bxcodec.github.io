@@ -2,10 +2,31 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://bxcodec.io/tags/benchmark/</loc>
-    <lastmod>2020-09-22T09:08:07+07:00</lastmod>
-  </url><url>
     <loc>https://bxcodec.io/categories/</loc>
+    <lastmod>2021-02-25T08:48:07+07:00</lastmod>
+  </url><url>
+    <loc>https://bxcodec.io/</loc>
+    <lastmod>2021-02-25T08:48:07+07:00</lastmod>
+  </url><url>
+    <loc>https://bxcodec.io/tags/life/</loc>
+    <lastmod>2021-02-25T08:48:07+07:00</lastmod>
+  </url><url>
+    <loc>https://bxcodec.io/categories/life/</loc>
+    <lastmod>2021-02-25T08:48:07+07:00</lastmod>
+  </url><url>
+    <loc>https://bxcodec.io/posts/my-mental-problem-am-i-too-hard-to-myself/</loc>
+    <lastmod>2021-02-25T08:48:07+07:00</lastmod>
+  </url><url>
+    <loc>https://bxcodec.io/posts/</loc>
+    <lastmod>2021-02-25T08:48:07+07:00</lastmod>
+  </url><url>
+    <loc>https://bxcodec.io/tags/selfstories/</loc>
+    <lastmod>2021-02-25T08:48:07+07:00</lastmod>
+  </url><url>
+    <loc>https://bxcodec.io/tags/</loc>
+    <lastmod>2021-02-25T08:48:07+07:00</lastmod>
+  </url><url>
+    <loc>https://bxcodec.io/tags/benchmark/</loc>
     <lastmod>2020-09-22T09:08:07+07:00</lastmod>
   </url><url>
     <loc>https://bxcodec.io/tags/database/</loc>
@@ -23,16 +44,10 @@
     <loc>https://bxcodec.io/posts/how-to-do-pagination-in-postgres-with-golang-in-4-common-ways/</loc>
     <lastmod>2020-09-22T09:08:07+07:00</lastmod>
   </url><url>
-    <loc>https://bxcodec.io/</loc>
-    <lastmod>2020-09-22T09:08:07+07:00</lastmod>
-  </url><url>
     <loc>https://bxcodec.io/tags/pagination/</loc>
     <lastmod>2020-09-22T09:08:07+07:00</lastmod>
   </url><url>
     <loc>https://bxcodec.io/tags/postgresql/</loc>
-    <lastmod>2020-09-22T09:08:07+07:00</lastmod>
-  </url><url>
-    <loc>https://bxcodec.io/posts/</loc>
     <lastmod>2020-09-22T09:08:07+07:00</lastmod>
   </url><url>
     <loc>https://bxcodec.io/tags/rdbms/</loc>
@@ -42,9 +57,6 @@
     <lastmod>2020-09-22T09:08:07+07:00</lastmod>
   </url><url>
     <loc>https://bxcodec.io/tags/sql/</loc>
-    <lastmod>2020-09-22T09:08:07+07:00</lastmod>
-  </url><url>
-    <loc>https://bxcodec.io/tags/</loc>
     <lastmod>2020-09-22T09:08:07+07:00</lastmod>
   </url><url>
     <loc>https://bxcodec.io/tags/http/</loc>
@@ -192,12 +204,6 @@
     <lastmod>2019-01-22T04:14:07+07:00</lastmod>
   </url><url>
     <loc>https://bxcodec.io/posts/ci/cd-at-kurio-backend-with-buddy.works/</loc>
-    <lastmod>2018-12-06T05:14:07+07:00</lastmod>
-  </url><url>
-    <loc>https://bxcodec.io/tags/life/</loc>
-    <lastmod>2018-12-06T05:14:07+07:00</lastmod>
-  </url><url>
-    <loc>https://bxcodec.io/categories/life/</loc>
     <lastmod>2018-12-06T05:14:07+07:00</lastmod>
   </url><url>
     <loc>https://bxcodec.io/posts/about-theme/</loc>

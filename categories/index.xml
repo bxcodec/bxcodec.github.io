@@ -7,7 +7,16 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>Iman Tumorang @bxcodec.io - All rights reserved</copyright>
-    <lastBuildDate>Tue, 22 Sep 2020 09:08:07 +0700</lastBuildDate><atom:link href="https://bxcodec.io/categories/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 25 Feb 2021 08:48:07 +0700</lastBuildDate><atom:link href="https://bxcodec.io/categories/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>life</title>
+      <link>https://bxcodec.io/categories/life/</link>
+      <pubDate>Thu, 25 Feb 2021 08:48:07 +0700</pubDate>
+      
+      <guid>https://bxcodec.io/categories/life/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>database</title>
       <link>https://bxcodec.io/categories/database/</link>
@@ -86,15 +95,6 @@
       <pubDate>Tue, 29 Jan 2019 08:13:07 +0700</pubDate>
       
       <guid>https://bxcodec.io/categories/kubernetes/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>life</title>
-      <link>https://bxcodec.io/categories/life/</link>
-      <pubDate>Thu, 06 Dec 2018 05:14:07 +0700</pubDate>
-      
-      <guid>https://bxcodec.io/categories/life/</guid>
       <description></description>
     </item>
     
