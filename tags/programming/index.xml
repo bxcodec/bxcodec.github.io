@@ -2,108 +2,108 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>programming on Letters From Iman</title>
-    <link>https://bxcodec.io/tags/programming/</link>
+    <link>https://imantumorang.com/tags/programming/</link>
     <description>Recent content in programming on Letters From Iman</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <copyright>Iman Tumorang @bxcodec.io - All rights reserved</copyright>
-    <lastBuildDate>Fri, 25 Jan 2019 09:14:07 +0700</lastBuildDate><atom:link href="https://bxcodec.io/tags/programming/index.xml" rel="self" type="application/rss+xml" />
+    <copyright>Iman Tumorang @imantumorang.com - All rights reserved</copyright>
+    <lastBuildDate>Fri, 25 Jan 2019 09:14:07 +0700</lastBuildDate><atom:link href="https://imantumorang.com/tags/programming/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Integration Test With Database in Golang</title>
-      <link>https://bxcodec.io/posts/integration-test-with-database-in-golang/</link>
+      <link>https://imantumorang.com/posts/integration-test-with-database-in-golang/</link>
       <pubDate>Fri, 25 Jan 2019 09:14:07 +0700</pubDate>
       
-      <guid>https://bxcodec.io/posts/integration-test-with-database-in-golang/</guid>
+      <guid>https://imantumorang.com/posts/integration-test-with-database-in-golang/</guid>
       <description>Software testing is a process used to identify the correctness, completeness, and quality of developed computer software.</description>
     </item>
     
     <item>
       <title>Today I Learned - Fix: go get private repository return error terminal prompts disabled</title>
-      <link>https://bxcodec.io/posts/today-i-learned-fix-go-get-private-repository-return-error-terminal-prompts-disabled/</link>
+      <link>https://imantumorang.com/posts/today-i-learned-fix-go-get-private-repository-return-error-terminal-prompts-disabled/</link>
       <pubDate>Thu, 24 Jan 2019 04:14:07 +0700</pubDate>
       
-      <guid>https://bxcodec.io/posts/today-i-learned-fix-go-get-private-repository-return-error-terminal-prompts-disabled/</guid>
+      <guid>https://imantumorang.com/posts/today-i-learned-fix-go-get-private-repository-return-error-terminal-prompts-disabled/</guid>
       <description>I&amp;rsquo;ve some project stored separated in 3 git-host providers: Github, Gitlab, and Bitbucket.</description>
     </item>
     
     <item>
       <title>Today I Learned: Making a Simple Interactive Shell Application in Golang</title>
-      <link>https://bxcodec.io/posts/today-i-learned-making-a-simple-interactive-shell-application-in-golang/</link>
+      <link>https://imantumorang.com/posts/today-i-learned-making-a-simple-interactive-shell-application-in-golang/</link>
       <pubDate>Tue, 22 Jan 2019 04:14:07 +0700</pubDate>
       
-      <guid>https://bxcodec.io/posts/today-i-learned-making-a-simple-interactive-shell-application-in-golang/</guid>
+      <guid>https://imantumorang.com/posts/today-i-learned-making-a-simple-interactive-shell-application-in-golang/</guid>
       <description>So today, I learn something new and a bit of basic thing in Golang.</description>
     </item>
     
     <item>
       <title>CI/CD at Kurio Backend with Buddy.Works</title>
-      <link>https://bxcodec.io/posts/ci/cd-at-kurio-backend-with-buddy.works/</link>
+      <link>https://imantumorang.com/posts/ci/cd-at-kurio-backend-with-buddy.works/</link>
       <pubDate>Thu, 06 Dec 2018 05:14:07 +0700</pubDate>
       
-      <guid>https://bxcodec.io/posts/ci/cd-at-kurio-backend-with-buddy.works/</guid>
+      <guid>https://imantumorang.com/posts/ci/cd-at-kurio-backend-with-buddy.works/</guid>
       <description>On my first time joining Kurio Engineering team, a year ago before I wrote this story, we already used CI/CD flow in every teams (mobile team, backend team, and data science team).</description>
     </item>
     
     <item>
       <title>The Daily Life of a Software Engineer in Jakarta</title>
-      <link>https://bxcodec.io/posts/the-daily-life-of-a-software-engineer-in-jakarta/</link>
+      <link>https://imantumorang.com/posts/the-daily-life-of-a-software-engineer-in-jakarta/</link>
       <pubDate>Sun, 02 Dec 2018 08:48:07 +0700</pubDate>
       
-      <guid>https://bxcodec.io/posts/the-daily-life-of-a-software-engineer-in-jakarta/</guid>
+      <guid>https://imantumorang.com/posts/the-daily-life-of-a-software-engineer-in-jakarta/</guid>
       <description>In this article, I will share what my typical daily looks like as Software Engineer in Jakarta.</description>
     </item>
     
     <item>
       <title>My honest opinion about Unit Testing</title>
-      <link>https://bxcodec.io/posts/my-honest-opinion-about-unit-testing/</link>
+      <link>https://imantumorang.com/posts/my-honest-opinion-about-unit-testing/</link>
       <pubDate>Sun, 06 May 2018 23:11:29 +0700</pubDate>
       
-      <guid>https://bxcodec.io/posts/my-honest-opinion-about-unit-testing/</guid>
+      <guid>https://imantumorang.com/posts/my-honest-opinion-about-unit-testing/</guid>
       <description>Imagine now you are in the kitchen. You are going to make an omelet.</description>
     </item>
     
     <item>
       <title>My First Impression about Code Review</title>
-      <link>https://bxcodec.io/posts/my-first-impression-about-code-review/</link>
+      <link>https://imantumorang.com/posts/my-first-impression-about-code-review/</link>
       <pubDate>Sun, 06 May 2018 23:03:29 +0700</pubDate>
       
-      <guid>https://bxcodec.io/posts/my-first-impression-about-code-review/</guid>
+      <guid>https://imantumorang.com/posts/my-first-impression-about-code-review/</guid>
       <description>My first time to know about Code Review is when entering my current company at Kurio.</description>
     </item>
     
     <item>
       <title>Why You Should Care About Squash and Merge in Git</title>
-      <link>https://bxcodec.io/posts/why-you-should-care-about-squash-and-merge-in-git/</link>
+      <link>https://imantumorang.com/posts/why-you-should-care-about-squash-and-merge-in-git/</link>
       <pubDate>Sun, 06 May 2018 22:46:43 +0700</pubDate>
       
-      <guid>https://bxcodec.io/posts/why-you-should-care-about-squash-and-merge-in-git/</guid>
+      <guid>https://imantumorang.com/posts/why-you-should-care-about-squash-and-merge-in-git/</guid>
       <description>We just develop our new feature in Kurio. It is a targeted push notification.</description>
     </item>
     
     <item>
       <title>Programming as a Passion vs Programming as a Job</title>
-      <link>https://bxcodec.io/posts/programming-as-a-passion-vs-programming-as-a-job/</link>
+      <link>https://imantumorang.com/posts/programming-as-a-passion-vs-programming-as-a-job/</link>
       <pubDate>Wed, 02 May 2018 08:48:07 +0700</pubDate>
       
-      <guid>https://bxcodec.io/posts/programming-as-a-passion-vs-programming-as-a-job/</guid>
+      <guid>https://imantumorang.com/posts/programming-as-a-passion-vs-programming-as-a-job/</guid>
       <description>When we were still in college, we always demanded for studying hard.</description>
     </item>
     
     <item>
       <title>Faker</title>
-      <link>https://bxcodec.io/posts/faker/</link>
+      <link>https://imantumorang.com/posts/faker/</link>
       <pubDate>Tue, 01 May 2018 11:18:11 +0700</pubDate>
       
-      <guid>https://bxcodec.io/posts/faker/</guid>
+      <guid>https://imantumorang.com/posts/faker/</guid>
       <description>Faker will generate you a fake data based on your Struct.</description>
     </item>
     
     <item>
       <title>Saint</title>
-      <link>https://bxcodec.io/posts/saint/</link>
+      <link>https://imantumorang.com/posts/saint/</link>
       <pubDate>Tue, 01 May 2018 11:15:02 +0700</pubDate>
       
-      <guid>https://bxcodec.io/posts/saint/</guid>
+      <guid>https://imantumorang.com/posts/saint/</guid>
       <description>Source code: github
 Download go get -u github.com/bxcodec/saint Example package main import ( &amp;quot;fmt&amp;quot; &amp;quot;github.</description>
     </item>

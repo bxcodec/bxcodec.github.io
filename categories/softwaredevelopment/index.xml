@@ -2,54 +2,54 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>softwaredevelopment on Letters From Iman</title>
-    <link>https://bxcodec.io/categories/softwaredevelopment/</link>
+    <link>https://imantumorang.com/categories/softwaredevelopment/</link>
     <description>Recent content in softwaredevelopment on Letters From Iman</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <copyright>Iman Tumorang @bxcodec.io - All rights reserved</copyright>
-    <lastBuildDate>Tue, 22 Sep 2020 09:08:07 +0700</lastBuildDate><atom:link href="https://bxcodec.io/categories/softwaredevelopment/index.xml" rel="self" type="application/rss+xml" />
+    <copyright>Iman Tumorang @imantumorang.com - All rights reserved</copyright>
+    <lastBuildDate>Tue, 22 Sep 2020 09:08:07 +0700</lastBuildDate><atom:link href="https://imantumorang.com/categories/softwaredevelopment/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>How To Do Pagination in Postgres with Golang in 4 Common Ways</title>
-      <link>https://bxcodec.io/posts/how-to-do-pagination-in-postgres-with-golang-in-4-common-ways/</link>
+      <link>https://imantumorang.com/posts/how-to-do-pagination-in-postgres-with-golang-in-4-common-ways/</link>
       <pubDate>Tue, 22 Sep 2020 09:08:07 +0700</pubDate>
       
-      <guid>https://bxcodec.io/posts/how-to-do-pagination-in-postgres-with-golang-in-4-common-ways/</guid>
+      <guid>https://imantumorang.com/posts/how-to-do-pagination-in-postgres-with-golang-in-4-common-ways/</guid>
       <description>Hi again everyone, it&amp;rsquo;s been a long time I haven&amp;rsquo;t published any article.</description>
     </item>
     
     <item>
       <title>HTTP - PATCH Method! I&#39;ve Thought the Wrong Way!!!</title>
-      <link>https://bxcodec.io/posts/http-patch-method-ive-thought-the-wrong-way/</link>
+      <link>https://imantumorang.com/posts/http-patch-method-ive-thought-the-wrong-way/</link>
       <pubDate>Sat, 08 Feb 2020 12:08:07 +0700</pubDate>
       
-      <guid>https://bxcodec.io/posts/http-patch-method-ive-thought-the-wrong-way/</guid>
+      <guid>https://imantumorang.com/posts/http-patch-method-ive-thought-the-wrong-way/</guid>
       <description>I&amp;rsquo;ve been working on Software Engineering for more than 3 years now.</description>
     </item>
     
     <item>
       <title>Today I Learned: Row Locking Transaction in PostgreSQL</title>
-      <link>https://bxcodec.io/posts/today-i-learned-row-locking-transaction-in-postgresql/</link>
+      <link>https://imantumorang.com/posts/today-i-learned-row-locking-transaction-in-postgresql/</link>
       <pubDate>Mon, 06 Jan 2020 12:08:07 +0700</pubDate>
       
-      <guid>https://bxcodec.io/posts/today-i-learned-row-locking-transaction-in-postgresql/</guid>
+      <guid>https://imantumorang.com/posts/today-i-learned-row-locking-transaction-in-postgresql/</guid>
       <description>Today&amp;rsquo;s problem is a hard problem but has a silly solution.</description>
     </item>
     
     <item>
       <title>Today I Learned: Enabling Horizontal Pod Autoscaler(HPA) in Kubernetes</title>
-      <link>https://bxcodec.io/posts/today-i-learned-enabling-horizontal-pod-autoscalerhpa-in-kubernetes/</link>
+      <link>https://imantumorang.com/posts/today-i-learned-enabling-horizontal-pod-autoscalerhpa-in-kubernetes/</link>
       <pubDate>Sat, 07 Sep 2019 15:00:07 +0700</pubDate>
       
-      <guid>https://bxcodec.io/posts/today-i-learned-enabling-horizontal-pod-autoscalerhpa-in-kubernetes/</guid>
+      <guid>https://imantumorang.com/posts/today-i-learned-enabling-horizontal-pod-autoscalerhpa-in-kubernetes/</guid>
       <description>It&amp;rsquo;s been a while I didn&amp;rsquo;t post any updates. It&amp;rsquo;s so busy lately, and it&amp;rsquo;s hard to find free time to write an article in this past few weeks.</description>
     </item>
     
     <item>
       <title>Utilize Open API 3 for the Faster Software Development Process</title>
-      <link>https://bxcodec.io/posts/utilize-open-api-3-for-the-faster-software-development-process/</link>
+      <link>https://imantumorang.com/posts/utilize-open-api-3-for-the-faster-software-development-process/</link>
       <pubDate>Wed, 31 Jul 2019 23:00:07 +0700</pubDate>
       
-      <guid>https://bxcodec.io/posts/utilize-open-api-3-for-the-faster-software-development-process/</guid>
+      <guid>https://imantumorang.com/posts/utilize-open-api-3-for-the-faster-software-development-process/</guid>
       <description>I&amp;rsquo;m enthusiastic to open source world. There so many great things and free to use in the open-source world.</description>
     </item>
     

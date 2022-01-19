@@ -2,18 +2,18 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>autoscaling on Letters From Iman</title>
-    <link>https://bxcodec.io/tags/autoscaling/</link>
+    <link>https://imantumorang.com/tags/autoscaling/</link>
     <description>Recent content in autoscaling on Letters From Iman</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <copyright>Iman Tumorang @bxcodec.io - All rights reserved</copyright>
-    <lastBuildDate>Sat, 07 Sep 2019 15:00:07 +0700</lastBuildDate><atom:link href="https://bxcodec.io/tags/autoscaling/index.xml" rel="self" type="application/rss+xml" />
+    <copyright>Iman Tumorang @imantumorang.com - All rights reserved</copyright>
+    <lastBuildDate>Sat, 07 Sep 2019 15:00:07 +0700</lastBuildDate><atom:link href="https://imantumorang.com/tags/autoscaling/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Today I Learned: Enabling Horizontal Pod Autoscaler(HPA) in Kubernetes</title>
-      <link>https://bxcodec.io/posts/today-i-learned-enabling-horizontal-pod-autoscalerhpa-in-kubernetes/</link>
+      <link>https://imantumorang.com/posts/today-i-learned-enabling-horizontal-pod-autoscalerhpa-in-kubernetes/</link>
       <pubDate>Sat, 07 Sep 2019 15:00:07 +0700</pubDate>
       
-      <guid>https://bxcodec.io/posts/today-i-learned-enabling-horizontal-pod-autoscalerhpa-in-kubernetes/</guid>
+      <guid>https://imantumorang.com/posts/today-i-learned-enabling-horizontal-pod-autoscalerhpa-in-kubernetes/</guid>
       <description>It&amp;rsquo;s been a while I didn&amp;rsquo;t post any updates. It&amp;rsquo;s so busy lately, and it&amp;rsquo;s hard to find free time to write an article in this past few weeks.</description>
     </item>
     

@@ -2,18 +2,18 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>saint on Letters From Iman</title>
-    <link>https://bxcodec.io/tags/saint/</link>
+    <link>https://imantumorang.com/tags/saint/</link>
     <description>Recent content in saint on Letters From Iman</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <copyright>Iman Tumorang @bxcodec.io - All rights reserved</copyright>
-    <lastBuildDate>Tue, 01 May 2018 11:15:02 +0700</lastBuildDate><atom:link href="https://bxcodec.io/tags/saint/index.xml" rel="self" type="application/rss+xml" />
+    <copyright>Iman Tumorang @imantumorang.com - All rights reserved</copyright>
+    <lastBuildDate>Tue, 01 May 2018 11:15:02 +0700</lastBuildDate><atom:link href="https://imantumorang.com/tags/saint/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Saint</title>
-      <link>https://bxcodec.io/posts/saint/</link>
+      <link>https://imantumorang.com/posts/saint/</link>
       <pubDate>Tue, 01 May 2018 11:15:02 +0700</pubDate>
       
-      <guid>https://bxcodec.io/posts/saint/</guid>
+      <guid>https://imantumorang.com/posts/saint/</guid>
       <description>Source code: github
 Download go get -u github.com/bxcodec/saint Example package main import ( &amp;quot;fmt&amp;quot; &amp;quot;github.</description>
     </item>

@@ -2,262 +2,262 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Posts on Letters From Iman</title>
-    <link>https://bxcodec.io/posts/</link>
+    <link>https://imantumorang.com/posts/</link>
     <description>Recent content in Posts on Letters From Iman</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <copyright>Iman Tumorang @bxcodec.io - All rights reserved</copyright>
-    <lastBuildDate>Thu, 25 Feb 2021 08:48:07 +0700</lastBuildDate><atom:link href="https://bxcodec.io/posts/index.xml" rel="self" type="application/rss+xml" />
+    <copyright>Iman Tumorang @imantumorang.com - All rights reserved</copyright>
+    <lastBuildDate>Thu, 25 Feb 2021 08:48:07 +0700</lastBuildDate><atom:link href="https://imantumorang.com/posts/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>My Mental Problem: Am I Too Hard to Myself?</title>
-      <link>https://bxcodec.io/posts/my-mental-problem-am-i-too-hard-to-myself/</link>
+      <link>https://imantumorang.com/posts/my-mental-problem-am-i-too-hard-to-myself/</link>
       <pubDate>Thu, 25 Feb 2021 08:48:07 +0700</pubDate>
       
-      <guid>https://bxcodec.io/posts/my-mental-problem-am-i-too-hard-to-myself/</guid>
+      <guid>https://imantumorang.com/posts/my-mental-problem-am-i-too-hard-to-myself/</guid>
       <description>Every morning, I always think about what makes me excited to finish this month?</description>
     </item>
     
     <item>
       <title>How To Do Pagination in Postgres with Golang in 4 Common Ways</title>
-      <link>https://bxcodec.io/posts/how-to-do-pagination-in-postgres-with-golang-in-4-common-ways/</link>
+      <link>https://imantumorang.com/posts/how-to-do-pagination-in-postgres-with-golang-in-4-common-ways/</link>
       <pubDate>Tue, 22 Sep 2020 09:08:07 +0700</pubDate>
       
-      <guid>https://bxcodec.io/posts/how-to-do-pagination-in-postgres-with-golang-in-4-common-ways/</guid>
+      <guid>https://imantumorang.com/posts/how-to-do-pagination-in-postgres-with-golang-in-4-common-ways/</guid>
       <description>Hi again everyone, it&amp;rsquo;s been a long time I haven&amp;rsquo;t published any article.</description>
     </item>
     
     <item>
       <title>HTTP - PATCH Method! I&#39;ve Thought the Wrong Way!!!</title>
-      <link>https://bxcodec.io/posts/http-patch-method-ive-thought-the-wrong-way/</link>
+      <link>https://imantumorang.com/posts/http-patch-method-ive-thought-the-wrong-way/</link>
       <pubDate>Sat, 08 Feb 2020 12:08:07 +0700</pubDate>
       
-      <guid>https://bxcodec.io/posts/http-patch-method-ive-thought-the-wrong-way/</guid>
+      <guid>https://imantumorang.com/posts/http-patch-method-ive-thought-the-wrong-way/</guid>
       <description>I&amp;rsquo;ve been working on Software Engineering for more than 3 years now.</description>
     </item>
     
     <item>
       <title>Today I Learned: Row Locking Transaction in PostgreSQL</title>
-      <link>https://bxcodec.io/posts/today-i-learned-row-locking-transaction-in-postgresql/</link>
+      <link>https://imantumorang.com/posts/today-i-learned-row-locking-transaction-in-postgresql/</link>
       <pubDate>Mon, 06 Jan 2020 12:08:07 +0700</pubDate>
       
-      <guid>https://bxcodec.io/posts/today-i-learned-row-locking-transaction-in-postgresql/</guid>
+      <guid>https://imantumorang.com/posts/today-i-learned-row-locking-transaction-in-postgresql/</guid>
       <description>Today&amp;rsquo;s problem is a hard problem but has a silly solution.</description>
     </item>
     
     <item>
       <title>Today I Learned: Enabling Horizontal Pod Autoscaler(HPA) in Kubernetes</title>
-      <link>https://bxcodec.io/posts/today-i-learned-enabling-horizontal-pod-autoscalerhpa-in-kubernetes/</link>
+      <link>https://imantumorang.com/posts/today-i-learned-enabling-horizontal-pod-autoscalerhpa-in-kubernetes/</link>
       <pubDate>Sat, 07 Sep 2019 15:00:07 +0700</pubDate>
       
-      <guid>https://bxcodec.io/posts/today-i-learned-enabling-horizontal-pod-autoscalerhpa-in-kubernetes/</guid>
+      <guid>https://imantumorang.com/posts/today-i-learned-enabling-horizontal-pod-autoscalerhpa-in-kubernetes/</guid>
       <description>It&amp;rsquo;s been a while I didn&amp;rsquo;t post any updates. It&amp;rsquo;s so busy lately, and it&amp;rsquo;s hard to find free time to write an article in this past few weeks.</description>
     </item>
     
     <item>
       <title>Utilize Open API 3 for the Faster Software Development Process</title>
-      <link>https://bxcodec.io/posts/utilize-open-api-3-for-the-faster-software-development-process/</link>
+      <link>https://imantumorang.com/posts/utilize-open-api-3-for-the-faster-software-development-process/</link>
       <pubDate>Wed, 31 Jul 2019 23:00:07 +0700</pubDate>
       
-      <guid>https://bxcodec.io/posts/utilize-open-api-3-for-the-faster-software-development-process/</guid>
+      <guid>https://imantumorang.com/posts/utilize-open-api-3-for-the-faster-software-development-process/</guid>
       <description>I&amp;rsquo;m enthusiastic to open source world. There so many great things and free to use in the open-source world.</description>
     </item>
     
     <item>
       <title>Today I Learned: Pass By Reference on Interface Parameter in Golang</title>
-      <link>https://bxcodec.io/posts/today-i-learned-pass-by-reference-on-interface-parameter-in-golang/</link>
+      <link>https://imantumorang.com/posts/today-i-learned-pass-by-reference-on-interface-parameter-in-golang/</link>
       <pubDate>Fri, 22 Mar 2019 14:14:07 +0700</pubDate>
       
-      <guid>https://bxcodec.io/posts/today-i-learned-pass-by-reference-on-interface-parameter-in-golang/</guid>
+      <guid>https://imantumorang.com/posts/today-i-learned-pass-by-reference-on-interface-parameter-in-golang/</guid>
       <description>Back to the college days, I remember there are 2 ways to pass a parameter to a function.</description>
     </item>
     
     <item>
       <title>The Evolutions of Git Commit Message Conventions in Kurio</title>
-      <link>https://bxcodec.io/posts/the-evolutions-of-git-commit-message-conventions-in-kurio/</link>
+      <link>https://imantumorang.com/posts/the-evolutions-of-git-commit-message-conventions-in-kurio/</link>
       <pubDate>Thu, 07 Feb 2019 04:14:07 +0700</pubDate>
       
-      <guid>https://bxcodec.io/posts/the-evolutions-of-git-commit-message-conventions-in-kurio/</guid>
+      <guid>https://imantumorang.com/posts/the-evolutions-of-git-commit-message-conventions-in-kurio/</guid>
       <description>We in Kurio use Github as our version control system. And because of that, we also have a flow like open source project does.</description>
     </item>
     
     <item>
       <title>Mount file to Kubernetes Pod, without Deleting the Existing File — in the Docker-Container in the Same Directory</title>
-      <link>https://bxcodec.io/posts/mount-file-to-kubernetes-pod-without-deleting-the-existing-file-in-the-docker-container-in-the-same-directory/</link>
+      <link>https://imantumorang.com/posts/mount-file-to-kubernetes-pod-without-deleting-the-existing-file-in-the-docker-container-in-the-same-directory/</link>
       <pubDate>Tue, 29 Jan 2019 08:13:07 +0700</pubDate>
       
-      <guid>https://bxcodec.io/posts/mount-file-to-kubernetes-pod-without-deleting-the-existing-file-in-the-docker-container-in-the-same-directory/</guid>
+      <guid>https://imantumorang.com/posts/mount-file-to-kubernetes-pod-without-deleting-the-existing-file-in-the-docker-container-in-the-same-directory/</guid>
       <description>A few weeks ago, I made a simple application named tweetor that was about a simple tutorial to create Kubenernetes Clusters in Google Cloud Platform (GCP).</description>
     </item>
     
     <item>
       <title>Integration Test With Database in Golang</title>
-      <link>https://bxcodec.io/posts/integration-test-with-database-in-golang/</link>
+      <link>https://imantumorang.com/posts/integration-test-with-database-in-golang/</link>
       <pubDate>Fri, 25 Jan 2019 09:14:07 +0700</pubDate>
       
-      <guid>https://bxcodec.io/posts/integration-test-with-database-in-golang/</guid>
+      <guid>https://imantumorang.com/posts/integration-test-with-database-in-golang/</guid>
       <description>Software testing is a process used to identify the correctness, completeness, and quality of developed computer software.</description>
     </item>
     
     <item>
       <title>Today I Learned - Fix: go get private repository return error terminal prompts disabled</title>
-      <link>https://bxcodec.io/posts/today-i-learned-fix-go-get-private-repository-return-error-terminal-prompts-disabled/</link>
+      <link>https://imantumorang.com/posts/today-i-learned-fix-go-get-private-repository-return-error-terminal-prompts-disabled/</link>
       <pubDate>Thu, 24 Jan 2019 04:14:07 +0700</pubDate>
       
-      <guid>https://bxcodec.io/posts/today-i-learned-fix-go-get-private-repository-return-error-terminal-prompts-disabled/</guid>
+      <guid>https://imantumorang.com/posts/today-i-learned-fix-go-get-private-repository-return-error-terminal-prompts-disabled/</guid>
       <description>I&amp;rsquo;ve some project stored separated in 3 git-host providers: Github, Gitlab, and Bitbucket.</description>
     </item>
     
     <item>
       <title>Today I Learned - Checkout to Pull Request in GitHub Public Repository</title>
-      <link>https://bxcodec.io/posts/today-i-learned-checkout-to-pull-request-in-github-public-repository/</link>
+      <link>https://imantumorang.com/posts/today-i-learned-checkout-to-pull-request-in-github-public-repository/</link>
       <pubDate>Wed, 23 Jan 2019 04:14:07 +0700</pubDate>
       
-      <guid>https://bxcodec.io/posts/today-i-learned-checkout-to-pull-request-in-github-public-repository/</guid>
+      <guid>https://imantumorang.com/posts/today-i-learned-checkout-to-pull-request-in-github-public-repository/</guid>
       <description>So today I learned a really important thing in Github and open-source world :D.</description>
     </item>
     
     <item>
       <title>Today I Learned: Making a Simple Interactive Shell Application in Golang</title>
-      <link>https://bxcodec.io/posts/today-i-learned-making-a-simple-interactive-shell-application-in-golang/</link>
+      <link>https://imantumorang.com/posts/today-i-learned-making-a-simple-interactive-shell-application-in-golang/</link>
       <pubDate>Tue, 22 Jan 2019 04:14:07 +0700</pubDate>
       
-      <guid>https://bxcodec.io/posts/today-i-learned-making-a-simple-interactive-shell-application-in-golang/</guid>
+      <guid>https://imantumorang.com/posts/today-i-learned-making-a-simple-interactive-shell-application-in-golang/</guid>
       <description>So today, I learn something new and a bit of basic thing in Golang.</description>
     </item>
     
     <item>
       <title>CI/CD at Kurio Backend with Buddy.Works</title>
-      <link>https://bxcodec.io/posts/ci/cd-at-kurio-backend-with-buddy.works/</link>
+      <link>https://imantumorang.com/posts/ci/cd-at-kurio-backend-with-buddy.works/</link>
       <pubDate>Thu, 06 Dec 2018 05:14:07 +0700</pubDate>
       
-      <guid>https://bxcodec.io/posts/ci/cd-at-kurio-backend-with-buddy.works/</guid>
+      <guid>https://imantumorang.com/posts/ci/cd-at-kurio-backend-with-buddy.works/</guid>
       <description>On my first time joining Kurio Engineering team, a year ago before I wrote this story, we already used CI/CD flow in every teams (mobile team, backend team, and data science team).</description>
     </item>
     
     <item>
       <title>About Theme</title>
-      <link>https://bxcodec.io/posts/about-theme/</link>
+      <link>https://imantumorang.com/posts/about-theme/</link>
       <pubDate>Sun, 02 Dec 2018 08:48:07 +0700</pubDate>
       
-      <guid>https://bxcodec.io/posts/about-theme/</guid>
+      <guid>https://imantumorang.com/posts/about-theme/</guid>
       <description>After a long time not maintaining this blog, now I think it&amp;rsquo;s time to re-maintain this.</description>
     </item>
     
     <item>
       <title>The Daily Life of a Software Engineer in Jakarta</title>
-      <link>https://bxcodec.io/posts/the-daily-life-of-a-software-engineer-in-jakarta/</link>
+      <link>https://imantumorang.com/posts/the-daily-life-of-a-software-engineer-in-jakarta/</link>
       <pubDate>Sun, 02 Dec 2018 08:48:07 +0700</pubDate>
       
-      <guid>https://bxcodec.io/posts/the-daily-life-of-a-software-engineer-in-jakarta/</guid>
+      <guid>https://imantumorang.com/posts/the-daily-life-of-a-software-engineer-in-jakarta/</guid>
       <description>In this article, I will share what my typical daily looks like as Software Engineer in Jakarta.</description>
     </item>
     
     <item>
       <title>What Are Some Things I Wish I Knew When I Started Programming</title>
-      <link>https://bxcodec.io/posts/what-are-some-things-i-wish-i-knew-when-i-started-programming/</link>
+      <link>https://imantumorang.com/posts/what-are-some-things-i-wish-i-knew-when-i-started-programming/</link>
       <pubDate>Thu, 17 May 2018 22:20:50 +0700</pubDate>
       
-      <guid>https://bxcodec.io/posts/what-are-some-things-i-wish-i-knew-when-i-started-programming/</guid>
+      <guid>https://imantumorang.com/posts/what-are-some-things-i-wish-i-knew-when-i-started-programming/</guid>
       <description>Majority and Stereotype Kills Dream I started programming 5 years ago.</description>
     </item>
     
     <item>
       <title>My honest opinion about Unit Testing</title>
-      <link>https://bxcodec.io/posts/my-honest-opinion-about-unit-testing/</link>
+      <link>https://imantumorang.com/posts/my-honest-opinion-about-unit-testing/</link>
       <pubDate>Sun, 06 May 2018 23:11:29 +0700</pubDate>
       
-      <guid>https://bxcodec.io/posts/my-honest-opinion-about-unit-testing/</guid>
+      <guid>https://imantumorang.com/posts/my-honest-opinion-about-unit-testing/</guid>
       <description>Imagine now you are in the kitchen. You are going to make an omelet.</description>
     </item>
     
     <item>
       <title>My First Impression about Code Review</title>
-      <link>https://bxcodec.io/posts/my-first-impression-about-code-review/</link>
+      <link>https://imantumorang.com/posts/my-first-impression-about-code-review/</link>
       <pubDate>Sun, 06 May 2018 23:03:29 +0700</pubDate>
       
-      <guid>https://bxcodec.io/posts/my-first-impression-about-code-review/</guid>
+      <guid>https://imantumorang.com/posts/my-first-impression-about-code-review/</guid>
       <description>My first time to know about Code Review is when entering my current company at Kurio.</description>
     </item>
     
     <item>
       <title>Why You Should Care About Squash and Merge in Git</title>
-      <link>https://bxcodec.io/posts/why-you-should-care-about-squash-and-merge-in-git/</link>
+      <link>https://imantumorang.com/posts/why-you-should-care-about-squash-and-merge-in-git/</link>
       <pubDate>Sun, 06 May 2018 22:46:43 +0700</pubDate>
       
-      <guid>https://bxcodec.io/posts/why-you-should-care-about-squash-and-merge-in-git/</guid>
+      <guid>https://imantumorang.com/posts/why-you-should-care-about-squash-and-merge-in-git/</guid>
       <description>We just develop our new feature in Kurio. It is a targeted push notification.</description>
     </item>
     
     <item>
       <title>How Bad is My First Code in Backend Production when Working as a Software Engineer</title>
-      <link>https://bxcodec.io/posts/how-bad-is-my-first-code-in-backend-production-when-working-as-a-software-engineer/</link>
+      <link>https://imantumorang.com/posts/how-bad-is-my-first-code-in-backend-production-when-working-as-a-software-engineer/</link>
       <pubDate>Sun, 06 May 2018 22:38:28 +0700</pubDate>
       
-      <guid>https://bxcodec.io/posts/how-bad-is-my-first-code-in-backend-production-when-working-as-a-software-engineer/</guid>
+      <guid>https://imantumorang.com/posts/how-bad-is-my-first-code-in-backend-production-when-working-as-a-software-engineer/</guid>
       <description>It happen when my first year in my first company as an Software Engineer.</description>
     </item>
     
     <item>
       <title>Programming as a Passion vs Programming as a Job</title>
-      <link>https://bxcodec.io/posts/programming-as-a-passion-vs-programming-as-a-job/</link>
+      <link>https://imantumorang.com/posts/programming-as-a-passion-vs-programming-as-a-job/</link>
       <pubDate>Wed, 02 May 2018 08:48:07 +0700</pubDate>
       
-      <guid>https://bxcodec.io/posts/programming-as-a-passion-vs-programming-as-a-job/</guid>
+      <guid>https://imantumorang.com/posts/programming-as-a-passion-vs-programming-as-a-job/</guid>
       <description>When we were still in college, we always demanded for studying hard.</description>
     </item>
     
     <item>
       <title>An Opinion-based : Advices to Junior Programmer</title>
-      <link>https://bxcodec.io/posts/an-opinion-based-advices-to-junior-programmer/</link>
+      <link>https://imantumorang.com/posts/an-opinion-based-advices-to-junior-programmer/</link>
       <pubDate>Wed, 02 May 2018 08:39:08 +0700</pubDate>
       
-      <guid>https://bxcodec.io/posts/an-opinion-based-advices-to-junior-programmer/</guid>
+      <guid>https://imantumorang.com/posts/an-opinion-based-advices-to-junior-programmer/</guid>
       <description>Being junior is a bit scary. It’s like too many things that we must know and learn.</description>
     </item>
     
     <item>
       <title>How can I ever be a shit as a software developer</title>
-      <link>https://bxcodec.io/posts/how-can-i-ever-be-a-shit-as-a-software-developer/</link>
+      <link>https://imantumorang.com/posts/how-can-i-ever-be-a-shit-as-a-software-developer/</link>
       <pubDate>Tue, 01 May 2018 18:14:17 +0700</pubDate>
       
-      <guid>https://bxcodec.io/posts/how-can-i-ever-be-a-shit-as-a-software-developer/</guid>
+      <guid>https://imantumorang.com/posts/how-can-i-ever-be-a-shit-as-a-software-developer/</guid>
       <description>Become software developer is not a title, but it’s a responsibilities we must faced.</description>
     </item>
     
     <item>
       <title>The Hardest Part of Being a Non-Native Speaker of English</title>
-      <link>https://bxcodec.io/posts/the-hardest-part-of-being-a-non-native-speaker-of-english/</link>
+      <link>https://imantumorang.com/posts/the-hardest-part-of-being-a-non-native-speaker-of-english/</link>
       <pubDate>Tue, 01 May 2018 17:59:14 +0700</pubDate>
       
-      <guid>https://bxcodec.io/posts/the-hardest-part-of-being-a-non-native-speaker-of-english/</guid>
+      <guid>https://imantumorang.com/posts/the-hardest-part-of-being-a-non-native-speaker-of-english/</guid>
       <description>Writing is one of my hobby since I was still in high school.</description>
     </item>
     
     <item>
       <title>Faker</title>
-      <link>https://bxcodec.io/posts/faker/</link>
+      <link>https://imantumorang.com/posts/faker/</link>
       <pubDate>Tue, 01 May 2018 11:18:11 +0700</pubDate>
       
-      <guid>https://bxcodec.io/posts/faker/</guid>
+      <guid>https://imantumorang.com/posts/faker/</guid>
       <description>Faker will generate you a fake data based on your Struct.</description>
     </item>
     
     <item>
       <title>Saint</title>
-      <link>https://bxcodec.io/posts/saint/</link>
+      <link>https://imantumorang.com/posts/saint/</link>
       <pubDate>Tue, 01 May 2018 11:15:02 +0700</pubDate>
       
-      <guid>https://bxcodec.io/posts/saint/</guid>
+      <guid>https://imantumorang.com/posts/saint/</guid>
       <description>Source code: github
 Download go get -u github.com/bxcodec/saint Example package main import ( &amp;quot;fmt&amp;quot; &amp;quot;github.</description>
     </item>
     
     <item>
       <title>What I Learn from Working in Small Startup as A Fresh Graduate</title>
-      <link>https://bxcodec.io/posts/what-i-learn-from-working-in-small-startup-as-a-fresh-graduate/</link>
+      <link>https://imantumorang.com/posts/what-i-learn-from-working-in-small-startup-as-a-fresh-graduate/</link>
       <pubDate>Tue, 01 May 2018 11:09:30 +0700</pubDate>
       
-      <guid>https://bxcodec.io/posts/what-i-learn-from-working-in-small-startup-as-a-fresh-graduate/</guid>
+      <guid>https://imantumorang.com/posts/what-i-learn-from-working-in-small-startup-as-a-fresh-graduate/</guid>
       <description>Hey , my name is Iman Syahputra Situmorang, a Fullstack Software Engineer in Bornevia.</description>
     </item>
     

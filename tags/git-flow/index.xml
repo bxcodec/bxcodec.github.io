@@ -2,27 +2,27 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>git-flow on Letters From Iman</title>
-    <link>https://bxcodec.io/tags/git-flow/</link>
+    <link>https://imantumorang.com/tags/git-flow/</link>
     <description>Recent content in git-flow on Letters From Iman</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <copyright>Iman Tumorang @bxcodec.io - All rights reserved</copyright>
-    <lastBuildDate>Sun, 06 May 2018 23:03:29 +0700</lastBuildDate><atom:link href="https://bxcodec.io/tags/git-flow/index.xml" rel="self" type="application/rss+xml" />
+    <copyright>Iman Tumorang @imantumorang.com - All rights reserved</copyright>
+    <lastBuildDate>Sun, 06 May 2018 23:03:29 +0700</lastBuildDate><atom:link href="https://imantumorang.com/tags/git-flow/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>My First Impression about Code Review</title>
-      <link>https://bxcodec.io/posts/my-first-impression-about-code-review/</link>
+      <link>https://imantumorang.com/posts/my-first-impression-about-code-review/</link>
       <pubDate>Sun, 06 May 2018 23:03:29 +0700</pubDate>
       
-      <guid>https://bxcodec.io/posts/my-first-impression-about-code-review/</guid>
+      <guid>https://imantumorang.com/posts/my-first-impression-about-code-review/</guid>
       <description>My first time to know about Code Review is when entering my current company at Kurio.</description>
     </item>
     
     <item>
       <title>Why You Should Care About Squash and Merge in Git</title>
-      <link>https://bxcodec.io/posts/why-you-should-care-about-squash-and-merge-in-git/</link>
+      <link>https://imantumorang.com/posts/why-you-should-care-about-squash-and-merge-in-git/</link>
       <pubDate>Sun, 06 May 2018 22:46:43 +0700</pubDate>
       
-      <guid>https://bxcodec.io/posts/why-you-should-care-about-squash-and-merge-in-git/</guid>
+      <guid>https://imantumorang.com/posts/why-you-should-care-about-squash-and-merge-in-git/</guid>
       <description>We just develop our new feature in Kurio. It is a targeted push notification.</description>
     </item>
     

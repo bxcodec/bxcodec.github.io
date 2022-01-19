@@ -2,11 +2,11 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>About on Letters From Iman</title>
-    <link>https://bxcodec.io/about/</link>
+    <link>https://imantumorang.com/about/</link>
     <description>Recent content in About on Letters From Iman</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <copyright>Iman Tumorang @bxcodec.io - All rights reserved</copyright>
-    <lastBuildDate>Fri, 19 May 2017 21:49:20 +0200</lastBuildDate><atom:link href="https://bxcodec.io/about/index.xml" rel="self" type="application/rss+xml" />
+    <copyright>Iman Tumorang @imantumorang.com - All rights reserved</copyright>
+    <lastBuildDate>Fri, 19 May 2017 21:49:20 +0200</lastBuildDate><atom:link href="https://imantumorang.com/about/index.xml" rel="self" type="application/rss+xml" />
   </channel>
 </rss>

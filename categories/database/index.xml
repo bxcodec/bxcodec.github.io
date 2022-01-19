@@ -2,27 +2,27 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>database on Letters From Iman</title>
-    <link>https://bxcodec.io/categories/database/</link>
+    <link>https://imantumorang.com/categories/database/</link>
     <description>Recent content in database on Letters From Iman</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <copyright>Iman Tumorang @bxcodec.io - All rights reserved</copyright>
-    <lastBuildDate>Tue, 22 Sep 2020 09:08:07 +0700</lastBuildDate><atom:link href="https://bxcodec.io/categories/database/index.xml" rel="self" type="application/rss+xml" />
+    <copyright>Iman Tumorang @imantumorang.com - All rights reserved</copyright>
+    <lastBuildDate>Tue, 22 Sep 2020 09:08:07 +0700</lastBuildDate><atom:link href="https://imantumorang.com/categories/database/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>How To Do Pagination in Postgres with Golang in 4 Common Ways</title>
-      <link>https://bxcodec.io/posts/how-to-do-pagination-in-postgres-with-golang-in-4-common-ways/</link>
+      <link>https://imantumorang.com/posts/how-to-do-pagination-in-postgres-with-golang-in-4-common-ways/</link>
       <pubDate>Tue, 22 Sep 2020 09:08:07 +0700</pubDate>
       
-      <guid>https://bxcodec.io/posts/how-to-do-pagination-in-postgres-with-golang-in-4-common-ways/</guid>
+      <guid>https://imantumorang.com/posts/how-to-do-pagination-in-postgres-with-golang-in-4-common-ways/</guid>
       <description>Hi again everyone, it&amp;rsquo;s been a long time I haven&amp;rsquo;t published any article.</description>
     </item>
     
     <item>
       <title>Today I Learned: Row Locking Transaction in PostgreSQL</title>
-      <link>https://bxcodec.io/posts/today-i-learned-row-locking-transaction-in-postgresql/</link>
+      <link>https://imantumorang.com/posts/today-i-learned-row-locking-transaction-in-postgresql/</link>
       <pubDate>Mon, 06 Jan 2020 12:08:07 +0700</pubDate>
       
-      <guid>https://bxcodec.io/posts/today-i-learned-row-locking-transaction-in-postgresql/</guid>
+      <guid>https://imantumorang.com/posts/today-i-learned-row-locking-transaction-in-postgresql/</guid>
       <description>Today&amp;rsquo;s problem is a hard problem but has a silly solution.</description>
     </item>
     

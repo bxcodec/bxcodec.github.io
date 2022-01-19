@@ -2,18 +2,18 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>kurio on Letters From Iman</title>
-    <link>https://bxcodec.io/tags/kurio/</link>
+    <link>https://imantumorang.com/tags/kurio/</link>
     <description>Recent content in kurio on Letters From Iman</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <copyright>Iman Tumorang @bxcodec.io - All rights reserved</copyright>
-    <lastBuildDate>Thu, 07 Feb 2019 04:14:07 +0700</lastBuildDate><atom:link href="https://bxcodec.io/tags/kurio/index.xml" rel="self" type="application/rss+xml" />
+    <copyright>Iman Tumorang @imantumorang.com - All rights reserved</copyright>
+    <lastBuildDate>Thu, 07 Feb 2019 04:14:07 +0700</lastBuildDate><atom:link href="https://imantumorang.com/tags/kurio/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>The Evolutions of Git Commit Message Conventions in Kurio</title>
-      <link>https://bxcodec.io/posts/the-evolutions-of-git-commit-message-conventions-in-kurio/</link>
+      <link>https://imantumorang.com/posts/the-evolutions-of-git-commit-message-conventions-in-kurio/</link>
       <pubDate>Thu, 07 Feb 2019 04:14:07 +0700</pubDate>
       
-      <guid>https://bxcodec.io/posts/the-evolutions-of-git-commit-message-conventions-in-kurio/</guid>
+      <guid>https://imantumorang.com/posts/the-evolutions-of-git-commit-message-conventions-in-kurio/</guid>
       <description>We in Kurio use Github as our version control system. And because of that, we also have a flow like open source project does.</description>
     </item>
     

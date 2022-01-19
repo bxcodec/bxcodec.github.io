@@ -2,18 +2,18 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>sliceofcode on Letters From Iman</title>
-    <link>https://bxcodec.io/tags/sliceofcode/</link>
+    <link>https://imantumorang.com/tags/sliceofcode/</link>
     <description>Recent content in sliceofcode on Letters From Iman</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <copyright>Iman Tumorang @bxcodec.io - All rights reserved</copyright>
-    <lastBuildDate>Fri, 22 Mar 2019 14:14:07 +0700</lastBuildDate><atom:link href="https://bxcodec.io/tags/sliceofcode/index.xml" rel="self" type="application/rss+xml" />
+    <copyright>Iman Tumorang @imantumorang.com - All rights reserved</copyright>
+    <lastBuildDate>Fri, 22 Mar 2019 14:14:07 +0700</lastBuildDate><atom:link href="https://imantumorang.com/tags/sliceofcode/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Today I Learned: Pass By Reference on Interface Parameter in Golang</title>
-      <link>https://bxcodec.io/posts/today-i-learned-pass-by-reference-on-interface-parameter-in-golang/</link>
+      <link>https://imantumorang.com/posts/today-i-learned-pass-by-reference-on-interface-parameter-in-golang/</link>
       <pubDate>Fri, 22 Mar 2019 14:14:07 +0700</pubDate>
       
-      <guid>https://bxcodec.io/posts/today-i-learned-pass-by-reference-on-interface-parameter-in-golang/</guid>
+      <guid>https://imantumorang.com/posts/today-i-learned-pass-by-reference-on-interface-parameter-in-golang/</guid>
       <description>Back to the college days, I remember there are 2 ways to pass a parameter to a function.</description>
     </item>
     

@@ -2,36 +2,36 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>kubernetes on Letters From Iman</title>
-    <link>https://bxcodec.io/tags/kubernetes/</link>
+    <link>https://imantumorang.com/tags/kubernetes/</link>
     <description>Recent content in kubernetes on Letters From Iman</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <copyright>Iman Tumorang @bxcodec.io - All rights reserved</copyright>
-    <lastBuildDate>Sat, 07 Sep 2019 15:00:07 +0700</lastBuildDate><atom:link href="https://bxcodec.io/tags/kubernetes/index.xml" rel="self" type="application/rss+xml" />
+    <copyright>Iman Tumorang @imantumorang.com - All rights reserved</copyright>
+    <lastBuildDate>Sat, 07 Sep 2019 15:00:07 +0700</lastBuildDate><atom:link href="https://imantumorang.com/tags/kubernetes/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Today I Learned: Enabling Horizontal Pod Autoscaler(HPA) in Kubernetes</title>
-      <link>https://bxcodec.io/posts/today-i-learned-enabling-horizontal-pod-autoscalerhpa-in-kubernetes/</link>
+      <link>https://imantumorang.com/posts/today-i-learned-enabling-horizontal-pod-autoscalerhpa-in-kubernetes/</link>
       <pubDate>Sat, 07 Sep 2019 15:00:07 +0700</pubDate>
       
-      <guid>https://bxcodec.io/posts/today-i-learned-enabling-horizontal-pod-autoscalerhpa-in-kubernetes/</guid>
+      <guid>https://imantumorang.com/posts/today-i-learned-enabling-horizontal-pod-autoscalerhpa-in-kubernetes/</guid>
       <description>It&amp;rsquo;s been a while I didn&amp;rsquo;t post any updates. It&amp;rsquo;s so busy lately, and it&amp;rsquo;s hard to find free time to write an article in this past few weeks.</description>
     </item>
     
     <item>
       <title>Utilize Open API 3 for the Faster Software Development Process</title>
-      <link>https://bxcodec.io/posts/utilize-open-api-3-for-the-faster-software-development-process/</link>
+      <link>https://imantumorang.com/posts/utilize-open-api-3-for-the-faster-software-development-process/</link>
       <pubDate>Wed, 31 Jul 2019 23:00:07 +0700</pubDate>
       
-      <guid>https://bxcodec.io/posts/utilize-open-api-3-for-the-faster-software-development-process/</guid>
+      <guid>https://imantumorang.com/posts/utilize-open-api-3-for-the-faster-software-development-process/</guid>
       <description>I&amp;rsquo;m enthusiastic to open source world. There so many great things and free to use in the open-source world.</description>
     </item>
     
     <item>
       <title>Mount file to Kubernetes Pod, without Deleting the Existing File — in the Docker-Container in the Same Directory</title>
-      <link>https://bxcodec.io/posts/mount-file-to-kubernetes-pod-without-deleting-the-existing-file-in-the-docker-container-in-the-same-directory/</link>
+      <link>https://imantumorang.com/posts/mount-file-to-kubernetes-pod-without-deleting-the-existing-file-in-the-docker-container-in-the-same-directory/</link>
       <pubDate>Tue, 29 Jan 2019 08:13:07 +0700</pubDate>
       
-      <guid>https://bxcodec.io/posts/mount-file-to-kubernetes-pod-without-deleting-the-existing-file-in-the-docker-container-in-the-same-directory/</guid>
+      <guid>https://imantumorang.com/posts/mount-file-to-kubernetes-pod-without-deleting-the-existing-file-in-the-docker-container-in-the-same-directory/</guid>
       <description>A few weeks ago, I made a simple application named tweetor that was about a simple tutorial to create Kubenernetes Clusters in Google Cloud Platform (GCP).</description>
     </item>
     

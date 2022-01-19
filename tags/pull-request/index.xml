@@ -2,18 +2,18 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>pull-request on Letters From Iman</title>
-    <link>https://bxcodec.io/tags/pull-request/</link>
+    <link>https://imantumorang.com/tags/pull-request/</link>
     <description>Recent content in pull-request on Letters From Iman</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <copyright>Iman Tumorang @bxcodec.io - All rights reserved</copyright>
-    <lastBuildDate>Wed, 23 Jan 2019 04:14:07 +0700</lastBuildDate><atom:link href="https://bxcodec.io/tags/pull-request/index.xml" rel="self" type="application/rss+xml" />
+    <copyright>Iman Tumorang @imantumorang.com - All rights reserved</copyright>
+    <lastBuildDate>Wed, 23 Jan 2019 04:14:07 +0700</lastBuildDate><atom:link href="https://imantumorang.com/tags/pull-request/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Today I Learned - Checkout to Pull Request in GitHub Public Repository</title>
-      <link>https://bxcodec.io/posts/today-i-learned-checkout-to-pull-request-in-github-public-repository/</link>
+      <link>https://imantumorang.com/posts/today-i-learned-checkout-to-pull-request-in-github-public-repository/</link>
       <pubDate>Wed, 23 Jan 2019 04:14:07 +0700</pubDate>
       
-      <guid>https://bxcodec.io/posts/today-i-learned-checkout-to-pull-request-in-github-public-repository/</guid>
+      <guid>https://imantumorang.com/posts/today-i-learned-checkout-to-pull-request-in-github-public-repository/</guid>
       <description>So today I learned a really important thing in Github and open-source world :D.</description>
     </item>
     
