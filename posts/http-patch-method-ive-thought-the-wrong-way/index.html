@@ -1,420 +1,73 @@
-<!DOCTYPE html>
-<html lang="en-us"><head>
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-        <meta name="generator" content="Hugo 0.85.0" />
-	
-
-	<title>
-		 
-		HTTP - PATCH Method! I&#39;ve Thought the Wrong Way!!!-Letters From Iman
-		
-	</title>
-
-	
-
-	<meta property="og:title" content="HTTP - PATCH Method! I&#39;ve Thought the Wrong Way!!! - Letters From Iman"/> 
-	<meta property="og:description" content="Today I learned, The Reality that People Never Told Me about HTTP-PATCH!" />
-	<meta property="og:type" content="article" />
-	<meta property="og:url" content="https://imantumorang.com/posts/http-patch-method-ive-thought-the-wrong-way/" />
-	
-	<link href="/css/bootstrap.min.css" rel="stylesheet">
-	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp"
-	 crossorigin="anonymous">
-	<link href="https://fonts.googleapis.com/css?family=Righteous%7CMerriweather:300,300i,400,400i,700,700i" rel="stylesheet">
-	<link href="/css/medium.css" rel="stylesheet">
-	<link href="/css/additional.css" rel="stylesheet">
-	<link rel="icon" href="https://imantumorang.com/favicon.ico">
-	<link rel="apple-touch-icon" href="https://imantumorang.com/apple-touch-icon.png"/>
-	
-	<meta property="og:image" content="https://cdn-images-1.medium.com/max/1440/0*nIYKJjAv-ufoRMNW"/>
-	<meta property="og:image:secure_url" content="https://cdn-images-1.medium.com/max/1440/0*nIYKJjAv-ufoRMNW"/>
-	<meta name="twitter:card" content="summary_large_image" />
-		
-	<meta name="twitter:site" content="@imantumorang.com" />
-	
-	<meta name="twitter:creator" content="@bxcodec" />
-	
-	
-</head>
-<body>
-<nav class="navbar navbar-expand-lg navbar-light bg-white fixed-top mediumnavigation nav-down">
-    <div class="container pr-0">
-        
-        <a class="navbar-brand" href="https://imantumorang.com">
-
-            
-            <span style="font-family:Righteous;">Letters From Iman</span>
-            
-        </a>
-        
-
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarMediumish" aria-controls="navbarSupportedContent"
-            aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-
-        
-        <div class="collapse navbar-collapse" id="navbarMediumish">
-            
-            <ul class="navbar-nav ml-auto">
-                 
-                <li class="nav-item ">
-                    <a class="nav-link" href="https://resume.imantumorang.com">Resume</a>
-                </li>
-                 
-                <li class="nav-item ">
-                    <a class="nav-link" href="/posts">Blog</a>
-                </li>
-                 
-                <li class="nav-item ">
-                    <a class="nav-link" href="/">About Me</a>
-                </li>
-                
-            </ul>
-        </div>
-        
-    </div>
-</nav>
-
-
-        <div class="site-content">   
-            <div class="container">
-<div class="mainheading">
-    
-</div><div class="main-content">
-        
-        <div class="container">
-            <div class="row">
-                
-                <div class="col-md-2 pl-0"><div class="share">
-    <p>Share</p>
-    <ul>
-        <li class="ml-1 mr-1">
-        <a target="_blank" href="https://twitter.com/intent/tweet?text=HTTP%e2%80%8a-%e2%80%8aPATCH%20Method%21%20I%27ve%20Thought%20the%20Wrong%c2%a0Way%21%21%21&url=https%3a%2f%2fimantumorang.com%2fposts%2fhttp-patch-method-ive-thought-the-wrong-way%2f" onclick="window.open(this.href, 'twitter-share', 'width=550,height=435');return false;">
-        <i class="fab fa-twitter"></i>
-        </a>
-        </li>
-        
-        <li class="ml-1 mr-1">
-        <a target="_blank" href="https://facebook.com/sharer.php?u=https%3a%2f%2fimantumorang.com%2fposts%2fhttp-patch-method-ive-thought-the-wrong-way%2f" onclick="window.open(this.href, 'facebook-share', 'width=550,height=435');return false;">
-        <i class="fab fa-facebook-f"></i>
-        </a>
-        </li>
-
-        <li class="ml-1 mr-1">
-        <a target="_blank" href="https://www.xing.com/spi/shares/new?url=https%3a%2f%2fimantumorang.com%2fposts%2fhttp-patch-method-ive-thought-the-wrong-way%2f" onclick="window.open(this.href, 'xing-share', 'width=550,height=435');return false;">
-        <i class="fab fa-xing"></i>
-        </a>
-        </li>        
-    </ul>
-
-    
-        <div class="sep">
-        </div>				
-        <ul>
-            <li> 
-            <a  class="small smoothscroll" href="#disqus_thread"></a>
-            </li>
-        </ul>
-    
-</div></div>
-                                
-                <div class="col-md-9 flex-first flex-md-unordered">
-                    <div class="mainheading">
-                                                                	
-                        
-                        
-                        
-                        <div class="post-top-meta">
-                            <div>
-                                <img class="author-thumb" src="http://gravatar.com/avatar/01e3584fe39eb72335f13243c3a814a2?s=200" alt="Iman Tumorang">
-                            </div>
-                            <div >
-                                <a  href="https://imantumorang.com" class="link-dark">Iman Tumorang</a><br>
-                                <span class="author-description">
-                                    Software Engineer - Writer - Open Source Enthusiast - Startup Enthusiast<br>
-                                    <i class="far fa-star"></i>
-                                    Feb 8, 2020
-                                    <i class="far fa-clock clock"></i>
-                                    5 min read
-                                </span>					
-                            </div>
-                        </div>			
-                        	
-                        
-                                                     
-                        
-                        <h1 class="posttitle">HTTP - PATCH Method! I&#39;ve Thought the Wrong Way!!!</h1> 
-                        
-                            <h2 class="subtitle">Today I learned, The Reality that People Never Told Me about HTTP-PATCH!</h2> 
-                        
-                        
-                    </div>
-
-                    
-                    
-                    
-                    <style>
-                        figure {
-                            width: 95%;
-                            text-align: center !important;
-                            font-style: italic !important;
-                            font-size: smaller !important;
-                            text-indent: 0 !important;
-                            margin: auto;
-                            padding: 0.5em;
-                            color: #aaaaaa;
-                        }
-                        figure a{
-                            color: #aaaaaa;
-                            text-decoration: #aaaaaa;
-                        }
-                        figure  .featured-image{
-                            margin-bottom: 0.5rem;
-                        }
-                        figure img{
-                            margin: auto;
-                        }
-                        img.scaled {
-                            width: 70%;
-                        }
-                    </style>
-
-                    <figure>
-                        <img class="featured-image img-fluid" src="https://cdn-images-1.medium.com/max/1440/0*nIYKJjAv-ufoRMNW" alt="Photo by Free To Use Sounds on Unsplash.com">
-                        <figcaption>Photo by <a href='https://unsplash.com/@freetousesoundscom'>Free To Use Sounds</a> on Unsplash.com</figcaption>
-                    </figure>
-                    <br>
-                    
-                    
-                    
-                    
-                    <div class="article-post">
-                        <p>I&rsquo;ve been working on Software Engineering for more than 3 years now. And I&rsquo;m surprised, in these 3 years, I never face any PATCH endpoint yet, until now. </p>
-<p>And because of that, I never really use the PATCH Method before, and never develop it either. I remember 3 years ago when the first time I asked my senior about the difference between PUT and PATCH was only the changed value. PUT will replace the entire item, and PATCH changing the specified field.</p>
-<p>That&rsquo;s it! But in reality, in my careers, we never used the PATCH method. The reason is that we still didn&rsquo;t need it at that time. So I now live with this belief, and whenever I talk to others, they usually understand what I mean.</p>
-<h3 id="my-original-thought-aboutpatch">My Original Thought about PATCH</h3>
-<p>So, since I know about HTTP Method and REST. I only use these methods, GET, DELETE, POST, and PUT. I never have a chance (yet) to use PATCH.</p>
-<p>We know clearly, how the PUT work. And I&rsquo;ve been using PUT for a long time now. For example, I have this JSON. And I&rsquo;m doing PUT operation.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">GET /user/bxcodec
-<span style="color:#f92672">{</span>
-  <span style="color:#e6db74">&#34;name&#34;</span>: <span style="color:#e6db74">&#34;Iman&#34;</span>,
-  <span style="color:#e6db74">&#34;username&#34;</span>: <span style="color:#e6db74">&#34;bxcodec&#34;</span>
-<span style="color:#f92672">}</span>
-</code></pre></div><p>Applying HTTP PUT</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">PUT /user/bxcodec
-<span style="color:#f92672">{</span>
-  <span style="color:#e6db74">&#34;name&#34;</span>: <span style="color:#e6db74">&#34;Iman Tumorang&#34;</span>,
-  <span style="color:#e6db74">&#34;username&#34;</span>: <span style="color:#e6db74">&#34;bxcodec&#34;</span>
-<span style="color:#f92672">}</span>
-</code></pre></div><p>Final Results</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">GET /user/bxcodec
-<span style="color:#f92672">{</span>
-  <span style="color:#e6db74">&#34;name&#34;</span>: <span style="color:#e6db74">&#34;Iman Tumorang&#34;</span>,
-  <span style="color:#e6db74">&#34;username&#34;</span>: <span style="color:#e6db74">&#34;bxcodec&#34;</span>
-<span style="color:#f92672">}</span>
-</code></pre></div><p>And then, derived from PUT, then PATCH, from what people say, <strong>&ldquo;PATCH not replacing the entire item, but only the specified one&rdquo;</strong>.</p>
-<p>So, from that statement, in default, this is what I think how PATCH work. For example, I have this JSON.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">GET /user/bxcodec
-<span style="color:#f92672">{</span>
-  <span style="color:#e6db74">&#34;name&#34;</span>: <span style="color:#e6db74">&#34;Iman&#34;</span>,
-  <span style="color:#e6db74">&#34;username&#34;</span>: <span style="color:#e6db74">&#34;bxcodec&#34;</span>
-<span style="color:#f92672">}</span>
-</code></pre></div><p>Applying HTTP Patch</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">PATCH /user/bxcodec
-<span style="color:#f92672">{</span>
-  <span style="color:#e6db74">&#34;name&#34;</span>: <span style="color:#e6db74">&#34;Iman Tumorang&#34;</span>
-<span style="color:#f92672">}</span>
-</code></pre></div><p>Final Results</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">GET /user/bxcodec
-<span style="color:#f92672">{</span>
-  <span style="color:#e6db74">&#34;name&#34;</span>: <span style="color:#e6db74">&#34;Iman Tumorang&#34;</span>,
-  <span style="color:#e6db74">&#34;username&#34;</span>: <span style="color:#e6db74">&#34;bxcodec&#34;</span>
-<span style="color:#f92672">}</span>
-</code></pre></div><p>Right? This is how I think HTTP-PATCH should work. And I live with this belief for more than 3 years. </p>
-<h3 id="the-plottwists">The Plot Twists</h3>
-<p>But, just now, when I write this, I found this on Golang docs here: <a href="https://golang.org/pkg/net/http/">https://golang.org/pkg/net/http/</a></p>
-<p><img src="https://cdn-images-1.medium.com/max/1440/1*_wiYDs1fk9SHUijw7h2xnA.png" alt="golang-docs"></p>
-<p>Out of curiosity, I notice a different value there, I found a comment for <code>RFC 5789</code>. Why the heck it has a different RFC, not like the others? Why is it different?</p>
-<p>After looking at the RFC 5789, I found a weird thing. From the description,
-<img src="https://cdn-images-1.medium.com/max/1440/1*eSO7WCG1sXltplNrbpyP3Q.png" alt="RFC 5789 Desc"> <img src="https://cdn-images-1.medium.com/max/1080/1*UR7nnaz43MfNnLdqjFPW9A.png" alt="RFC 5789 Example"></p>
-<blockquote>
-<p>With PATCH, however, the enclosed entity <strong>contains a set of instructions</strong> describing how a resource currently residing on the origin server should be modified to produce a new version.</p>
-</blockquote>
-<p>So, from the RFC docs, it says, in the request body, I have to specify a set of actions or instructions to modify the current resource in request URI. As we can see in the example above. But how I do set the actions in the request body? How should I format it?</p>
-<h3 id="introducing-jsonpatch">Introducing JSON PATCH</h3>
-<p>To answer the previous question, how should I format the action list in my request body? I found an interesting thing, it&rsquo;s another RFC called JSON-Patch (RFC 6902). This is an RFC to explain how to use JSON-Patch for JSON operations. </p>
-<p>A short example of how JSON-PATCH worked is more like this. For example, we have a JSON here.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json">{
-  <span style="color:#f92672">&#34;name&#34;</span>: <span style="color:#e6db74">&#34;Iman&#34;</span>,
-  <span style="color:#f92672">&#34;username&#34;</span>: <span style="color:#e6db74">&#34;bxcodec&#34;</span>
-}
-</code></pre></div><p>Using the JSON-PATCH.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json">[
-  { <span style="color:#f92672">&#34;op&#34;</span>: <span style="color:#e6db74">&#34;replace&#34;</span>, <span style="color:#f92672">&#34;path&#34;</span>: <span style="color:#e6db74">&#34;/name&#34;</span>, <span style="color:#f92672">&#34;value&#34;</span>: <span style="color:#e6db74">&#34;Iman Tumorang&#34;</span> },
-  { <span style="color:#f92672">&#34;op&#34;</span>: <span style="color:#e6db74">&#34;add&#34;</span>, <span style="color:#f92672">&#34;path&#34;</span>: <span style="color:#e6db74">&#34;/likes&#34;</span>, <span style="color:#f92672">&#34;value&#34;</span>: [<span style="color:#e6db74">&#34;go&#34;</span>, <span style="color:#e6db74">&#34;blogging&#34;</span>] }
-]
-</code></pre></div><p>Patched results.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json">{
-  <span style="color:#f92672">&#34;name&#34;</span>: <span style="color:#e6db74">&#34;Iman Tumorang&#34;</span>,
-  <span style="color:#f92672">&#34;username&#34;</span>: <span style="color:#e6db74">&#34;bxcodec&#34;</span>,
-  <span style="color:#f92672">&#34;likes&#34;</span>: [
-    <span style="color:#e6db74">&#34;go&#34;</span>,
-    <span style="color:#e6db74">&#34;blogging&#34;</span>
-  ]
-}
-</code></pre></div><p>So in JSON-PATCH, I have to define the operations, the path, and the value for modifying the resources. And all the available commands can be seen in the <a href="https://tools.ietf.org/html/rfc6902">RFC6902</a>.</p>
-<p>So, here the plot twist, surprisingly, HTTP PATCH and JSON-PATCH have a correlation. When I open the RFC 6902, I got this.
-<img src="https://cdn-images-1.medium.com/max/1440/1*tq1Mcg789vW9MUZMAIfOJw.png" alt="RFC 6092"></p>
-<blockquote>
-<p>RFC 6902JSON Patch is a format (identified by the media type &ldquo;application/ json-patch+json&rdquo;) for expressing a sequence of operations to apply to a target JSON document; <strong>it is suitable for use with the HTTP PATCH method</strong>.</p>
-</blockquote>
-<p>Gotcha!</p>
-<p>So, in simple, for HTTP-PATCH, we can use JSON-PATCH for the request body. So the action list for the request body, we can define it using JSON-PATCH.</p>
-<p>So, to combine HTTP-PATCH and JSON-PATCH, if I put it into an example, it will be more like this below.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">GET /user/bxcodec
-<span style="color:#f92672">{</span>
-  <span style="color:#e6db74">&#34;name&#34;</span>: <span style="color:#e6db74">&#34;Iman&#34;</span>,
-  <span style="color:#e6db74">&#34;username&#34;</span>: <span style="color:#e6db74">&#34;bxcodec&#34;</span>
-<span style="color:#f92672">}</span>
-</code></pre></div><p>Applying HTTP Patch</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">PATCH /user/bxcodec
-<span style="color:#f92672">[</span>
-  <span style="color:#f92672">{</span> <span style="color:#e6db74">&#34;op&#34;</span>: <span style="color:#e6db74">&#34;replace&#34;</span>, <span style="color:#e6db74">&#34;path&#34;</span>: <span style="color:#e6db74">&#34;/name&#34;</span>, <span style="color:#e6db74">&#34;value&#34;</span>: <span style="color:#e6db74">&#34;Iman Tumorang&#34;</span> <span style="color:#f92672">}</span>
-<span style="color:#f92672">]</span>
-</code></pre></div><p>Final Results.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">GET /user/bxcodec
-<span style="color:#f92672">{</span>
-  <span style="color:#e6db74">&#34;name&#34;</span>: <span style="color:#e6db74">&#34;Iman Tumorang&#34;</span>,
-  <span style="color:#e6db74">&#34;username&#34;</span>: <span style="color:#e6db74">&#34;bxcodec&#34;</span>
-<span style="color:#f92672">}</span>
-</code></pre></div><h3 id="conclusions">Conclusions</h3>
-<p>Today, after living with a wrong belief, I learned new things. HTTP-PATCH has a different way to implement it. We can use JSON-PATCH as the request-body on the HTTP-PATCH request method. </p>
-<p>But, I don&rsquo;t know, to be honest, I still feel this way is not really convenient. And it makes an extra layer of our implementations, compares to like what I used to be used. Luckily, there&rsquo;s already a lot of JSON-PATCH library out there, like <a href="https://github.com/evanphx/json-patch">https://github.com/evanphx/json-patch</a> for Golang, <a href="https://www.npmjs.com/package/fast-json-patch">https://www.npmjs.com/package/fast-json-patch</a> in Typescript, and many more. So I don&rsquo;t think it will be hard to implement it in my next projects. But yeah, let&rsquo;s see haha. </p>
-<p>But yeah, even it more convenient to change directly the value for patching (without using JSON-PATCH, and not following the RFC 5789) LOL, I will try to follow this in my next projects.</p>
-
-                    </div>
-
-                    
-
-
-
-
-
- 
-                    <div class="after-post-tags">
-                        <ul class="tags">
-                        
-                        <li>
-                        <a href="/tags/http">http</a>
-                        </li>
-                        
-                        <li>
-                        <a href="/tags/http-patch">http-patch</a>
-                        </li>
-                        
-                        <li>
-                        <a href="/tags/json-patch">json-patch</a>
-                        </li>
-                        
-                        <li>
-                        <a href="/tags/softwaredevelopment">softwaredevelopment</a>
-                        </li>
-                        
-                        <li>
-                        <a href="/tags/rfcs">rfcs</a>
-                        </li>
-                        
-                        </ul>
-                    </div>
-                    
-                    
-                    
-                    <div class="row PageNavigation d-flex justify-content-between font-weight-bold">
-                    
-                        <a class="prev d-block col-md-6" href="/posts/how-to-do-pagination-in-postgres-with-golang-in-4-common-ways/"> &laquo; How To Do Pagination in Postgres with Golang in 4 Common Ways</a>
-                    
-                    
-                        <a class="next d-block col-md-6 text-lg-right" href="/posts/today-i-learned-row-locking-transaction-in-postgresql/">Today I Learned: Row Locking Transaction in PostgreSQL &raquo;</a>
-                    
-                    <div class="clearfix"></div>
-                    </div>
-                    
-                </div>
-                
-            </div>
-        </div>
-        
-        <br/> 
-        
-<div class="container">
-    <div id="comments" class="row justify-content-center mb-5">
-        <div class="col-md-8">           
-            <div id="disqus_thread"></div>
-<script type="application/javascript">
-    var disqus_config = function () {
-    
-    
-    
-    };
-    (function() {
-        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
-            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
-            return;
-        }
-        var d = document, s = d.createElement('script'); s.async = true;
-        s.src = '//' + "iman-tumorang" + '.disqus.com/embed.js';
-        s.setAttribute('data-timestamp', +new Date());
-        (d.head || d.body).appendChild(s);
-    })();
-</script>
-<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>               
-        </div>
-    </div>
-</div>
-
-
- 
-    </div>
-
-            </div>
-    
-<footer class="footer">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-6 col-sm-6 text-center text-lg-left">
-                &copy; Copyright Iman Tumorang @imantumorang.com - All rights reserved
-            </div>
-            <div class="col-md-6 col-sm-6 text-center text-lg-right">    
-                <a target="_blank" href="https://www.wowthemes.net">Mediumish Theme</a> by WowThemes.net
-            </div>
-        </div>
-    </div>
-</footer>
-
-        </div>
-
-    
-<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
-    
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
-    
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>    
-    
-<script src="/js/mediumish.js"></script>
-
+<!doctype html><html lang=en-us><head><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1,shrink-to-fit=no"><meta name=generator content="Hugo 0.102.3"><title>HTTP - PATCH Method! I've Thought the Wrong Way!!!-Letters From Iman</title><meta property="og:title" content="HTTP - PATCH Method! I've Thought the Wrong Way!!! - Letters From Iman"><meta property="og:description" content="Today I learned, The Reality that People Never Told Me about HTTP-PATCH!"><meta property="og:type" content="article"><meta property="og:url" content="https://imantumorang.com/posts/http-patch-method-ive-thought-the-wrong-way/"><link href=/css/bootstrap.min.css rel=stylesheet><link rel=stylesheet href=https://use.fontawesome.com/releases/v5.0.13/css/all.css integrity=sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp crossorigin=anonymous><link href="https://fonts.googleapis.com/css?family=Righteous%7CMerriweather:300,300i,400,400i,700,700i" rel=stylesheet><link href=/css/medium.css rel=stylesheet><link href=/css/additional.css rel=stylesheet><link rel=icon href=https://imantumorang.com/favicon.ico><link rel=apple-touch-icon href=https://imantumorang.com/apple-touch-icon.png><meta property="og:image" content="https://cdn-images-1.medium.com/max/1440/0*nIYKJjAv-ufoRMNW"><meta property="og:image:secure_url" content="https://cdn-images-1.medium.com/max/1440/0*nIYKJjAv-ufoRMNW"><meta name=twitter:card content="summary_large_image"><meta name=twitter:site content="@imantumorang.com"><meta name=twitter:creator content="@bxcodec"></head><body><nav class="navbar navbar-expand-lg navbar-light bg-white fixed-top mediumnavigation nav-down"><div class="container pr-0"><a class=navbar-brand href=https://imantumorang.com><span style=font-family:Righteous>Letters From Iman</span></a>
+<button class=navbar-toggler type=button data-toggle=collapse data-target=#navbarMediumish aria-controls=navbarSupportedContent aria-expanded=false aria-label="Toggle navigation">
+<span class=navbar-toggler-icon></span></button><div class="collapse navbar-collapse" id=navbarMediumish><ul class="navbar-nav ml-auto"><li class=nav-item><a class=nav-link href=https://resume.imantumorang.com>Resume</a></li><li class=nav-item><a class=nav-link href=/posts>Blog</a></li><li class=nav-item><a class=nav-link href=/>About Me</a></li></ul></div></div></nav><div class=site-content><div class=container><div class=mainheading></div><div class=main-content><div class=container><div class=row><div class="col-md-2 pl-0"><div class=share><p>Share</p><ul><li class="ml-1 mr-1"><a target=_blank href="https://twitter.com/intent/tweet?text=HTTP%e2%80%8a-%e2%80%8aPATCH%20Method%21%20I%27ve%20Thought%20the%20Wrong%c2%a0Way%21%21%21&url=https%3a%2f%2fimantumorang.com%2fposts%2fhttp-patch-method-ive-thought-the-wrong-way%2f" onclick='return window.open(this.href,"twitter-share","width=550,height=435"),!1'><i class="fab fa-twitter"></i></a></li><li class="ml-1 mr-1"><a target=_blank href="https://facebook.com/sharer.php?u=https%3a%2f%2fimantumorang.com%2fposts%2fhttp-patch-method-ive-thought-the-wrong-way%2f" onclick='return window.open(this.href,"facebook-share","width=550,height=435"),!1'><i class="fab fa-facebook-f"></i></a></li><li class="ml-1 mr-1"><a target=_blank href="https://www.xing.com/spi/shares/new?url=https%3a%2f%2fimantumorang.com%2fposts%2fhttp-patch-method-ive-thought-the-wrong-way%2f" onclick='return window.open(this.href,"xing-share","width=550,height=435"),!1'><i class="fab fa-xing"></i></a></li></ul><div class=sep></div><ul><li><a class="small smoothscroll" href=#disqus_thread></a></li></ul></div></div><div class="col-md-9 flex-first flex-md-unordered"><div class=mainheading><div class=post-top-meta><div><img class=author-thumb src="http://gravatar.com/avatar/01e3584fe39eb72335f13243c3a814a2?s=200" alt="Iman Tumorang"></div><div><a href=https://imantumorang.com class=link-dark>Iman Tumorang</a><br><span class=author-description>Software Engineer - Writer - Open Source Enthusiast - Startup Enthusiast<br><i class="far fa-star"></i>
+Feb 8, 2020
+<i class="far fa-clock clock"></i>
+5 min read</span></div></div><h1 class=posttitle>HTTP - PATCH Method! I've Thought the Wrong Way!!!</h1><h2 class=subtitle>Today I learned, The Reality that People Never Told Me about HTTP-PATCH!</h2></div><style>figure{width:95%;text-align:center!important;font-style:italic!important;font-size:smaller!important;text-indent:0!important;margin:auto;padding:.5em;color:#aaa}figure a{color:#aaa;text-decoration:#aaa}figure .featured-image{margin-bottom:.5rem}figure img{margin:auto}img.scaled{width:70%}</style><figure><img class="featured-image img-fluid" src=https://cdn-images-1.medium.com/max/1440/0*nIYKJjAv-ufoRMNW alt="Photo by Free To Use Sounds on Unsplash.com"><figcaption>Photo by <a href=https://unsplash.com/@freetousesoundscom>Free To Use Sounds</a> on Unsplash.com</figcaption></figure><br><div class=article-post><p>I&rsquo;ve been working on Software Engineering for more than 3 years now. And I&rsquo;m surprised, in these 3 years, I never face any PATCH endpoint yet, until now. </p><p>And because of that, I never really use the PATCH Method before, and never develop it either. I remember 3 years ago when the first time I asked my senior about the difference between PUT and PATCH was only the changed value. PUT will replace the entire item, and PATCH changing the specified field.</p><p>That&rsquo;s it! But in reality, in my careers, we never used the PATCH method. The reason is that we still didn&rsquo;t need it at that time. So I now live with this belief, and whenever I talk to others, they usually understand what I mean.</p><h3 id=my-original-thought-aboutpatch>My Original Thought about PATCH</h3><p>So, since I know about HTTP Method and REST. I only use these methods, GET, DELETE, POST, and PUT. I never have a chance (yet) to use PATCH.</p><p>We know clearly, how the PUT work. And I&rsquo;ve been using PUT for a long time now. For example, I have this JSON. And I&rsquo;m doing PUT operation.</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=display:flex><span>GET /user/bxcodec
+</span></span><span style=display:flex><span><span style=color:#f92672>{</span>
+</span></span><span style=display:flex><span>  <span style=color:#e6db74>&#34;name&#34;</span>: <span style=color:#e6db74>&#34;Iman&#34;</span>,
+</span></span><span style=display:flex><span>  <span style=color:#e6db74>&#34;username&#34;</span>: <span style=color:#e6db74>&#34;bxcodec&#34;</span>
+</span></span><span style=display:flex><span><span style=color:#f92672>}</span>
+</span></span></code></pre></div><p>Applying HTTP PUT</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=display:flex><span>PUT /user/bxcodec
+</span></span><span style=display:flex><span><span style=color:#f92672>{</span>
+</span></span><span style=display:flex><span>  <span style=color:#e6db74>&#34;name&#34;</span>: <span style=color:#e6db74>&#34;Iman Tumorang&#34;</span>,
+</span></span><span style=display:flex><span>  <span style=color:#e6db74>&#34;username&#34;</span>: <span style=color:#e6db74>&#34;bxcodec&#34;</span>
+</span></span><span style=display:flex><span><span style=color:#f92672>}</span>
+</span></span></code></pre></div><p>Final Results</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=display:flex><span>GET /user/bxcodec
+</span></span><span style=display:flex><span><span style=color:#f92672>{</span>
+</span></span><span style=display:flex><span>  <span style=color:#e6db74>&#34;name&#34;</span>: <span style=color:#e6db74>&#34;Iman Tumorang&#34;</span>,
+</span></span><span style=display:flex><span>  <span style=color:#e6db74>&#34;username&#34;</span>: <span style=color:#e6db74>&#34;bxcodec&#34;</span>
+</span></span><span style=display:flex><span><span style=color:#f92672>}</span>
+</span></span></code></pre></div><p>And then, derived from PUT, then PATCH, from what people say, <strong>&ldquo;PATCH not replacing the entire item, but only the specified one&rdquo;</strong>.</p><p>So, from that statement, in default, this is what I think how PATCH work. For example, I have this JSON.</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=display:flex><span>GET /user/bxcodec
+</span></span><span style=display:flex><span><span style=color:#f92672>{</span>
+</span></span><span style=display:flex><span>  <span style=color:#e6db74>&#34;name&#34;</span>: <span style=color:#e6db74>&#34;Iman&#34;</span>,
+</span></span><span style=display:flex><span>  <span style=color:#e6db74>&#34;username&#34;</span>: <span style=color:#e6db74>&#34;bxcodec&#34;</span>
+</span></span><span style=display:flex><span><span style=color:#f92672>}</span>
+</span></span></code></pre></div><p>Applying HTTP Patch</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=display:flex><span>PATCH /user/bxcodec
+</span></span><span style=display:flex><span><span style=color:#f92672>{</span>
+</span></span><span style=display:flex><span>  <span style=color:#e6db74>&#34;name&#34;</span>: <span style=color:#e6db74>&#34;Iman Tumorang&#34;</span>
+</span></span><span style=display:flex><span><span style=color:#f92672>}</span>
+</span></span></code></pre></div><p>Final Results</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=display:flex><span>GET /user/bxcodec
+</span></span><span style=display:flex><span><span style=color:#f92672>{</span>
+</span></span><span style=display:flex><span>  <span style=color:#e6db74>&#34;name&#34;</span>: <span style=color:#e6db74>&#34;Iman Tumorang&#34;</span>,
+</span></span><span style=display:flex><span>  <span style=color:#e6db74>&#34;username&#34;</span>: <span style=color:#e6db74>&#34;bxcodec&#34;</span>
+</span></span><span style=display:flex><span><span style=color:#f92672>}</span>
+</span></span></code></pre></div><p>Right? This is how I think HTTP-PATCH should work. And I live with this belief for more than 3 years. </p><h3 id=the-plottwists>The Plot Twists</h3><p>But, just now, when I write this, I found this on Golang docs here: <a href=https://golang.org/pkg/net/http/>https://golang.org/pkg/net/http/</a></p><p><img src=https://cdn-images-1.medium.com/max/1440/1*_wiYDs1fk9SHUijw7h2xnA.png alt=golang-docs></p><p>Out of curiosity, I notice a different value there, I found a comment for <code>RFC 5789</code>. Why the heck it has a different RFC, not like the others? Why is it different?</p><p>After looking at the RFC 5789, I found a weird thing. From the description,
+<img src=https://cdn-images-1.medium.com/max/1440/1*eSO7WCG1sXltplNrbpyP3Q.png alt="RFC 5789 Desc"> <img src=https://cdn-images-1.medium.com/max/1080/1*UR7nnaz43MfNnLdqjFPW9A.png alt="RFC 5789 Example"></p><blockquote><p>With PATCH, however, the enclosed entity <strong>contains a set of instructions</strong> describing how a resource currently residing on the origin server should be modified to produce a new version.</p></blockquote><p>So, from the RFC docs, it says, in the request body, I have to specify a set of actions or instructions to modify the current resource in request URI. As we can see in the example above. But how I do set the actions in the request body? How should I format it?</p><h3 id=introducing-jsonpatch>Introducing JSON PATCH</h3><p>To answer the previous question, how should I format the action list in my request body? I found an interesting thing, it&rsquo;s another RFC called JSON-Patch (RFC 6902). This is an RFC to explain how to use JSON-Patch for JSON operations. </p><p>A short example of how JSON-PATCH worked is more like this. For example, we have a JSON here.</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-json data-lang=json><span style=display:flex><span>{
+</span></span><span style=display:flex><span>  <span style=color:#f92672>&#34;name&#34;</span>: <span style=color:#e6db74>&#34;Iman&#34;</span>,
+</span></span><span style=display:flex><span>  <span style=color:#f92672>&#34;username&#34;</span>: <span style=color:#e6db74>&#34;bxcodec&#34;</span>
+</span></span><span style=display:flex><span>}
+</span></span></code></pre></div><p>Using the JSON-PATCH.</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-json data-lang=json><span style=display:flex><span>[
+</span></span><span style=display:flex><span>  { <span style=color:#f92672>&#34;op&#34;</span>: <span style=color:#e6db74>&#34;replace&#34;</span>, <span style=color:#f92672>&#34;path&#34;</span>: <span style=color:#e6db74>&#34;/name&#34;</span>, <span style=color:#f92672>&#34;value&#34;</span>: <span style=color:#e6db74>&#34;Iman Tumorang&#34;</span> },
+</span></span><span style=display:flex><span>  { <span style=color:#f92672>&#34;op&#34;</span>: <span style=color:#e6db74>&#34;add&#34;</span>, <span style=color:#f92672>&#34;path&#34;</span>: <span style=color:#e6db74>&#34;/likes&#34;</span>, <span style=color:#f92672>&#34;value&#34;</span>: [<span style=color:#e6db74>&#34;go&#34;</span>, <span style=color:#e6db74>&#34;blogging&#34;</span>] }
+</span></span><span style=display:flex><span>]
+</span></span></code></pre></div><p>Patched results.</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-json data-lang=json><span style=display:flex><span>{
+</span></span><span style=display:flex><span>  <span style=color:#f92672>&#34;name&#34;</span>: <span style=color:#e6db74>&#34;Iman Tumorang&#34;</span>,
+</span></span><span style=display:flex><span>  <span style=color:#f92672>&#34;username&#34;</span>: <span style=color:#e6db74>&#34;bxcodec&#34;</span>,
+</span></span><span style=display:flex><span>  <span style=color:#f92672>&#34;likes&#34;</span>: [
+</span></span><span style=display:flex><span>    <span style=color:#e6db74>&#34;go&#34;</span>,
+</span></span><span style=display:flex><span>    <span style=color:#e6db74>&#34;blogging&#34;</span>
+</span></span><span style=display:flex><span>  ]
+</span></span><span style=display:flex><span>}
+</span></span></code></pre></div><p>So in JSON-PATCH, I have to define the operations, the path, and the value for modifying the resources. And all the available commands can be seen in the <a href=https://tools.ietf.org/html/rfc6902>RFC6902</a>.</p><p>So, here the plot twist, surprisingly, HTTP PATCH and JSON-PATCH have a correlation. When I open the RFC 6902, I got this.
+<img src=https://cdn-images-1.medium.com/max/1440/1*tq1Mcg789vW9MUZMAIfOJw.png alt="RFC 6092"></p><blockquote><p>RFC 6902JSON Patch is a format (identified by the media type &ldquo;application/ json-patch+json&rdquo;) for expressing a sequence of operations to apply to a target JSON document; <strong>it is suitable for use with the HTTP PATCH method</strong>.</p></blockquote><p>Gotcha!</p><p>So, in simple, for HTTP-PATCH, we can use JSON-PATCH for the request body. So the action list for the request body, we can define it using JSON-PATCH.</p><p>So, to combine HTTP-PATCH and JSON-PATCH, if I put it into an example, it will be more like this below.</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=display:flex><span>GET /user/bxcodec
+</span></span><span style=display:flex><span><span style=color:#f92672>{</span>
+</span></span><span style=display:flex><span>  <span style=color:#e6db74>&#34;name&#34;</span>: <span style=color:#e6db74>&#34;Iman&#34;</span>,
+</span></span><span style=display:flex><span>  <span style=color:#e6db74>&#34;username&#34;</span>: <span style=color:#e6db74>&#34;bxcodec&#34;</span>
+</span></span><span style=display:flex><span><span style=color:#f92672>}</span>
+</span></span></code></pre></div><p>Applying HTTP Patch</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=display:flex><span>PATCH /user/bxcodec
+</span></span><span style=display:flex><span><span style=color:#f92672>[</span>
+</span></span><span style=display:flex><span>  <span style=color:#f92672>{</span> <span style=color:#e6db74>&#34;op&#34;</span>: <span style=color:#e6db74>&#34;replace&#34;</span>, <span style=color:#e6db74>&#34;path&#34;</span>: <span style=color:#e6db74>&#34;/name&#34;</span>, <span style=color:#e6db74>&#34;value&#34;</span>: <span style=color:#e6db74>&#34;Iman Tumorang&#34;</span> <span style=color:#f92672>}</span>
+</span></span><span style=display:flex><span><span style=color:#f92672>]</span>
+</span></span></code></pre></div><p>Final Results.</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=display:flex><span>GET /user/bxcodec
+</span></span><span style=display:flex><span><span style=color:#f92672>{</span>
+</span></span><span style=display:flex><span>  <span style=color:#e6db74>&#34;name&#34;</span>: <span style=color:#e6db74>&#34;Iman Tumorang&#34;</span>,
+</span></span><span style=display:flex><span>  <span style=color:#e6db74>&#34;username&#34;</span>: <span style=color:#e6db74>&#34;bxcodec&#34;</span>
+</span></span><span style=display:flex><span><span style=color:#f92672>}</span>
+</span></span></code></pre></div><h3 id=conclusions>Conclusions</h3><p>Today, after living with a wrong belief, I learned new things. HTTP-PATCH has a different way to implement it. We can use JSON-PATCH as the request-body on the HTTP-PATCH request method. </p><p>But, I don&rsquo;t know, to be honest, I still feel this way is not really convenient. And it makes an extra layer of our implementations, compares to like what I used to be used. Luckily, there&rsquo;s already a lot of JSON-PATCH library out there, like <a href=https://github.com/evanphx/json-patch>https://github.com/evanphx/json-patch</a> for Golang, <a href=https://www.npmjs.com/package/fast-json-patch>https://www.npmjs.com/package/fast-json-patch</a> in Typescript, and many more. So I don&rsquo;t think it will be hard to implement it in my next projects. But yeah, let&rsquo;s see haha. </p><p>But yeah, even it more convenient to change directly the value for patching (without using JSON-PATCH, and not following the RFC 5789) LOL, I will try to follow this in my next projects.</p></div><div class=after-post-tags><ul class=tags><li><a href=/tags/http>http</a></li><li><a href=/tags/http-patch>http-patch</a></li><li><a href=/tags/json-patch>json-patch</a></li><li><a href=/tags/softwaredevelopment>softwaredevelopment</a></li><li><a href=/tags/rfcs>rfcs</a></li></ul></div><div class="row PageNavigation d-flex justify-content-between font-weight-bold"><a class="prev d-block col-md-6" href=/posts/how-to-do-pagination-in-postgres-with-golang-in-4-common-ways/>&#171; How To Do Pagination in Postgres with Golang in 4 Common Ways</a>
+<a class="next d-block col-md-6 text-lg-right" href=/posts/today-i-learned-row-locking-transaction-in-postgresql/>Today I Learned: Row Locking Transaction in PostgreSQL &#187;</a><div class=clearfix></div></div></div></div></div><br><div class=container><div id=comments class="row justify-content-center mb-5"><div class=col-md-8><div id=disqus_thread></div><script type=application/javascript>window.disqus_config=function(){},function(){if(["localhost","127.0.0.1"].indexOf(window.location.hostname)!=-1){document.getElementById("disqus_thread").innerHTML="Disqus comments not available by default when the website is previewed locally.";return}var t=document,e=t.createElement("script");e.async=!0,e.src="//iman-tumorang.disqus.com/embed.js",e.setAttribute("data-timestamp",+new Date),(t.head||t.body).appendChild(e)}()</script><noscript>Please enable JavaScript to view the <a href=https://disqus.com/?ref_noscript>comments powered by Disqus.</a></noscript><a href=https://disqus.com class=dsq-brlink>comments powered by <span class=logo-disqus>Disqus</span></a></div></div></div></div></div><footer class=footer><div class=container><div class=row><div class="col-md-6 col-sm-6 text-center text-lg-left">&copy; Copyright Iman Tumorang @imantumorang.com - All rights reserved</div><div class="col-md-6 col-sm-6 text-center text-lg-right"><a target=_blank href=https://www.wowthemes.net>Mediumish Theme</a> by WowThemes.net</div></div></div></footer></div><script src=https://code.jquery.com/jquery-3.3.1.min.js></script>
+<script src=https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js integrity=sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49 crossorigin=anonymous></script>
+<script src=https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js integrity=sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy crossorigin=anonymous></script>
+<script src=/js/mediumish.js></script>
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-0DEK04TJDM"></script>
-<script>
-var doNotTrack = false;
-if (!doNotTrack) {
-	window.dataLayer = window.dataLayer || [];
-	function gtag(){dataLayer.push(arguments);}
-	gtag('js', new Date());
-	gtag('config', 'G-0DEK04TJDM', { 'anonymize_ip': false });
-}
-</script>
-
-    </body>
-</html>
+<script>var doNotTrack=!1;if(!doNotTrack){window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag("js",new Date),gtag("config","G-0DEK04TJDM",{anonymize_ip:!1})}</script></body></html>
