@@ -1,542 +1,68 @@
-<!DOCTYPE html>
-<html lang="en-us"><head>
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-        <meta name="generator" content="Hugo 0.85.0" />
-	
-
-	<title>
-		 
-		How To Do Pagination in Postgres with Golang in 4 Common Ways-Letters From Iman
-		
-	</title>
-
-	
-
-	<meta property="og:title" content="How To Do Pagination in Postgres with Golang in 4 Common Ways - Letters From Iman"/> 
-	<meta property="og:description" content="A few examples of pagination on Postgres, with Benchmark, written on Golang" />
-	<meta property="og:type" content="article" />
-	<meta property="og:url" content="https://imantumorang.com/posts/how-to-do-pagination-in-postgres-with-golang-in-4-common-ways/" />
-	
-	<link href="/css/bootstrap.min.css" rel="stylesheet">
-	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp"
-	 crossorigin="anonymous">
-	<link href="https://fonts.googleapis.com/css?family=Righteous%7CMerriweather:300,300i,400,400i,700,700i" rel="stylesheet">
-	<link href="/css/medium.css" rel="stylesheet">
-	<link href="/css/additional.css" rel="stylesheet">
-	<link rel="icon" href="https://imantumorang.com/favicon.ico">
-	<link rel="apple-touch-icon" href="https://imantumorang.com/apple-touch-icon.png"/>
-	
-	<meta property="og:image" content="https://cdn-images-1.medium.com/max/720/0*hayUe6QTgRGqgtdJ"/>
-	<meta property="og:image:secure_url" content="https://cdn-images-1.medium.com/max/720/0*hayUe6QTgRGqgtdJ"/>
-	<meta name="twitter:card" content="summary_large_image" />
-		
-	<meta name="twitter:site" content="@imantumorang.com" />
-	
-	<meta name="twitter:creator" content="@bxcodec" />
-	
-	
-</head>
-<body>
-<nav class="navbar navbar-expand-lg navbar-light bg-white fixed-top mediumnavigation nav-down">
-    <div class="container pr-0">
-        
-        <a class="navbar-brand" href="https://imantumorang.com">
-
-            
-            <span style="font-family:Righteous;">Letters From Iman</span>
-            
-        </a>
-        
-
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarMediumish" aria-controls="navbarSupportedContent"
-            aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-
-        
-        <div class="collapse navbar-collapse" id="navbarMediumish">
-            
-            <ul class="navbar-nav ml-auto">
-                 
-                <li class="nav-item ">
-                    <a class="nav-link" href="https://resume.imantumorang.com">Resume</a>
-                </li>
-                 
-                <li class="nav-item ">
-                    <a class="nav-link" href="/posts">Blog</a>
-                </li>
-                 
-                <li class="nav-item ">
-                    <a class="nav-link" href="/">About Me</a>
-                </li>
-                
-            </ul>
-        </div>
-        
-    </div>
-</nav>
-
-
-        <div class="site-content">   
-            <div class="container">
-<div class="mainheading">
-    
-</div><div class="main-content">
-        
-        <div class="container">
-            <div class="row">
-                
-                <div class="col-md-2 pl-0"><div class="share">
-    <p>Share</p>
-    <ul>
-        <li class="ml-1 mr-1">
-        <a target="_blank" href="https://twitter.com/intent/tweet?text=How%20To%20Do%20Pagination%20in%20Postgres%20with%20Golang%20in%204%20Common%c2%a0Ways&url=https%3a%2f%2fimantumorang.com%2fposts%2fhow-to-do-pagination-in-postgres-with-golang-in-4-common-ways%2f" onclick="window.open(this.href, 'twitter-share', 'width=550,height=435');return false;">
-        <i class="fab fa-twitter"></i>
-        </a>
-        </li>
-        
-        <li class="ml-1 mr-1">
-        <a target="_blank" href="https://facebook.com/sharer.php?u=https%3a%2f%2fimantumorang.com%2fposts%2fhow-to-do-pagination-in-postgres-with-golang-in-4-common-ways%2f" onclick="window.open(this.href, 'facebook-share', 'width=550,height=435');return false;">
-        <i class="fab fa-facebook-f"></i>
-        </a>
-        </li>
-
-        <li class="ml-1 mr-1">
-        <a target="_blank" href="https://www.xing.com/spi/shares/new?url=https%3a%2f%2fimantumorang.com%2fposts%2fhow-to-do-pagination-in-postgres-with-golang-in-4-common-ways%2f" onclick="window.open(this.href, 'xing-share', 'width=550,height=435');return false;">
-        <i class="fab fa-xing"></i>
-        </a>
-        </li>        
-    </ul>
-
-    
-        <div class="sep">
-        </div>				
-        <ul>
-            <li> 
-            <a  class="small smoothscroll" href="#disqus_thread"></a>
-            </li>
-        </ul>
-    
-</div></div>
-                                
-                <div class="col-md-9 flex-first flex-md-unordered">
-                    <div class="mainheading">
-                                                                	
-                        
-                        
-                        
-                        <div class="post-top-meta">
-                            <div>
-                                <img class="author-thumb" src="http://gravatar.com/avatar/01e3584fe39eb72335f13243c3a814a2?s=200" alt="Iman Tumorang">
-                            </div>
-                            <div >
-                                <a  href="https://imantumorang.com" class="link-dark">Iman Tumorang</a><br>
-                                <span class="author-description">
-                                    Software Engineer - Writer - Open Source Enthusiast - Startup Enthusiast<br>
-                                    <i class="far fa-star"></i>
-                                    Sep 22, 2020
-                                    <i class="far fa-clock clock"></i>
-                                    10 min read
-                                </span>					
-                            </div>
-                        </div>			
-                        	
-                        
-                                                     
-                        
-                        <h1 class="posttitle">How To Do Pagination in Postgres with Golang in 4 Common Ways</h1> 
-                        
-                            <h2 class="subtitle">A few examples of pagination on Postgres, with Benchmark, written on Golang</h2> 
-                        
-                        
-                    </div>
-
-                    
-                    
-                    
-                    <style>
-                        figure {
-                            width: 95%;
-                            text-align: center !important;
-                            font-style: italic !important;
-                            font-size: smaller !important;
-                            text-indent: 0 !important;
-                            margin: auto;
-                            padding: 0.5em;
-                            color: #aaaaaa;
-                        }
-                        figure a{
-                            color: #aaaaaa;
-                            text-decoration: #aaaaaa;
-                        }
-                        figure  .featured-image{
-                            margin-bottom: 0.5rem;
-                        }
-                        figure img{
-                            margin: auto;
-                        }
-                        img.scaled {
-                            width: 70%;
-                        }
-                    </style>
-
-                    <figure>
-                        <img class="featured-image img-fluid" src="https://cdn-images-1.medium.com/max/720/0*hayUe6QTgRGqgtdJ" alt="Photo by Ergita Sela on Unsplash.com">
-                        <figcaption>Photo by <a href='https://unsplash.com/@gitsela'>Ergita Sela</a> on Unsplash.com</figcaption>
-                    </figure>
-                    <br>
-                    
-                    
-                    
-                    
-                    <div class="article-post">
-                        <p>Hi again everyone, it&rsquo;s been a long time I haven&rsquo;t published any article. There&rsquo;s a lot of things happen, like from the pandemic and much more stuff. This pandemic affecting me mentally personally, like this self-quarantine is really exhausting and stressing me enough. I wish this Covid-19 pandemic will be ended before Christmas this year. 😭</p>
-<p>On this rare occasion, after fighting with the boredom and laziness, I found a spirit to finish this article. Start from me when building our new application in my current job, I&rsquo;m curious about a few things, and in this part, it&rsquo;s about pagination. Like how to handle pagination in a better way based on my understanding LOL. <em>*My proposed idea might not be the best, so if you guys have a better way, a vast experience than me, put your comments below yaa!!</em></p>
-<p>TBH, I never care more details about this in my previous job because we all have the same perspective, and we only like to have 10 engineers in my previous company, so we can have the same perspective. But now I care about this, since we have a lot of engineers in my current job, and everyone has a different perspective.</p>
-<p>So, I&rsquo;m just curious, what&rsquo;s the better way in building pagination on Postgres on top of the application, with my case I&rsquo;m using Golang for the application.</p>
-<p>Actually, there are 2 famous styles of pagination:</p>
-<ul>
-<li>Cursor based pagination</li>
-<li>Offset based pagination</li>
-</ul>
-<p>In this article I&rsquo;ll only cover those 2 style paginations in 4 different common ways that Backend engineer usually does, or at least, what I know so far since I know how to code.</p>
-<ul>
-<li>Do pagination with page number, pretty common, the user only sends the page number, and we handle it internally, I use offset in the database level.</li>
-<li>Do pagination with offset and limit, pretty common since the RDBMS features. The user will directly send the offset number from query param.</li>
-<li>Do pagination with a simple query with an auto incremental ID as the PK, quite common for auto incremental ID in the database. Which is the ID is treated as the cursor.</li>
-<li>Do pagination with UUID as the PK combined with the created timestamp, also known as the seek-pagination method, or keyset pagination method. And the combined key will be hashed into a cursor string.</li>
-</ul>
-<p>So what I&rsquo;m gonna do here are, I&rsquo;ll create those 4 pagination implementations, and do a small benchmark from code, I&rsquo;ll using Golang Benchmark. The goal of this article is just to satisfy my curiosity LOL. I know I can read people&rsquo;s articles, but I want to do it with my own version.</p>
-<p>TL;DR</p>
-<ul>
-<li>All the code used here already pushed to my Github repository, github.com/bxcodec/go-postgres-pagination-example</li>
-<li>Conclusions can be seen at the bottom of this article</li>
-</ul>
-<hr>
-<h2 id="pagination-on-restapi">Pagination On REST API</h2>
-<p>To give you some context, *in case you don&rsquo;t know what is pagination used for. Pagination is used to paginate your response, LOL. Well, I don&rsquo;t know how to rephrase it better.</p>
-<p>I&rsquo;ll create an example, let&rsquo;s say I have this endpoint, in REST API.</p>
-<pre><code>GET /payments
-</code></pre><p>And this endpoint will fetch all payments from the API. As we know, in bigger scale application that has tons of data set, these payments may have thousands or millions of data rows. And as a user, I want to fetch my payments list.</p>
-<p>From a database perspective, querying all the records will takes time a lot. I can imagine how long it will be if we have a million records and fetch all the data. So, in that case, people introduce what they called pagination. It works like pages on the books, that each page contains a bunch of words.</p>
-<p>But for this endpoint, each page will contain a list of payment details, so we can still fetch the payment faster but maybe it will truncated into multiple pages until we can fetch all the payment records.</p>
-<pre><code>GET /payments?page=1 // to fetch payments in page 1
+<!doctype html><html lang=en-us><head><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1,shrink-to-fit=no"><meta name=generator content="Hugo 0.102.3"><title>How To Do Pagination in Postgres with Golang in 4 Common Ways-Letters From Iman</title><meta property="og:title" content="How To Do Pagination in Postgres with Golang in 4 Common Ways - Letters From Iman"><meta property="og:description" content="A few examples of pagination on Postgres, with Benchmark, written on Golang"><meta property="og:type" content="article"><meta property="og:url" content="https://imantumorang.com/posts/how-to-do-pagination-in-postgres-with-golang-in-4-common-ways/"><link href=/css/bootstrap.min.css rel=stylesheet><link rel=stylesheet href=https://use.fontawesome.com/releases/v5.0.13/css/all.css integrity=sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp crossorigin=anonymous><link href="https://fonts.googleapis.com/css?family=Righteous%7CMerriweather:300,300i,400,400i,700,700i" rel=stylesheet><link href=/css/medium.css rel=stylesheet><link href=/css/additional.css rel=stylesheet><link rel=icon href=https://imantumorang.com/favicon.ico><link rel=apple-touch-icon href=https://imantumorang.com/apple-touch-icon.png><meta property="og:image" content="https://cdn-images-1.medium.com/max/720/0*hayUe6QTgRGqgtdJ"><meta property="og:image:secure_url" content="https://cdn-images-1.medium.com/max/720/0*hayUe6QTgRGqgtdJ"><meta name=twitter:card content="summary_large_image"><meta name=twitter:site content="@imantumorang.com"><meta name=twitter:creator content="@bxcodec"></head><body><nav class="navbar navbar-expand-lg navbar-light bg-white fixed-top mediumnavigation nav-down"><div class="container pr-0"><a class=navbar-brand href=https://imantumorang.com><span style=font-family:Righteous>Letters From Iman</span></a>
+<button class=navbar-toggler type=button data-toggle=collapse data-target=#navbarMediumish aria-controls=navbarSupportedContent aria-expanded=false aria-label="Toggle navigation">
+<span class=navbar-toggler-icon></span></button><div class="collapse navbar-collapse" id=navbarMediumish><ul class="navbar-nav ml-auto"><li class=nav-item><a class=nav-link href=https://resume.imantumorang.com>Resume</a></li><li class=nav-item><a class=nav-link href=/posts>Blog</a></li><li class=nav-item><a class=nav-link href=/>About Me</a></li></ul></div></div></nav><div class=site-content><div class=container><div class=mainheading></div><div class=main-content><div class=container><div class=row><div class="col-md-2 pl-0"><div class=share><p>Share</p><ul><li class="ml-1 mr-1"><a target=_blank href="https://twitter.com/intent/tweet?text=How%20To%20Do%20Pagination%20in%20Postgres%20with%20Golang%20in%204%20Common%c2%a0Ways&url=https%3a%2f%2fimantumorang.com%2fposts%2fhow-to-do-pagination-in-postgres-with-golang-in-4-common-ways%2f" onclick='return window.open(this.href,"twitter-share","width=550,height=435"),!1'><i class="fab fa-twitter"></i></a></li><li class="ml-1 mr-1"><a target=_blank href="https://facebook.com/sharer.php?u=https%3a%2f%2fimantumorang.com%2fposts%2fhow-to-do-pagination-in-postgres-with-golang-in-4-common-ways%2f" onclick='return window.open(this.href,"facebook-share","width=550,height=435"),!1'><i class="fab fa-facebook-f"></i></a></li><li class="ml-1 mr-1"><a target=_blank href="https://www.xing.com/spi/shares/new?url=https%3a%2f%2fimantumorang.com%2fposts%2fhow-to-do-pagination-in-postgres-with-golang-in-4-common-ways%2f" onclick='return window.open(this.href,"xing-share","width=550,height=435"),!1'><i class="fab fa-xing"></i></a></li></ul><div class=sep></div><ul><li><a class="small smoothscroll" href=#disqus_thread></a></li></ul></div></div><div class="col-md-9 flex-first flex-md-unordered"><div class=mainheading><div class=post-top-meta><div><img class=author-thumb src="http://gravatar.com/avatar/01e3584fe39eb72335f13243c3a814a2?s=200" alt="Iman Tumorang"></div><div><a href=https://imantumorang.com class=link-dark>Iman Tumorang</a><br><span class=author-description>Software Engineer - Writer - Open Source Enthusiast - Startup Enthusiast<br><i class="far fa-star"></i>
+Sep 22, 2020
+<i class="far fa-clock clock"></i>
+10 min read</span></div></div><h1 class=posttitle>How To Do Pagination in Postgres with Golang in 4 Common Ways</h1><h2 class=subtitle>A few examples of pagination on Postgres, with Benchmark, written on Golang</h2></div><style>figure{width:95%;text-align:center!important;font-style:italic!important;font-size:smaller!important;text-indent:0!important;margin:auto;padding:.5em;color:#aaa}figure a{color:#aaa;text-decoration:#aaa}figure .featured-image{margin-bottom:.5rem}figure img{margin:auto}img.scaled{width:70%}</style><figure><img class="featured-image img-fluid" src=https://cdn-images-1.medium.com/max/720/0*hayUe6QTgRGqgtdJ alt="Photo by Ergita Sela on Unsplash.com"><figcaption>Photo by <a href=https://unsplash.com/@gitsela>Ergita Sela</a> on Unsplash.com</figcaption></figure><br><div class=article-post><p>Hi again everyone, it&rsquo;s been a long time I haven&rsquo;t published any article. There&rsquo;s a lot of things happen, like from the pandemic and much more stuff. This pandemic affecting me mentally personally, like this self-quarantine is really exhausting and stressing me enough. I wish this Covid-19 pandemic will be ended before Christmas this year. 😭</p><p>On this rare occasion, after fighting with the boredom and laziness, I found a spirit to finish this article. Start from me when building our new application in my current job, I&rsquo;m curious about a few things, and in this part, it&rsquo;s about pagination. Like how to handle pagination in a better way based on my understanding LOL. <em>*My proposed idea might not be the best, so if you guys have a better way, a vast experience than me, put your comments below yaa!!</em></p><p>TBH, I never care more details about this in my previous job because we all have the same perspective, and we only like to have 10 engineers in my previous company, so we can have the same perspective. But now I care about this, since we have a lot of engineers in my current job, and everyone has a different perspective.</p><p>So, I&rsquo;m just curious, what&rsquo;s the better way in building pagination on Postgres on top of the application, with my case I&rsquo;m using Golang for the application.</p><p>Actually, there are 2 famous styles of pagination:</p><ul><li>Cursor based pagination</li><li>Offset based pagination</li></ul><p>In this article I&rsquo;ll only cover those 2 style paginations in 4 different common ways that Backend engineer usually does, or at least, what I know so far since I know how to code.</p><ul><li>Do pagination with page number, pretty common, the user only sends the page number, and we handle it internally, I use offset in the database level.</li><li>Do pagination with offset and limit, pretty common since the RDBMS features. The user will directly send the offset number from query param.</li><li>Do pagination with a simple query with an auto incremental ID as the PK, quite common for auto incremental ID in the database. Which is the ID is treated as the cursor.</li><li>Do pagination with UUID as the PK combined with the created timestamp, also known as the seek-pagination method, or keyset pagination method. And the combined key will be hashed into a cursor string.</li></ul><p>So what I&rsquo;m gonna do here are, I&rsquo;ll create those 4 pagination implementations, and do a small benchmark from code, I&rsquo;ll using Golang Benchmark. The goal of this article is just to satisfy my curiosity LOL. I know I can read people&rsquo;s articles, but I want to do it with my own version.</p><p>TL;DR</p><ul><li>All the code used here already pushed to my Github repository, github.com/bxcodec/go-postgres-pagination-example</li><li>Conclusions can be seen at the bottom of this article</li></ul><hr><h2 id=pagination-on-restapi>Pagination On REST API</h2><p>To give you some context, *in case you don&rsquo;t know what is pagination used for. Pagination is used to paginate your response, LOL. Well, I don&rsquo;t know how to rephrase it better.</p><p>I&rsquo;ll create an example, let&rsquo;s say I have this endpoint, in REST API.</p><pre tabindex=0><code>GET /payments
+</code></pre><p>And this endpoint will fetch all payments from the API. As we know, in bigger scale application that has tons of data set, these payments may have thousands or millions of data rows. And as a user, I want to fetch my payments list.</p><p>From a database perspective, querying all the records will takes time a lot. I can imagine how long it will be if we have a million records and fetch all the data. So, in that case, people introduce what they called pagination. It works like pages on the books, that each page contains a bunch of words.</p><p>But for this endpoint, each page will contain a list of payment details, so we can still fetch the payment faster but maybe it will truncated into multiple pages until we can fetch all the payment records.</p><pre tabindex=0><code>GET /payments?page=1 // to fetch payments in page 1
 GET /payments?page=2 // to fetch payments in page 2
 GET /payments?page=3 // to fetch payments in page 3
 ... etc
-</code></pre><p>You may have seen this style in any endpoint, or maybe something like this as well.</p>
-<pre><code>GET /payments?limit=10 // initial request for fetch payment
+</code></pre><p>You may have seen this style in any endpoint, or maybe something like this as well.</p><pre tabindex=0><code>GET /payments?limit=10 // initial request for fetch payment
 GET /payments?limit=10&amp;cursor=randomCursorString // with cursor
 GET /payments?limit=10&amp;cursor=newrandomCursorString // for next page
 GET /payments?limit=10&amp;cursor=anotherNewrandomCursorString
 ... etc
-</code></pre><p>And many more, this is what we called pagination. We truncate our list of data into a few segments and send it to the client, so we still maintain the performance of the application and the client won&rsquo;t lose track when fetching our data.</p>
-<h4 id="1-pagination-with-pagenumber">1. Pagination with Page Number</h4>
-<pre><code>GET /payments?page=1 // to fetch payments in page 1
+</code></pre><p>And many more, this is what we called pagination. We truncate our list of data into a few segments and send it to the client, so we still maintain the performance of the application and the client won&rsquo;t lose track when fetching our data.</p><h4 id=1-pagination-with-pagenumber>1. Pagination with Page Number</h4><pre tabindex=0><code>GET /payments?page=1 // to fetch payments in page 1
 GET /payments?page=2 // to fetch payments in page 2
 GET /payments?page=3 // to fetch payments in page 3
 ... etc
-</code></pre><p>Have you seen pagination like those above? TBH, I never have seen any pagination like those, not in public API if I remember correctly. But, I&rsquo;ve ever created pagination with that&rsquo;s style, around 4 years ago, on my first job-test after graduated.</p>
-<p>So the logic quite complicated in the backend, but it will simplify from the user experience,</p>
-<ul>
-<li>First I&rsquo;ll set the default limit, let&rsquo;s say 10. Per page is 10 items.</li>
-<li>And each page number will be multiplied to the default limit</li>
-<li>Then I&rsquo;ll use it as the offset to the database.</li>
-<li>And, the user can fetch the items based on the requested page number.</li>
-</ul>
-<p>So then, I try to build again a simple application for this kind of method. With 100K rows of data, I try to benchmark it.</p>
-<h5 id="benchmark-result">Benchmark Result</h5>
-<script type="application/javascript" src="https://gist.github.com/bxcodec/fb3a785e60f49a59926ec5b8d9a17a9a.js"></script>
-
-<blockquote>
-<p>Benchmark Result using Go for PageNumber pagination</p>
-</blockquote>
-<p><strong>The drawback of this pagination method is</strong></p>
-<ul>
-<li>Performance-wise, it&rsquo;s not recommended. The bigger the data set, the bigger the resource consumption.</li>
-</ul>
-<p>But the benefit of using this method, the user feels like opening a book, they will just need to pass the page number.</p>
-<hr>
-<h4 id="2-pagination-with-offset-andlimit">2. Pagination with Offset and Limit</h4>
-<p>Pagination with offset and limit is quite common to engineers. This comes because of the feature of RDBMS that supports offset and limit for querying.</p>
-<p>From the application level, there&rsquo;s no extra logic, just passing the offset and limit to the database, and let the database do the pagination.</p>
-<p>How is usually looks like,</p>
-<pre><code>GET /payments?limit=10 // initial 
+</code></pre><p>Have you seen pagination like those above? TBH, I never have seen any pagination like those, not in public API if I remember correctly. But, I&rsquo;ve ever created pagination with that&rsquo;s style, around 4 years ago, on my first job-test after graduated.</p><p>So the logic quite complicated in the backend, but it will simplify from the user experience,</p><ul><li>First I&rsquo;ll set the default limit, let&rsquo;s say 10. Per page is 10 items.</li><li>And each page number will be multiplied to the default limit</li><li>Then I&rsquo;ll use it as the offset to the database.</li><li>And, the user can fetch the items based on the requested page number.</li></ul><p>So then, I try to build again a simple application for this kind of method. With 100K rows of data, I try to benchmark it.</p><h5 id=benchmark-result>Benchmark Result</h5><script type=application/javascript src=https://gist.github.com/bxcodec/fb3a785e60f49a59926ec5b8d9a17a9a.js></script><blockquote><p>Benchmark Result using Go for PageNumber pagination</p></blockquote><p><strong>The drawback of this pagination method is</strong></p><ul><li>Performance-wise, it&rsquo;s not recommended. The bigger the data set, the bigger the resource consumption.</li></ul><p>But the benefit of using this method, the user feels like opening a book, they will just need to pass the page number.</p><hr><h4 id=2-pagination-with-offset-andlimit>2. Pagination with Offset and Limit</h4><p>Pagination with offset and limit is quite common to engineers. This comes because of the feature of RDBMS that supports offset and limit for querying.</p><p>From the application level, there&rsquo;s no extra logic, just passing the offset and limit to the database, and let the database do the pagination.</p><p>How is usually looks like,</p><pre tabindex=0><code>GET /payments?limit=10 // initial 
 GET /payments?limit=10&amp;offset=10 //fetch the next 10 items
 GET /payments?limit=10&amp;offset=20 //fetch the next 10 items again
 ... etc
-</code></pre><p>From the client-side, they only need to add the offset params, and the API will return the items based on the given offset.</p>
-<p>And from database level, which is RDBMS, it will look like this below,</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#66d9ef">SELECT</span>
-    <span style="color:#f92672">*</span>
-<span style="color:#66d9ef">FROM</span>
-    payments
-<span style="color:#66d9ef">ORDER</span> <span style="color:#66d9ef">BY</span> created_time
-<span style="color:#66d9ef">LIMIT</span> <span style="color:#ae81ff">10</span>
-<span style="color:#66d9ef">OFFSET</span> <span style="color:#ae81ff">20</span>;
-</code></pre></div><h5 id="benchmark-result-1">Benchmark Result</h5>
-<script type="application/javascript" src="https://gist.github.com/bxcodec/ef649fba2a3cf22940e2e88e35a89812.js"></script>
-
-<blockquote>
-<p>Benchmark Result using Go for LimitOffset pagination</p>
-</blockquote>
-<p><strong>The drawback of this pagination method</strong></p>
-<ul>
-<li>Performance-wise, it&rsquo;s not recommended. The bigger the data set, the bigger the resource consumption.</li>
-</ul>
-<p><strong>The benefits of this pagination method</strong></p>
-<ul>
-<li>Very easy to implement, no need to do complex logic things in the server</li>
-</ul>
-<hr>
-<h4 id="3-pagination-with-auto-incremental-pk-of-theid">3. Pagination with Auto Incremental PK of the ID</h4>
-<p>This pagination method was also pretty common. We set our table to be auto increment, and use that as the page identifier/cursor.</p>
-<p>How it&rsquo;s used in REST</p>
-<pre><code>GET /payments?limit=10
+</code></pre><p>From the client-side, they only need to add the offset params, and the API will return the items based on the given offset.</p><p>And from database level, which is RDBMS, it will look like this below,</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-sql data-lang=sql><span style=display:flex><span><span style=color:#66d9ef>SELECT</span>
+</span></span><span style=display:flex><span>    <span style=color:#f92672>*</span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>FROM</span>
+</span></span><span style=display:flex><span>    payments
+</span></span><span style=display:flex><span><span style=color:#66d9ef>ORDER</span> <span style=color:#66d9ef>BY</span> created_time
+</span></span><span style=display:flex><span><span style=color:#66d9ef>LIMIT</span> <span style=color:#ae81ff>10</span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>OFFSET</span> <span style=color:#ae81ff>20</span>;
+</span></span></code></pre></div><h5 id=benchmark-result-1>Benchmark Result</h5><script type=application/javascript src=https://gist.github.com/bxcodec/ef649fba2a3cf22940e2e88e35a89812.js></script><blockquote><p>Benchmark Result using Go for LimitOffset pagination</p></blockquote><p><strong>The drawback of this pagination method</strong></p><ul><li>Performance-wise, it&rsquo;s not recommended. The bigger the data set, the bigger the resource consumption.</li></ul><p><strong>The benefits of this pagination method</strong></p><ul><li>Very easy to implement, no need to do complex logic things in the server</li></ul><hr><h4 id=3-pagination-with-auto-incremental-pk-of-theid>3. Pagination with Auto Incremental PK of the ID</h4><p>This pagination method was also pretty common. We set our table to be auto increment, and use that as the page identifier/cursor.</p><p>How it&rsquo;s used in REST</p><pre tabindex=0><code>GET /payments?limit=10
 GET /payments?limit=10&amp;cursor=last_id_from_previous_fetch
 GET /payments?limit=10&amp;cursor=last_id_from_previous_fetch
 ... etc
-</code></pre><p>How it looks like in database query level</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#66d9ef">SELECT</span>
-    <span style="color:#f92672">*</span>
-<span style="color:#66d9ef">FROM</span>
-    payments
-<span style="color:#66d9ef">WHERE</span>
-  Id <span style="color:#f92672">&gt;</span> <span style="color:#ae81ff">10</span>
-<span style="color:#66d9ef">LIMIT</span> <span style="color:#ae81ff">20</span> 
-</code></pre></div><p>Or for descending</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#66d9ef">SELECT</span>
-    <span style="color:#f92672">*</span>
-<span style="color:#66d9ef">FROM</span>
-    payments
-<span style="color:#66d9ef">WHERE</span>
-  Id <span style="color:#f92672">&lt;</span> <span style="color:#ae81ff">100</span>
-<span style="color:#66d9ef">ORDER</span> <span style="color:#66d9ef">BY</span> Id <span style="color:#66d9ef">DESC</span>
-<span style="color:#66d9ef">LIMIT</span> <span style="color:#ae81ff">20</span>
-</code></pre></div><h4 id="benchmark-result-2">Benchmark Result</h4>
-<script type="application/javascript" src="https://gist.github.com/bxcodec/9c2137ecd04a88aed23f8191f56f7bdc.js"></script>
-
-<blockquote>
-<p>Benchmark Result using Go for AutoIncrement pagination</p>
-</blockquote>
-<p><strong>The drawback of this pagination method</strong></p>
-<ul>
-<li>The only drawback of this pagination method is, when using the auto-increment id, it will be problematic in the world of microservice and distributed system. 
-Like id with 20 can exist in Service Payment and Service User. It&rsquo;s unique in the same application context. It will different if each ID using UUID, it&rsquo;s &ldquo;practically unique&rdquo; (means, there&rsquo;s a very small possibility of duplicate generated UUID). So some people trying to use UUID instead as the PK. Read more details about UUID and auto-increment keys here</li>
-</ul>
-<p><strong>The benefits of this pagination method</strong></p>
-<ul>
-<li>Easy to implement, no need to do complex logic things in the server.</li>
-<li>The best way to do pagination that I know so far from performance-wise, since it&rsquo;s using autoincrement ID.</li>
-</ul>
-<hr>
-<h4 id="4-pagination-with-uuid-combined-with-created-timestamp">4. Pagination with UUID Combined with Created Timestamp</h4>
-<p>I&rsquo;m not sure this is pretty common, but I see that a few articles do this kind of pagination. The context is, the table not using auto incremental id, but it&rsquo;s using the UUID instead. But then people wondering how to do pagination, adding a new column with auto incremental number is a wasting resource. So for myself, what I do is, using the created timestamp of my rows, and combine it with the PK which is the UUID.</p>
-<p>This is the database schema
-<script type="application/javascript" src="https://gist.github.com/bxcodec/973374104cd1032db50667ebab29e34e.js"></script>
-</p>
-<blockquote>
-<p>payment.sql schema with UUID and timestamp</p>
-</blockquote>
-<p>And for the faster queries, I make an index with multiple tables which is the PK and the created timestamp, as you can see from the above schema, I made an index named <code>idx_payment_pagination</code>.</p>
-<p>So the logic is,</p>
-<ul>
-<li>I&rsquo;ll use the UUID which is my primary key, and combine it with create timestamp</li>
-<li>Combine those two into a string, then I encode it to base64 string</li>
-<li>And return that encoded string as a cursor for the next page, so the user can use it to fetch the next page of their request.</li>
-</ul>
-<p>Example of how I made the cursor on application level</p>
-<script type="application/javascript" src="https://gist.github.com/bxcodec/5e09b0c1a2cd1ba72c306966821b2ae0.js"></script>
-
-<p>And this is how it looks like in the REST endpoint.</p>
-<pre><code>GET /payments?limit=10
+</code></pre><p>How it looks like in database query level</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-sql data-lang=sql><span style=display:flex><span><span style=color:#66d9ef>SELECT</span>
+</span></span><span style=display:flex><span>    <span style=color:#f92672>*</span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>FROM</span>
+</span></span><span style=display:flex><span>    payments
+</span></span><span style=display:flex><span><span style=color:#66d9ef>WHERE</span>
+</span></span><span style=display:flex><span>  Id <span style=color:#f92672>&gt;</span> <span style=color:#ae81ff>10</span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>LIMIT</span> <span style=color:#ae81ff>20</span> 
+</span></span></code></pre></div><p>Or for descending</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-sql data-lang=sql><span style=display:flex><span><span style=color:#66d9ef>SELECT</span>
+</span></span><span style=display:flex><span>    <span style=color:#f92672>*</span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>FROM</span>
+</span></span><span style=display:flex><span>    payments
+</span></span><span style=display:flex><span><span style=color:#66d9ef>WHERE</span>
+</span></span><span style=display:flex><span>  Id <span style=color:#f92672>&lt;</span> <span style=color:#ae81ff>100</span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>ORDER</span> <span style=color:#66d9ef>BY</span> Id <span style=color:#66d9ef>DESC</span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>LIMIT</span> <span style=color:#ae81ff>20</span>
+</span></span></code></pre></div><h4 id=benchmark-result-2>Benchmark Result</h4><script type=application/javascript src=https://gist.github.com/bxcodec/9c2137ecd04a88aed23f8191f56f7bdc.js></script><blockquote><p>Benchmark Result using Go for AutoIncrement pagination</p></blockquote><p><strong>The drawback of this pagination method</strong></p><ul><li>The only drawback of this pagination method is, when using the auto-increment id, it will be problematic in the world of microservice and distributed system. 
+Like id with 20 can exist in Service Payment and Service User. It&rsquo;s unique in the same application context. It will different if each ID using UUID, it&rsquo;s &ldquo;practically unique&rdquo; (means, there&rsquo;s a very small possibility of duplicate generated UUID). So some people trying to use UUID instead as the PK. Read more details about UUID and auto-increment keys here</li></ul><p><strong>The benefits of this pagination method</strong></p><ul><li>Easy to implement, no need to do complex logic things in the server.</li><li>The best way to do pagination that I know so far from performance-wise, since it&rsquo;s using autoincrement ID.</li></ul><hr><h4 id=4-pagination-with-uuid-combined-with-created-timestamp>4. Pagination with UUID Combined with Created Timestamp</h4><p>I&rsquo;m not sure this is pretty common, but I see that a few articles do this kind of pagination. The context is, the table not using auto incremental id, but it&rsquo;s using the UUID instead. But then people wondering how to do pagination, adding a new column with auto incremental number is a wasting resource. So for myself, what I do is, using the created timestamp of my rows, and combine it with the PK which is the UUID.</p><p>This is the database schema
+<script type=application/javascript src=https://gist.github.com/bxcodec/973374104cd1032db50667ebab29e34e.js></script></p><blockquote><p>payment.sql schema with UUID and timestamp</p></blockquote><p>And for the faster queries, I make an index with multiple tables which is the PK and the created timestamp, as you can see from the above schema, I made an index named <code>idx_payment_pagination</code>.</p><p>So the logic is,</p><ul><li>I&rsquo;ll use the UUID which is my primary key, and combine it with create timestamp</li><li>Combine those two into a string, then I encode it to base64 string</li><li>And return that encoded string as a cursor for the next page, so the user can use it to fetch the next page of their request.</li></ul><p>Example of how I made the cursor on application level</p><script type=application/javascript src=https://gist.github.com/bxcodec/5e09b0c1a2cd1ba72c306966821b2ae0.js></script><p>And this is how it looks like in the REST endpoint.</p><pre tabindex=0><code>GET /payments?limit=10
 GET /payments?limit=10&amp;cursor=base64_string_from_previous_result
 GET /payments?limit=10&amp;cursor=base64_string_from_previous_result
 ... etc
-</code></pre><p>But in the database, the query will look like this,</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#66d9ef">SELECT</span> <span style="color:#f92672">*</span>
-<span style="color:#66d9ef">FROM</span> payments
-<span style="color:#66d9ef">WHERE</span> created_time <span style="color:#f92672">&lt;=</span> <span style="color:#e6db74">&#39;2020-05-16 03:15:06&#39;</span>  <span style="color:#75715e">-- created timestamp
-</span><span style="color:#75715e"></span><span style="color:#66d9ef">AND</span> id <span style="color:#f92672">&lt;</span> <span style="color:#e6db74">&#39;2a1aa856-ad26-4760-9bd9-b2fe1c1ca5aa&#39;</span>  <span style="color:#75715e">-- this is UUID
-</span><span style="color:#75715e"></span><span style="color:#66d9ef">ORDER</span> <span style="color:#66d9ef">BY</span> created_time <span style="color:#66d9ef">DESC</span> 
-<span style="color:#66d9ef">LIMIT</span> <span style="color:#ae81ff">2</span>
-</code></pre></div><h5 id="benchmark-result-3">Benchmark Result</h5>
-<script type="application/javascript" src="https://gist.github.com/bxcodec/e162995119769356632d9f42136e7ff0.js"></script>
-
-<blockquote>
-<p>Benchmark Result using Go for Keyset pagination</p>
-</blockquote>
-<p><strong>The drawback of this pagination method</strong></p>
-<ul>
-<li>The performance may not be the best like using the autoincrement id. But it&rsquo;s consistent even we will have millions of data</li>
-<li>Quite tricky and advanced, we need to understand the index, because if we didn&rsquo;t add an index, this query will really take time on a big dataset. And also we need to careful when handling timestamps. Even I, still facing some issues when querying the timestamp when doing this.</li>
-</ul>
-<p><strong>The benefits of this pagination method</strong></p>
-<ul>
-<li>The ID is UUID, so it&rsquo;s practically globally unique across microservice in the organizations.</li>
-<li>The performance is consistent from the beginning until querying the last page of the data</li>
-</ul>
-<hr>
-<h2 id="conclusions">Conclusions</h2>
-<p>Alright, after doing all the benchmark, I&rsquo;ve come with some conclusions.</p>
-<h4 id="1-performances-faster-toslower">1. Performances: Faster to Slower</h4>
-<p>From the benchmark results (using the Golang benchmark tool), the faster one is using the autoincrement PK. See the chart below, <strong>the smaller the faster, the chart for the average-time needed for each operation in nanoseconds</strong>. This chart is might not be a good representation, it&rsquo;s should be better if I make it in 95th, 97th, etc percentile, but I got this value from the benchmark result. So I assume this is already good enough for the representation.</p>
-<p><img src="https://raw.githubusercontent.com/bxcodec/go-postgres-pagination-example/master/benchmark.png" alt="Benchmark Pagination"></p>
-<p>Pagination with autoincrement ID is the faster, followed by UUID/created time, and PageNumber and LimitOffset. And this is only with 100K rows of data. And it will grow bigger as the data grow as well. So with only 100K data, even it still under 1 second, but the differences already quite high when using autoincrement compared to limit offset.</p>
-<h4 id="2-development-faster-toslower">2. Development: Faster to Slower</h4>
-<p>Implementation difficulties from easy to hard</p>
-<ul>
-<li><strong>Using Offset</strong>, because we just only passing the offset and limit directly to the database.</li>
-<li><strong>Using PageNumber</strong>, this is opinionated, some people may have different logic, but for my case I put this in the top two.</li>
-<li><strong>Using autoincrement ID</strong></li>
-<li><strong>Using UUID with created time</strong></li>
-</ul>
-<h4 id="code-artifacts">Code artifacts</h4>
-<p>For the code, I&rsquo;ve pushed it to my GitHub repository, can be found here, <a href="https://github.com/bxcodec/go-postgres-pagination-example">https://github.com/bxcodec/go-postgres-pagination-example</a></p>
-<h4 id="the-issues-that-i-face-when-doingthis">The issues that I face when doing this</h4>
-<p>When doing all of these things, obviously I face some issues, but I&rsquo;ve resolved it, and I also learn about this. I&rsquo;ve written the things that I learned here, as well in this article: <a href="https://medium.com/easyread/til-becareful-on-postgres-query-for-less-than-or-equal-on-timestamp-9e486b657fc">TIL: Becareful on Postgres Query, for Less than Or Equal on Timestamp</a></p>
-<h3 id="author-suggestion">Author Suggestion</h3>
-<p>As a software engineer, and as the author of this article, I recommend to use autoincrement ID when doing pagination, but if your system or you don&rsquo;t want to use autoincrement ID as the PK, you may consider of using keyset pagination, with my case using UUID + created_time timestamp.</p>
-<hr>
-<h2 id="reference">Reference</h2>
-<ul>
-<li>Tons of Stackoverflow answer, I forgot which one, but all answers that related to pagination with Postgres.</li>
-<li><a href="https://blog.jooq.org/2013/10/26/faster-sql-paging-with-jooq-using-the-seek-method/">Faster SQL Pagination with jOOQ Using the Seek Method</a></li>
-<li><a href="https://www.moesif.com/blog/technical/api-design/REST-API-Design-Filtering-Sorting-and-Pagination/">REST API Design: Filtering, Sorting, and Pagination</a></li>
-</ul>
-<hr>
-<p><em>Originally posted at: <a href="https://medium.com/easyread/how-to-do-pagination-in-postgres-with-golang-in-4-common-ways-12365b9fb528">https://medium.com/easyread/how-to-do-pagination-in-postgres-with-golang-in-4-common-ways-12365b9fb528</a></em></p>
-
-                    </div>
-
-                    
-
-
-
-
-
- 
-                    <div class="after-post-tags">
-                        <ul class="tags">
-                        
-                        <li>
-                        <a href="/tags/postgresql">postgresql</a>
-                        </li>
-                        
-                        <li>
-                        <a href="/tags/pagination">pagination</a>
-                        </li>
-                        
-                        <li>
-                        <a href="/tags/golang">golang</a>
-                        </li>
-                        
-                        <li>
-                        <a href="/tags/benchmark">benchmark</a>
-                        </li>
-                        
-                        <li>
-                        <a href="/tags/sql">sql</a>
-                        </li>
-                        
-                        <li>
-                        <a href="/tags/database">database</a>
-                        </li>
-                        
-                        <li>
-                        <a href="/tags/rdbms">rdbms</a>
-                        </li>
-                        
-                        </ul>
-                    </div>
-                    
-                    
-                    
-                    <div class="row PageNavigation d-flex justify-content-between font-weight-bold">
-                    
-                        <a class="prev d-block col-md-6" href="/posts/my-mental-problem-am-i-too-hard-to-myself/"> &laquo; My Mental Problem: Am I Too Hard to Myself?</a>
-                    
-                    
-                        <a class="next d-block col-md-6 text-lg-right" href="/posts/http-patch-method-ive-thought-the-wrong-way/">HTTP - PATCH Method! I&#39;ve Thought the Wrong Way!!! &raquo;</a>
-                    
-                    <div class="clearfix"></div>
-                    </div>
-                    
-                </div>
-                
-            </div>
-        </div>
-        
-        <br/> 
-        
-<div class="container">
-    <div id="comments" class="row justify-content-center mb-5">
-        <div class="col-md-8">           
-            <div id="disqus_thread"></div>
-<script type="application/javascript">
-    var disqus_config = function () {
-    
-    
-    
-    };
-    (function() {
-        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
-            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
-            return;
-        }
-        var d = document, s = d.createElement('script'); s.async = true;
-        s.src = '//' + "iman-tumorang" + '.disqus.com/embed.js';
-        s.setAttribute('data-timestamp', +new Date());
-        (d.head || d.body).appendChild(s);
-    })();
-</script>
-<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>               
-        </div>
-    </div>
-</div>
-
-
- 
-    </div>
-
-            </div>
-    
-<footer class="footer">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-6 col-sm-6 text-center text-lg-left">
-                &copy; Copyright Iman Tumorang @imantumorang.com - All rights reserved
-            </div>
-            <div class="col-md-6 col-sm-6 text-center text-lg-right">    
-                <a target="_blank" href="https://www.wowthemes.net">Mediumish Theme</a> by WowThemes.net
-            </div>
-        </div>
-    </div>
-</footer>
-
-        </div>
-
-    
-<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
-    
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
-    
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>    
-    
-<script src="/js/mediumish.js"></script>
-
+</code></pre><p>But in the database, the query will look like this,</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-sql data-lang=sql><span style=display:flex><span><span style=color:#66d9ef>SELECT</span> <span style=color:#f92672>*</span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>FROM</span> payments
+</span></span><span style=display:flex><span><span style=color:#66d9ef>WHERE</span> created_time <span style=color:#f92672>&lt;=</span> <span style=color:#e6db74>&#39;2020-05-16 03:15:06&#39;</span>  <span style=color:#75715e>-- created timestamp
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span><span style=color:#66d9ef>AND</span> id <span style=color:#f92672>&lt;</span> <span style=color:#e6db74>&#39;2a1aa856-ad26-4760-9bd9-b2fe1c1ca5aa&#39;</span>  <span style=color:#75715e>-- this is UUID
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span><span style=color:#66d9ef>ORDER</span> <span style=color:#66d9ef>BY</span> created_time <span style=color:#66d9ef>DESC</span> 
+</span></span><span style=display:flex><span><span style=color:#66d9ef>LIMIT</span> <span style=color:#ae81ff>2</span>
+</span></span></code></pre></div><h5 id=benchmark-result-3>Benchmark Result</h5><script type=application/javascript src=https://gist.github.com/bxcodec/e162995119769356632d9f42136e7ff0.js></script><blockquote><p>Benchmark Result using Go for Keyset pagination</p></blockquote><p><strong>The drawback of this pagination method</strong></p><ul><li>The performance may not be the best like using the autoincrement id. But it&rsquo;s consistent even we will have millions of data</li><li>Quite tricky and advanced, we need to understand the index, because if we didn&rsquo;t add an index, this query will really take time on a big dataset. And also we need to careful when handling timestamps. Even I, still facing some issues when querying the timestamp when doing this.</li></ul><p><strong>The benefits of this pagination method</strong></p><ul><li>The ID is UUID, so it&rsquo;s practically globally unique across microservice in the organizations.</li><li>The performance is consistent from the beginning until querying the last page of the data</li></ul><hr><h2 id=conclusions>Conclusions</h2><p>Alright, after doing all the benchmark, I&rsquo;ve come with some conclusions.</p><h4 id=1-performances-faster-toslower>1. Performances: Faster to Slower</h4><p>From the benchmark results (using the Golang benchmark tool), the faster one is using the autoincrement PK. See the chart below, <strong>the smaller the faster, the chart for the average-time needed for each operation in nanoseconds</strong>. This chart is might not be a good representation, it&rsquo;s should be better if I make it in 95th, 97th, etc percentile, but I got this value from the benchmark result. So I assume this is already good enough for the representation.</p><p><img src=https://raw.githubusercontent.com/bxcodec/go-postgres-pagination-example/master/benchmark.png alt="Benchmark Pagination"></p><p>Pagination with autoincrement ID is the faster, followed by UUID/created time, and PageNumber and LimitOffset. And this is only with 100K rows of data. And it will grow bigger as the data grow as well. So with only 100K data, even it still under 1 second, but the differences already quite high when using autoincrement compared to limit offset.</p><h4 id=2-development-faster-toslower>2. Development: Faster to Slower</h4><p>Implementation difficulties from easy to hard</p><ul><li><strong>Using Offset</strong>, because we just only passing the offset and limit directly to the database.</li><li><strong>Using PageNumber</strong>, this is opinionated, some people may have different logic, but for my case I put this in the top two.</li><li><strong>Using autoincrement ID</strong></li><li><strong>Using UUID with created time</strong></li></ul><h4 id=code-artifacts>Code artifacts</h4><p>For the code, I&rsquo;ve pushed it to my GitHub repository, can be found here, <a href=https://github.com/bxcodec/go-postgres-pagination-example>https://github.com/bxcodec/go-postgres-pagination-example</a></p><h4 id=the-issues-that-i-face-when-doingthis>The issues that I face when doing this</h4><p>When doing all of these things, obviously I face some issues, but I&rsquo;ve resolved it, and I also learn about this. I&rsquo;ve written the things that I learned here, as well in this article: <a href=https://medium.com/easyread/til-becareful-on-postgres-query-for-less-than-or-equal-on-timestamp-9e486b657fc>TIL: Becareful on Postgres Query, for Less than Or Equal on Timestamp</a></p><h3 id=author-suggestion>Author Suggestion</h3><p>As a software engineer, and as the author of this article, I recommend to use autoincrement ID when doing pagination, but if your system or you don&rsquo;t want to use autoincrement ID as the PK, you may consider of using keyset pagination, with my case using UUID + created_time timestamp.</p><hr><h2 id=reference>Reference</h2><ul><li>Tons of Stackoverflow answer, I forgot which one, but all answers that related to pagination with Postgres.</li><li><a href=https://blog.jooq.org/2013/10/26/faster-sql-paging-with-jooq-using-the-seek-method/>Faster SQL Pagination with jOOQ Using the Seek Method</a></li><li><a href=https://www.moesif.com/blog/technical/api-design/REST-API-Design-Filtering-Sorting-and-Pagination/>REST API Design: Filtering, Sorting, and Pagination</a></li></ul><hr><p><em>Originally posted at: <a href=https://medium.com/easyread/how-to-do-pagination-in-postgres-with-golang-in-4-common-ways-12365b9fb528>https://medium.com/easyread/how-to-do-pagination-in-postgres-with-golang-in-4-common-ways-12365b9fb528</a></em></p></div><div class=after-post-tags><ul class=tags><li><a href=/tags/postgresql>postgresql</a></li><li><a href=/tags/pagination>pagination</a></li><li><a href=/tags/golang>golang</a></li><li><a href=/tags/benchmark>benchmark</a></li><li><a href=/tags/sql>sql</a></li><li><a href=/tags/database>database</a></li><li><a href=/tags/rdbms>rdbms</a></li></ul></div><div class="row PageNavigation d-flex justify-content-between font-weight-bold"><a class="prev d-block col-md-6" href=/posts/my-mental-problem-am-i-too-hard-to-myself/>&#171; My Mental Problem: Am I Too Hard to Myself?</a>
+<a class="next d-block col-md-6 text-lg-right" href=/posts/http-patch-method-ive-thought-the-wrong-way/>HTTP - PATCH Method! I've Thought the Wrong Way!!! &#187;</a><div class=clearfix></div></div></div></div></div><br><div class=container><div id=comments class="row justify-content-center mb-5"><div class=col-md-8><div id=disqus_thread></div><script type=application/javascript>window.disqus_config=function(){},function(){if(["localhost","127.0.0.1"].indexOf(window.location.hostname)!=-1){document.getElementById("disqus_thread").innerHTML="Disqus comments not available by default when the website is previewed locally.";return}var t=document,e=t.createElement("script");e.async=!0,e.src="//iman-tumorang.disqus.com/embed.js",e.setAttribute("data-timestamp",+new Date),(t.head||t.body).appendChild(e)}()</script><noscript>Please enable JavaScript to view the <a href=https://disqus.com/?ref_noscript>comments powered by Disqus.</a></noscript><a href=https://disqus.com class=dsq-brlink>comments powered by <span class=logo-disqus>Disqus</span></a></div></div></div></div></div><footer class=footer><div class=container><div class=row><div class="col-md-6 col-sm-6 text-center text-lg-left">&copy; Copyright Iman Tumorang @imantumorang.com - All rights reserved</div><div class="col-md-6 col-sm-6 text-center text-lg-right"><a target=_blank href=https://www.wowthemes.net>Mediumish Theme</a> by WowThemes.net</div></div></div></footer></div><script src=https://code.jquery.com/jquery-3.3.1.min.js></script>
+<script src=https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js integrity=sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49 crossorigin=anonymous></script>
+<script src=https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js integrity=sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy crossorigin=anonymous></script>
+<script src=/js/mediumish.js></script>
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-0DEK04TJDM"></script>
-<script>
-var doNotTrack = false;
-if (!doNotTrack) {
-	window.dataLayer = window.dataLayer || [];
-	function gtag(){dataLayer.push(arguments);}
-	gtag('js', new Date());
-	gtag('config', 'G-0DEK04TJDM', { 'anonymize_ip': false });
-}
-</script>
-
-    </body>
-</html>
+<script>var doNotTrack=!1;if(!doNotTrack){window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag("js",new Date),gtag("config","G-0DEK04TJDM",{anonymize_ip:!1})}</script></body></html>

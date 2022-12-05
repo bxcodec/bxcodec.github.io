@@ -1,434 +1,75 @@
-<!DOCTYPE html>
-<html lang="en-us"><head>
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-        <meta name="generator" content="Hugo 0.85.0" />
-	
-
-	<title>
-		 
-		Today I Learned: Row Locking Transaction in PostgreSQL-Letters From Iman
-		
-	</title>
-
-	
-
-	<meta property="og:title" content="Today I Learned: Row Locking Transaction in PostgreSQL - Letters From Iman"/> 
-	<meta property="og:description" content="How I did Locking in a Row for Read-Write Transactions in Postgres. - It took me 2 days to attempt to solve this, but the solution is actually very simple and elegant." />
-	<meta property="og:type" content="article" />
-	<meta property="og:url" content="https://imantumorang.com/posts/today-i-learned-row-locking-transaction-in-postgresql/" />
-	
-	<link href="/css/bootstrap.min.css" rel="stylesheet">
-	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp"
-	 crossorigin="anonymous">
-	<link href="https://fonts.googleapis.com/css?family=Righteous%7CMerriweather:300,300i,400,400i,700,700i" rel="stylesheet">
-	<link href="/css/medium.css" rel="stylesheet">
-	<link href="/css/additional.css" rel="stylesheet">
-	<link rel="icon" href="https://imantumorang.com/favicon.ico">
-	<link rel="apple-touch-icon" href="https://imantumorang.com/apple-touch-icon.png"/>
-	
-	<meta property="og:image" content="https://cdn-images-1.medium.com/max/1440/0*dvAYXPuCVffbgfvn"/>
-	<meta property="og:image:secure_url" content="https://cdn-images-1.medium.com/max/1440/0*dvAYXPuCVffbgfvn"/>
-	<meta name="twitter:card" content="summary_large_image" />
-		
-	<meta name="twitter:site" content="@imantumorang.com" />
-	
-	<meta name="twitter:creator" content="@bxcodec" />
-	
-	
-</head>
-<body>
-<nav class="navbar navbar-expand-lg navbar-light bg-white fixed-top mediumnavigation nav-down">
-    <div class="container pr-0">
-        
-        <a class="navbar-brand" href="https://imantumorang.com">
-
-            
-            <span style="font-family:Righteous;">Letters From Iman</span>
-            
-        </a>
-        
-
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarMediumish" aria-controls="navbarSupportedContent"
-            aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-
-        
-        <div class="collapse navbar-collapse" id="navbarMediumish">
-            
-            <ul class="navbar-nav ml-auto">
-                 
-                <li class="nav-item ">
-                    <a class="nav-link" href="https://resume.imantumorang.com">Resume</a>
-                </li>
-                 
-                <li class="nav-item ">
-                    <a class="nav-link" href="/posts">Blog</a>
-                </li>
-                 
-                <li class="nav-item ">
-                    <a class="nav-link" href="/">About Me</a>
-                </li>
-                
-            </ul>
-        </div>
-        
-    </div>
-</nav>
-
-
-        <div class="site-content">   
-            <div class="container">
-<div class="mainheading">
-    
-</div><div class="main-content">
-        
-        <div class="container">
-            <div class="row">
-                
-                <div class="col-md-2 pl-0"><div class="share">
-    <p>Share</p>
-    <ul>
-        <li class="ml-1 mr-1">
-        <a target="_blank" href="https://twitter.com/intent/tweet?text=Today%20I%20Learned%3a%20Row%20Locking%20Transaction%20in%20PostgreSQL&url=https%3a%2f%2fimantumorang.com%2fposts%2ftoday-i-learned-row-locking-transaction-in-postgresql%2f" onclick="window.open(this.href, 'twitter-share', 'width=550,height=435');return false;">
-        <i class="fab fa-twitter"></i>
-        </a>
-        </li>
-        
-        <li class="ml-1 mr-1">
-        <a target="_blank" href="https://facebook.com/sharer.php?u=https%3a%2f%2fimantumorang.com%2fposts%2ftoday-i-learned-row-locking-transaction-in-postgresql%2f" onclick="window.open(this.href, 'facebook-share', 'width=550,height=435');return false;">
-        <i class="fab fa-facebook-f"></i>
-        </a>
-        </li>
-
-        <li class="ml-1 mr-1">
-        <a target="_blank" href="https://www.xing.com/spi/shares/new?url=https%3a%2f%2fimantumorang.com%2fposts%2ftoday-i-learned-row-locking-transaction-in-postgresql%2f" onclick="window.open(this.href, 'xing-share', 'width=550,height=435');return false;">
-        <i class="fab fa-xing"></i>
-        </a>
-        </li>        
-    </ul>
-
-    
-        <div class="sep">
-        </div>				
-        <ul>
-            <li> 
-            <a  class="small smoothscroll" href="#disqus_thread"></a>
-            </li>
-        </ul>
-    
-</div></div>
-                                
-                <div class="col-md-9 flex-first flex-md-unordered">
-                    <div class="mainheading">
-                                                                	
-                        
-                        
-                        
-                        <div class="post-top-meta">
-                            <div>
-                                <img class="author-thumb" src="http://gravatar.com/avatar/01e3584fe39eb72335f13243c3a814a2?s=200" alt="Iman Tumorang">
-                            </div>
-                            <div >
-                                <a  href="https://imantumorang.com" class="link-dark">Iman Tumorang</a><br>
-                                <span class="author-description">
-                                    Software Engineer - Writer - Open Source Enthusiast - Startup Enthusiast<br>
-                                    <i class="far fa-star"></i>
-                                    Jan 6, 2020
-                                    <i class="far fa-clock clock"></i>
-                                    6 min read
-                                </span>					
-                            </div>
-                        </div>			
-                        	
-                        
-                                                     
-                        
-                        <h1 class="posttitle">Today I Learned: Row Locking Transaction in PostgreSQL</h1> 
-                        
-                            <h2 class="subtitle">How I did Locking in a Row for Read-Write Transactions in Postgres. - It took me 2 days to attempt to solve this, but the solution is actually very simple and elegant.</h2> 
-                        
-                        
-                    </div>
-
-                    
-                    
-                    
-                    <style>
-                        figure {
-                            width: 95%;
-                            text-align: center !important;
-                            font-style: italic !important;
-                            font-size: smaller !important;
-                            text-indent: 0 !important;
-                            margin: auto;
-                            padding: 0.5em;
-                            color: #aaaaaa;
-                        }
-                        figure a{
-                            color: #aaaaaa;
-                            text-decoration: #aaaaaa;
-                        }
-                        figure  .featured-image{
-                            margin-bottom: 0.5rem;
-                        }
-                        figure img{
-                            margin: auto;
-                        }
-                        img.scaled {
-                            width: 70%;
-                        }
-                    </style>
-
-                    <figure>
-                        <img class="featured-image img-fluid" src="https://cdn-images-1.medium.com/max/1440/0*dvAYXPuCVffbgfvn" alt="Photo by The Framed Bear on Unsplash.com">
-                        <figcaption>Photo by <a href='https://unsplash.com/@theframedbear'>The Framed Bear</a> on Unsplash.com</figcaption>
-                    </figure>
-                    <br>
-                    
-                    
-                    
-                    
-                    <div class="article-post">
-                        <p>Today&rsquo;s problem is a hard problem but has a silly solution. So, right now, I&rsquo;m working on some stuff in Xendit, my current employer. I&rsquo;m working on the refactoring of our core-payment system that will handle the payment transaction from/to each bank that we supported. </p>
-<p>And, when I&rsquo;m developing this new core service, one of the services is related to hashing and generating a payment code, let&rsquo;s call it Payment Code Generator service. The <code>payment_code</code> needs to be random but also unique, but we won&rsquo;t go into there for the details. But in short, it will require a counter to generate and that is why we need to store the counter.</p>
-<p>So, I would tell the scenario in a simple one.  Let&rsquo;s say I&rsquo;m building a service that will generate payment code. </p>
-<p>In this service, I have 2 tables. Let&rsquo;s say <code>master_counter</code> and <code>payment_code</code>.</p>
-<p>The <code>master_counter</code> table schema.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql">  <span style="color:#66d9ef">BEGIN</span>;
-  <span style="color:#66d9ef">CREATE</span> <span style="color:#66d9ef">TABLE</span> <span style="color:#66d9ef">IF</span> <span style="color:#66d9ef">NOT</span> <span style="color:#66d9ef">EXISTS</span> master_counter(
-    id varchar(<span style="color:#ae81ff">255</span>) <span style="color:#66d9ef">NOT</span> <span style="color:#66d9ef">NULL</span> <span style="color:#66d9ef">PRIMARY</span> <span style="color:#66d9ef">KEY</span>, 
-    user_id VARCHAR(<span style="color:#ae81ff">255</span>) <span style="color:#66d9ef">NOT</span> <span style="color:#66d9ef">NULL</span>, 
-    counter bigint <span style="color:#66d9ef">NOT</span> <span style="color:#66d9ef">NULL</span>, 
-    created_at timestamptz <span style="color:#66d9ef">NOT</span> <span style="color:#66d9ef">NULL</span>, 
-    updated_at timestamptz <span style="color:#66d9ef">NOT</span> <span style="color:#66d9ef">NULL</span>, 
-    deleted_at timestamptz, 
-    <span style="color:#66d9ef">CONSTRAINT</span> master_counter_user_id_unique_idx <span style="color:#66d9ef">UNIQUE</span> (user_id)
-  );
-  <span style="color:#66d9ef">COMMIT</span>;
-</code></pre></div><p>And the <code>payment_code</code> schema</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql">  <span style="color:#66d9ef">BEGIN</span>;
-  <span style="color:#66d9ef">CREATE</span> <span style="color:#66d9ef">TABLE</span> <span style="color:#66d9ef">IF</span> <span style="color:#66d9ef">NOT</span> <span style="color:#66d9ef">EXISTS</span> payment_code(
-    id varchar(<span style="color:#ae81ff">255</span>) <span style="color:#66d9ef">NOT</span> <span style="color:#66d9ef">NULL</span> <span style="color:#66d9ef">PRIMARY</span> <span style="color:#66d9ef">KEY</span>, 
-    payment_code varchar(<span style="color:#ae81ff">255</span>) <span style="color:#66d9ef">NOT</span> <span style="color:#66d9ef">NULL</span>, 
-    user_id varchar(<span style="color:#ae81ff">255</span>) <span style="color:#66d9ef">NOT</span> <span style="color:#66d9ef">NULL</span>, 
-    created_at timestamptz <span style="color:#66d9ef">NOT</span> <span style="color:#66d9ef">NULL</span>, 
-    updated_at timestamptz <span style="color:#66d9ef">NOT</span> <span style="color:#66d9ef">NULL</span>, 
-    <span style="color:#66d9ef">CONSTRAINT</span> payment_code_unique_idx <span style="color:#66d9ef">UNIQUE</span>(payment_code, user_id)
-  );
-  <span style="color:#66d9ef">COMMIT</span>;
-</code></pre></div><p>So, in the <code>master_counter</code>, I have a counter column that will always be increased based on received requests. If we draw into a diagram, the flow will more look like this.</p>
-<p><img src="https://cdn-images-1.medium.com/max/2160/1*mxDww1X_77Zutq2u22VoiQ.png" alt="Flow the Generating Payment Code"></p>
-<blockquote>
-<p>Flow the Generating Payment Code</p>
-</blockquote>
-<ul>
-<li>When the user requests a new payment code, we will get its current counter value.</li>
-<li>Then we increase the counter value by 1 and apply the algorithm. Or simply just hash the counter value to be a random character.</li>
-<li>After the new counter value hashed, we then store the hashed value to <code>payment_code</code> table. With unique constraint.</li>
-<li>Then we update the counter value based on user id again to <code>master_counter</code>.</li>
-<li>And finally, we return the hashed counter value to the user, which is a payment code that will be used by our user. </li>
-</ul>
-<p>More and less the whole logic is like that. Actually there&rsquo;s a lot of algorithms used here, but to simplify, all the process is more like I write above. </p>
-<h2 id="problems-started">Problems Started</h2>
-<p>Initially, if written in SQL my query is more look like this.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql">  <span style="color:#66d9ef">BEGIN</span>;
-  <span style="color:#66d9ef">SELECT</span> counter <span style="color:#66d9ef">FROM</span> master_counter;
-  <span style="color:#f92672">//</span> <span style="color:#66d9ef">Do</span> Addition <span style="color:#66d9ef">to</span> counter <span style="color:#66d9ef">in</span> application
-  <span style="color:#f92672">//</span> Apply Generator Logic <span style="color:#66d9ef">in</span> Application
-  <span style="color:#66d9ef">INSERT</span> <span style="color:#66d9ef">INTO</span> payment_code(payment_code) <span style="color:#66d9ef">VALUES</span>(generated_value_with_counter);
-  <span style="color:#66d9ef">UPDATE</span> master_counter <span style="color:#66d9ef">SET</span> counter<span style="color:#f92672">=&lt;</span>new_value_from_application<span style="color:#f92672">&gt;</span>;
-  <span style="color:#66d9ef">COMMIT</span>;
-</code></pre></div><p>And since I&rsquo;m using Golang for the application. In Golang, we can do a transaction with easy. This is the pseudo-code of how I do it in Golang.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go">  <span style="color:#a6e22e">tx</span>,<span style="color:#a6e22e">_</span><span style="color:#f92672">:=</span><span style="color:#a6e22e">db</span>.<span style="color:#a6e22e">Begin</span>() <span style="color:#75715e">// Begin the transaction
-</span><span style="color:#75715e"></span>
-  <span style="color:#a6e22e">counter</span>, <span style="color:#a6e22e">err</span><span style="color:#f92672">:=</span> <span style="color:#a6e22e">SelectCounter</span>(<span style="color:#a6e22e">tx</span>) <span style="color:#75715e">// Select the `counter`
-</span><span style="color:#75715e"></span>  <span style="color:#66d9ef">if</span> <span style="color:#a6e22e">err</span> <span style="color:#f92672">!=</span> <span style="color:#66d9ef">nil</span> {
-    <span style="color:#a6e22e">tx</span>.<span style="color:#a6e22e">Rollback</span>() <span style="color:#75715e">// Rollback if any error occured
-</span><span style="color:#75715e"></span>  }
-
-  <span style="color:#a6e22e">counter</span><span style="color:#f92672">++</span> <span style="color:#75715e">// increase the counter
-</span><span style="color:#75715e"></span>  <span style="color:#a6e22e">generatedCode</span><span style="color:#f92672">:=</span><span style="color:#a6e22e">ApplyAlgorithm</span>(<span style="color:#a6e22e">counter</span>) <span style="color:#75715e">// apply the algorithm
-</span><span style="color:#75715e"></span>  
-  <span style="color:#a6e22e">err</span><span style="color:#f92672">:=</span> <span style="color:#a6e22e">SaveGeneratedCode</span>(<span style="color:#a6e22e">tx</span>, <span style="color:#a6e22e">generatedCode</span>) <span style="color:#75715e">// save the payment_code
-</span><span style="color:#75715e"></span>  <span style="color:#66d9ef">if</span> <span style="color:#a6e22e">err</span> <span style="color:#f92672">!=</span> <span style="color:#66d9ef">nil</span> {
-    <span style="color:#a6e22e">tx</span>.<span style="color:#a6e22e">Rollback</span>() <span style="color:#75715e">// Rollback if any error occured
-</span><span style="color:#75715e"></span>  }
-
-  <span style="color:#a6e22e">err</span><span style="color:#f92672">:=</span><span style="color:#a6e22e">UpdateCounter</span>(<span style="color:#a6e22e">tx</span>, <span style="color:#a6e22e">counter</span>) <span style="color:#75715e">// update the counter to DB
-</span><span style="color:#75715e"></span>  <span style="color:#66d9ef">if</span> <span style="color:#a6e22e">err</span> <span style="color:#f92672">!=</span> <span style="color:#66d9ef">nil</span> {
-    <span style="color:#a6e22e">tx</span>.<span style="color:#a6e22e">Rollback</span>() <span style="color:#75715e">// Rollback if any error occured
-</span><span style="color:#75715e"></span>  }
-
-  <span style="color:#a6e22e">tx</span>.<span style="color:#a6e22e">Commit</span>() <span style="color:#75715e">// commit the transaction
-</span></code></pre></div><p>All this function is working perfectly when I try with a single request. There&rsquo;s no error or bug happening. But, when I try to do load testing. Just with only 2 concurrent users. I got these errors a lot.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">pq: duplicate key value violates unique constraint <span style="color:#ae81ff">\&#34;</span>my_unique_payment_code_index<span style="color:#ae81ff">\&#34;</span>
-</code></pre></div><p>It says, duplication error on <code>payment_code</code>. This is happening because the generated <code>payment_code</code> has to be unique. </p>
-<p>Well, as an application it&rsquo;s not wrong anyway. Because we return an error. But, from the business point of view, how could it return the duplication error, when the user is requesting a &ldquo;<strong>new</strong>&rdquo; <code>payment_code</code> that never used yet?</p>
-<p>My first assumption is, if there&rsquo;s a duplication, it means, that there&rsquo;s a race condition here. The race condition happened when I&rsquo;m doing an update and read on the <code>counter</code> value. And because the <code>counter</code> will be hashed for the payment code, and the payment code must be unique, but because of the race condition, there&rsquo;s a condition that the application reading the same value of the <code>counter</code> and that&rsquo;s causing duplicate key violations.</p>
-<p>In simple, the error occurs because we have met with a race condition where the counters are not updated when concurrent requests come in, causing duplication to occur when we attempt to create new payment codes in parallel requests.</p>
-<h2 id="first-attempt---using-isolation-level">First Attempt! &ndash; Using Isolation Level</h2>
-<p>Knowing this, I started to get confused. Because I&rsquo;ve used the transaction here. Spending my whole day to search and learn about the transaction, bring me to these articles</p>
-<ul>
-<li><a href="https://pgdash.io/blog/postgres-transactions.html">https://pgdash.io/blog/postgres-transactions.html</a></li>
-<li><a href="http://shiroyasha.io/transaction-isolation-levels-in-postgresql.html">http://shiroyasha.io/transaction-isolation-levels-in-postgresql.html</a></li>
-<li><a href="https://blog.gojekengineering.com/on-concurrency-control-in-databases-1e34c95d396e">https://blog.gojekengineering.com/on-concurrency-control-in-databases-1e34c95d396e</a></li>
-</ul>
-<p>I realized that there&rsquo;s also an isolation level on the transaction. Reading all those articles made me remember my old days in college life. I remember I&rsquo;ve learned this, but I never found a case when I need to really understand about this. </p>
-<p>From those articles, I can conclude that my isolation level on my transaction is not enough to lock the concurrent read-write-update processes in my database. 
-So then I add the isolation level to my application.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go">  <span style="color:#a6e22e">_</span>, <span style="color:#a6e22e">err</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">tx</span>.<span style="color:#a6e22e">ExecContext</span>(<span style="color:#a6e22e">ctx</span>, <span style="color:#e6db74">&#34;SET TRANSACTION ISOLATION LEVEL REPEATABLE READ&#34;</span>)
-  <span style="color:#66d9ef">if</span> <span style="color:#a6e22e">err</span> <span style="color:#f92672">!=</span> <span style="color:#66d9ef">nil</span> {
-    <span style="color:#66d9ef">return</span>
-  }
-</code></pre></div><p>And try to re-run my application again. And now the error is different.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">pq: could not serialize access due to concurrent update
-</code></pre></div><p>It&rsquo;s succeeding to avoid the duplication error. But, it&rsquo;s totally blocked concurrent request. So it&rsquo;s no different from having 1 concurrent request to a lot concurrent request.</p>
-<p>Since we want this system would be able to handle requests concurrently. So then I&rsquo;m asking a lot of my friends, even my friend that not work in my company. And even many Senior DBA from other companies. I&rsquo;m asking for suggestions and advice from them. </p>
-<p>And thanks to them, I realized, what I need is a row-level locking. Since I only need to read and update the counter value, so what I need is only on the row-level locking mechanism.</p>
-<p>And after understanding my condition, it&rsquo;s brought me to my second try, using row-level locking.</p>
-<h2 id="second-attempt-using-select-forupdate">Second Attempt! - Using SELECT FOR UPDATE</h2>
-<p>Since I just want on row-level locking, I don&rsquo;t need a strict isolation level. Because isolation level is for table scope.</p>
-<p>So my second try is:</p>
-<ul>
-<li>Isolation level: <code>READ COMMITTED</code> (Postgres default isolation level)</li>
-<li>Row-level locking: <code>SELECT ... FOR UPDATE</code></li>
-</ul>
-<p>The change is only adding the FOR UDPATE in my select query for my counter value. Compare to my previous SQL query, this is my new query now.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql">  <span style="color:#66d9ef">BEGIN</span>;
-  <span style="color:#66d9ef">SELECT</span> counter <span style="color:#66d9ef">FROM</span> master_counter <span style="color:#66d9ef">FOR</span> UDPATE; <span style="color:#f92672">//</span> notice this
-  <span style="color:#f92672">//</span> <span style="color:#66d9ef">Do</span> Addition <span style="color:#66d9ef">to</span> counter <span style="color:#66d9ef">in</span> application
-  <span style="color:#f92672">//</span> Apply Generator Logic <span style="color:#66d9ef">in</span> Application
-  <span style="color:#66d9ef">INSERT</span> <span style="color:#66d9ef">INTO</span> payment_code(payment_code) <span style="color:#66d9ef">VALUES</span>(generated_value_with_counter);
-  <span style="color:#66d9ef">UPDATE</span> master_counter <span style="color:#66d9ef">SET</span> counter<span style="color:#f92672">=&lt;</span>new_value_from_application<span style="color:#f92672">&gt;</span>;
-  <span style="color:#66d9ef">COMMIT</span>;
-</code></pre></div><p>So I only add the <code>FOR UPDATE</code> and it&rsquo;s solved my problem.</p>
-<p>Actually I don&rsquo;t know yet if this is the right solution. But for now, at least it solves our current problem. </p>
-<p>Actually, there&rsquo;s a lot of things that need to understand about <code>SELECT ... FOR UPDATE</code> like explained in this article <a href="http://shiroyasha.io/selecting-for-share-and-update-in-postgresql.html">http://shiroyasha.io/selecting-for-share-and-update-in-postgresql.html</a></p>
-<p>But, with only a simple <code>SELECT ... FOR UDPATE</code> already solve our issue. Maybe later there&rsquo;s will be a new issue, we leave that for future problems 😎</p>
-
-                    </div>
-
-                    
-
-
-
-
-
- 
-                    <div class="after-post-tags">
-                        <ul class="tags">
-                        
-                        <li>
-                        <a href="/tags/postgresql">postgresql</a>
-                        </li>
-                        
-                        <li>
-                        <a href="/tags/transaction">transaction</a>
-                        </li>
-                        
-                        <li>
-                        <a href="/tags/sql">sql</a>
-                        </li>
-                        
-                        <li>
-                        <a href="/tags/database">database</a>
-                        </li>
-                        
-                        <li>
-                        <a href="/tags/rdbms">rdbms</a>
-                        </li>
-                        
-                        </ul>
-                    </div>
-                    
-                    
-                    
-                    <div class="row PageNavigation d-flex justify-content-between font-weight-bold">
-                    
-                        <a class="prev d-block col-md-6" href="/posts/http-patch-method-ive-thought-the-wrong-way/"> &laquo; HTTP - PATCH Method! I&#39;ve Thought the Wrong Way!!!</a>
-                    
-                    
-                        <a class="next d-block col-md-6 text-lg-right" href="/posts/today-i-learned-enabling-horizontal-pod-autoscalerhpa-in-kubernetes/">Today I Learned: Enabling Horizontal Pod Autoscaler(HPA) in Kubernetes &raquo;</a>
-                    
-                    <div class="clearfix"></div>
-                    </div>
-                    
-                </div>
-                
-            </div>
-        </div>
-        
-        <br/> 
-        
-<div class="container">
-    <div id="comments" class="row justify-content-center mb-5">
-        <div class="col-md-8">           
-            <div id="disqus_thread"></div>
-<script type="application/javascript">
-    var disqus_config = function () {
-    
-    
-    
-    };
-    (function() {
-        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
-            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
-            return;
-        }
-        var d = document, s = d.createElement('script'); s.async = true;
-        s.src = '//' + "iman-tumorang" + '.disqus.com/embed.js';
-        s.setAttribute('data-timestamp', +new Date());
-        (d.head || d.body).appendChild(s);
-    })();
-</script>
-<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>               
-        </div>
-    </div>
-</div>
-
-
- 
-    </div>
-
-            </div>
-    
-<footer class="footer">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-6 col-sm-6 text-center text-lg-left">
-                &copy; Copyright Iman Tumorang @imantumorang.com - All rights reserved
-            </div>
-            <div class="col-md-6 col-sm-6 text-center text-lg-right">    
-                <a target="_blank" href="https://www.wowthemes.net">Mediumish Theme</a> by WowThemes.net
-            </div>
-        </div>
-    </div>
-</footer>
-
-        </div>
-
-    
-<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
-    
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
-    
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>    
-    
-<script src="/js/mediumish.js"></script>
-
+<!doctype html><html lang=en-us><head><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1,shrink-to-fit=no"><meta name=generator content="Hugo 0.102.3"><title>Today I Learned: Row Locking Transaction in PostgreSQL-Letters From Iman</title><meta property="og:title" content="Today I Learned: Row Locking Transaction in PostgreSQL - Letters From Iman"><meta property="og:description" content="How I did Locking in a Row for Read-Write Transactions in Postgres. - It took me 2 days to attempt to solve this, but the solution is actually very simple and elegant."><meta property="og:type" content="article"><meta property="og:url" content="https://imantumorang.com/posts/today-i-learned-row-locking-transaction-in-postgresql/"><link href=/css/bootstrap.min.css rel=stylesheet><link rel=stylesheet href=https://use.fontawesome.com/releases/v5.0.13/css/all.css integrity=sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp crossorigin=anonymous><link href="https://fonts.googleapis.com/css?family=Righteous%7CMerriweather:300,300i,400,400i,700,700i" rel=stylesheet><link href=/css/medium.css rel=stylesheet><link href=/css/additional.css rel=stylesheet><link rel=icon href=https://imantumorang.com/favicon.ico><link rel=apple-touch-icon href=https://imantumorang.com/apple-touch-icon.png><meta property="og:image" content="https://cdn-images-1.medium.com/max/1440/0*dvAYXPuCVffbgfvn"><meta property="og:image:secure_url" content="https://cdn-images-1.medium.com/max/1440/0*dvAYXPuCVffbgfvn"><meta name=twitter:card content="summary_large_image"><meta name=twitter:site content="@imantumorang.com"><meta name=twitter:creator content="@bxcodec"></head><body><nav class="navbar navbar-expand-lg navbar-light bg-white fixed-top mediumnavigation nav-down"><div class="container pr-0"><a class=navbar-brand href=https://imantumorang.com><span style=font-family:Righteous>Letters From Iman</span></a>
+<button class=navbar-toggler type=button data-toggle=collapse data-target=#navbarMediumish aria-controls=navbarSupportedContent aria-expanded=false aria-label="Toggle navigation">
+<span class=navbar-toggler-icon></span></button><div class="collapse navbar-collapse" id=navbarMediumish><ul class="navbar-nav ml-auto"><li class=nav-item><a class=nav-link href=https://resume.imantumorang.com>Resume</a></li><li class=nav-item><a class=nav-link href=/posts>Blog</a></li><li class=nav-item><a class=nav-link href=/>About Me</a></li></ul></div></div></nav><div class=site-content><div class=container><div class=mainheading></div><div class=main-content><div class=container><div class=row><div class="col-md-2 pl-0"><div class=share><p>Share</p><ul><li class="ml-1 mr-1"><a target=_blank href="https://twitter.com/intent/tweet?text=Today%20I%20Learned%3a%20Row%20Locking%20Transaction%20in%20PostgreSQL&url=https%3a%2f%2fimantumorang.com%2fposts%2ftoday-i-learned-row-locking-transaction-in-postgresql%2f" onclick='return window.open(this.href,"twitter-share","width=550,height=435"),!1'><i class="fab fa-twitter"></i></a></li><li class="ml-1 mr-1"><a target=_blank href="https://facebook.com/sharer.php?u=https%3a%2f%2fimantumorang.com%2fposts%2ftoday-i-learned-row-locking-transaction-in-postgresql%2f" onclick='return window.open(this.href,"facebook-share","width=550,height=435"),!1'><i class="fab fa-facebook-f"></i></a></li><li class="ml-1 mr-1"><a target=_blank href="https://www.xing.com/spi/shares/new?url=https%3a%2f%2fimantumorang.com%2fposts%2ftoday-i-learned-row-locking-transaction-in-postgresql%2f" onclick='return window.open(this.href,"xing-share","width=550,height=435"),!1'><i class="fab fa-xing"></i></a></li></ul><div class=sep></div><ul><li><a class="small smoothscroll" href=#disqus_thread></a></li></ul></div></div><div class="col-md-9 flex-first flex-md-unordered"><div class=mainheading><div class=post-top-meta><div><img class=author-thumb src="http://gravatar.com/avatar/01e3584fe39eb72335f13243c3a814a2?s=200" alt="Iman Tumorang"></div><div><a href=https://imantumorang.com class=link-dark>Iman Tumorang</a><br><span class=author-description>Software Engineer - Writer - Open Source Enthusiast - Startup Enthusiast<br><i class="far fa-star"></i>
+Jan 6, 2020
+<i class="far fa-clock clock"></i>
+6 min read</span></div></div><h1 class=posttitle>Today I Learned: Row Locking Transaction in PostgreSQL</h1><h2 class=subtitle>How I did Locking in a Row for Read-Write Transactions in Postgres. - It took me 2 days to attempt to solve this, but the solution is actually very simple and elegant.</h2></div><style>figure{width:95%;text-align:center!important;font-style:italic!important;font-size:smaller!important;text-indent:0!important;margin:auto;padding:.5em;color:#aaa}figure a{color:#aaa;text-decoration:#aaa}figure .featured-image{margin-bottom:.5rem}figure img{margin:auto}img.scaled{width:70%}</style><figure><img class="featured-image img-fluid" src=https://cdn-images-1.medium.com/max/1440/0*dvAYXPuCVffbgfvn alt="Photo by The Framed Bear on Unsplash.com"><figcaption>Photo by <a href=https://unsplash.com/@theframedbear>The Framed Bear</a> on Unsplash.com</figcaption></figure><br><div class=article-post><p>Today&rsquo;s problem is a hard problem but has a silly solution. So, right now, I&rsquo;m working on some stuff in Xendit, my current employer. I&rsquo;m working on the refactoring of our core-payment system that will handle the payment transaction from/to each bank that we supported. </p><p>And, when I&rsquo;m developing this new core service, one of the services is related to hashing and generating a payment code, let&rsquo;s call it Payment Code Generator service. The <code>payment_code</code> needs to be random but also unique, but we won&rsquo;t go into there for the details. But in short, it will require a counter to generate and that is why we need to store the counter.</p><p>So, I would tell the scenario in a simple one. Let&rsquo;s say I&rsquo;m building a service that will generate payment code. </p><p>In this service, I have 2 tables. Let&rsquo;s say <code>master_counter</code> and <code>payment_code</code>.</p><p>The <code>master_counter</code> table schema.</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-sql data-lang=sql><span style=display:flex><span>  <span style=color:#66d9ef>BEGIN</span>;
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>CREATE</span> <span style=color:#66d9ef>TABLE</span> <span style=color:#66d9ef>IF</span> <span style=color:#66d9ef>NOT</span> <span style=color:#66d9ef>EXISTS</span> master_counter(
+</span></span><span style=display:flex><span>    id varchar(<span style=color:#ae81ff>255</span>) <span style=color:#66d9ef>NOT</span> <span style=color:#66d9ef>NULL</span> <span style=color:#66d9ef>PRIMARY</span> <span style=color:#66d9ef>KEY</span>, 
+</span></span><span style=display:flex><span>    user_id VARCHAR(<span style=color:#ae81ff>255</span>) <span style=color:#66d9ef>NOT</span> <span style=color:#66d9ef>NULL</span>, 
+</span></span><span style=display:flex><span>    counter bigint <span style=color:#66d9ef>NOT</span> <span style=color:#66d9ef>NULL</span>, 
+</span></span><span style=display:flex><span>    created_at timestamptz <span style=color:#66d9ef>NOT</span> <span style=color:#66d9ef>NULL</span>, 
+</span></span><span style=display:flex><span>    updated_at timestamptz <span style=color:#66d9ef>NOT</span> <span style=color:#66d9ef>NULL</span>, 
+</span></span><span style=display:flex><span>    deleted_at timestamptz, 
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>CONSTRAINT</span> master_counter_user_id_unique_idx <span style=color:#66d9ef>UNIQUE</span> (user_id)
+</span></span><span style=display:flex><span>  );
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>COMMIT</span>;
+</span></span></code></pre></div><p>And the <code>payment_code</code> schema</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-sql data-lang=sql><span style=display:flex><span>  <span style=color:#66d9ef>BEGIN</span>;
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>CREATE</span> <span style=color:#66d9ef>TABLE</span> <span style=color:#66d9ef>IF</span> <span style=color:#66d9ef>NOT</span> <span style=color:#66d9ef>EXISTS</span> payment_code(
+</span></span><span style=display:flex><span>    id varchar(<span style=color:#ae81ff>255</span>) <span style=color:#66d9ef>NOT</span> <span style=color:#66d9ef>NULL</span> <span style=color:#66d9ef>PRIMARY</span> <span style=color:#66d9ef>KEY</span>, 
+</span></span><span style=display:flex><span>    payment_code varchar(<span style=color:#ae81ff>255</span>) <span style=color:#66d9ef>NOT</span> <span style=color:#66d9ef>NULL</span>, 
+</span></span><span style=display:flex><span>    user_id varchar(<span style=color:#ae81ff>255</span>) <span style=color:#66d9ef>NOT</span> <span style=color:#66d9ef>NULL</span>, 
+</span></span><span style=display:flex><span>    created_at timestamptz <span style=color:#66d9ef>NOT</span> <span style=color:#66d9ef>NULL</span>, 
+</span></span><span style=display:flex><span>    updated_at timestamptz <span style=color:#66d9ef>NOT</span> <span style=color:#66d9ef>NULL</span>, 
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>CONSTRAINT</span> payment_code_unique_idx <span style=color:#66d9ef>UNIQUE</span>(payment_code, user_id)
+</span></span><span style=display:flex><span>  );
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>COMMIT</span>;
+</span></span></code></pre></div><p>So, in the <code>master_counter</code>, I have a counter column that will always be increased based on received requests. If we draw into a diagram, the flow will more look like this.</p><p><img src=https://cdn-images-1.medium.com/max/2160/1*mxDww1X_77Zutq2u22VoiQ.png alt="Flow the Generating Payment Code"></p><blockquote><p>Flow the Generating Payment Code</p></blockquote><ul><li>When the user requests a new payment code, we will get its current counter value.</li><li>Then we increase the counter value by 1 and apply the algorithm. Or simply just hash the counter value to be a random character.</li><li>After the new counter value hashed, we then store the hashed value to <code>payment_code</code> table. With unique constraint.</li><li>Then we update the counter value based on user id again to <code>master_counter</code>.</li><li>And finally, we return the hashed counter value to the user, which is a payment code that will be used by our user. </li></ul><p>More and less the whole logic is like that. Actually there&rsquo;s a lot of algorithms used here, but to simplify, all the process is more like I write above. </p><h2 id=problems-started>Problems Started</h2><p>Initially, if written in SQL my query is more look like this.</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-sql data-lang=sql><span style=display:flex><span>  <span style=color:#66d9ef>BEGIN</span>;
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>SELECT</span> counter <span style=color:#66d9ef>FROM</span> master_counter;
+</span></span><span style=display:flex><span>  <span style=color:#f92672>//</span> <span style=color:#66d9ef>Do</span> Addition <span style=color:#66d9ef>to</span> counter <span style=color:#66d9ef>in</span> application
+</span></span><span style=display:flex><span>  <span style=color:#f92672>//</span> Apply Generator Logic <span style=color:#66d9ef>in</span> Application
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>INSERT</span> <span style=color:#66d9ef>INTO</span> payment_code(payment_code) <span style=color:#66d9ef>VALUES</span>(generated_value_with_counter);
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>UPDATE</span> master_counter <span style=color:#66d9ef>SET</span> counter<span style=color:#f92672>=&lt;</span>new_value_from_application<span style=color:#f92672>&gt;</span>;
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>COMMIT</span>;
+</span></span></code></pre></div><p>And since I&rsquo;m using Golang for the application. In Golang, we can do a transaction with easy. This is the pseudo-code of how I do it in Golang.</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-go data-lang=go><span style=display:flex><span>  <span style=color:#a6e22e>tx</span>,<span style=color:#a6e22e>_</span><span style=color:#f92672>:=</span><span style=color:#a6e22e>db</span>.<span style=color:#a6e22e>Begin</span>() <span style=color:#75715e>// Begin the transaction
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span>
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>counter</span>, <span style=color:#a6e22e>err</span><span style=color:#f92672>:=</span> <span style=color:#a6e22e>SelectCounter</span>(<span style=color:#a6e22e>tx</span>) <span style=color:#75715e>// Select the `counter`
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span>  <span style=color:#66d9ef>if</span> <span style=color:#a6e22e>err</span> <span style=color:#f92672>!=</span> <span style=color:#66d9ef>nil</span> {
+</span></span><span style=display:flex><span>    <span style=color:#a6e22e>tx</span>.<span style=color:#a6e22e>Rollback</span>() <span style=color:#75715e>// Rollback if any error occured
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span>  }
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>counter</span><span style=color:#f92672>++</span> <span style=color:#75715e>// increase the counter
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span>  <span style=color:#a6e22e>generatedCode</span><span style=color:#f92672>:=</span><span style=color:#a6e22e>ApplyAlgorithm</span>(<span style=color:#a6e22e>counter</span>) <span style=color:#75715e>// apply the algorithm
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span>  
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>err</span><span style=color:#f92672>:=</span> <span style=color:#a6e22e>SaveGeneratedCode</span>(<span style=color:#a6e22e>tx</span>, <span style=color:#a6e22e>generatedCode</span>) <span style=color:#75715e>// save the payment_code
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span>  <span style=color:#66d9ef>if</span> <span style=color:#a6e22e>err</span> <span style=color:#f92672>!=</span> <span style=color:#66d9ef>nil</span> {
+</span></span><span style=display:flex><span>    <span style=color:#a6e22e>tx</span>.<span style=color:#a6e22e>Rollback</span>() <span style=color:#75715e>// Rollback if any error occured
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span>  }
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>err</span><span style=color:#f92672>:=</span><span style=color:#a6e22e>UpdateCounter</span>(<span style=color:#a6e22e>tx</span>, <span style=color:#a6e22e>counter</span>) <span style=color:#75715e>// update the counter to DB
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span>  <span style=color:#66d9ef>if</span> <span style=color:#a6e22e>err</span> <span style=color:#f92672>!=</span> <span style=color:#66d9ef>nil</span> {
+</span></span><span style=display:flex><span>    <span style=color:#a6e22e>tx</span>.<span style=color:#a6e22e>Rollback</span>() <span style=color:#75715e>// Rollback if any error occured
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span>  }
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>tx</span>.<span style=color:#a6e22e>Commit</span>() <span style=color:#75715e>// commit the transaction
+</span></span></span></code></pre></div><p>All this function is working perfectly when I try with a single request. There&rsquo;s no error or bug happening. But, when I try to do load testing. Just with only 2 concurrent users. I got these errors a lot.</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-shell data-lang=shell><span style=display:flex><span>pq: duplicate key value violates unique constraint <span style=color:#ae81ff>\&#34;</span>my_unique_payment_code_index<span style=color:#ae81ff>\&#34;</span>
+</span></span></code></pre></div><p>It says, duplication error on <code>payment_code</code>. This is happening because the generated <code>payment_code</code> has to be unique. </p><p>Well, as an application it&rsquo;s not wrong anyway. Because we return an error. But, from the business point of view, how could it return the duplication error, when the user is requesting a &ldquo;<strong>new</strong>&rdquo; <code>payment_code</code> that never used yet?</p><p>My first assumption is, if there&rsquo;s a duplication, it means, that there&rsquo;s a race condition here. The race condition happened when I&rsquo;m doing an update and read on the <code>counter</code> value. And because the <code>counter</code> will be hashed for the payment code, and the payment code must be unique, but because of the race condition, there&rsquo;s a condition that the application reading the same value of the <code>counter</code> and that&rsquo;s causing duplicate key violations.</p><p>In simple, the error occurs because we have met with a race condition where the counters are not updated when concurrent requests come in, causing duplication to occur when we attempt to create new payment codes in parallel requests.</p><h2 id=first-attempt---using-isolation-level>First Attempt! &ndash; Using Isolation Level</h2><p>Knowing this, I started to get confused. Because I&rsquo;ve used the transaction here. Spending my whole day to search and learn about the transaction, bring me to these articles</p><ul><li><a href=https://pgdash.io/blog/postgres-transactions.html>https://pgdash.io/blog/postgres-transactions.html</a></li><li><a href=http://shiroyasha.io/transaction-isolation-levels-in-postgresql.html>http://shiroyasha.io/transaction-isolation-levels-in-postgresql.html</a></li><li><a href=https://blog.gojekengineering.com/on-concurrency-control-in-databases-1e34c95d396e>https://blog.gojekengineering.com/on-concurrency-control-in-databases-1e34c95d396e</a></li></ul><p>I realized that there&rsquo;s also an isolation level on the transaction. Reading all those articles made me remember my old days in college life. I remember I&rsquo;ve learned this, but I never found a case when I need to really understand about this. </p><p>From those articles, I can conclude that my isolation level on my transaction is not enough to lock the concurrent read-write-update processes in my database. 
+So then I add the isolation level to my application.</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-go data-lang=go><span style=display:flex><span>  <span style=color:#a6e22e>_</span>, <span style=color:#a6e22e>err</span> <span style=color:#f92672>:=</span> <span style=color:#a6e22e>tx</span>.<span style=color:#a6e22e>ExecContext</span>(<span style=color:#a6e22e>ctx</span>, <span style=color:#e6db74>&#34;SET TRANSACTION ISOLATION LEVEL REPEATABLE READ&#34;</span>)
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>if</span> <span style=color:#a6e22e>err</span> <span style=color:#f92672>!=</span> <span style=color:#66d9ef>nil</span> {
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>return</span>
+</span></span><span style=display:flex><span>  }
+</span></span></code></pre></div><p>And try to re-run my application again. And now the error is different.</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-sh data-lang=sh><span style=display:flex><span>pq: could not serialize access due to concurrent update
+</span></span></code></pre></div><p>It&rsquo;s succeeding to avoid the duplication error. But, it&rsquo;s totally blocked concurrent request. So it&rsquo;s no different from having 1 concurrent request to a lot concurrent request.</p><p>Since we want this system would be able to handle requests concurrently. So then I&rsquo;m asking a lot of my friends, even my friend that not work in my company. And even many Senior DBA from other companies. I&rsquo;m asking for suggestions and advice from them. </p><p>And thanks to them, I realized, what I need is a row-level locking. Since I only need to read and update the counter value, so what I need is only on the row-level locking mechanism.</p><p>And after understanding my condition, it&rsquo;s brought me to my second try, using row-level locking.</p><h2 id=second-attempt-using-select-forupdate>Second Attempt! - Using SELECT FOR UPDATE</h2><p>Since I just want on row-level locking, I don&rsquo;t need a strict isolation level. Because isolation level is for table scope.</p><p>So my second try is:</p><ul><li>Isolation level: <code>READ COMMITTED</code> (Postgres default isolation level)</li><li>Row-level locking: <code>SELECT ... FOR UPDATE</code></li></ul><p>The change is only adding the FOR UDPATE in my select query for my counter value. Compare to my previous SQL query, this is my new query now.</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-sql data-lang=sql><span style=display:flex><span>  <span style=color:#66d9ef>BEGIN</span>;
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>SELECT</span> counter <span style=color:#66d9ef>FROM</span> master_counter <span style=color:#66d9ef>FOR</span> UDPATE; <span style=color:#f92672>//</span> notice this
+</span></span><span style=display:flex><span>  <span style=color:#f92672>//</span> <span style=color:#66d9ef>Do</span> Addition <span style=color:#66d9ef>to</span> counter <span style=color:#66d9ef>in</span> application
+</span></span><span style=display:flex><span>  <span style=color:#f92672>//</span> Apply Generator Logic <span style=color:#66d9ef>in</span> Application
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>INSERT</span> <span style=color:#66d9ef>INTO</span> payment_code(payment_code) <span style=color:#66d9ef>VALUES</span>(generated_value_with_counter);
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>UPDATE</span> master_counter <span style=color:#66d9ef>SET</span> counter<span style=color:#f92672>=&lt;</span>new_value_from_application<span style=color:#f92672>&gt;</span>;
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>COMMIT</span>;
+</span></span></code></pre></div><p>So I only add the <code>FOR UPDATE</code> and it&rsquo;s solved my problem.</p><p>Actually I don&rsquo;t know yet if this is the right solution. But for now, at least it solves our current problem. </p><p>Actually, there&rsquo;s a lot of things that need to understand about <code>SELECT ... FOR UPDATE</code> like explained in this article <a href=http://shiroyasha.io/selecting-for-share-and-update-in-postgresql.html>http://shiroyasha.io/selecting-for-share-and-update-in-postgresql.html</a></p><p>But, with only a simple <code>SELECT ... FOR UDPATE</code> already solve our issue. Maybe later there&rsquo;s will be a new issue, we leave that for future problems 😎</p></div><div class=after-post-tags><ul class=tags><li><a href=/tags/postgresql>postgresql</a></li><li><a href=/tags/transaction>transaction</a></li><li><a href=/tags/sql>sql</a></li><li><a href=/tags/database>database</a></li><li><a href=/tags/rdbms>rdbms</a></li></ul></div><div class="row PageNavigation d-flex justify-content-between font-weight-bold"><a class="prev d-block col-md-6" href=/posts/http-patch-method-ive-thought-the-wrong-way/>&#171; HTTP - PATCH Method! I've Thought the Wrong Way!!!</a>
+<a class="next d-block col-md-6 text-lg-right" href=/posts/today-i-learned-enabling-horizontal-pod-autoscalerhpa-in-kubernetes/>Today I Learned: Enabling Horizontal Pod Autoscaler(HPA) in Kubernetes &#187;</a><div class=clearfix></div></div></div></div></div><br><div class=container><div id=comments class="row justify-content-center mb-5"><div class=col-md-8><div id=disqus_thread></div><script type=application/javascript>window.disqus_config=function(){},function(){if(["localhost","127.0.0.1"].indexOf(window.location.hostname)!=-1){document.getElementById("disqus_thread").innerHTML="Disqus comments not available by default when the website is previewed locally.";return}var t=document,e=t.createElement("script");e.async=!0,e.src="//iman-tumorang.disqus.com/embed.js",e.setAttribute("data-timestamp",+new Date),(t.head||t.body).appendChild(e)}()</script><noscript>Please enable JavaScript to view the <a href=https://disqus.com/?ref_noscript>comments powered by Disqus.</a></noscript><a href=https://disqus.com class=dsq-brlink>comments powered by <span class=logo-disqus>Disqus</span></a></div></div></div></div></div><footer class=footer><div class=container><div class=row><div class="col-md-6 col-sm-6 text-center text-lg-left">&copy; Copyright Iman Tumorang @imantumorang.com - All rights reserved</div><div class="col-md-6 col-sm-6 text-center text-lg-right"><a target=_blank href=https://www.wowthemes.net>Mediumish Theme</a> by WowThemes.net</div></div></div></footer></div><script src=https://code.jquery.com/jquery-3.3.1.min.js></script>
+<script src=https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js integrity=sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49 crossorigin=anonymous></script>
+<script src=https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js integrity=sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy crossorigin=anonymous></script>
+<script src=/js/mediumish.js></script>
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-0DEK04TJDM"></script>
-<script>
-var doNotTrack = false;
-if (!doNotTrack) {
-	window.dataLayer = window.dataLayer || [];
-	function gtag(){dataLayer.push(arguments);}
-	gtag('js', new Date());
-	gtag('config', 'G-0DEK04TJDM', { 'anonymize_ip': false });
-}
-</script>
-
-    </body>
-</html>
+<script>var doNotTrack=!1;if(!doNotTrack){window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag("js",new Date),gtag("config","G-0DEK04TJDM",{anonymize_ip:!1})}</script></body></html>
